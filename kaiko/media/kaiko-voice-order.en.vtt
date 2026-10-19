@@ -1,0 +1,93 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.450
+Real recording: OpenAI Realtime (gpt-realtime-2), Mandarin, translated captions.
+
+2
+00:00:01.500 --> 00:00:03.200
+The customer taps Talk and accepts the one-time voice notice.
+
+3
+00:00:03.250 --> 00:00:05.450
+[Connecting. The customer voice in this demo is synthetic text-to-speech.]
+
+4
+00:00:05.520 --> 00:00:08.920
+Waiter: Hi, welcome to Xiangkou Diner! What would you like to start with?
+
+5
+00:00:09.920 --> 00:00:14.470
+Customer (TTS): Hi, I would like a bowl of braised beef noodle soup, mildly spicy, with wide noodles.
+
+6
+00:00:14.840 --> 00:00:17.590
+[The model calls add_items; the server checks it against the menu and the ticket updates.]
+
+7
+00:00:17.660 --> 00:00:22.680
+Waiter: One braised beef noodle soup, mild, wide noodles, done. Anything else?
+
+8
+00:00:23.680 --> 00:00:26.800
+Customer (TTS): And a bubble milk tea, less ice, half sugar.
+
+9
+00:00:28.700 --> 00:00:32.140
+Waiter: OK, let me check the bubble milk tea options first.
+
+10
+00:00:32.500 --> 00:00:39.220
+Waiter: The bubble milk tea needs a size first: medium or large? Once you choose I will add it. Less ice, half sugar is fine.
+
+11
+00:00:40.220 --> 00:00:41.520
+Customer (TTS): Large, thanks.
+
+12
+00:00:41.920 --> 00:00:45.170
+[add_items: bubble milk tea, large, less ice, half sugar. Validated server-side.]
+
+13
+00:00:45.250 --> 00:00:48.440
+Waiter: Large bubble milk tea, less ice, half sugar, added.
+
+14
+00:00:48.960 --> 00:00:53.080
+Waiter: Your subtotal is NT$255. Would you like to check out?
+
+15
+00:00:54.080 --> 00:00:57.560
+Customer (TTS): Add one braised egg too. That is all, please check me out.
+
+16
+00:00:59.840 --> 00:01:03.780
+Waiter: Sure, I will add the braised egg, then confirm your order.
+
+17
+00:01:04.220 --> 00:01:11.600
+Waiter: You ordered one braised beef noodle soup, mild, wide noodles; one large bubble milk tea, less ice, half sugar; and one braised egg. NT$270 in total.
+
+18
+00:01:11.970 --> 00:01:16.820
+Waiter: Please tap the submit button on the screen to finish checking out.
+
+19
+00:01:16.880 --> 00:01:17.570
+[confirm_order returned the server-computed total.]
+
+20
+00:01:17.590 --> 00:01:20.780
+The customer taps Confirm order, enters table 5 and submits.
+
+21
+00:01:20.820 --> 00:01:23.670
+Order #001 is placed: dine-in, table 5, NT$270.
+
+22
+00:01:23.690 --> 00:01:26.660
+Kitchen display: order #001 arrives under New, tagged Voice.
+
+23
+00:01:26.710 --> 00:01:29.830
+The kitchen taps Start. The order moves to In progress.

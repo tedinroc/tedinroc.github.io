@@ -1,45 +1,598 @@
 <!doctype html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
-    />
-    <title>開口點 KAIKŌ — 開口就能點餐</title>
-    <meta name="description" content="Order from a seeded demo store by voice or text. This copy needs no KAIKŌ server: the deterministic Chinese/English parser runs in your browser, and voice input uses the browser's own speech recognition; the live version adds OpenAI Realtime voice over WebRTC." />
-    <link rel="canonical" href="https://tedinroc.github.io/kaiko/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ted Chen" />
-    <meta property="og:title" content="KAIKŌ: voice ordering demo (offline copy)" />
-    <meta property="og:description" content="Order from a seeded demo store by voice or text. This copy needs no KAIKŌ server: the deterministic Chinese/English parser runs in your browser, and voice input uses the browser's own speech recognition; the live version adds OpenAI Realtime voice over WebRTC." />
-    <meta property="og:url" content="https://tedinroc.github.io/kaiko/" />
-    <meta property="og:image" content="https://tedinroc.github.io/kaiko/og.jpg" />
-    <meta property="og:image:secure_url" content="https://tedinroc.github.io/kaiko/og.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="627" />
-    <meta property="og:image:alt" content="KAIKŌ demo store 巷口食堂: a printed-menu style list of dishes with prices, a receipt-style order ticket and a voice/typing dock" />
-    <meta property="og:locale" content="zh_TW" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="KAIKŌ: voice ordering demo (offline copy)" />
-    <meta name="twitter:description" content="Order from a seeded demo store by voice or text. This copy needs no KAIKŌ server: the deterministic Chinese/English parser runs in your browser, and voice input uses the browser's own speech recognition; the live version adds OpenAI Realtime voice over WebRTC." />
-    <meta name="twitter:image" content="https://tedinroc.github.io/kaiko/og.jpg" />
-    <meta name="twitter:image:alt" content="KAIKŌ demo store 巷口食堂 menu, order ticket and voice dock" />
-    <meta name="author" content="Ted Chen" />
-    <meta name="theme-color" content="#f6f1e7" />
-    <link rel="manifest" href="/kaiko/manifest.webmanifest" />
-    <link rel="icon" href="/kaiko/icon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/kaiko/assets/index-Cv_7KkxL.js"></script>
-    <link rel="stylesheet" crossorigin href="/kaiko/assets/index-H-3ajf5n.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAIKŌ: voice ordering, recorded demo</title>
+<meta name="description" content="KAIKŌ is a multi-tenant voice ordering app. A recorded Mandarin order shows the OpenAI Realtime waiter, server-checked tool calls, the receipt-style ticket and the kitchen display.">
+<link rel="canonical" href="https://tedinroc.github.io/kaiko/">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1813" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ted Chen">
+<meta property="og:title" content="KAIKŌ: voice ordering, recorded demo">
+<meta property="og:description" content="A recorded end-to-end voice order on KAIKŌ, a multi-tenant ordering app: a customer orders in Mandarin, the server checks every model tool call, and the order lands on the kitchen display.">
+<meta property="og:url" content="https://tedinroc.github.io/kaiko/">
+<meta property="og:image" content="https://tedinroc.github.io/kaiko/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="KAIKŌ customer page: a receipt-style ticket with three voice-ordered items totalling NT$270 and the waiter's spoken readback.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KAIKŌ: voice ordering, recorded demo">
+<meta name="twitter:description" content="A recorded end-to-end voice order on KAIKŌ, a multi-tenant ordering app: a customer orders in Mandarin, the server checks every model tool call, and the order lands on the kitchen display.">
+<meta name="twitter:image" content="https://tedinroc.github.io/kaiko/og.jpg">
+<meta name="twitter:image:alt" content="KAIKŌ customer page: a receipt-style ticket with three voice-ordered items totalling NT$270 and the waiter's spoken readback.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #f6f1e7;
+  --card: #fffcf5;
+  --ink: #221d14;
+  --ink-soft: #5f574a;
+  --ink-faint: #756c5d;
+  --line: rgba(34, 29, 20, 0.16);
+  --line-strong: rgba(34, 29, 20, 0.32);
+  --accent: #bc3e1b;
+  --accent-deep: #93300f;
+  --accent-wash: #f4ddd0;
+  --green: #44633f;
+  --green-wash: #dfe7d9;
+  --gold: #a87b2d;
+  --gold-wash: #f0e4c9;
+  --grain: rgba(34, 29, 20, 0.025);
+  --shadow-pop: 0 10px 30px rgba(34, 29, 20, 0.12);
+  --font-display: 'Fraunces', 'Noto Serif TC', Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang TC', monospace;
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1813;
+    --card: #252119;
+    --ink: #ece4d4;
+    --ink-soft: #b5ab99;
+    --ink-faint: #8f8675;
+    --line: rgba(236, 228, 212, 0.16);
+    --line-strong: rgba(236, 228, 212, 0.34);
+    --accent: #e0552c;
+    --accent-deep: #f06a41;
+    --accent-wash: #45261a;
+    --green: #8fae88;
+    --green-wash: #2a3326;
+    --gold: #cda04f;
+    --gold-wash: #3a3120;
+    --grain: rgba(236, 228, 212, 0.03);
+    --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--grain) 1px, transparent 1px);
+  background-size: 5px 5px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent-deep); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--accent-wash); }
+code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+code { background: color-mix(in srgb, var(--accent-wash) 55%, transparent); padding: 0.05em 0.3em; border-radius: 4px; overflow-wrap: anywhere; }
+img, video, svg { max-width: 100%; display: block; }
+
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.omac { position: relative; display: inline-block; }
+.omac::after { content: ""; position: absolute; left: 16%; right: 16%; top: -0.06em; height: 0.075em; min-height: 1.5px; background: currentColor; border-radius: 1px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); color: var(--ink); padding: 8px 12px; border: 1.5px solid var(--line-strong); border-radius: var(--radius-s); z-index: 50; }
+.skip:focus { left: 16px; }
+
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 560px) { .wrap { padding: 0 16px; } }
+
+/* top bar */
+.topbar { border-bottom: 1.5px solid var(--line); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: inline-flex; align-items: baseline; gap: 8px; }
+.brand-zh { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+.brand-latin { font-family: var(--font-display); font-size: 12px; letter-spacing: 0.3em; color: var(--accent); font-weight: 600; }
+.topbar nav a { font-size: 14.5px; font-weight: 600; color: var(--ink); text-decoration: none; border: 1.5px solid var(--line-strong); border-radius: 999px; padding: 6px 14px; white-space: nowrap; }
+.topbar nav a:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+
+/* hero */
+.hero { padding: 56px 0 24px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 40px; align-items: start; }
+.hero h1 { font-size: clamp(56px, 10vw, 104px); font-weight: 700; letter-spacing: 0.02em; margin-top: 10px; }
+.hero h1 .zh { display: block; font-size: 0.26em; letter-spacing: 0.3em; color: var(--ink-soft); font-weight: 600; margin-top: 6px; }
+.lede { font-size: clamp(19px, 2.3vw, 23px); line-height: 1.45; margin-top: 18px; max-width: 34ch; }
+.hero-meta { margin-top: 20px; color: var(--ink-soft); font-size: 15px; max-width: 52ch; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* receipt */
+.receipt {
+  background: var(--card);
+  border: 1.5px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 22px 20px 18px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  position: relative;
+  box-shadow: var(--shadow-pop);
+}
+.receipt::after {
+  /* torn bottom edge */
+  content: ""; position: absolute; left: -1.5px; right: -1.5px; bottom: -9px; height: 9px;
+  background: linear-gradient(-45deg, transparent 6px, var(--card) 0) 0 0 / 12px 9px repeat-x,
+              linear-gradient(45deg, transparent 6px, var(--card) 0) 0 0 / 12px 9px repeat-x;
+}
+.receipt-head { text-align: center; }
+.receipt-head .store { font-family: var(--font-body); font-size: 13px; letter-spacing: 0.18em; color: var(--ink-soft); }
+.receipt-head .label { font-family: var(--font-display); font-weight: 700; font-size: 21px; margin-top: 2px; }
+.tear { border: none; border-top: 2px dashed var(--line-strong); margin: 14px -20px; }
+.rline { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; }
+.rline .item { font-family: var(--font-body); font-weight: 600; font-size: 15px; }
+.rline .opts { display: block; font-family: var(--font-body); font-weight: 400; font-size: 13px; color: var(--ink-soft); }
+.rline .amt { white-space: nowrap; }
+.rtotal { display: flex; justify-content: space-between; font-weight: 500; font-size: 18px; padding-top: 2px; }
+.rtotal span:first-child { font-family: var(--font-body); font-weight: 700; font-size: 16px; }
+.rfoot { margin-top: 12px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.55; }
+.rfoot div { display: flex; justify-content: space-between; gap: 10px; }
+
+/* video */
+.film { margin-top: 36px; }
+.film-frame { background: var(--card); border: 1.5px solid var(--line-strong); border-radius: var(--radius-l); padding: 10px; box-shadow: var(--shadow-pop); }
+.film video { width: 100%; height: auto; aspect-ratio: 1280 / 800; border-radius: var(--radius-m); background: #1b1813; }
+.film-note { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 16px; font-size: 14.5px; color: var(--ink-soft); max-width: 900px; }
+.film-note .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1.5px solid currentColor; border-radius: 999px; padding: 1px 10px; height: fit-content; margin-top: 2px; }
+@media (max-width: 560px) { .film-frame { padding: 6px; border-radius: var(--radius-m); } .film-note { grid-template-columns: 1fr; } .film-note .tag { width: fit-content; } }
+
+/* sections */
+section { padding: 56px 0 8px; }
+.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 22px; }
+.sec-head h2 { font-size: clamp(28px, 4vw, 38px); white-space: nowrap; }
+@media (max-width: 560px) { .sec-head h2 { white-space: normal; } }
+.sec-head .rule { flex: 1; border-top: 1.5px solid var(--ink); transform: translateY(-0.35em); min-width: 24px; }
+.sec-intro { color: var(--ink-soft); max-width: 68ch; margin-bottom: 24px; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 820px) { .two { grid-template-columns: 1fr; } }
+.panel { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius-l); padding: 22px 22px 18px; }
+.panel h3 { font-size: 22px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.panel h3 small { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--ink-faint); letter-spacing: 0.04em; }
+.dotlist { list-style: none; margin: 14px 0 0; padding: 0; }
+.dotlist li { padding: 10px 0; border-top: 1.5px dotted var(--line-strong); }
+.dotlist li:first-child { border-top: none; padding-top: 4px; }
+.dotlist b { font-weight: 650; }
+
+/* diagram */
+.diagram { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius-l); padding: 18px; }
+.diagram svg { width: 100%; height: auto; margin: 0 auto; }
+.dg-narrow { display: none; max-width: 420px; }
+@media (max-width: 720px) { .dg-wide { display: none; } .dg-narrow { display: block; } .diagram { padding: 10px; } }
+.dg-box { fill: var(--card); stroke: var(--line-strong); stroke-width: 1.5; }
+.dg-box-rt { fill: var(--accent-wash); stroke: var(--accent); stroke-width: 1.5; }
+.dg-ext { fill: none; stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.dg-group { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.dg-head { font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; fill: var(--accent); }
+.dg-t { font-family: var(--font-body); font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+.dg-s { font-family: var(--font-body); font-size: 12.5px; fill: var(--ink-soft); }
+.dg-m { font-family: var(--font-mono); font-size: 12px; fill: var(--ink-soft); }
+.dg-line { fill: none; stroke: var(--ink-soft); stroke-width: 1.5; }
+.dg-line-rt { fill: none; stroke: var(--accent); stroke-width: 2; }
+.dg-badge { fill: var(--accent); }
+.dg-badge-t { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; fill: var(--card); }
+.dg-arrow { fill: var(--ink-soft); }
+.dg-arrow-rt { fill: var(--accent); }
+
+.steps { list-style: none; counter-reset: s; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
+@media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+.steps li { counter-increment: s; position: relative; padding-left: 38px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--card); font-family: var(--font-mono); font-size: 13px; display: grid; place-items: center; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 28px; border: 1.5px solid var(--line-strong); border-radius: var(--radius-m); background: var(--card); overflow: hidden; }
+.stat { padding: 14px 16px; border-left: 1.5px dashed var(--line-strong); }
+.stat:first-child { border-left: none; }
+.stat .n { font-family: var(--font-mono); font-size: 26px; font-weight: 500; line-height: 1.1; }
+.stat .l { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+@media (max-width: 720px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: none; } .stat:nth-child(n+3) { border-top: 1.5px dashed var(--line-strong); } }
+.stats-note { font-size: 13.5px; color: var(--ink-faint); margin-top: 10px; max-width: 80ch; }
+
+/* notes */
+.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.notes li { background: var(--card); border: 1.5px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius-m); padding: 16px 18px; }
+.notes h3 { font-size: 19px; margin-bottom: 6px; }
+.notes p { color: var(--ink-soft); }
+.notes p + p { margin-top: 6px; }
+.findings li { border-left-color: var(--gold); }
+
+/* gallery */
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+.gallery figure { margin: 0; }
+.gallery .shot { background: var(--card); border: 1.5px solid var(--line-strong); border-radius: var(--radius-m); overflow: hidden; }
+.gallery img { width: 100%; height: auto; }
+.gallery figcaption { font-size: 14.5px; color: var(--ink-soft); margin-top: 10px; }
+.gallery figcaption b { color: var(--ink); font-weight: 650; }
+.gallery .num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-right: 6px; }
+.gallery .wide { grid-column: 1 / -1; }
+.gallery .phone { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: 24px; align-items: center; }
+.gallery .phone .shot { border-radius: 22px; }
+@media (max-width: 720px) { .gallery { grid-template-columns: 1fr; } .gallery .phone { grid-template-columns: 1fr; } .gallery .phone .shot { max-width: 300px; } }
+
+/* footer */
+footer { margin-top: 72px; border-top: 1.5px solid var(--line); padding: 28px 0 40px; }
+footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; font-size: 15px; }
+footer .who a { font-weight: 650; }
+footer .fine { color: var(--ink-faint); font-size: 13.5px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="brand"><span class="brand-zh" lang="zh-Hant">開口點</span><span class="brand-latin"><span class="vh">KAIKŌ</span><span aria-hidden="true">KAIK<span class="omac">O</span></span></span></span>
+    <nav aria-label="Site"><a href="../">All projects</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Case study · Voice ordering</p>
+          <h1><span class="vh">KAIKŌ</span><span aria-hidden="true">KAIK<span class="omac">O</span></span> <span class="zh" lang="zh-Hant">開口點</span></h1>
+          <p class="lede">Multi-tenant voice ordering: customers order by talking, merchants set up a store in minutes.</p>
+          <p class="hero-meta">A web app on Cloudflare Pages Functions and D1. Each store gets its own menu, customer page and kitchen display. The voice waiter runs on OpenAI Realtime, and every change it makes to an order goes through the server first.</p>
+        </div>
+
+        <aside class="receipt" aria-label="The order placed in the recording">
+          <div class="receipt-head">
+            <div class="store" lang="zh-Hant">巷口食堂</div>
+            <div class="label">The recorded order</div>
+          </div>
+          <hr class="tear">
+          <div class="rline"><span class="item"><span lang="zh-Hant">紅燒牛肉麵</span> ×1<span class="opts">Braised beef noodle soup · mild · wide noodles</span></span><span class="amt">NT$180</span></div>
+          <div class="rline"><span class="item"><span lang="zh-Hant">珍珠奶茶</span> ×1<span class="opts">Bubble milk tea · large · less ice · half sugar</span></span><span class="amt">NT$75</span></div>
+          <div class="rline"><span class="item"><span lang="zh-Hant">滷蛋</span> ×1<span class="opts">Braised egg</span></span><span class="amt">NT$15</span></div>
+          <hr class="tear">
+          <div class="rtotal"><span>Total</span><span>NT$270</span></div>
+          <div class="rfoot">
+            <div><span>Customer turns</span><span>4</span></div>
+            <div><span>Tool calls checked / rejected</span><span>4 / 0</span></div>
+            <div><span>Order</span><span>#001 · dine-in · table 5</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="film">
+        <div class="film-frame">
+          <video controls playsinline preload="metadata" poster="media/poster.jpg" width="1280" height="800" aria-label="Recorded demo: a Mandarin voice order on KAIKŌ, with English captions">
+            <source src="media/kaiko-voice-order.mp4" type="video/mp4">
+            <track kind="captions" srclang="en" label="English" src="media/kaiko-voice-order.en.vtt" default>
+            Your browser cannot play this video. <a href="media/kaiko-voice-order.mp4">Download the MP4</a> (4.2 MB).
+          </video>
+        </div>
+        <div class="film-note">
+          <span class="tag">Recording</span>
+          <p>Recorded from a local run of the app with a template store (<span lang="zh-Hant">巷口食堂</span>, “Xiangkou Diner”) and a synthetic customer voice (text-to-speech). The waiter is the real OpenAI Realtime model, speaking Mandarin; the English captions translate both sides and mark each tool call. 90 seconds with sound. Only waits on the recording side (connecting, pauses before each scripted line, page navigation) were trimmed, 8.67 s in total; the model's response times are left as they were.</p>
+        </div>
+      </div>
+    </div>
+
+    <section aria-labelledby="what">
+      <div class="sec-head"><h2 id="what">What it does</h2><span class="rule" aria-hidden="true"></span></div>
+      <div class="two">
+        <div class="panel">
+          <h3>Customer <small>scans a QR code, opens the store page</small></h3>
+          <ul class="dotlist">
+            <li><b>Talk to a waiter.</b> A Conversation button starts an OpenAI Realtime voice session. The waiter asks for required options before adding an item; in the recording it asked for the milk tea size first.</li>
+            <li><b>Fallbacks.</b> Without Realtime, hold-to-talk uses the browser's speech recognition. Typing and tapping the menu always work, on the same order state.</li>
+            <li><b>A receipt, not a cart.</b> The order is a paper-style ticket; items added by voice carry a mic badge, and quantities stay editable by hand.</li>
+            <li><b>Checkout and status.</b> Dine-in or takeout, table number, optional discount code. The status page shows the pickup number and progress, and lets the customer cancel while the order is still at “received” or print a receipt.</li>
+            <li><b>Four languages.</b> Traditional Chinese, Simplified Chinese, English and Japanese, for the interface, the menu and the waiter.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Merchant <small>no account system, one admin key per store</small></h3>
+          <ul class="dotlist">
+            <li><b>Three-step setup.</b> Store name and URL slug, then a menu from a template, pasted CSV or manual entry, then a printable QR code and the store's admin key.</li>
+            <li><b>Menu editor.</b> Import from a menu photo (needs an LLM key) or CSV, edit option groups and spoken aliases in Chinese and English, toggle items sold out.</li>
+            <li><b>Kitchen display.</b> New, In progress and Ready columns, refreshed every 4 seconds. Cards show dine-in or takeout, table, a voice tag and a paid or unpaid tag, with Start, Void and Mark paid.</li>
+            <li><b>Keys and history.</b> The admin key is kept only as a SHA-256 hash; orders keep a snapshot of each line's price, so later menu edits do not change past orders.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="how">
+      <div class="sec-head"><h2 id="how">How the voice path works</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="sec-intro">Three input tiers share one order. The model never writes to the ticket directly: it proposes tool calls, the browser hands each one to the server, and only the cart operations the server returns are applied.</p>
+
+      <figure class="diagram" style="margin:0">
+        <svg class="dg-wide" viewBox="0 0 960 460" role="img" aria-labelledby="dgw-t dgw-d">
+          <title id="dgw-t">KAIKŌ voice ordering data flow</title>
+          <desc id="dgw-d">Customer input has three tiers: conversation over OpenAI Realtime, hold-to-talk with browser speech recognition, and typing. The browser gets a short-lived client secret from the server, then talks to OpenAI Realtime over WebRTC. Each model tool call goes to the server's realtime-tool endpoint for validation against the menu. Speech-recognition and typed text go to the interpret endpoint, which uses an LLM if a key is set and otherwise a deterministic parser. Validated cart operations update the ticket; on submit the server recomputes prices and the order appears on the kitchen display.</desc>
+          <defs>
+            <marker id="aw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow" d="M0 0 L10 5 L0 10 z"/></marker>
+            <marker id="awr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow-rt" d="M0 0 L10 5 L0 10 z"/></marker>
+          </defs>
+
+          <text class="dg-head" x="20" y="24">CUSTOMER INPUT</text>
+          <text class="dg-head" x="720" y="24">TICKET → KITCHEN</text>
+
+          <!-- tier 1 -->
+          <rect class="dg-box-rt" x="20" y="36" width="240" height="110" rx="10"/>
+          <text class="dg-t" x="36" y="62">1 · Conversation</text>
+          <text class="dg-s" x="36" y="84">OpenAI Realtime over WebRTC</text>
+          <text class="dg-s" x="36" y="103">half-duplex mic, live captions</text>
+          <text class="dg-m" x="36" y="128">gpt-realtime-2</text>
+          <!-- tier 2 -->
+          <rect class="dg-box" x="20" y="210" width="240" height="76" rx="10"/>
+          <text class="dg-t" x="36" y="238">2 · Hold to talk</text>
+          <text class="dg-s" x="36" y="262">browser SpeechRecognition</text>
+          <!-- tier 3 -->
+          <rect class="dg-box" x="20" y="350" width="240" height="76" rx="10"/>
+          <text class="dg-t" x="36" y="378">3 · Type and tap</text>
+          <text class="dg-s" x="36" y="402">always available</text>
+          <path class="dg-line" d="M60 146 V206" marker-end="url(#aw)"/>
+          <path class="dg-line" d="M60 286 V346" marker-end="url(#aw)"/>
+          <text class="dg-s" x="70" y="182">if unavailable</text>
+          <text class="dg-s" x="70" y="322">if unavailable</text>
+
+          <!-- OpenAI (external) -->
+          <rect class="dg-ext" x="340" y="36" width="280" height="62" rx="10"/>
+          <circle class="dg-badge" cx="358" cy="56" r="10"/><text class="dg-badge-t" x="358" y="60" text-anchor="middle">2</text>
+          <text class="dg-t" x="376" y="61">OpenAI Realtime</text>
+          <text class="dg-s" x="356" y="84">audio both ways + oai-events channel</text>
+
+          <!-- server group -->
+          <rect class="dg-group" x="330" y="116" width="300" height="330" rx="14"/>
+          <text class="dg-head" x="346" y="140">KAIKŌ SERVER</text>
+
+          <rect class="dg-box" x="346" y="154" width="268" height="64" rx="10"/>
+          <circle class="dg-badge" cx="364" cy="174" r="10"/><text class="dg-badge-t" x="364" y="178" text-anchor="middle">1</text>
+          <text class="dg-t" x="382" y="179">POST voice-session</text>
+          <text class="dg-s" x="362" y="204">mints a 300 s client secret</text>
+
+          <rect class="dg-box" x="346" y="234" width="268" height="78" rx="10"/>
+          <circle class="dg-badge" cx="364" cy="254" r="10"/><text class="dg-badge-t" x="364" y="258" text-anchor="middle">3</text>
+          <text class="dg-t" x="382" y="259">POST realtime-tool</text>
+          <text class="dg-s" x="362" y="282">checks each tool call against the menu</text>
+          <text class="dg-s" x="362" y="300">before the ticket changes</text>
+
+          <rect class="dg-box" x="346" y="328" width="268" height="104" rx="10"/>
+          <circle class="dg-badge" cx="364" cy="348" r="10"/><text class="dg-badge-t" x="364" y="352" text-anchor="middle">5</text>
+          <text class="dg-t" x="382" y="353">POST interpret</text>
+          <text class="dg-s" x="362" y="376">LLM parse if a key is set,</text>
+          <text class="dg-s" x="362" y="394">checked field by field; otherwise</text>
+          <text class="dg-s" x="362" y="412">a deterministic zh/en parser</text>
+
+          <!-- ticket / order / kds -->
+          <rect class="dg-box" x="720" y="154" width="220" height="78" rx="10"/>
+          <circle class="dg-badge" cx="738" cy="174" r="10"/><text class="dg-badge-t" x="738" y="178" text-anchor="middle">4</text>
+          <text class="dg-t" x="756" y="179">Ticket (receipt)</text>
+          <text class="dg-s" x="736" y="202">changes only on validated</text>
+          <text class="dg-s" x="736" y="220">cart operations</text>
+
+          <rect class="dg-box" x="720" y="262" width="220" height="64" rx="10"/>
+          <circle class="dg-badge" cx="738" cy="282" r="10"/><text class="dg-badge-t" x="738" y="286" text-anchor="middle">6</text>
+          <text class="dg-t" x="756" y="287">Submit → order</text>
+          <text class="dg-s" x="736" y="312">prices recomputed by the server</text>
+
+          <rect class="dg-box" x="720" y="356" width="220" height="64" rx="10"/>
+          <text class="dg-t" x="736" y="383">Kitchen display</text>
+          <text class="dg-s" x="736" y="406">polls every 4 s</text>
+
+          <!-- connectors -->
+          <path class="dg-line-rt" d="M262 66 H336" marker-start="url(#awr)" marker-end="url(#awr)"/>
+          <path class="dg-line-rt" d="M262 100 C300 100 304 186 342 186" marker-end="url(#awr)"/>
+          <path class="dg-line-rt" d="M560 154 V102" marker-end="url(#awr)"/>
+          <text class="dg-m" x="568" y="134">secret</text>
+          <path class="dg-line-rt" d="M262 128 C300 128 304 272 342 272" marker-end="url(#awr)"/>
+          <path class="dg-line" d="M262 248 C300 248 304 372 342 372" marker-end="url(#aw)"/>
+          <path class="dg-line" d="M262 388 C300 388 304 404 342 404" marker-end="url(#aw)"/>
+          <path class="dg-line-rt" d="M614 272 C668 272 668 190 716 190" marker-end="url(#awr)"/>
+          <path class="dg-line" d="M614 380 C684 380 684 212 716 212" marker-end="url(#aw)"/>
+          <path class="dg-line" d="M830 232 V258" marker-end="url(#aw)"/>
+          <path class="dg-line" d="M830 326 V352" marker-end="url(#aw)"/>
+        </svg>
+
+        <svg class="dg-narrow" viewBox="0 0 360 640" role="img" aria-labelledby="dgn-t dgn-d">
+          <title id="dgn-t">KAIKŌ voice ordering data flow</title>
+          <desc id="dgn-d">Three input tiers: conversation, hold-to-talk and typing. Conversation gets a client secret from the server, talks to OpenAI Realtime, and sends tool calls to the server for validation. Hold-to-talk and typing go to the interpret endpoint, which uses an LLM if a key is set and otherwise a deterministic parser. Both paths update the ticket only with validated cart operations; on submit the server recomputes prices and the order reaches the kitchen display.</desc>
+          <defs>
+            <marker id="nw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow" d="M0 0 L10 5 L0 10 z"/></marker>
+            <marker id="nwr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow-rt" d="M0 0 L10 5 L0 10 z"/></marker>
+          </defs>
+          <text class="dg-head" x="10" y="16">CUSTOMER INPUT</text>
+          <rect class="dg-box-rt" x="10" y="26" width="108" height="58" rx="9"/>
+          <text class="dg-t" x="20" y="50">1 · Talk</text>
+          <text class="dg-s" x="20" y="70">Realtime</text>
+          <rect class="dg-box" x="126" y="26" width="108" height="58" rx="9"/>
+          <text class="dg-t" x="136" y="50">2 · Hold</text>
+          <text class="dg-s" x="136" y="70">speech API</text>
+          <rect class="dg-box" x="242" y="26" width="108" height="58" rx="9"/>
+          <text class="dg-t" x="252" y="50">3 · Type</text>
+          <text class="dg-s" x="252" y="70">always on</text>
+
+          <path class="dg-line-rt" d="M64 84 V108" marker-end="url(#nwr)"/>
+          <path class="dg-line" d="M180 84 V96 H240 V108" marker-end="url(#nw)"/>
+          <path class="dg-line" d="M296 84 V96 H280 V108" marker-end="url(#nw)"/>
+
+          <rect class="dg-box" x="10" y="112" width="166" height="64" rx="9"/>
+          <circle class="dg-badge" cx="26" cy="130" r="9"/><text class="dg-badge-t" x="26" y="134" text-anchor="middle">1</text>
+          <text class="dg-t" x="41" y="135">voice-session</text>
+          <text class="dg-s" x="20" y="160">300 s client secret</text>
+
+          <path class="dg-line-rt" d="M93 176 V198" marker-end="url(#nwr)"/>
+          <rect class="dg-ext" x="10" y="202" width="166" height="64" rx="9"/>
+          <circle class="dg-badge" cx="26" cy="220" r="9"/><text class="dg-badge-t" x="26" y="224" text-anchor="middle">2</text>
+          <text class="dg-t" x="41" y="225">OpenAI Realtime</text>
+          <text class="dg-s" x="20" y="250">WebRTC audio + events</text>
+
+          <path class="dg-line-rt" d="M93 266 V288" marker-end="url(#nwr)"/>
+          <rect class="dg-box" x="10" y="292" width="166" height="76" rx="9"/>
+          <circle class="dg-badge" cx="26" cy="310" r="9"/><text class="dg-badge-t" x="26" y="314" text-anchor="middle">3</text>
+          <text class="dg-t" x="41" y="315">realtime-tool</text>
+          <text class="dg-s" x="20" y="340">each tool call checked</text>
+          <text class="dg-s" x="20" y="358">against the menu</text>
+
+          <rect class="dg-box" x="184" y="112" width="166" height="256" rx="9"/>
+          <circle class="dg-badge" cx="200" cy="130" r="9"/><text class="dg-badge-t" x="200" y="134" text-anchor="middle">5</text>
+          <text class="dg-t" x="215" y="135">interpret</text>
+          <text class="dg-s" x="194" y="164">LLM parse if a key</text>
+          <text class="dg-s" x="194" y="182">is set (Claude or</text>
+          <text class="dg-s" x="194" y="200">gpt-4.1-mini),</text>
+          <text class="dg-s" x="194" y="218">checked field by field</text>
+          <text class="dg-s" x="194" y="252">otherwise, or when the</text>
+          <text class="dg-s" x="194" y="270">daily LLM budget is</text>
+          <text class="dg-s" x="194" y="288">spent: deterministic</text>
+          <text class="dg-s" x="194" y="306">zh/en parser</text>
+
+          <path class="dg-line-rt" d="M93 368 V398" marker-end="url(#nwr)"/>
+          <path class="dg-line" d="M267 368 V398" marker-end="url(#nw)"/>
+          <rect class="dg-box" x="10" y="402" width="340" height="62" rx="9"/>
+          <circle class="dg-badge" cx="26" cy="420" r="9"/><text class="dg-badge-t" x="26" y="424" text-anchor="middle">4</text>
+          <text class="dg-t" x="41" y="425">Ticket (receipt)</text>
+          <text class="dg-s" x="20" y="450">changes only on validated cart operations</text>
+
+          <path class="dg-line" d="M180 464 V490" marker-end="url(#nw)"/>
+          <rect class="dg-box" x="10" y="494" width="340" height="58" rx="9"/>
+          <circle class="dg-badge" cx="26" cy="512" r="9"/><text class="dg-badge-t" x="26" y="516" text-anchor="middle">6</text>
+          <text class="dg-t" x="41" y="517">Submit → order</text>
+          <text class="dg-s" x="20" y="540">prices recomputed by the server</text>
+
+          <path class="dg-line" d="M180 552 V576" marker-end="url(#nw)"/>
+          <rect class="dg-box" x="10" y="580" width="340" height="54" rx="9"/>
+          <text class="dg-t" x="20" y="603">Kitchen display</text>
+          <text class="dg-s" x="20" y="624">polls every 4 s</text>
+        </svg>
+      </figure>
+
+      <ol class="steps">
+        <li>The browser asks the server for a voice session. The server calls OpenAI's client-secret endpoint and returns a secret that expires after 300 seconds, so the API key never reaches the browser. Minting is rate limited per store and per IP.</li>
+        <li>The browser connects to OpenAI Realtime over WebRTC with that secret: audio both ways, plus an <code>oai-events</code> data channel that carries transcripts and tool calls.</li>
+        <li>When the model calls a tool (<code>add_items</code>, <code>set_choice</code>, <code>confirm_order</code> and six others), the browser posts it to the server with the count of customer speech turns heard and the turn's transcript.</li>
+        <li>The server checks it against the store's menu: the item exists and is not sold out, required options are chosen, allergens the customer named are avoided, and the customer has actually spoken. It returns cart operations, the browser applies them to the ticket, and the result goes back to the model.</li>
+        <li>Without Realtime, recognised speech or typed text goes to <code>interpret</code>. With a key, an LLM (Claude when its key is set, otherwise <code>gpt-4.1-mini</code>) parses it and the server validates the result; any item id not on the menu discards the whole reply. With no key, a failed check or the daily budget spent, the built-in parser handles Chinese and English.</li>
+        <li>The voice flow ends by asking the customer to tap Submit; it never submits on its own. The server recomputes every price from the menu, and the order shows up on the kitchen display.</li>
+      </ol>
+
+      <div class="stats" role="group" aria-label="Measured in the recording">
+        <div class="stat"><div class="n">4 / 0</div><div class="l">tool calls checked / rejected</div></div>
+        <div class="stat"><div class="n">1.9–3.7 s</div><div class="l">end of customer speech to first waiter audio</div></div>
+        <div class="stat"><div class="n">118</div><div class="l">tests passing in 7 files</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">languages for the interface, menu and waiter</div></div>
+      </div>
+      <p class="stats-note">Response times per turn were 3.2, 1.9, 3.7 and 2.3 s, measured on the recording's audio. They include the 600 ms silence window the voice detector waits for, and turns 1 and 3 include a tool call and a second response before the waiter speaks.</p>
+    </section>
+
+    <section aria-labelledby="eng">
+      <div class="sec-head"><h2 id="eng">Engineering notes</h2><span class="rule" aria-hidden="true"></span></div>
+      <ul class="notes">
+        <li>
+          <h3>The model speaks only when asked</h3>
+          <p>An earlier build had a waiter that answered nobody in a quiet room. The cause was server-side auto-response: OpenAI's turn detection defaults <code>create_response</code> to true. KAIKŌ sets <code>create_response:false</code> and <code>interrupt_response:false</code> when it mints the session, then sends them again in a <code>session.update</code> once the call is live, because the settings in the token were only partly applied.</p>
+          <p>The browser creates a response in three places only: the greeting, each committed customer turn, and each tool result. The mic track is switched off while the waiter is audible and reopened 600 ms after it goes quiet. A “let me talk” button cancels the current response and opens the mic, so interrupting does not depend on echo cancellation.</p>
+        </li>
+        <li>
+          <h3>A transcription model that does not invent phrases</h3>
+          <p><code>whisper-1</code> produced stock phrases from near-silence. Input transcription now uses <code>gpt-realtime-whisper</code> with a language hint for the session, plus near-field noise reduction. As a last check, the server refuses <code>add_items</code> when the customer has not spoken yet in the session, or when the turn's transcript has fewer than two meaningful characters.</p>
+        </li>
+        <li>
+          <h3>Rate limits and daily budgets</h3>
+          <p>Fixed-window limits are stored in D1 and set in <code>wrangler.toml</code> and the server code. Voice sessions: 20 a minute per store and 10 per IP, with a global <code>REALTIME_DAILY_BUDGET</code> of 2000 a day. Text parsing: 30 a minute per IP and a global <code>LLM_DAILY_BUDGET</code> of 5000 a day; past the budget it falls back to the local parser instead of failing. Orders: 10 a minute per IP and 120 per store. Creating a store: 5 a minute per IP.</p>
+        </li>
+        <li>
+          <h3>The server owns the money</h3>
+          <p>Prices are recomputed from the menu on every order, and unknown item ids are rejected. If the merchant changes a price or an option while someone is ordering, submit returns a line-by-line diff and asks the customer to confirm again rather than charging the new price.</p>
+        </li>
+        <li>
+          <h3>Tests</h3>
+          <p>118 vitest tests in 7 files pass: parser 38, API 26, tools 24, ask 14, money 11, translate 3, i18n 2. The API tests run the routes against an in-memory D1 stand-in on better-sqlite3 and cover auth, isolation between stores, price recomputation, duplicate orders, invalid state changes and rate limits. Live WebRTC speech cannot run in a unit test, which is why the voice path is shown here as a recording.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="shots">
+      <div class="sec-head"><h2 id="shots">Screens</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="sec-intro">Captured from the same local run. The app's interface was set to Traditional Chinese, matching the recording.</p>
+      <div class="gallery">
+        <figure>
+          <div class="shot"><img src="media/shots/02-store-menu.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Customer store page for 巷口食堂: menu sections for noodles, rice, sides and drinks with prices, an empty ticket on the right, and a bottom dock with a text button, a hold-to-talk mic and a Conversation button."></div>
+          <figcaption><span class="num">01</span><b>Store page.</b> Menu on the left, an empty ticket on the right, and the input dock: type, hold to talk, or start a conversation.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/03-voice-turn.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Mid-conversation: the caption panel shows the customer's transcribed request for bubble milk tea and the waiter asking whether it should be medium or large. The beef noodle soup is already on the ticket at NT$180."></div>
+          <figcaption><span class="num">02</span><b>A voice turn.</b> The customer's line and the waiter's reply as captions. The milk tea needs a size, so the waiter asks before adding it.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/04-cart-filled-readback.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Ticket with three voice-added lines, each with a small mic badge: beef noodle soup NT$180, bubble milk tea NT$75, braised egg NT$15, total NT$270. The waiter's caption reads the order back and asks the customer to tap submit."></div>
+          <figcaption><span class="num">03</span><b>Read-back.</b> Three lines added by voice (mic badge), NT$270, and the waiter asking the customer to tap Submit.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/05-checkout.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Checkout sheet listing the three items and the NT$270 total, with dine-in selected, table number 5, an empty discount code field and a submit button reading NT$270. A note says to pay at the counter."></div>
+          <figcaption><span class="num">04</span><b>Checkout.</b> Dine-in, table 5, an optional discount code, pay at the counter.</figcaption>
+        </figure>
+        <figure class="wide">
+          <div class="shot"><img src="media/shots/06-order-status.webp" width="1440" height="540" loading="lazy" decoding="async" alt="Order status receipt: order received, pickup number #001, dine-in table 5, a four-step progress line from received to done, the three items and NT$270. Buttons to cancel the order, print a receipt and order again."></div>
+          <figcaption><span class="num">05</span><b>Order status.</b> Pickup number #001 and its progress. The customer can cancel while it is still at “received”, print a receipt, or order again.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/07-kds-new-order.webp" width="1440" height="568" loading="lazy" decoding="async" alt="Kitchen display with three columns, New, In progress and Ready. Order #001 sits under New, tagged dine-in, table 5, voice and unpaid, with its three items, a Start button, a Void button and Mark paid."></div>
+          <figcaption><span class="num">06</span><b>Kitchen display, new order.</b> #001 arrives under New, tagged voice and unpaid.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/08-kds-in-progress.webp" width="1440" height="568" loading="lazy" decoding="async" alt="Kitchen display after Start: order #001 has moved to the In progress column and its main button now reads Ready."></div>
+          <figcaption><span class="num">07</span><b>After Start.</b> The order moves to In progress; the next action marks it Ready.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/09-dashboard-menu.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Merchant menu editor: buttons to import from a menu photo with AI and to import CSV, then menu items grouped by section, each with option count, Chinese and English aliases, a price and an available toggle."></div>
+          <figcaption><span class="num">08</span><b>Menu editor.</b> Photo or CSV import, spoken aliases in Chinese and English, and an availability toggle per item.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="media/shots/10-setup-menu-editor.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Setup wizard, step 2 of 3 (build the menu): buttons to load the template menu or fill a CSV example, a CSV text area with columns for section, name, price, aliases and English name, and the loaded template items below."></div>
+          <figcaption><span class="num">09</span><b>Setup, step 2.</b> The template menu loaded; CSV paste and manual entry are on the same step. Steps 1 and 3 are not shown.</figcaption>
+        </figure>
+        <figure class="wide phone">
+          <div class="shot"><img src="media/shots/11-store-menu-mobile.webp" width="780" height="1688" loading="lazy" decoding="async" alt="The store page on a phone: store name, section tabs, the menu with dotted price leaders, a hint suggesting what to say, and a bottom dock with a text button, a large mic button, a Conversation button and the ticket total."></div>
+          <figcaption><span class="num">10</span><b>On a phone.</b> At 390 px the ticket collapses into the dock, next to the text, hold-to-talk and Conversation buttons. A hint suggests a first sentence to say.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="who"><a href="../">Ted Chen · All projects</a></p>
+    <p><a href="https://github.com/tedinroc">github.com/tedinroc</a></p>
+    <p class="fine">Recorded October 2026 from a local build. Customer voice is synthetic.</p>
+  </div>
+</footer>
+</body>
 </html>
