@@ -1,0 +1,14 @@
+{
+ "tool": "tools/web_cover.mjs",
+ "shot": "2026-10-06T03:45:06.169Z",
+ "props": {
+  "earth": "tripo",
+  "watcher": "tripo"
+ },
+ "files": [
+  "img/cover_og.jpg",
+  "assets/photos/web_rim.jpg",
+  "assets/photos/web_rim_rising.jpg",
+  "assets/photos/web_table.jpg"
+ ]
+}

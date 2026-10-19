@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noa — 本機桌面 AI 看板娘助手</title>
+<meta name="description" content="有形象、聽得懂話、還能動手幫你做事的本機桌面 AI 助手。一行指令安裝，大腦跑在你自己的機器上。MIT 開源、零 Live2D 授權包袱。" />
+<link rel="canonical" href="https://tedinroc.github.io/noa/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ted Chen" />
+<meta property="og:title" content="Noa: an MIT-licensed desktop voice companion" />
+<meta property="og:description" content="One-line installers for macOS, Linux and Windows. An animated desktop companion that listens, talks and can run tasks through a hermes-agent brain. MIT licensed." />
+<meta property="og:url" content="https://tedinroc.github.io/noa/" />
+<meta property="og:image" content="https://tedinroc.github.io/noa/og.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:image:alt" content="The Noa wordmark and the tagline A desktop voice companion, MIT licensed, beside the Noa character: a silver-haired girl in glowing blue headphones." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Noa: an MIT-licensed desktop voice companion" />
+<meta name="twitter:description" content="One-line installers for macOS, Linux and Windows. An animated desktop companion that listens, talks and can run tasks through a hermes-agent brain. MIT licensed." />
+<meta name="twitter:image" content="https://tedinroc.github.io/noa/og.jpg" />
+<meta name="twitter:image:alt" content="The Noa wordmark beside the Noa character in glowing blue headphones." />
+<style>
+  :root{
+    --bg0:#050814; --bg1:#0d1630; --cyan:#42d9ff; --blue:#5d7cff;
+    --text:#e9f7ff; --muted:#9bb6c8; --card:rgba(8,16,34,.62); --line:rgba(120,220,255,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;
+    background:
+      radial-gradient(900px 600px at 78% -5%, rgba(66,217,255,.16), transparent 60%),
+      radial-gradient(800px 600px at 12% 100%, rgba(93,124,255,.16), transparent 55%),
+      linear-gradient(160deg,var(--bg0),var(--bg1));
+    background-attachment:fixed;line-height:1.65;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(5,9,22,.55);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+  .logo{font-weight:900;letter-spacing:.04em;font-size:20px}
+  .logo b{color:var(--cyan)}
+  nav .sp{flex:1}
+  nav a.navlink{color:var(--muted);font-size:14px;font-weight:600}
+  nav a.navlink:hover{color:var(--text)}
+  .btn{display:inline-block;border:0;border-radius:14px;padding:13px 20px;font-weight:800;cursor:pointer;font-size:15px}
+  .btn-primary{color:#03111a;background:linear-gradient(135deg,var(--cyan),#b6f3ff);box-shadow:0 12px 34px rgba(66,217,255,.22)}
+  .btn-ghost{color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line)}
+  .btn:hover{transform:translateY(-1px)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:64px 0 30px}
+  .badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+    border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(66,217,255,.06)}
+  h1{font-size:clamp(44px,7vw,84px);line-height:.98;margin:18px 0 10px;letter-spacing:-.01em}
+  .hero p.lead{color:var(--muted);font-size:18px;max-width:34ch}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .trust{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;color:var(--muted);font-size:13px}
+  .trust span{display:inline-flex;align-items:center;gap:7px}
+  .dot{width:7px;height:7px;border-radius:99px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+
+  .stage{position:relative;display:grid;place-items:center;min-height:420px;perspective:1000px}
+  .sprite-wrap{position:relative;width:min(80%,360px);transform-origin:50% 82%;
+    animation:float 5.2s ease-in-out infinite,breathe 3.4s ease-in-out infinite;
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.5)) drop-shadow(0 0 30px rgba(66,217,255,.25))}
+  .sprite-wrap img{width:100%;display:block;user-select:none;-webkit-user-drag:none}
+  .speech{position:absolute;top:8%;left:-6%;background:rgba(5,12,28,.82);border:1px solid rgba(100,220,255,.4);
+    border-radius:18px 18px 18px 6px;padding:12px 14px;font-size:14px;max-width:230px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+  @keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+  @keyframes breathe{0%,100%{scale:1 1}50%{scale:1.015 1.025}}
+
+  /* sections */
+  section{padding:48px 0}
+  h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 26px;max-width:60ch}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;transition:.2s}
+  .card:hover{transform:translateY(-3px);border-color:rgba(120,220,255,.4)}
+  .card .ic{font-size:26px}
+  .card h3{margin:12px 0 6px;font-size:18px}
+  .card p{color:var(--muted);margin:0;font-size:14.5px}
+
+  /* install */
+  .install{background:linear-gradient(180deg,rgba(66,217,255,.05),transparent);border:1px solid var(--line);border-radius:26px;padding:30px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .tab{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);border-radius:12px;padding:9px 14px;cursor:pointer;font-weight:700;font-size:14px}
+  .tab.active{color:#03111a;background:linear-gradient(135deg,var(--cyan),#b6f3ff)}
+  .code{position:relative;background:#020610;border:1px solid var(--line);border-radius:14px;padding:16px 52px 16px 16px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:#cfeaff;overflow:auto;white-space:pre}
+  .copy{position:absolute;top:10px;right:10px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);
+    border-radius:9px;padding:6px 10px;cursor:pointer;font-size:12px;font-weight:700}
+  .copy:hover{background:rgba(66,217,255,.18)}
+  .note{color:var(--muted);font-size:13.5px;margin-top:12px}
+  .hide{display:none}
+
+  .flow{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch}
+  .flow .box{flex:1;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .flow .box b{color:var(--cyan)}
+  .flow .arrow{display:grid;place-items:center;color:var(--muted);font-size:22px}
+
+  table.lic{width:100%;border-collapse:collapse;font-size:14px}
+  table.lic th,table.lic td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.lic th{color:var(--muted);font-weight:700}
+  .ok{color:#6bffb0}.warn{color:#ffd166}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;padding:30px 0 56px;margin-top:30px}
+  footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;padding-top:40px}
+    .stage{order:-1;min-height:320px}
+    .grid{grid-template-columns:1fr}
+    nav a.navlink{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo">N<b>o</b>a</div>
+  <div class="sp"></div>
+  <a class="navlink" href="#features">特色</a>
+  <a class="navlink" href="#how">運作方式</a>
+  <a class="navlink" href="#license">授權</a>
+  <a class="btn btn-primary" href="#install" style="padding:9px 16px">安裝</a>
+</div></nav>
+
+<header class="wrap hero">
+  <div>
+    <span class="badge"><span class="dot"></span> 本機 · 開源 · MIT</span>
+    <h1>Noa</h1>
+    <p class="lead">有形象、聽得懂話、還能動手幫你做事的<strong>本機桌面 AI 助手</strong>。一行指令安裝，大腦跑在你自己的機器上。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#install">⚡ 一鍵安裝</a>
+      <a class="btn btn-ghost" href="#how">看它如何運作</a>
+    </div>
+    <div class="trust">
+      <span><span class="dot"></span> MIT 授權，可自由散佈</span>
+      <span><span class="dot"></span> 零 Live2D 授權包袱</span>
+      <span><span class="dot"></span> 語音免下載模型</span>
+      <span><span class="dot"></span> 大腦在你電腦本機</span>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="sprite-wrap">
+      <div class="speech">嗨，我是 Noa。裝好後點麥克風或直接打字跟我說話。</div>
+      <img src="./assets/noa.png" alt="Noa 角色" />
+    </div>
+  </div>
+</header>
+
+<section id="features" class="wrap">
+  <h2>它是什麼</h2>
+  <p class="sub">Noa 把任何 OpenAI 相容模型變成一個有臉、有聲音、會動手做事的桌面夥伴。預設幫你裝一顆全新的本機大腦，全程不碰任何受限的 VTuber／Live2D 素材。</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🎭</div><h3>有形象・桌寵</h3><p>原創角色 Noa，用純 CSS 做呼吸、眨眼、口型動畫。<code>noa --desktop</code> 可開成透明置頂的桌面寵物視窗。零 Live2D，沒有授權包袱。</p></div>
+    <div class="card"><div class="ic">🎙️</div><h3>聽得懂、會說話</h3><p>直接用瀏覽器內建語音（Web Speech），免下載任何語音模型，開箱即用。</p></div>
+    <div class="card"><div class="ic">🛠️</div><h3>真的會做事</h3><p>大腦是 hermes-agent，能讀寫檔案、執行終端機指令、寫與改程式——不只是聊天。</p></div>
+    <div class="card"><div class="ic">🔒</div><h3>隱私本機</h3><p>介面、語音、大腦全跑在你自己的電腦上，沒有雲端中間人。</p></div>
+    <div class="card"><div class="ic">⚖️</div><h3>授權乾淨</h3><p>100% 自有程式碼搭配 MIT／寬鬆授權元件，可自由散佈，甚至商用。</p></div>
+    <div class="card"><div class="ic">🔌</div><h3>大腦可換</h3><p>預設安裝全新 hermes-agent；也能一行設定改接 Ollama、LM Studio 或 OpenAI。</p></div>
+  </div>
+</section>
+
+<section id="install" class="wrap">
+  <h2>安裝</h2>
+  <p class="sub">支援 <b>macOS、Windows、Linux</b>。建議用 Chrome 或 Edge（語音支援最完整）。</p>
+  <div class="install">
+    <div class="tabs">
+      <button class="tab active" data-tab="one">⚡ 一鍵安裝（推薦）</button>
+      <button class="tab" data-tab="have">已有 hermes-agent</button>
+      <button class="tab" data-tab="byo">自架大腦（Ollama 等）</button>
+    </div>
+
+    <div class="panel" data-panel="one">
+      <div style="color:var(--muted);font-size:13px;margin-bottom:6px">macOS / Linux（終端機）</div>
+      <div class="code"><button class="copy">複製</button>curl -fsSL https://noa-companion.pages.dev/install.sh | bash</div>
+      <div style="color:var(--muted);font-size:13px;margin:12px 0 6px">Windows（PowerShell）</div>
+      <div class="code"><button class="copy">複製</button>irm https://noa-companion.pages.dev/install.ps1 | iex</div>
+      <p class="note">這行會：① 安裝一顆全新的 <b>hermes-agent</b>（你的私人 AI 大腦，MIT）→ ② 開啟它的本機 API（:8642）→ ③ 安裝 Noa 介面。完成後輸入 <code>noa --desktop</code> 開「透明置頂桌寵視窗」，或 <code>noa</code> 用瀏覽器開 <a href="http://localhost:8900">http://localhost:8900</a>。<br>第一次會請你把大腦接到一個 AI 供應商（Anthropic／OpenAI／OpenRouter／Ollama…）。</p>
+    </div>
+
+    <div class="panel hide" data-panel="have">
+      <div class="code"><button class="copy">複製</button>uv pip install https://noa-companion.pages.dev/noa_companion-0.2.0-py3-none-any.whl
+NOA_BRAIN_BASE_URL=http://127.0.0.1:8642/v1 NOA_BRAIN_MODEL=hermes-noa noa</div>
+      <p class="note">已經在跑 hermes-agent？只裝 Noa 介面、指向你現有的 :8642 即可。</p>
+    </div>
+
+    <div class="panel hide" data-panel="byo">
+      <div class="code"><button class="copy">複製</button>uv pip install https://noa-companion.pages.dev/noa_companion-0.2.0-py3-none-any.whl
+NOA_BRAIN_BASE_URL=http://127.0.0.1:11434/v1 NOA_BRAIN_MODEL=qwen2.5 noa</div>
+      <p class="note">不想用 hermes-agent？Noa 接任何 OpenAI 相容端點：Ollama（如上）、LM Studio（:1234）、或設 <code>NOA_BRAIN_API_KEY</code> 接 OpenAI。</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="wrap">
+  <h2>運作方式</h2>
+  <p class="sub">Noa 本身只是一層輕薄的橋；不綁任何模型、不綁任何語音引擎。</p>
+  <div class="flow">
+    <div class="box"><b>瀏覽器</b><br>麥克風聽寫 + 說出回答（Web Speech），角色做口型與表情。</div>
+    <div class="arrow">→</div>
+    <div class="box"><b>Noa 伺服器</b><br>本機 FastAPI／WebSocket，把文字轉發給大腦並串流回覆。</div>
+    <div class="arrow">→</div>
+    <div class="box"><b>hermes-agent</b><br>你的本機大腦，能用工具讀寫檔案、跑指令、寫程式。</div>
+  </div>
+</section>
+
+<section id="license" class="wrap">
+  <h2>為什麼能放心散佈</h2>
+  <p class="sub">Noa 是 clean-room 重寫：不含、也不再散佈任何受限的 VTuber 網頁客戶端或 Live2D 專有元件與範例角色。</p>
+  <table class="lic">
+    <tr><th>元件</th><th>授權</th><th>處置</th></tr>
+    <tr><td>Noa 介面（前後端）</td><td>MIT（本專案）</td><td class="ok">自有程式碼</td></tr>
+    <tr><td>角色美術「Noa」</td><td>原創</td><td class="ok">作者擁有</td></tr>
+    <tr><td>hermes-agent（大腦）</td><td>MIT · Nous Research</td><td class="ok">由官方安裝器裝新的，不 vendor</td></tr>
+    <tr><td>語音</td><td>瀏覽器 Web Speech</td><td class="ok">免下載、無第三方模型</td></tr>
+    <tr><td>Live2D Cubism Core／範例模型</td><td>專有／受限</td><td class="warn">不使用、不打包</td></tr>
+    <tr><td>原 Open-LLM-VTuber 網頁客戶端</td><td>含商業限制</td><td class="warn">不使用、已重寫</td></tr>
+  </table>
+</section>
+
+<footer><div class="wrap">
+  <span>© 2026 Noa · MIT 授權</span>
+  <span>· 角色美術為原創</span>
+  <span>· 大腦 hermes-agent by Nous Research（MIT）</span>
+  <span>· 不含任何 Live2D 專有元件</span>
+</div></footer>
+
+<script>
+  // tab switching
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    const id=t.dataset.tab;
+    document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('hide',p.dataset.panel!==id));
+  }));
+  // copy buttons
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+    const code=b.parentElement.textContent.replace(/^複製/,'').trim();
+    try{await navigator.clipboard.writeText(code);const o=b.textContent;b.textContent='已複製 ✓';setTimeout(()=>b.textContent=o,1400);}catch(e){}
+  }));
+</script>
+</body>
+</html>

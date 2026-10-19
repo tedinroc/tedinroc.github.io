@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Earthrise for Daedalus</title>
+<meta name="description" content="Turn the crank. A small lit Earth rises over the far rim of Daedalus crater — a place on the far side of the Moon that has never once seen Earth.">
+<meta name="theme-color" content="#000000">
+<!-- Share cards need absolute URLs. If the site moves to another domain, change the URLs below. -->
+<link rel="canonical" href="https://tedinroc.github.io/earthrise/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ted Chen">
+<meta property="og:url" content="https://tedinroc.github.io/earthrise/">
+<meta property="og:title" content="Earthrise for Daedalus">
+<meta property="og:description" content="A gift for the far side of the Moon. Turn the crank and a small lit Earth rises over Daedalus crater, which has never once seen Earth.">
+<meta property="og:image" content="https://tedinroc.github.io/earthrise/img/cover_og.jpg">
+<meta property="og:image:secure_url" content="https://tedinroc.github.io/earthrise/img/cover_og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A small lit Earth rising over the real ridge of Daedalus crater, seen from the watcher's seat on the rim.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Earthrise for Daedalus">
+<meta name="twitter:description" content="A gift for the far side of the Moon. Turn the crank and a small lit Earth rises over Daedalus crater, which has never once seen Earth.">
+<meta name="twitter:image" content="https://tedinroc.github.io/earthrise/img/cover_og.jpg">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="modulepreload" href="vendor/three/three.core.js">
+<link rel="modulepreload" href="vendor/three/three.module.js">
+<script>
+/* Old-browser exit (classic script, so it runs where the module graph cannot): three r186 needs class static blocks
+   (iOS Safari 16.4+, Chrome 94+) and WebGL2. Without them — or if the module files never arrive — show the render
+   instead of hanging on the intro screen. */
+window.__erFail = function (msg, retry) {
+  var go = function () {
+    var f = document.getElementById('fail'); if (!f || window.__er) return;
+    document.getElementById('fail-msg').textContent = msg;
+    document.getElementById('fail-retry').hidden = !retry;
+    f.hidden = false; document.getElementById('intro').classList.add('done');
+    document.body.classList.remove('is-intro'); document.body.classList.add('failed');
+  };
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', go) : go();
+};
+(function () {
+  var old = 'This browser cannot show the 3D model (it needs iOS 16.4 or later, or a recent Chrome, Edge or Firefox). Here is a picture of the piece instead.';
+  try { new Function('class A { static {} }'); } catch (e) { return window.__erFail(old, false); }
+  if (!('WebGL2RenderingContext' in window)) return window.__erFail(old, false);
+  window.addEventListener('error', function (e) { if (!window.__er && e.error instanceof SyntaxError) window.__erFail(old, false); });
+})();
+</script>
+</head>
+<body class="is-intro">
+<canvas id="gl" role="img" aria-label="Interactive 3D model: a 180 by 150 millimetre tile of the Moon's far side around Daedalus crater, on a dark plinth. Behind the far rim, a small Earth waits on an arm turned by a crank."></canvas>
+
+<div id="intro" tabindex="-1">
+  <div class="intro-inner">
+    <p class="intro-line">It has never once seen Earth.</p>
+    <p class="intro-sub">Daedalus crater <i>·</i> far side of the Moon <i>·</i> 5.9°S 179.4°E</p>
+  </div>
+  <p class="intro-hint"><span class="only-fine">Click to enter <i>·</i> sound on</span><span class="only-coarse">Tap to enter <i>·</i> sound on</span></p>
+  <div class="intro-load" aria-hidden="true"><span id="load-bar"></span></div>
+</div>
+
+<header id="top" class="chrome">
+  <h1 class="mark"><span class="mark-1">Earthrise</span> <span class="mark-2">for Daedalus</span></h1>
+  <nav class="tools" aria-label="View">
+    <button id="btn-face" class="pill" type="button" aria-label="See the watcher" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12c2.6-4 5.8-6 9.5-6s6.9 2 9.5 6c-2.6 4-5.8 6-9.5 6s-6.9-2-9.5-6z" /><circle cx="12" cy="12" r="2.6" /></svg><span class="lbl"><span class="lbl-long">See the watcher</span><span class="lbl-short">Watcher</span></span></button>
+    <button id="btn-rim" class="pill" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17c3-3.2 5-4.6 7.5-4.6 2.3 0 3.3 1.6 5.2 1.6 2 0 3.6-1.2 7.3-3.6" /><circle cx="15.5" cy="8" r="3.2" /></svg><span class="lbl"><span class="lbl-long">Sit on the rim</span><span class="lbl-short">On the rim</span></span></button>
+    <button id="btn-sound" class="icon" type="button" aria-pressed="false" aria-label="Sound">
+      <svg class="ico-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M16 9.5l5 5M21 9.5l-5 5" /></svg>
+      <svg class="ico-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" /></svg>
+    </button>
+    <button id="btn-info" class="icon" type="button" aria-label="About this piece" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v6" /><circle cx="12" cy="7.6" r="0.6" class="dot" /></svg></button>
+  </nav>
+</header>
+
+<section id="ending" aria-hidden="true">
+  <p class="end-1">It wants quiet,<br>so we didn't send a signal.</p>
+  <p class="end-2">We sent it a light.</p>
+  <p class="end-to"><span>A gift for</span>the far side of the Moon</p>
+  <p id="lights" class="end-light" hidden></p>
+</section>
+<p id="ending-sr" class="sr-only" aria-live="polite"></p>
+
+<footer id="foot" class="chrome">
+  <p id="caption">Daedalus crater, far side of the Moon <i>·</i> 1&nbsp;mm = 1&nbsp;km <i>·</i> height ×3</p>
+</footer>
+
+<div id="crank" class="chrome">
+  <p id="dial-hint" aria-hidden="true"><span class="only-fine">Turn the crank — give it its first earthrise</span><span class="only-coarse">Turn the crank to raise the Earth</span><svg viewBox="0 0 40 20"><path d="M2 16 C 12 16, 26 12, 34 4" /><path d="M28 3.5 L34.5 3.6 L33 10" /></svg></p>
+  <button id="btn-auto" class="pill small" type="button">Turn it for me</button>
+  <div id="dial" role="slider" tabindex="0" aria-label="Crank. Arrow keys turn it." aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Earth hidden behind the far rim">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <path id="dial-track" d="" />
+      <path id="dial-prog" d="" />
+      <circle id="dial-end" r="2.6" />
+      <line id="dial-start" />
+    </svg>
+  </div>
+</div>
+
+<div id="shade" aria-hidden="true"></div>
+<div id="veil" aria-hidden="true"></div>
+<div id="scrim" hidden></div>
+<aside id="info" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
+  <button id="btn-close" class="icon" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+  <div class="info-scroll">
+    <p class="kicker">A gift for</p>
+    <h2 id="info-title" class="info-title">the far side of the Moon</h2>
+    <p class="lede">Daedalus crater, which has never once seen Earth.</p>
+
+    <h3>Why Daedalus</h3>
+    <p>Daedalus lies about 6° south of the lunar equator, right beside the 180° meridian — near the middle of the far side, close to the point directly opposite Earth. The Moon keeps one face turned toward us, and its slow wobble only lets Earth wander within a small patch of the near-side sky. From Daedalus, Earth is always on the other side of the Moon. We have seen it — Apollo 11 photographed it from orbit in July 1969 — but it has never once seen us.</p>
+    <p>The same shadow that hides Earth makes it quiet. Radio astronomers describe the lunar far side as the only truly radio-quiet zone in the inner solar system, shielded by the Moon itself from Earth's radio noise. Claudio Maccone singled out Daedalus as the crater most shielded from that noise and proposed a radio lab inside it; NASA has studied the FARSIDE array concept; and the NASA–DOE LuSEE-Night radio telescope is built to land on the far side.</p>
+    <p class="pull">It wants quiet, so we didn't send a signal. We sent it a light.</p>
+
+    <h3>The piece, as designed for print</h3>
+    <figure class="photo">
+      <img id="photo" src="img/cover_og.jpg" alt="The web version seen from the watcher's seat: a small lit Earth above the real ridge of Daedalus crater." width="1200" height="630" loading="lazy">
+      <figcaption><span id="photo-kind" class="tag">Web</span> <span id="photo-cap">Seen from the watcher's seat. Photos of the printed piece go here when they arrive.</span></figcaption>
+    </figure>
+    <div id="thumbs" class="thumbs"></div>
+    <dl class="facts">
+      <div><dt>Scale</dt><dd><span data-num="scale">1 mm = 1 km</span> <small>(1:1,000,000)</small></dd></div>
+      <div><dt>Height</dt><dd><span data-num="ve">×3</span> vertical exaggeration — every real kilometre of relief becomes <span data-num="ve_mm">3 mm</span></dd></div>
+      <div><dt>Tile</dt><dd><span data-num="tile">180 × 150 mm</span> of real far-side terrain, crater centred</dd></div>
+      <div><dt>Plinth</dt><dd><span data-num="plinth">192 × 162 × 43 mm</span>, crank on the right</dd></div>
+      <div><dt>Crank</dt><dd>Direct drive, <span data-num="travel">103.5°</span> of travel, an O-ring brake holds the Earth wherever you stop</dd></div>
+      <div><dt>Earth</dt><dd>Ø<span data-num="earth">32 mm</span> hollow shell, one warm-white LED inside, USB-C, no coin cells</dd></div>
+      <div><dt>Watcher</dt><dd><span data-num="watcher">22 mm</span> tall — <span data-num="watcher_km">22 km</span> at map scale</dd></div>
+    </dl>
+    <p><b>Fairy-tale scale, on purpose.</b> A true-scale Earth would be a <span data-num="true_earth">12.74 m</span> ball hanging <span data-num="true_dist">384.4 m</span> away. We broke scale for exactly two things: someone to look, and something to see.</p>
+    <p><b>Real elevation, no sculpting.</b> The ground is measured from lunar orbit. The arm's shape and travel were computed from sightlines so that, from where you stand, the Earth stays hidden at rest and clears the far ridge when raised.</p>
+
+    <h3>This web version</h3>
+    <p>It is built from the same files the print shop received: the terrain heightmap, the arm's kinematics and the props' placement. The crank turns the arm through its real travel, and the Earth brightens as it clears the horizon — measured live, from wherever you are looking. <b>Sit on the rim</b> puts you at the watcher's eye; in that view the plinth and mechanism are hidden.</p>
+    <!-- #standins, #made and #track are written by js/main.js from js/config.js (TRIPO_USED, TRACK): the one place for that text -->
+    <p class="small" id="standins"></p>
+    <dl class="keys">
+      <div><dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>turn the crank (hold)</dd></div>
+      <div><dt><kbd>Space</kbd></dt><dd>turn it for me / lower it</dd></div>
+      <div><dt><kbd>R</kbd></dt><dd>sit on the rim (<kbd>Esc</kbd> to leave)</dd></div>
+      <div><dt><kbd>M</kbd> <kbd>I</kbd></dt><dd>sound, this panel</dd></div>
+    </dl>
+
+    <h3>Data &amp; credits</h3>
+    <ul class="credits">
+      <li><b>Topography.</b> <span id="credit-terrain">SLDEM2015 (LOLA + SELENE/Kaguya Terrain Camera, 512 pixels per degree).</span> Barker, M. K., Mazarico, E., Neumann, G. A., Zuber, M. T., Haruyama, J., &amp; Smith, D. E. (2016). A new lunar digital elevation model from the Lunar Orbiter Laser Altimeter and SELENE Terrain Camera. <i>Icarus</i>, 273, 346–355. <a href="https://doi.org/10.1016/j.icarus.2015.07.039" rel="noopener" target="_blank">doi:10.1016/j.icarus.2015.07.039</a>. Data: NASA LRO LOLA Science Team and JAXA SELENE (Kaguya), via the NASA PDS Geosciences Node.</li>
+      <li><b>Cross-check.</b> Registered against NASA's Scientific Visualization Studio <i>CGI Moon Kit</i> (LOLA, 64 pixels per degree). Credit: NASA's Scientific Visualization Studio; LOLA Science Team.</li>
+      <li><b>Names.</b> IAU/USGS Gazetteer of Planetary Nomenclature. The title references <i>Earthrise</i>, taken by Bill Anders from Apollo 8 on 24 December 1968; no NASA imagery is reproduced here.</li>
+      <li><b>Software.</b> three.js (MIT), the meshoptimizer decoder (MIT) and simplex noise from webgl-noise by Ashima Arts and Stefan Gustavson (MIT); <a href="LICENSES.md" target="_blank" rel="noopener">licence texts</a>. Sound is generated in your browser; no recordings.</li>
+    </ul>
+    <p class="made" id="made"></p>
+    <p class="small muted" id="track"></p>
+  </div>
+</aside>
+
+<div id="fail" hidden>
+  <p class="intro-line">It has never once seen Earth.</p>
+  <p id="fail-msg">This page needs WebGL to show the model. Here is a picture of the piece instead.</p>
+  <img src="img/cover_og.jpg" alt="A small lit Earth rising over the ridge of Daedalus crater, seen from the watcher's seat." width="1200" height="630" loading="lazy">
+  <p><a id="fail-retry" href="" hidden>Try again</a></p>
+</div>
+<noscript><p class="noscript">Earthrise for Daedalus needs JavaScript and WebGL.</p></noscript>
+<script type="module" src="js/main.js" onerror="__erFail('The page could not finish loading. Check the connection and try again.', true)"></script>
+</body>
+</html>

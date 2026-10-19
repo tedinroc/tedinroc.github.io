@@ -1,0 +1,1630 @@
+{
+ "schema": "earthrise.web.v1",
+ "generated": "2026-10-05T20:45:06-07:00",
+ "generator": {
+  "tool": "tools/web_assets.py",
+  "gltf_transform": "4.3.0",
+  "rerun": "python3 tools/web_assets.py（換 Tripo 道具後：--only earth,watcher）"
+ },
+ "coordinate_system": {
+  "units": "mm（WebXR 要乘 0.001 變公尺）",
+  "axes": "DESIGN §1：X 右、Y 後（遠離觀者）、Z 上；Z=0＝底座凹槽底面＝地形磚底面；原點＝地形磚底面中心；觀者在 −Y 往 +Y 看",
+  "frames": {
+   "global": "上述 DESIGN 框架",
+   "rotor": "mech/assembly.json rotor_frame：原點在轉軸 (0, 90, 5.5)、X 沿軸；global = Translate(axis_point)·RotX(θ)·p_rotor",
+   "earth_local": "原點＝地球中心、Z 上、−Y 朝觀者（＝升起位的世界軸）；rotor = T_local_to_rotor · p_local",
+   "watcher_local": "原點＝座位點（地形表面）、Z 上、臉朝 watcher.face_ccw_from_plus_y_deg（從 +Y 俯視逆時針，已烤進模型）；global = watcher.transform_4x4 · p_local（只有平移）"
+  },
+  "matrices": "4×4 row-major 巢狀陣列（同 assembly.json）；p' = M · [x, y, z, 1]ᵀ。Three.js：new Matrix4().set(...M.flat())（set() 吃 row-major）",
+  "glb_axes": "GLB 幾何沒有轉成 glTF 慣例的 Y 上，留在上面各自的框架（Z 上、mm）",
+  "to_threejs_yup": {
+   "mapping": "three = (X, Z, −Y)；即 C = [[1,0,0],[0,0,1],[0,−1,0]]（行列式 +1，純旋轉）",
+   "how": "整個作品放進一個 root Group，root.rotation.x = −Math.PI/2；裡面全部照 DESIGN 座標擺。觀者（−Y）落在 three 的 +Z，正好是預設相機方向。",
+   "rotor": "轉軸 X 在兩邊都是 X，所以臂的角度 θ 在 root 底下直接 rotation.x = θ（弧度），符號不變",
+   "per_point": "不想用 root group 時：three(x, y, z) = (X, Z, −Y)；法線同樣轉"
+  },
+  "glb_internal_nodes": "meshopt 壓縮的 GLB 內部節點帶反量化平移/縮放（KHR_mesh_quantization）：把 gltf.scene 整個加進你的 group，不要覆寫內部節點的變換",
+  "decoders": {
+   "meshopt": "GLTFLoader.setMeshoptDecoder(MeshoptDecoder) — web/vendor/three/addons/libs/meshopt_decoder.module.js"
+  }
+ },
+ "kinematics": {
+  "axis_point": [
+   0.0,
+   90.0,
+   5.5
+  ],
+  "axis_dir": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "rest_deg": -35.5,
+  "raise_deg": 68.0,
+  "sweep_deg": 103.5,
+  "led_on_after_deg_from_rest": [
+   2.0,
+   14.0
+  ],
+  "angle_convention": "theta = rotor (hub) angle: rotor +Y direction measured from global +Y toward +Z (right-hand about +X). v1 used the same theta (its arm pointed along rotor +Y).",
+  "rotor_frame": "origin on shaft axis at global (0, 90.000, 5.500); X along shaft; rotor +Y = v1 arm direction (λ=0, the shaft radial wire hole). global = T_rotor(theta) · p_rotor, T_rotor = Translate(0,Ya,Za)·RotX(theta)",
+  "T_rotor": "global = Translate(axis_point) · RotX(θ) · p_rotor（θ 單位度，右手繞 +X）",
+  "transforms_rest_raise": {
+   "rest": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.814116,
+     0.580703,
+     90.0
+    ],
+    [
+     0.0,
+     -0.580703,
+     0.814116,
+     5.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "raise": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.374607,
+     -0.927184,
+     90.0
+    ],
+    [
+     0.0,
+     0.927184,
+     0.374607,
+     5.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "source": "mech/assembly.json",
+  "arm_version": "v2 (2026-10-04): gooseneck arm body, pin enters earth from the back-bottom; hub/plinth/knob/shaft frozen"
+ },
+ "terrain": {
+  "heightmap": {
+   "file": "terrain/terrain_h_901x751.r16",
+   "encoding": "uint16",
+   "byte_order": "little",
+   "header_bytes": 0,
+   "nx": 901,
+   "ny": 751,
+   "x0_mm": -90.0,
+   "y0_mm": -75.0,
+   "dx_mm": 0.2,
+   "row0": "front",
+   "index": "v[j*nx+i] at X=x0+i*dx, Y=y0+j*dx (row 0 = front edge Y=y0)",
+   "z_min_mm": 4.0,
+   "z_max_mm": 21.394548416137695,
+   "z_formula": "z = z_min + v/65535·(z_max − z_min)",
+   "quantization_max_err_mm": 0.000133
+  },
+  "heightmap_full": {
+   "file": "terrain/terrain_h_1801x1501.r16",
+   "encoding": "uint16",
+   "byte_order": "little",
+   "header_bytes": 0,
+   "nx": 1801,
+   "ny": 1501,
+   "x0_mm": -90.0,
+   "y0_mm": -75.0,
+   "dx_mm": 0.1,
+   "row0": "front",
+   "index": "v[j*nx+i] at X=x0+i*dx, Y=y0+j*dx (row 0 = front edge Y=y0)",
+   "z_min_mm": 4.0,
+   "z_max_mm": 21.394548416137695,
+   "z_formula": "z = z_min + v/65535·(z_max − z_min)",
+   "quantization_max_err_mm": 0.000133
+  },
+  "normal_map": {
+   "file": "terrain/terrain_normal.jpg",
+   "space": "object",
+   "width": 1024,
+   "height": 853,
+   "hq_file": "terrain/terrain_normal_2k.jpg",
+   "hq_width": 2048,
+   "hq_height": 1707,
+   "decode_error": {
+    "1024": {
+     "p50_deg": 2.05,
+     "p99_deg": 6.72
+    },
+    "2048": {
+     "p50_deg": 0.96,
+     "p99_deg": 3.05
+    }
+   },
+   "encoding": "rgb = (n+1)/2, n = surface normal in DESIGN frame (Z up); image top = back edge Y=+75, left = X=−90",
+   "uv": "u=(X+90)/180, v=(Y+75)/150 with THREE.TextureLoader default flipY=true",
+   "three": "material.normalMapType = THREE.ObjectSpaceNormalMap（物件空間：與 LOD 網格無關）",
+   "source": "terrain/heightmap_mm.npy central differences (0.1 mm), bilinear to texel centres",
+   "format": "JPEG 4:4:4（WebP 有損一定 4:2:0，會把法線的 R/G 弄壞）；hq_file 是 2048 寬，近看時再換"
+  },
+  "ao_map": {
+   "file": "terrain/terrain_ao.jpg",
+   "hq_file": "terrain/terrain_ao_2k.jpg",
+   "width": 1024,
+   "height": 853,
+   "channel": "grey",
+   "method": "horizon-based AO on the 0.1 mm heightmap, 16 directions, small r=1.7 mm × large r=12.5 mm",
+   "three": "material.aoMap（r151+ 用 uv 第 0 組即可）；aoMapIntensity 建議 1.0"
+  },
+  "albedo_map": {
+   "file": "terrain/terrain_albedo.jpg",
+   "hq_file": "terrain/terrain_albedo_2k.jpg",
+   "width": 1024,
+   "height": 853,
+   "color_space": "srgb",
+   "what": "primer grey #8e8e8c × black wash in crevices + dry-brush on convex rims (visual_review 附錄 B2 的外觀模擬)；不用就把 color 設 #8e8e8c"
+  },
+  "lods": [
+   {
+    "file": "terrain/terrain_lod0.glb",
+    "target_triangles": 90000,
+    "triangles": 109798,
+    "triangles_top": 89998,
+    "vertices_top": 48300,
+    "max_error_mm": 0.6638,
+    "p99_error_mm": 0.0838,
+    "mean_error_mm": 0.02203,
+    "error_vs": "terrain/heightmap_mm.npy (0.1 mm), every grid point",
+    "far_horizon_band_dz_mm": [
+     -0.3628,
+     0.2025
+    ],
+    "far_horizon_band": "|X| ≤ 20, Y ≥ 55（地球從這條地平線後升起；LOD − 原高度，負＝比實體低；休息位遮蔽餘量 1.58 mm、升起 25° 餘量 7.61 mm）",
+    "use": "首屏／手機",
+    "quantization": "positions 16-bit over the mesh bbox (≤ 0.003 mm)",
+    "first_screen": false,
+    "bytes": 670036,
+    "simplified": true
+   },
+   {
+    "file": "terrain/terrain_lod1.glb",
+    "target_triangles": 360000,
+    "triangles": 379800,
+    "triangles_top": 360000,
+    "vertices_top": 183301,
+    "max_error_mm": 0.1453,
+    "p99_error_mm": 0.0391,
+    "mean_error_mm": 0.00968,
+    "error_vs": "terrain/heightmap_mm.npy (0.1 mm), every grid point",
+    "far_horizon_band_dz_mm": [
+     -0.09,
+     0.1033
+    ],
+    "far_horizon_band": "|X| ≤ 20, Y ≥ 55（地球從這條地平線後升起；LOD − 原高度，負＝比實體低；休息位遮蔽餘量 1.58 mm、升起 25° 餘量 7.61 mm）",
+    "use": "桌機載完首屏後換上",
+    "quantization": "positions 16-bit over the mesh bbox (≤ 0.003 mm)",
+    "first_screen": false,
+    "bytes": 1855804,
+    "simplified": true
+   },
+   {
+    "file": "terrain/terrain_lod2.glb",
+    "target_triangles": 1200000,
+    "triangles": 1219794,
+    "triangles_top": 1199994,
+    "vertices_top": 603298,
+    "max_error_mm": 0.1287,
+    "p99_error_mm": 0.0232,
+    "mean_error_mm": 0.00486,
+    "error_vs": "terrain/heightmap_mm.npy (0.1 mm), every grid point",
+    "far_horizon_band_dz_mm": [
+     -0.0774,
+     0.0584
+    ],
+    "far_horizon_band": "|X| ≤ 20, Y ≥ 55（地球從這條地平線後升起；LOD − 原高度，負＝比實體低；休息位遮蔽餘量 1.58 mm、升起 25° 餘量 7.61 mm）",
+    "use": "近看（相機離地形 < ~150 mm）再載",
+    "quantization": "positions 16-bit over the mesh bbox (≤ 0.003 mm)",
+    "first_screen": false,
+    "bytes": 5456660,
+    "simplified": true
+   }
+  ],
+  "uv": "u=(X+90)/180, v=(Y+75)/150（影像上方＝後緣；TextureLoader 預設 flipY=true）",
+  "materials": {
+   "top": "terrain_top",
+   "side": "terrain_side（四個側面＋底面）"
+  },
+  "bbox_mm": {
+   "min": [
+    -90.0,
+    -75.0,
+    0.0
+   ],
+   "max": [
+    90.0,
+    75.0,
+    21.394548416137695
+   ],
+   "extents": [
+    180.0,
+    150.0,
+    21.394548416137695
+   ],
+   "expected_extents": [
+    180.0,
+    150.0,
+    21.39454755554962
+   ],
+   "ok": true
+  },
+  "source": {
+   "heightmap": "terrain/heightmap_mm.npy",
+   "meta": "terrain/terrain_meta.json",
+   "sha256": "d1d062961601de61bfd2801aac38122f339b79d310092faa5ad8c71e61842e1c",
+   "dataset": "SLDEM2015",
+   "credit": "Topography: SLDEM2015 (LOLA + SELENE/Kaguya Terrain Camera merged DEM, 512 ppd), Barker, M.K., Mazarico, E., Neumann, G.A., Zuber, M.T., Haruyama, J., Smith, D.E. (2016), 'A new lunar digital elevation model from the Lunar Orbiter Laser Altimeter and SELENE Terrain Camera', Icarus 273, 346-355. Data: NASA LRO LOLA team / JAXA SELENE, via NASA PDS Geosciences Node (LRO-L-LOLA-4-GDR-V1.0).",
+   "VE": 3.0,
+   "horizontal": "1:1,000,000"
+  },
+  "notes": "底面磁鐵孔省略（看不到）；上緣 0.6 mm 倒角已在高度圖裡。"
+ },
+ "meshes": {
+  "plinth": {
+   "file": "mech/plinth.glb",
+   "frame": "global",
+   "material": "plinth",
+   "triangles": 18387,
+   "bytes": 88620,
+   "first_screen": true,
+   "source": "mech/plinth.stl",
+   "source_sha256": "219b7ec5b7c28111726fbf2ed93357b0becaf19dbf8952a9b9b1782dd413aa7c",
+   "frozen": true,
+   "print": true,
+   "note": "plinth.stl 去掉耳座（見 plinth_ears）；兩者合起來＝原檔"
+  },
+  "plinth_ears": {
+   "file": "mech/plinth_ears.glb",
+   "frame": "global",
+   "material": "mech",
+   "triangles": 1693,
+   "bytes": 11304,
+   "first_screen": true,
+   "source": "mech/plinth.stl",
+   "source_sha256": "219b7ec5b7c28111726fbf2ed93357b0becaf19dbf8952a9b9b1782dd413aa7c",
+   "frozen": true,
+   "print": true,
+   "note": "plinth.stl 中質心 Y > 81（背牆外）的三角形：耳座＋限位塊＋開關凸台"
+  },
+  "arm": {
+   "file": "mech/arm.glb",
+   "frame": "rotor",
+   "material": "mech",
+   "triangles": 13892,
+   "bytes": 68212,
+   "first_screen": true,
+   "source": "mech/arm.stl",
+   "source_sha256": "92cf8cfd8508dd7f3da6726ecc30db667a4633baebbc0cb81f8db15ce169dabe",
+   "frozen": false,
+   "print": true,
+   "simplify_error": {
+    "max_mm": 0.0428,
+    "p99_mm": 0.0176,
+    "measured_on": "simplified triangle centroids + edge midpoints → original STL surface"
+   }
+  },
+  "knob": {
+   "file": "mech/knob.glb",
+   "frame": "rotor",
+   "material": "mech",
+   "triangles": 13834,
+   "bytes": 60548,
+   "first_screen": true,
+   "source": "mech/knob.stl",
+   "source_sha256": "d8d7a440bd32d0041c216bcfa5aaa644e9ffba7d1a9db5d55e40f4eecb4864d1",
+   "frozen": true,
+   "print": true
+  },
+  "ref_shaft_tube": {
+   "file": "mech/ref_shaft_tube.glb",
+   "frame": "rotor",
+   "material": "tube",
+   "triangles": 2320,
+   "bytes": 13512,
+   "first_screen": true,
+   "source": "mech/ref_shaft_tube.stl",
+   "source_sha256": "7dc39efe151179277a43c57b9ae8594b666c301fa1f9374c7da3370cb9b0185d",
+   "frozen": true,
+   "print": false
+  },
+  "ref_oring_left": {
+   "file": "mech/ref_oring_left.glb",
+   "frame": "rotor",
+   "material": "oring",
+   "triangles": 1264,
+   "bytes": 9160,
+   "first_screen": true,
+   "source": "mech/ref_oring_left.stl",
+   "source_sha256": "1933cad31e7a6d960398742ab14139617fc33e7610b2ce1a361a8adeed33cfa6",
+   "frozen": true,
+   "print": false
+  },
+  "ref_oring_right": {
+   "file": "mech/ref_oring_right.glb",
+   "frame": "rotor",
+   "material": "oring",
+   "triangles": 1264,
+   "bytes": 9160,
+   "first_screen": true,
+   "source": "mech/ref_oring_right.stl",
+   "source_sha256": "9f6e48d2c383d948dba33ea6d3db693830e808783666f6f267da4e5f73e0c11b",
+   "frozen": true,
+   "print": false
+  },
+  "bottom_cover": {
+   "file": "mech/bottom_cover.glb",
+   "frame": "global",
+   "material": "plinth",
+   "triangles": 9532,
+   "bytes": 46540,
+   "first_screen": false,
+   "source": "mech/bottom_cover.stl",
+   "source_sha256": "c287284504362f5c136f8da1a6d9fc8191757fde05639ba5c4810c66d9df535b",
+   "frozen": true,
+   "print": true
+  },
+  "usb_clamp": {
+   "file": "mech/usb_clamp.glb",
+   "frame": "global",
+   "material": "mech",
+   "triangles": 1940,
+   "bytes": 11936,
+   "first_screen": false,
+   "source": "mech/usb_clamp.stl",
+   "source_sha256": "3e36aecf9eeb835d70b3c1da47b9cd35fa66c8656787e2ea837a1e4c56a49b56",
+   "frozen": true,
+   "print": true
+  }
+ },
+ "materials": {
+  "plinth": {
+   "color": "#141518",
+   "roughness": 0.9,
+   "metalness": 0.0,
+   "why": "黑色哑光底座（visual_review #4/#5：不打光讓它退成黑）"
+  },
+  "mech": {
+   "color": "#0b0b0c",
+   "roughness": 1.0,
+   "metalness": 0.0,
+   "why": "無反射黑（visual_review #5/#7 armMat：臂、輪轂、耳座、旋鈕不要被 LED 照成銅色）"
+  },
+  "tube": {
+   "color": "#80848b",
+   "roughness": 0.45,
+   "metalness": 0.9,
+   "why": "外購 Ø8 不鏽鋼管（故事鏡頭可改 mech 黑：visual_review #5 建議纏黑膠帶）"
+  },
+  "oring": {
+   "color": "#2a2a2e",
+   "roughness": 0.9,
+   "metalness": 0.0,
+   "why": "矽膠 O 環"
+  },
+  "terrain_top": {
+   "color": "#8e8e8c",
+   "roughness": 0.97,
+   "metalness": 0.0,
+   "why": "灰底漆；搭配 terrain.albedo_map（滲線＋乾刷）時 color 設白 #ffffff"
+  },
+  "terrain_side": {
+   "color": "#121214",
+   "roughness": 0.95,
+   "metalness": 0.0,
+   "why": "四個側面噴哑光黑（visual_review #6：讀成從月面切下的標本）"
+  },
+  "watcher": {
+   "color": "#ffffff",
+   "roughness": 0.85,
+   "metalness": 0.0,
+   "why": "貼圖色；visual_review #6 建議暖月岩灰"
+  },
+  "earth": {
+   "roughness": 0.62,
+   "metalness": 0.0,
+   "why": "透光樹脂＋手繪晝夜＋哑光保護漆"
+  },
+  "floor": {
+   "color": "#0a0a0b",
+   "roughness": 1.0,
+   "metalness": 0.0,
+   "why": "黑植絨布（visual_review #5）"
+  }
+ },
+ "earth": {
+  "diameter_mm": 32.0,
+  "T_local_to_rotor": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.374607,
+    0.927184,
+    30.663
+   ],
+   [
+    0.0,
+    -0.927184,
+    0.374607,
+    -13.627
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "T_local_to_world_rest": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    -0.233445,
+    0.97237,
+    107.049985
+   ],
+   [
+    0.0,
+    -0.97237,
+    -0.233445,
+    -23.400047
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "T_local_to_world_raise": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    1.0,
+    0.0,
+    114.121296
+   ],
+   [
+    0.0,
+    0.0,
+    1.0,
+    28.825474
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "center_rest_mm": [
+   0.0,
+   107.05,
+   -23.4
+  ],
+  "center_raise_mm": [
+   0.0,
+   114.1213,
+   28.8255
+  ],
+  "file": "props/earth.glb",
+  "texture_role": "albedo",
+  "triangles": 81920,
+  "bytes": 675936,
+  "mask_file": "props/earth_mask.png",
+  "mask_bytes": 184191,
+  "mask_role": "web/js/earth.js 的 mesh+mask 模式：網頁用自己的即時晝夜 shader（和程序地球同一套：海、雲、晨昏線、夜側城市燈、藍色大氣邊、LED 透光）畫這顆 Tripo 地球，幾何（陸地高出海 0.4 mm）給浮雕光影、這張遮罩給大陸輪廓（R 陸地、G 近岸淺海、B 模型上畫的窗光），UV 與 GLB 相同（LAEA）。這時 GLB 內烘好的底色／自發光不用；沒有遮罩才退回 GLB 材質。",
+  "emissive_role": "led_transmission",
+  "emissive_note": "emissiveTexture＝LED（約 2850 K，色已烘進貼圖）透過塗層的光：晝側只有很淡的一層（海 4%、陸 6%、雲 3% 透光，免得蓋過反射色）；夜側城市燈針孔與窗光 100%。emissiveFactor=1；開燈＝emissiveIntensity 約 1–2.5，關燈＝0（LED 在離開休息位 2–14° 後亮，見 kinematics）。",
+  "sun_dir_local": [
+   -0.96074,
+   -0.09996,
+   0.25882
+  ],
+  "sun_note": "晝半球中心方向（地球本地＝升起位世界軸）。從觀者（−Y）看圓盤左邊 55% 是白天；主光放這個方向最自然（visual_review 第 10 條：晨昏線朝主光）。",
+  "paint_design": "visual_review 第 10 條：晝夜各半＋夜側城市燈針孔；不畫國界、陸地同色；陸地/海/窗遮罩取自 props 貼圖（與實體殼的海 −0.4 mm 起伏一致）",
+  "city_lights": 153,
+  "lakes_filled": 349,
+  "source_ocean_fraction": 0.7358,
+  "source_cloud_texels": 477,
+  "lakes_note": "來源貼圖裡小於圓盤 0.4% 的內陸湖填成陸地（貼圖與幾何都填；visual_review：Ø32 上小湖像破洞）",
+  "socket_cap": "插座孔周圍 7.0° 內以常數色封口（在臂凸台 Ø9.6 底下，看不到）；web 殼為封閉外表面（不含空腔/插座孔壁）",
+  "geometry": "icosphere subdiv 6，半徑＝真外表面徑向取樣（海比陸低 0.4 mm），≤ R16",
+  "source": {
+   "glb": "props/earth/earth_fullcolor.glb",
+   "glb_sha256": "8a1ad418f8c4a1a222c98ff4c933c62d88d5c569abcd69bba4e77f85a9044ce6",
+   "meta": "props/earth/earth_meta.json",
+   "kind": "tripo"
+  }
+ },
+ "watcher": {
+  "file": "props/watcher.glb",
+  "transform_4x4": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    51.0
+   ],
+   [
+    0.0,
+    1.0,
+    0.0,
+    -25.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0,
+    18.725006103515625
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "height_mm": 22.0,
+  "eye_local_mm": [
+   -1.862,
+   2.086,
+   15.67
+  ],
+  "eye_source": "centroid of 2345 dark (pupil) vertices on the face, +0.6 mm forward",
+  "triangles": 49462,
+  "bytes": 262892,
+  "simplify_error": {
+   "max_mm": 0.0396,
+   "p99_mm": 0.0126
+  },
+  "placement": {
+   "source": "props/placement.json watcher.terrainfit_transform_4x4",
+   "facing": "+Y 逆時針 20°（俯視；朝升起位地球）",
+   "yaw_deg": 0.0,
+   "seat_mm": [
+    51.0,
+    -25.0,
+    18.725
+   ]
+  },
+  "drape": {
+   "band_mm": 5.586,
+   "t_range_mm": [
+    -3.325,
+    1.29
+   ]
+  },
+  "drape_note": "底部披覆與 props/watcher/watcher_terrainfit.* 同公式（推薦印的版本），所以平移到座位點就貼地，不用旋轉。",
+  "face_ccw_from_plus_y_deg": 20.0,
+  "earth_raised_bearing_ccw_from_plus_y_deg": 20.13,
+  "yaw_note": "臉朝 +Y 逆時針 20.0°（props/placement.json facing_dir_xy），已烤進模型 local 座標；transform_4x4 只有平移，網頁不再轉（再轉一次會變 40°）。座位→升起位地球中心方位 20.13°，差 -0.13°。偏離 DESIGN §4「面朝 +Y」：visual_review 第 9 條，主控 2026-10-05 核准（props/placement.json contract_deviation）。",
+  "source": {
+   "glb": "props/watcher/watcher_fullcolor.glb",
+   "glb_sha256": "7711bc8b5e80fcd388592062181919f61b26e130b9557ae16e3a05d09f1b2f59",
+   "kind": "tripo",
+   "candidate": 3,
+   "variant": "daedalus-sprite",
+   "task_id": "ec9958e4-f636-443a-9d62-338bb6063cda"
+  }
+ },
+ "landmarks": {
+  "crater_centre_mm": [
+   -0.717,
+   -5.271,
+   5.555
+  ],
+  "crater_nominal_centre_mm": [
+   0.0,
+   -8.0
+  ],
+  "crater_crest_radius_mm": 48.95,
+  "far_horizon_point_mm": [
+   -11.599999999999994,
+   74.4,
+   19.78995704650879
+  ],
+  "far_rim_crest_highest_mm": [
+   12.410593244262952,
+   41.77617075795862,
+   21.239970799019787
+  ],
+  "tile_top_centre_mm": [
+   0.0,
+   0.0,
+   7.118649482727051
+  ],
+  "watcher_seat_mm": [
+   51.0,
+   -25.0,
+   18.725006103515625
+  ],
+  "earth_centre_rest_mm": [
+   0.0,
+   107.05,
+   -23.4
+  ],
+  "earth_centre_raise_mm": [
+   0.0,
+   114.1213,
+   28.8255
+  ],
+  "design_eyes": [
+   {
+    "depression_deg": 15.0,
+    "eye_mm": [
+     0.0,
+     -450.0,
+     127.696
+    ],
+    "target_mm": [
+     0.0,
+     0.0,
+     7.118649482727051
+    ]
+   },
+   {
+    "depression_deg": 25.0,
+    "eye_mm": [
+     0.0,
+     -450.0,
+     216.957
+    ],
+    "target_mm": [
+     0.0,
+     0.0,
+     7.118649482727051
+    ]
+   },
+   {
+    "depression_deg": 35.0,
+    "eye_mm": [
+     0.0,
+     -450.0,
+     322.212
+    ],
+    "target_mm": [
+     0.0,
+     0.0,
+     7.118649482727051
+    ]
+   }
+  ],
+  "story_eye_16deg": {
+   "eye_mm": [
+    0.0,
+    -450.0,
+    129.035
+   ],
+   "target_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "why": "visual_review 第 1 條：16° 俯角時地球從真正的月面山脊（不是輪轂直線）後面升起；eye z = 450·tan16°，瞄 Z=0 磚底中心"
+  },
+  "rim_crest_polyline_mm": [
+   [
+    46.8,
+    -8.0,
+    19.781
+   ],
+   [
+    47.485,
+    -5.511,
+    20.234
+   ],
+   [
+    46.295,
+    -3.134,
+    19.951
+   ],
+   [
+    45.73,
+    -0.757,
+    20.128
+   ],
+   [
+    45.777,
+    1.73,
+    19.978
+   ],
+   [
+    45.93,
+    4.307,
+    20.181
+   ],
+   [
+    45.223,
+    6.694,
+    20.03
+   ],
+   [
+    45.092,
+    9.309,
+    20.743
+   ],
+   [
+    43.896,
+    11.544,
+    20.869
+   ],
+   [
+    42.813,
+    13.814,
+    21.323
+   ],
+   [
+    40.53,
+    15.4,
+    21.079
+   ],
+   [
+    38.621,
+    17.081,
+    20.761
+   ],
+   [
+    36.648,
+    18.627,
+    19.98
+   ],
+   [
+    35.205,
+    20.508,
+    20.034
+   ],
+   [
+    34.036,
+    22.646,
+    19.571
+   ],
+   [
+    32.739,
+    24.739,
+    19.355
+   ],
+   [
+    31.148,
+    26.593,
+    19.251
+   ],
+   [
+    28.98,
+    27.788,
+    19.234
+   ],
+   [
+    26.774,
+    28.851,
+    19.457
+   ],
+   [
+    24.536,
+    29.782,
+    19.574
+   ],
+   [
+    22.65,
+    31.231,
+    19.933
+   ],
+   [
+    21.133,
+    33.476,
+    20.063
+   ],
+   [
+    19.035,
+    34.754,
+    19.775
+   ],
+   [
+    16.861,
+    35.925,
+    19.684
+   ],
+   [
+    15.003,
+    38.174,
+    19.737
+   ],
+   [
+    13.148,
+    41.069,
+    20.963
+   ],
+   [
+    10.926,
+    43.402,
+    21.041
+   ],
+   [
+    8.338,
+    44.644,
+    20.162
+   ],
+   [
+    5.65,
+    45.754,
+    20.074
+   ],
+   [
+    2.842,
+    46.226,
+    19.729
+   ],
+   [
+    0.0,
+    43.55,
+    18.896
+   ],
+   [
+    -2.593,
+    41.482,
+    19.165
+   ],
+   [
+    -5.153,
+    41.03,
+    19.216
+   ],
+   [
+    -7.947,
+    42.175,
+    17.744
+   ],
+   [
+    -10.666,
+    42.179,
+    17.07
+   ],
+   [
+    -13.277,
+    41.552,
+    17.545
+   ],
+   [
+    -16.007,
+    41.265,
+    18.69
+   ],
+   [
+    -18.743,
+    40.826,
+    19.687
+   ],
+   [
+    -20.764,
+    38.636,
+    19.397
+   ],
+   [
+    -24.311,
+    39.713,
+    18.203
+   ],
+   [
+    -28.65,
+    41.623,
+    19.04
+   ],
+   [
+    -31.072,
+    39.846,
+    20.623
+   ],
+   [
+    -32.651,
+    36.941,
+    20.678
+   ],
+   [
+    -35.116,
+    35.365,
+    19.771
+   ],
+   [
+    -39.01,
+    35.325,
+    19.879
+   ],
+   [
+    -42.108,
+    34.108,
+    19.775
+   ],
+   [
+    -43.883,
+    31.512,
+    19.333
+   ],
+   [
+    -44.919,
+    28.375,
+    18.717
+   ],
+   [
+    -47.57,
+    26.562,
+    18.78
+   ],
+   [
+    -49.104,
+    23.889,
+    19.227
+   ],
+   [
+    -48.974,
+    20.275,
+    18.693
+   ],
+   [
+    -49.273,
+    17.106,
+    19.11
+   ],
+   [
+    -48.92,
+    13.781,
+    19.283
+   ],
+   [
+    -49.06,
+    10.832,
+    19.004
+   ],
+   [
+    -48.076,
+    7.621,
+    19.009
+   ],
+   [
+    -48.103,
+    4.889,
+    18.978
+   ],
+   [
+    -45.777,
+    1.73,
+    19.101
+   ],
+   [
+    -44.002,
+    -1.031,
+    18.659
+   ],
+   [
+    -43.809,
+    -3.396,
+    18.497
+   ],
+   [
+    -44.239,
+    -5.682,
+    18.526
+   ],
+   [
+    -44.8,
+    -8.0,
+    18.759
+   ],
+   [
+    -43.99,
+    -10.305,
+    18.315
+   ],
+   [
+    -43.809,
+    -12.604,
+    17.946
+   ],
+   [
+    -43.755,
+    -14.93,
+    17.679
+   ],
+   [
+    -44.31,
+    -17.418,
+    17.653
+   ],
+   [
+    -42.791,
+    -19.466,
+    18.627
+   ],
+   [
+    -42.607,
+    -21.844,
+    18.107
+   ],
+   [
+    -42.291,
+    -24.234,
+    17.357
+   ],
+   [
+    -41.155,
+    -26.323,
+    17.41
+   ],
+   [
+    -40.363,
+    -28.566,
+    16.876
+   ],
+   [
+    -39.88,
+    -31.025,
+    17.001
+   ],
+   [
+    -39.04,
+    -33.353,
+    17.488
+   ],
+   [
+    -38.469,
+    -35.949,
+    17.132
+   ],
+   [
+    -38.896,
+    -39.497,
+    17.196
+   ],
+   [
+    -34.408,
+    -38.981,
+    17.59
+   ],
+   [
+    -33.269,
+    -41.269,
+    18.433
+   ],
+   [
+    -31.315,
+    -42.779,
+    18.373
+   ],
+   [
+    -29.138,
+    -43.982,
+    18.127
+   ],
+   [
+    -27.214,
+    -45.457,
+    18.08
+   ],
+   [
+    -25.217,
+    -46.83,
+    17.934
+   ],
+   [
+    -23.15,
+    -48.097,
+    18.472
+   ],
+   [
+    -21.02,
+    -49.254,
+    18.414
+   ],
+   [
+    -18.73,
+    -50.069,
+    18.733
+   ],
+   [
+    -16.144,
+    -50.058,
+    19.369
+   ],
+   [
+    -13.767,
+    -50.37,
+    19.094
+   ],
+   [
+    -11.53,
+    -51.032,
+    18.522
+   ],
+   [
+    -9.314,
+    -51.821,
+    18.748
+   ],
+   [
+    -7.047,
+    -52.495,
+    18.226
+   ],
+   [
+    -4.761,
+    -53.3,
+    17.827
+   ],
+   [
+    -2.423,
+    -54.237,
+    18.298
+   ],
+   [
+    -0.0,
+    -55.8,
+    18.72
+   ],
+   [
+    2.502,
+    -55.734,
+    18.882
+   ],
+   [
+    4.996,
+    -55.538,
+    18.648
+   ],
+   [
+    7.517,
+    -55.458,
+    18.569
+   ],
+   [
+    9.99,
+    -55.0,
+    19.117
+   ],
+   [
+    12.372,
+    -54.171,
+    19.042
+   ],
+   [
+    14.926,
+    -53.936,
+    18.68
+   ],
+   [
+    17.04,
+    -52.392,
+    17.979
+   ],
+   [
+    18.018,
+    -48.47,
+    18.585
+   ],
+   [
+    19.998,
+    -47.249,
+    19.616
+   ],
+   [
+    22.15,
+    -46.365,
+    19.787
+   ],
+   [
+    24.4,
+    -45.572,
+    19.435
+   ],
+   [
+    27.068,
+    -45.255,
+    18.782
+   ],
+   [
+    29.767,
+    -44.759,
+    19.521
+   ],
+   [
+    31.483,
+    -42.965,
+    19.542
+   ],
+   [
+    32.385,
+    -40.385,
+    18.953
+   ],
+   [
+    33.479,
+    -38.144,
+    19.385
+   ],
+   [
+    36.176,
+    -37.295,
+    19.552
+   ],
+   [
+    40.491,
+    -37.419,
+    19.517
+   ],
+   [
+    45.12,
+    -37.302,
+    19.519
+   ],
+   [
+    47.675,
+    -35.525,
+    19.485
+   ],
+   [
+    50.832,
+    -33.9,
+    19.617
+   ],
+   [
+    52.346,
+    -31.306,
+    19.822
+   ],
+   [
+    52.794,
+    -28.266,
+    19.941
+   ],
+   [
+    52.356,
+    -25.011,
+    19.24
+   ],
+   [
+    50.518,
+    -21.536,
+    19.365
+   ],
+   [
+    47.489,
+    -18.094,
+    19.434
+   ],
+   [
+    44.742,
+    -15.086,
+    19.805
+   ],
+   [
+    44.803,
+    -12.709,
+    19.172
+   ],
+   [
+    44.988,
+    -10.358,
+    19.043
+   ]
+  ],
+  "source": "terrain/terrain_meta.json, mech/assembly.json"
+ },
+ "numbers": {
+  "scale_den": 1000000.0,
+  "ve": 3.0,
+  "tile_mm": [
+   180.0,
+   150.0
+  ],
+  "plinth_mm": [
+   192.0,
+   162.0
+  ],
+  "plinth_height_mm": 43.0,
+  "earth_d": 32.0,
+  "watcher_h": 22.0,
+  "true_scale_earth_m": 12.74,
+  "true_scale_earth_distance_m": 384.4,
+  "earth_mean_radius_km": 6371.0,
+  "moon_mean_distance_km": 384400.0,
+  "earth_undersize_factor": 398,
+  "terrain_relief_m": 5798.18,
+  "terrain_source_px_m": 59.2,
+  "sightline_sweep_deg": 103.5,
+  "crater_contract": {
+   "lat": -5.9,
+   "lon_e": 179.4,
+   "diam_km": 93.0
+  },
+  "source": "docs/copy_numbers.json"
+ },
+ "photos": [
+  {
+   "file": "photos/web_rim.jpg",
+   "kind": "web",
+   "caption": "In the browser, from the watcher's seat on the rim — real SLDEM2015 terrain.",
+   "props": {
+    "earth": "tripo",
+    "watcher": "tripo"
+   },
+   "source": "tools/web_cover.mjs",
+   "width": 1600,
+   "height": 900,
+   "bytes": 194407,
+   "first_screen": false
+  },
+  {
+   "file": "photos/web_rim_rising.jpg",
+   "kind": "web",
+   "caption": "In the browser, the Earth clearing the far ridge — real SLDEM2015 terrain.",
+   "props": {
+    "earth": "tripo",
+    "watcher": "tripo"
+   },
+   "source": "tools/web_cover.mjs",
+   "width": 1600,
+   "height": 900,
+   "bytes": 179578,
+   "first_screen": false
+  },
+  {
+   "file": "photos/web_table.jpg",
+   "kind": "web",
+   "caption": "In the browser, the piece on the table, Earth raised — real SLDEM2015 terrain.",
+   "props": {
+    "earth": "tripo",
+    "watcher": "tripo"
+   },
+   "source": "tools/web_cover.mjs",
+   "width": 1600,
+   "height": 900,
+   "bytes": 199283,
+   "first_screen": false
+  }
+ ],
+ "budget": {
+  "first_screen_bytes": 3559135,
+  "first_screen_files": [
+   "mech/arm.glb",
+   "mech/knob.glb",
+   "mech/plinth.glb",
+   "mech/plinth_ears.glb",
+   "mech/ref_oring_left.glb",
+   "mech/ref_oring_right.glb",
+   "mech/ref_shaft_tube.glb",
+   "props/earth.glb",
+   "props/earth_mask.png",
+   "props/watcher.glb",
+   "terrain/terrain_albedo.jpg",
+   "terrain/terrain_ao.jpg",
+   "terrain/terrain_h_901x751.r16",
+   "terrain/terrain_normal.jpg"
+  ],
+  "lazy_bytes": 16595401,
+  "target_first_screen_bytes": 5000000,
+  "note": "首屏＝manifest＋標 first_screen 的檔（不含 app 的 HTML/JS/three，約 2.5 MB；整站首屏見 node tools/web_qa_static.mjs）；lazy＝LOD（app 不抓）、2k 貼圖、全解析高度圖、照片、placeholder 道具"
+ },
+ "files": {
+  "mech/arm.glb": {
+   "bytes": 68212,
+   "sha256": "43ee89df2f6550dd58c9079529607eb02ec71eb043e296ef96e3a8f1a9bd6d75",
+   "first_screen": true,
+   "role": "mech arm (rotor)",
+   "triangles": 13892
+  },
+  "mech/bottom_cover.glb": {
+   "bytes": 46540,
+   "sha256": "a2795e2156eadee070c3fe32f9775c4a67aad34fc8c273ef37bdbfad14303af5",
+   "first_screen": false,
+   "role": "mech bottom_cover (global)",
+   "triangles": 9532
+  },
+  "mech/knob.glb": {
+   "bytes": 60548,
+   "sha256": "a30429b53cf5a269f4fc47719839a5e4c2ef95611de05a35914a85f0e2147ce0",
+   "first_screen": true,
+   "role": "mech knob (rotor)",
+   "triangles": 13834
+  },
+  "mech/plinth.glb": {
+   "bytes": 88620,
+   "sha256": "437fd9479602cda194805788ee14b7661e9e83de505d96717cfe15142edb9354",
+   "first_screen": true,
+   "role": "mech plinth (global)",
+   "triangles": 18387
+  },
+  "mech/plinth_ears.glb": {
+   "bytes": 11304,
+   "sha256": "3984feb5a4819d44139e6ead826c3386603782e918e014d40a04f9d0423d2173",
+   "first_screen": true,
+   "role": "mech plinth_ears (global)",
+   "triangles": 1693
+  },
+  "mech/ref_oring_left.glb": {
+   "bytes": 9160,
+   "sha256": "0a528e0d38c9fdc291387dece1be832e863f81841739d4a113390087b0efac92",
+   "first_screen": true,
+   "role": "mech ref_oring_left (rotor)",
+   "triangles": 1264
+  },
+  "mech/ref_oring_right.glb": {
+   "bytes": 9160,
+   "sha256": "96a7be527ea26a9306a576ee02c18169fbc643f9ad11e9fe3f3718a494283127",
+   "first_screen": true,
+   "role": "mech ref_oring_right (rotor)",
+   "triangles": 1264
+  },
+  "mech/ref_shaft_tube.glb": {
+   "bytes": 13512,
+   "sha256": "7e2c77bfcf166df1e0bf7c9af00ef26679675bad8f437d727d4f14608348fbc4",
+   "first_screen": true,
+   "role": "mech ref_shaft_tube (rotor)",
+   "triangles": 2320
+  },
+  "mech/usb_clamp.glb": {
+   "bytes": 11936,
+   "sha256": "7b5fd1b020e84d3d7d844c739f9bcd843cb8cc276eb6811dad6928fdbbbb5725",
+   "first_screen": false,
+   "role": "mech usb_clamp (global)",
+   "triangles": 1940
+  },
+  "photos/web_cover.json": {
+   "bytes": 268,
+   "sha256": "b46451c46a29322f9efda269aac01e2d5dfcb8895ed5301b452e6e42163bddaf",
+   "first_screen": false,
+   "role": "what the Earth and the watcher were in the web photos (tools/web_cover.mjs)"
+  },
+  "photos/web_rim.jpg": {
+   "bytes": 194407,
+   "sha256": "d67031e2782bddfc2b0bd96460e3fd579761bd51ebf2843468b9f1a976723825",
+   "first_screen": false,
+   "role": "photo slot (web)"
+  },
+  "photos/web_rim_rising.jpg": {
+   "bytes": 179578,
+   "sha256": "a5b5aeecc2b9fec2135074d1e04b567a75fbc9848e3cf3bb818beee911828d23",
+   "first_screen": false,
+   "role": "photo slot (web)"
+  },
+  "photos/web_table.jpg": {
+   "bytes": 199283,
+   "sha256": "d8ad67970ecd4a37c9a634f28411670c67ec9ec4647adac4c58354de3df832c1",
+   "first_screen": false,
+   "role": "photo slot (web)"
+  },
+  "props/earth.glb": {
+   "bytes": 675936,
+   "sha256": "18273f3511254e76dd24d29bd5dae63411b2a727492ee22fec7c88210f09d96c",
+   "first_screen": true,
+   "role": "earth (geometry + albedo + LED emissive)",
+   "triangles": 81920
+  },
+  "props/earth_mask.png": {
+   "bytes": 184191,
+   "sha256": "3bb8229875ed82a2fbc8fc34e9f12e5551eb0945caafc2154f896be4f8fc606b",
+   "first_screen": true,
+   "role": "earth continents mask for the web's day/night shader (R land, G shelf, B windows)"
+  },
+  "props/earth_textures_preview.jpg": {
+   "bytes": 41360,
+   "sha256": "75904e3ca7de131e7b32b7141ea987dcc03d61545ac3073af91c095575c6fb19",
+   "first_screen": false,
+   "role": "preview of earth albedo | emissive (not used by the app)"
+  },
+  "props/watcher.glb": {
+   "bytes": 262892,
+   "sha256": "39ee81bf2e16d0c3dcbf7f45d81075c9d2285c5fe35f2f52d0b21252c15dd0e5",
+   "first_screen": true,
+   "role": "watcher (geometry + vertex colours, terrain-draped base)",
+   "triangles": 49462
+  },
+  "terrain/terrain_albedo.jpg": {
+   "bytes": 142956,
+   "sha256": "e0f31707f8571bda71adbda8c90e5f8b770cbfb345174e9e871998bceae780cd",
+   "first_screen": true,
+   "role": "terrain painted albedo 1024 (primer + wash + dry-brush), sRGB"
+  },
+  "terrain/terrain_albedo_2k.jpg": {
+   "bytes": 384782,
+   "sha256": "1c24885242978aaa81c578266a460ac5f7b890307dd23ece3745d92bfb258086",
+   "first_screen": false,
+   "role": "terrain painted albedo 2048 (primer + wash + dry-brush), sRGB"
+  },
+  "terrain/terrain_ao.jpg": {
+   "bytes": 184434,
+   "sha256": "d0831ef89b077a0a0b63bfc03579783f4f51fc649f2bd4634a1ec719a5071a7b",
+   "first_screen": true,
+   "role": "terrain ambient occlusion 1024 (aoMap)"
+  },
+  "terrain/terrain_ao_2k.jpg": {
+   "bytes": 475866,
+   "sha256": "10bce4006b91cab8544bceb589149934d9a9fe00f2d59d77025c24099c15f649",
+   "first_screen": false,
+   "role": "terrain ambient occlusion 2048 (aoMap)"
+  },
+  "terrain/terrain_h_1801x1501.r16": {
+   "bytes": 5406602,
+   "sha256": "7af6f05477ef8b998571c4ec2a93d34dd1f0b9fb10bad130196a88b753334e00",
+   "first_screen": false,
+   "role": "terrain heightmap_full"
+  },
+  "terrain/terrain_h_901x751.r16": {
+   "bytes": 1353302,
+   "sha256": "ff0e6bf26bf51d0cdd601249f05cbd7c14b9ed783a6e73d0110a8296de627d30",
+   "first_screen": true,
+   "role": "terrain heightmap"
+  },
+  "terrain/terrain_lod0.glb": {
+   "bytes": 670036,
+   "sha256": "76de0d8bd641f8eff288a8f6a32506b83835dd4e53e64684b96bba958eafd2a1",
+   "first_screen": false,
+   "role": "terrain mesh lod0",
+   "triangles": 109798
+  },
+  "terrain/terrain_lod1.glb": {
+   "bytes": 1855804,
+   "sha256": "8d7165cf6bcec0794ab4134740635c981d571c54a7e482c168a278f7774a7ab1",
+   "first_screen": false,
+   "role": "terrain mesh lod1",
+   "triangles": 379800
+  },
+  "terrain/terrain_lod2.glb": {
+   "bytes": 5456660,
+   "sha256": "a36a701102f5f11e209ccd1e7087788ae14343be92c0da3bc3413c3e1091aab8",
+   "first_screen": false,
+   "role": "terrain mesh lod2",
+   "triangles": 1219794
+  },
+  "terrain/terrain_normal.jpg": {
+   "bytes": 459631,
+   "sha256": "b35cd6a5cf790cd0611b9525b23790c1988087568536c752aef5004c145842e4",
+   "first_screen": true,
+   "role": "terrain object-space normal map 1024"
+  },
+  "terrain/terrain_normal_2k.jpg": {
+   "bytes": 1672279,
+   "sha256": "628aad87f3d531647524d538c96c4f28d7baadac5422669e5294ce6d71034f5f",
+   "first_screen": false,
+   "role": "terrain object-space normal map 2048"
+  }
+ }
+}

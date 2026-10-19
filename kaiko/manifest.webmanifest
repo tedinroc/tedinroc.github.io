@@ -1,0 +1,11 @@
+{
+  "name": "開口點 KAIKŌ",
+  "short_name": "開口點",
+  "description": "AI 語音點餐系統（離線展示版）",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e7",
+  "theme_color": "#f6f1e7",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

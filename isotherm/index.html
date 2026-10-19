@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isotherm: daily temperature strike ladders on Monad testnet</title>
+<meta name="description" content="Will Taipei hit 30°C tomorrow? YES/NO strike ladders on Kuru order books, settled from airport METAR data by a Chainlink CRE workflow. Monad testnet, test dollars only. Monad Metropolis Track 01 entry.">
+<meta name="author" content="Ted Chen">
+<link rel="canonical" href="https://tedinroc.github.io/isotherm/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ted Chen">
+<meta property="og:title" content="Isotherm: daily temperature strike ladders on Monad testnet">
+<meta property="og:description" content="Will Taipei hit 30°C tomorrow? YES/NO strike ladders on Kuru order books, settled from airport METAR data by a Chainlink CRE workflow. Monad testnet, test dollars only. Monad Metropolis Track 01 entry.">
+<meta property="og:url" content="https://tedinroc.github.io/isotherm/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tedinroc.github.io/isotherm/og.jpg">
+<meta property="og:image:secure_url" content="https://tedinroc.github.io/isotherm/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Isotherm logo with a thermometer and a strike ladder of 28, 29, 30 and 31 °C on a navy and orange background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Isotherm: daily temperature strike ladders on Monad testnet">
+<meta name="twitter:description" content="Will Taipei hit 30°C tomorrow? YES/NO strike ladders on Kuru order books, settled from airport METAR data by a Chainlink CRE workflow. Monad testnet, test dollars only. Monad Metropolis Track 01 entry.">
+<meta name="twitter:image" content="https://tedinroc.github.io/isotherm/og.jpg">
+<meta name="twitter:image:alt" content="Isotherm logo with a thermometer and a strike ladder of 28, 29, 30 and 31 °C on a navy and orange background">
+<meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%230f1720'/%3E%3Cpath d='M96 352 C176 352 176 192 256 192 S336 352 416 352' fill='none' stroke='%23ff7a45' stroke-width='40' stroke-linecap='round'/%3E%3Cpath d='M96 264 H416' stroke='%235eead4' stroke-width='20' stroke-dasharray='28 22' stroke-linecap='round'/%3E%3C/svg%3E">
+<noscript><style>#launch{display:none}</style></noscript>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0e1116;--surface:#151a21;--surface-2:#1c222b;--border:#283040;
+  --text:#e9ecf1;--muted:#8d96a5;--warm:#ff8a4c;--on-warm:#1b0d05;--cool:#3cc8b9;
+  --focus:#7cb7ff;--shadow:0 10px 40px rgba(0,0,0,.45);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    color-scheme:light;
+    --bg:#f7f6f2;--surface:#ffffff;--surface-2:#f0eee8;--border:#e2ded4;
+    --text:#191c22;--muted:#646b78;--warm:#bf4a17;--on-warm:#ffffff;--cool:#0b8a7e;
+    --focus:#2563eb;--shadow:0 10px 30px rgba(20,20,30,.14);
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
+  background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+/* header bar */
+.bar{
+  flex:none;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:8px 20px;padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--border);
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand svg{flex:none;width:34px;height:34px;display:block}
+.brand h1{margin:0;font-size:18px;line-height:1.2;font-weight:750;letter-spacing:-.01em}
+.label{margin:1px 0 0;font-size:12.5px;line-height:1.35;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-size:14px;font-weight:600}
+.links a{text-decoration:none;padding:4px 0;white-space:nowrap}
+.links a:hover{color:var(--warm)}
+.links a.full{color:var(--warm)}
+
+/* stage */
+main{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+.poster{width:100%;max-width:960px;margin:0 auto;padding:28px 20px 40px}
+.poster img{
+  display:block;width:100%;height:auto;aspect-ratio:1200/627;border-radius:16px;
+  border:1px solid var(--border);box-shadow:var(--shadow);background:#16304f;
+}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;
+  border-radius:14px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);
+  font:inherit;font-size:15.5px;font-weight:700;text-decoration:none;cursor:pointer;
+}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--warm);border-color:var(--warm);color:var(--on-warm)}
+.btn.primary:hover{filter:brightness(1.06)}
+.lede{margin:20px 0 0;font-size:17px;line-height:1.55;max-width:62ch}
+.note{margin:10px 0 0;font-size:14.5px;color:var(--muted);max-width:62ch}
+
+/* launched: the frame takes the rest of the viewport */
+body.launched{height:100vh;height:100dvh;overflow:hidden}
+iframe.app{display:block;flex:1 1 auto;width:100%;height:100%;min-height:0;border:0;background:var(--bg)}
+
+iframe.app:focus-visible{outline:2px solid var(--focus);outline-offset:-2px;border-radius:0}
+
+@media (max-width:640px){
+  .bar{padding:8px 16px 6px;gap:4px}
+  .brand{gap:10px;width:100%}
+  .brand svg{width:28px;height:28px}
+  .brand h1{font-size:16.5px}
+  .label{font-size:11.5px}
+  /* fits one line at 360 px with system fonts; a wider font wraps instead of overflowing */
+  .links{width:100%;gap:0 10px;font-size:12.5px}
+  .poster{padding:16px 16px 32px}
+  .poster img{border-radius:12px}
+  .cta{flex-direction:column;gap:10px;margin-top:18px}
+  .btn{width:100%}
+  .lede{font-size:16px}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><rect width="512" height="512" rx="112" fill="#0f1720"/><path d="M96 352 C176 352 176 192 256 192 S336 352 416 352" fill="none" stroke="#ff7a45" stroke-width="40" stroke-linecap="round"/><path d="M96 264 H416" stroke="#5eead4" stroke-width="20" stroke-dasharray="28 22" stroke-linecap="round"/></svg>
+    <div>
+      <h1>Isotherm</h1>
+      <p class="label">Monad Metropolis · Track 01 entry · results pending</p>
+    </div>
+  </div>
+  <nav class="links" aria-label="Project links">
+    <a class="full" href="https://isotherm.pages.dev/" target="_blank" rel="noopener">Open full screen ↗</a>
+    <a href="https://youtu.be/15AFL_xz_3U" target="_blank" rel="noopener">Demo video</a>
+    <a href="https://github.com/tedinroc/isotherm" target="_blank" rel="noopener">Source</a>
+    <a href="../">All projects</a>
+  </nav>
+</header>
+<main id="stage">
+  <section class="poster" id="poster" aria-label="Isotherm overview">
+    <img src="og.jpg" width="1200" height="627" alt="Isotherm logo with a thermometer and a strike ladder of 28, 29, 30 and 31 °C on a navy and orange background">
+    <div class="cta">
+      <button type="button" class="btn primary" id="launch">Open the app here</button>
+      <a class="btn" href="https://isotherm.pages.dev/" target="_blank" rel="noopener">Open full screen ↗</a>
+    </div>
+    <p class="lede">Will Taipei hit 30°C tomorrow? Daily max-temperature strike ladders on Kuru order books, settled from airport METAR data by a Chainlink CRE workflow. Monad testnet, test dollars only.</p>
+    <p class="note">If sign-in does not work inside this frame in your browser, use Open full screen.</p>
+  </section>
+</main>
+<script>
+(function () {
+  var APP = 'https://isotherm.pages.dev/';
+  var launched = false;
+  function launch(fromClick) {
+    if (launched) return;
+    launched = true;
+    var frame = document.createElement('iframe');
+    frame.className = 'app';
+    frame.title = 'Isotherm app, live on Monad testnet';
+    frame.setAttribute('allow', 'clipboard-write');
+    frame.src = APP;
+    var stage = document.getElementById('stage');
+    while (stage.firstChild) stage.removeChild(stage.firstChild);
+    stage.appendChild(frame);
+    document.body.classList.add('launched');
+    // the clicked button is gone, so hand keyboard focus to the frame
+    if (fromClick) { try { frame.focus(); } catch (e) {} }
+  }
+  document.getElementById('launch').addEventListener('click', function () { launch(true); });
+  var auto = false;
+  try { auto = new URLSearchParams(window.location.search).get('autoload') === '1'; } catch (e) {}
+  if (auto) launch(false);
+})();
+</script>
+</body>
+</html>
