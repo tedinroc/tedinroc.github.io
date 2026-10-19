@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Noa — 本機桌面 AI 看板娘助手</title>
-<meta name="description" content="有形象、聽得懂話、還能動手幫你做事的本機桌面 AI 助手。一行指令安裝，大腦跑在你自己的機器上。MIT 開源、零 Live2D 授權包袱。" />
+<meta name="description" content="有形象、聽得懂話、還能動手幫你做事的本機桌面 AI 助手。一行指令安裝，大腦跑在你自己的機器上。MIT 授權、零 Live2D 授權包袱。" />
 <link rel="canonical" href="https://tedinroc.github.io/noa/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ted Chen" />
@@ -109,7 +109,7 @@
   footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 
   @media(max-width:860px){
-    .hero{grid-template-columns:1fr;padding-top:40px}
+    .hero{grid-template-columns:1fr;padding-top:40px;padding-left:22px;padding-right:22px}
     .stage{order:-1;min-height:320px}
     .grid{grid-template-columns:1fr}
     nav a.navlink{display:none}
@@ -129,7 +129,7 @@
 
 <header class="wrap hero">
   <div>
-    <span class="badge"><span class="dot"></span> 本機 · 開源 · MIT</span>
+    <span class="badge"><span class="dot"></span> 本機 · MIT 授權</span>
     <h1>Noa</h1>
     <p class="lead">有形象、聽得懂話、還能動手幫你做事的<strong>本機桌面 AI 助手</strong>。一行指令安裝，大腦跑在你自己的機器上。</p>
     <div class="cta">
@@ -158,7 +158,7 @@
     <div class="card"><div class="ic">🎭</div><h3>有形象・桌寵</h3><p>原創角色 Noa，用純 CSS 做呼吸、眨眼、口型動畫。<code>noa --desktop</code> 可開成透明置頂的桌面寵物視窗。零 Live2D，沒有授權包袱。</p></div>
     <div class="card"><div class="ic">🎙️</div><h3>聽得懂、會說話</h3><p>直接用瀏覽器內建語音（Web Speech），免下載任何語音模型，開箱即用。</p></div>
     <div class="card"><div class="ic">🛠️</div><h3>真的會做事</h3><p>大腦是 hermes-agent，能讀寫檔案、執行終端機指令、寫與改程式——不只是聊天。</p></div>
-    <div class="card"><div class="ic">🔒</div><h3>隱私本機</h3><p>介面、語音、大腦全跑在你自己的電腦上，沒有雲端中間人。</p></div>
+    <div class="card"><div class="ic">🔒</div><h3>裝在你自己的電腦</h3><p>Noa 介面和 hermes-agent 大腦都裝在你自己的電腦上。語音用瀏覽器內建的 Web Speech 服務，模型則是你接上的端點：本機的 Ollama、LM Studio，或你自己的雲端金鑰。</p></div>
     <div class="card"><div class="ic">⚖️</div><h3>授權乾淨</h3><p>100% 自有程式碼搭配 MIT／寬鬆授權元件，可自由散佈，甚至商用。</p></div>
     <div class="card"><div class="ic">🔌</div><h3>大腦可換</h3><p>預設安裝全新 hermes-agent；也能一行設定改接 Ollama、LM Studio 或 OpenAI。</p></div>
   </div>
@@ -179,7 +179,7 @@
       <div class="code"><button class="copy">複製</button>curl -fsSL https://noa-companion.pages.dev/install.sh | bash</div>
       <div style="color:var(--muted);font-size:13px;margin:12px 0 6px">Windows（PowerShell）</div>
       <div class="code"><button class="copy">複製</button>irm https://noa-companion.pages.dev/install.ps1 | iex</div>
-      <p class="note">這行會：① 安裝一顆全新的 <b>hermes-agent</b>（你的私人 AI 大腦，MIT）→ ② 開啟它的本機 API（:8642）→ ③ 安裝 Noa 介面。完成後輸入 <code>noa --desktop</code> 開「透明置頂桌寵視窗」，或 <code>noa</code> 用瀏覽器開 <a href="http://localhost:8900">http://localhost:8900</a>。<br>第一次會請你把大腦接到一個 AI 供應商（Anthropic／OpenAI／OpenRouter／Ollama…）。</p>
+      <p class="note">這行會：① 安裝一顆全新的 <b>hermes-agent</b>（你的私人 AI 大腦，MIT）→ ② 開啟它的本機 API（:8642）→ ③ 安裝 Noa 介面。完成後輸入 <code>noa --desktop</code> 開「透明置頂桌寵視窗」，或 <code>noa</code> 用瀏覽器開 <code>http://localhost:8900</code>。<br>第一次會請你把大腦接到一個 AI 供應商（Anthropic／OpenAI／OpenRouter／Ollama…）。</p>
     </div>
 
     <div class="panel hide" data-panel="have">

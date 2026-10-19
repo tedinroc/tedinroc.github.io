@@ -9,13 +9,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ted Chen">
 <meta property="og:title" content="Ted Chen · Voice AI and LLM agents, shipped solo">
-<meta property="og:description" content="Independent AI engineer in Taiwan. Eleven Seconds (1st of 39, Monad Blitz Shanghai V3), Isotherm, EARTHRISE, KAIKŌ, a voice-agent smartwatch and Noa, with live demos and source.">
+<meta property="og:description" content="Independent AI engineer in Taiwan. Eleven Seconds (1st of 39, Monad Blitz Shanghai V3), Isotherm, EARTHRISE, KAIKŌ, a voice-agent smartwatch and Noa, with live demos, and source where public.">
 <meta property="og:url" content="https://tedinroc.github.io/">
 <meta property="og:image" content="https://tedinroc.github.io/assets/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta property="og:image:alt" content="Ted Chen: Voice AI and LLM agents, shipped solo.">
+<meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tedinroc.github.io/assets/og/home.jpg">
 <meta name="author" content="Ted Chen">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
@@ -60,7 +62,7 @@ main{padding:8px 0 40px}
 h2{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:600; margin:28px 0 14px}
 .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px}
 .card{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
-.card img{display:block; width:100%; aspect-ratio:1200/627; object-fit:cover; background:var(--chip); border-bottom:1px solid var(--line)}
+.card img{display:block; width:100%; height:auto; aspect-ratio:1200/627; object-fit:cover; background:var(--chip); border-bottom:1px solid var(--line)}
 .body{padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px; flex:1}
 .card h3{margin:0; font-size:20px; line-height:1.25}
 .meta{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:12.5px; letter-spacing:.3px; color:var(--muted); margin:0}
@@ -109,11 +111,11 @@ footer p{margin:0 0 6px}
       </article>
 
       <article class="card">
-        <img src="isotherm/og.jpg" alt="Isotherm app showing a ladder of temperature strikes" loading="lazy" width="1200" height="627">
+        <img src="isotherm/og.jpg" alt="Isotherm cover art: daily max-temperature strike ladders on Monad testnet" loading="lazy" width="1200" height="627">
         <div class="body">
           <p class="meta">Monad Metropolis, Track 01 · results pending</p>
           <h3>Isotherm</h3>
-          <p class="desc">Daily temperature strike ladders on Monad testnet: YES/NO tokens on Kuru order books, a market-making bot, a MetaMask Agent Wallet plugin for AI agents, and settlement from airport METAR data by a Chainlink CRE workflow run with the official CRE CLI. 149 Foundry tests. Test dollars only.</p>
+          <p class="desc">Daily temperature strike ladders on Monad testnet: YES/NO tokens on Kuru order books, a market-making bot, a MetaMask Agent Wallet plugin for AI agents, and settlement from airport METAR data by a Chainlink CRE workflow run with the official CRE CLI. 149 Foundry tests. Test AUSD only.</p>
           <div class="actions">
             <a href="isotherm/">Open the app</a>
             <a href="https://youtu.be/15AFL_xz_3U">Demo video</a>
@@ -123,7 +125,7 @@ footer p{margin:0 0 6px}
       </article>
 
       <article class="card">
-        <img src="earthrise/img/cover_og.jpg" alt="EARTHRISE scene: Earth rising over a lunar crater rim" loading="lazy" width="1200" height="627">
+        <img src="earthrise/img/cover_og.jpg" alt="EARTHRISE scene: Earth rising over a lunar crater rim" loading="lazy" width="1200" height="630">
         <div class="body">
           <p class="meta">Tripothon S1 entry · results pending</p>
           <h3>EARTHRISE</h3>
@@ -139,9 +141,9 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta">Voice AI · 2026</p>
           <h3>KAIKŌ</h3>
-          <p class="desc">Multi-tenant voice ordering: OpenAI Realtime over WebRTC that falls back to browser speech recognition, then typing. Every model tool call is checked on the server before an order is accepted. 118 tests passing.</p>
+          <p class="desc">Multi-tenant voice ordering: OpenAI Realtime over WebRTC that falls back to browser speech recognition, then typing. Every model tool call is checked on the server before an order is accepted. 118 tests passing. The demo here is an offline copy: KAIKŌ's deterministic parser runs in your browser, with no Realtime voice.</p>
           <div class="actions">
-            <a href="kaiko/">Open the demo</a>
+            <a href="kaiko/">Offline demo</a>
           </div>
         </div>
       </article>
@@ -153,7 +155,7 @@ footer p{margin:0 0 6px}
           <h3>ESP32-S3 voice-agent smartwatch</h3>
           <p class="desc">A voice AI agent on an ESP32-S3 AMOLED watch, built on xiaozhi-esp32 (MIT) and ESP-Claw (Apache-2.0), with my own Go voice gateway. A single-variable control run traced cut-off answers to a missing barge-in confirmation window, not speaker echo. One working prototype, not a product.</p>
           <div class="actions">
-            <a href="watch/">Project site</a>
+            <a href="watch/">Project site (Chinese)</a>
           </div>
         </div>
       </article>
@@ -163,9 +165,9 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta">Desktop voice companion · 2026</p>
           <h3>Noa</h3>
-          <p class="desc">An MIT-licensed desktop voice companion with one-line installers for macOS, Linux and Windows and a hermes-agent brain.</p>
+          <p class="desc">An MIT-licensed desktop voice companion with a hermes-agent brain and one-line installers for macOS, Linux and Windows.</p>
           <div class="actions">
-            <a href="noa/">Project page</a>
+            <a href="noa/">Project page (Chinese)</a>
           </div>
         </div>
       </article>
@@ -174,7 +176,7 @@ footer p{margin:0 0 6px}
   </main>
 
   <footer>
-    <p>Everything here is testnet, demo or prototype work. The pages under this site are copies of each project's live demo, hosted on GitHub Pages; each one links back to the original.</p>
+    <p>Everything here is testnet, demo or prototype work. Each project page on this site is hosted on GitHub Pages: a static copy of the demo, an offline copy (KAIKŌ), or a page that loads the live app when you press its button (the Arena and Isotherm).</p>
     <p>© 2026 Ted Chen</p>
   </footer>
 </div>
