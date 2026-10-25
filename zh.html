@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ted Chen · 作品集</title>
+<meta name="description" content="台灣的獨立 AI 工程師 Ted Chen。語音 AI、LLM agent、智能合約工具，一個人完成。現場 demo、原始碼與比賽結果。">
+<link rel="canonical" href="https://tedinroc.github.io/zh.html">
+<link rel="alternate" hreflang="en" href="https://tedinroc.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ted Chen">
+<meta property="og:title" content="Ted Chen · 語音 AI 與 LLM agent，一個人做出來">
+<meta property="og:description" content="台灣的獨立 AI 工程師。Eleven Seconds（Monad Blitz 上海 V3 第一名）、Upgrade Airlock（ETH Shenzhen 2026 第二名）、Isotherm、EARTHRISE、KAIKŌ 與語音 agent 智慧手錶，附現場 demo 與公開原始碼。">
+<meta property="og:url" content="https://tedinroc.github.io/zh.html">
+<meta property="og:image" content="https://tedinroc.github.io/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Ted Chen：語音 AI 與 LLM agent，一個人做出來。">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tedinroc.github.io/assets/og/home.jpg">
+<meta name="author" content="Ted Chen">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#edf1f6; --grid:#d8dfe8; --card:#ffffff; --ink:#0f1d33; --sub:#3d4d66; --muted:#5f6d84;
+  --accent:#2a55c9; --accent-ink:#ffffff; --line:#d3dbe6; --chip:#e3e9f2;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
+    --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
+  --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:96px 96px; background-position:-1px -1px;
+}
+a{color:var(--accent)}
+.mono{font-family:Menlo,"SF Mono",ui-monospace,monospace}
+.wrap{max-width:1040px; margin:0 auto; padding:0 16px}
+header{padding:56px 0 28px}
+.eyebrow{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
+h1{font-size:clamp(32px,6vw,52px); line-height:1.08; letter-spacing:-.5px; margin:0 0 14px; font-weight:600; text-wrap:balance}
+.lede{max-width:720px; font-size:18px; color:var(--sub); margin:0 0 10px}
+.since{max-width:720px; color:var(--muted); margin:0 0 22px}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
+.btn{display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:8px 14px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink); text-decoration:none; font-weight:600; font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+main{padding:8px 0 40px}
+h2{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:600; margin:28px 0 14px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.card img{display:block; width:100%; height:auto; aspect-ratio:1200/627; object-fit:cover; background:var(--chip); border-bottom:1px solid var(--line)}
+.body{padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px; flex:1}
+.card h3{margin:0; font-size:20px; line-height:1.25}
+.meta{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:12.5px; letter-spacing:.3px; color:var(--muted); margin:0}
+.meta b{color:var(--accent); font-weight:600}
+.card p.desc{margin:0; color:var(--sub); font-size:15px}
+.actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:4px}
+.actions a{font-size:14px; font-weight:600; text-decoration:none; padding:6px 10px; border-radius:7px; background:var(--chip); color:var(--ink)}
+.actions a:first-child{background:var(--accent); color:var(--accent-ink)}
+.actions a:hover{outline:2px solid var(--accent); outline-offset:0}
+footer{border-top:1px solid var(--line); padding:20px 0 40px; color:var(--muted); font-size:14px}
+footer p{margin:0 0 6px}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+@media (max-width:520px){ header{padding-top:36px} .lede{font-size:17px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Ted Chen · 獨立 AI 工程師 · 台灣</p>
+    <h1>語音 AI 與 LLM agent，一個人做出來。</h1>
+    <p class="lede">我自己一個人做語音 AI、LLM agent 和智能合約工具。題目我挑、系統我設計，大部分程式碼交給 Claude Code 和 Codex 寫，然後自己 review、測試、部署、上台 demo。</p>
+    <p class="since">2006 年開始獨立開發：先做演算法交易，2016 年轉做智能合約，2023 年開始做 AI 系統。</p>
+    <ul class="links">
+      <li><a class="btn primary" href="https://github.com/tedinroc">GitHub</a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/tedinroc">LinkedIn</a></li>
+      <li><a class="btn" href="./">English</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h2>2026 年作品</h2>
+    <div class="grid">
+
+      <article class="card">
+        <img src="eleven-seconds-arena/og.jpg" alt="Eleven Seconds Arena: an attack proposal vetoed by three sentinels on Monad testnet" loading="lazy" width="1200" height="627">
+        <div class="body">
+          <p class="meta"><b>第一名</b> · Monad Blitz 上海 V3 · 2026 年 10 月</p>
+          <h3>Eleven Seconds</h3>
+          <p class="desc">智能合約升級的 30 個區塊冷卻期。三個 sentinel 程序各自持有私鑰，對新程式碼模擬攻擊；不變量被打破或模擬失敗，就在鏈上否決。活動現場開發，單人參賽。僅測試網，未經審計。</p>
+          <div class="actions">
+            <a href="eleven-seconds-arena/">Arena：親自發動攻擊</a>
+            <a href="eleven-seconds/">戰情室</a>
+            <a href="https://github.com/tedinroc/eleven-seconds">原始碼（MIT）</a>
+            <a href="https://mojo.devnads.com/events/17?tab=showcase">官方結果</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/img/upgrade-airlock-war-room.jpg" alt="Upgrade Airlock war room: a real replay of an EvilDrain upgrade vetoed by Chainlink CRE on Ethereum Sepolia" loading="lazy" width="1200" height="627">
+        <div class="body">
+          <p class="meta"><b>第二名</b> · ETH Shenzhen 2026 · 2026 年 10 月</p>
+          <h3>Upgrade Airlock</h3>
+          <p class="desc">每次 proxy 升級要過兩道門：以區塊計算的冷卻期，以及 Chainlink CRE 工作流的鏈上許可——工作流會先在模擬器裡攻擊新實作。攻擊成功的升級會收到簽名否決，永遠不會執行，就算攻擊者握有升級權限也一樣。已部署在 Ethereum Sepolia，單人參賽。僅測試網，未經審計。</p>
+          <div class="actions">
+            <a href="https://upgrade-airlock.pages.dev/">戰情室</a>
+            <a href="https://upgrade-airlock.pages.dev/video/">Demo 影片</a>
+            <a href="https://github.com/tedinroc/upgrade-airlock">原始碼（MIT）</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="isotherm/og.jpg" alt="Isotherm cover art: daily max-temperature strike ladders on Monad testnet" loading="lazy" width="1200" height="627">
+        <div class="body">
+          <p class="meta">Monad Metropolis Track 01 · 結果待公布</p>
+          <h3>Isotherm</h3>
+          <p class="desc">Monad 測試網上的每日氣溫履約階梯：Kuru 訂單簿上的 YES/NO 代幣、做市機器人、給 AI agent 的 MetaMask Agent Wallet 外掛，以及用官方 CRE CLI 執行的 Chainlink CRE 工作流從機場 METAR 資料結算。149 個 Foundry 測試。僅測試 AUSD。</p>
+          <div class="actions">
+            <a href="isotherm/">開啟應用</a>
+            <a href="https://youtu.be/15AFL_xz_3U">Demo 影片</a>
+            <a href="https://github.com/tedinroc/isotherm">原始碼（MIT）</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="earthrise/img/cover_og.jpg" alt="EARTHRISE scene: Earth rising over a lunar crater rim" loading="lazy" width="1200" height="630">
+        <div class="body">
+          <p class="meta">Tripothon S1 參賽 · 結果待公布</p>
+          <h3>EARTHRISE</h3>
+          <p class="desc">真實月球高程資料，加上 Tripo 生成的地球，用 three.js 即時渲染。</p>
+          <div class="actions">
+            <a href="earthrise/">開啟場景</a>
+            <a href="https://earthrise-daedalus.pages.dev/">官方參賽頁</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="kaiko/og.jpg" alt="KAIKŌ store page during a voice order: the waiter reads back a NT$270 ticket" loading="lazy" width="1200" height="627">
+        <div class="body">
+          <p class="meta">語音 AI · 2026</p>
+          <h3>KAIKŌ</h3>
+          <p class="desc">多租戶語音點餐：OpenAI Realtime over WebRTC，失敗時退回瀏覽器語音辨識，再退回打字。每個模型工具呼叫都在伺服器端檢查後才接受訂單。118 個測試通過。案例研究包含一段 90 秒的真實語音點餐錄音，從招呼到廚房顯示。</p>
+          <div class="actions">
+            <a href="kaiko/">案例研究與 Demo 影片</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="watch/og.jpg" alt="ESP32-S3 voice-agent smartwatch prototype" loading="lazy" width="1200" height="627">
+        <div class="body">
+          <p class="meta">硬體原型 · 2026 年 8–9 月</p>
+          <h3>ESP32-S3 語音 agent 智慧手錶</h3>
+          <p class="desc">ESP32-S3 AMOLED 手錶上的語音 AI agent，建在 xiaozhi-esp32（MIT）和 ESP-Claw（Apache-2.0）上，搭配我自己寫的 Go 語音閘道。用單變數控制實驗把「回答被截斷」追到缺少 barge-in 確認視窗，而不是喇叭回音。只有一個可用原型，不是產品。</p>
+          <div class="actions">
+            <a href="watch/">專案網站（中文）</a>
+          </div>
+        </div>
+      </article>
+
+
+    </div>
+  </main>
+
+  <footer>
+    <p>這裡的東西都是測試網、demo 或原型。本站每個專案頁都放在 GitHub Pages 上：demo 的靜態副本、附錄音的案例研究（KAIKŌ），或是按下按鈕才載入線上應用的頁面（Arena 和 Isotherm）。</p>
+    <p>© 2026 Ted Chen</p>
+  </footer>
+</div>
+</body>
+</html>
