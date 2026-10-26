@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ted Chen · Projects</title>
-<meta name="description" content="Ted Chen, independent AI engineer in Taiwan. Voice AI, LLM agents and smart-contract tools, developed independently. Live demos, source code and results.">
+<meta name="description" content="Ted Chen, independent AI engineer in Taiwan. Voice AI, LLM agents and tools that check smart-contract upgrades before they run. Demos, recordings and source.">
 <link rel="canonical" href="https://tedinroc.github.io/">
 <link rel="alternate" hreflang="zh-Hant" href="https://tedinroc.github.io/zh.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ted Chen">
-<meta property="og:title" content="Ted Chen · Voice AI and LLM agents, developed independently">
-<meta property="og:description" content="Independent AI engineer in Taiwan. Eleven Seconds (1st place, Monad Blitz Shanghai V3), Upgrade Airlock (2nd, ETH Shenzhen 2026), Isotherm, EARTHRISE, KAIKŌ and a voice-agent smartwatch, with live demos, and source where public.">
+<meta property="og:title" content="Ted Chen · Independent AI engineer in Taiwan">
+<meta property="og:description" content="Voice AI, LLM agents and smart-contract upgrade safety. Eleven Seconds (1st place, Monad Blitz Shanghai V3), Upgrade Airlock (2nd place, ETH Shenzhen 2026), Isotherm, EARTHRISE, KAIKŌ and a voice-agent smartwatch.">
 <meta property="og:url" content="https://tedinroc.github.io/">
 <meta property="og:image" content="https://tedinroc.github.io/assets/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
-<meta property="og:image:alt" content="Ted Chen: Voice AI and LLM agents, developed independently.">
+<meta property="og:image:alt" content="Ted Chen, independent AI engineer in Taiwan: voice AI, LLM agents and smart-contract upgrade safety.">
 <meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tedinroc.github.io/assets/og/home.jpg">
@@ -83,9 +83,9 @@ footer p{margin:0 0 6px}
 <div class="wrap">
   <header>
     <p class="eyebrow">Ted Chen · Independent AI Engineer · Taiwan</p>
-    <h1>Voice AI and LLM agents, developed independently.</h1>
-    <p class="lede">I build voice AI, LLM agents and smart-contract tools independently: I select the problem, design the system, direct Claude Code and Codex to produce most of the implementation, and then review, test, deploy and demonstrate the result.</p>
-    <p class="since">Independent development since 2006: algorithmic trading first, smart contracts from 2016, and AI systems since 2023.</p>
+    <h1>Voice AI, LLM agents and smart-contract upgrade safety.</h1>
+    <p class="lede">I build voice AI, LLM agents and tools that check smart-contract upgrades before they run. Claude Code and Codex write most of my code from my designs, and I review, test and ship it.</p>
+    <p class="since">I started writing algorithmic trading strategies in 2006 and smart contracts in 2016, and have focused on AI systems since 2023.</p>
     <ul class="links">
       <li><a class="btn primary" href="https://github.com/tedinroc">GitHub</a></li>
       <li><a class="btn" href="https://www.linkedin.com/in/tedinroc">LinkedIn</a></li>
@@ -102,7 +102,7 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta"><b>1st place</b> · Monad Blitz Shanghai V3 · Oct 2026</p>
           <h3>Eleven Seconds</h3>
-          <p class="desc">A 30-block cooldown on smart-contract upgrades. Three sentinel processes, each with its own key, simulate attacks against the new code and veto it on chain when an invariant breaks or the simulation fails. Developed on site, entered solo. Testnet only, not audited.</p>
+          <p class="desc">On the Monad testnet, each contract upgrade waits 30 blocks while three sentinel processes attack the new code in simulation and veto it on chain if it breaks a rule. Built on site, entered solo.</p>
           <div class="actions">
             <a href="eleven-seconds-arena/">Arena: fire an attack</a>
             <a href="eleven-seconds/">War room</a>
@@ -117,8 +117,9 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta"><b>2nd place</b> · ETH Shenzhen 2026 · Oct 2026</p>
           <h3>Upgrade Airlock</h3>
-          <p class="desc">Every proxy upgrade passes two doors: a cooldown measured in blocks, and an on-chain clearance from a Chainlink CRE workflow that first attacks the new implementation in a simulator. An upgrade that fails the attack receives a signed veto and does not execute, even if the attacker holds the upgrade key. Live on Ethereum Sepolia, entered solo. Testnet only, not audited.</p>
+          <p class="desc">On the Ethereum Sepolia testnet, a proxy upgrade has to wait out a cooldown and get an on-chain clearance. A Chainlink CRE workflow attacks the new implementation in simulation first, then clears or vetoes it. Entered solo.</p>
           <div class="actions">
+            <a href="upgrade-airlock/">Overview</a>
             <a href="https://upgrade-airlock.pages.dev/">War room</a>
             <a href="https://upgrade-airlock.pages.dev/video/">Demo video</a>
             <a href="https://github.com/tedinroc/upgrade-airlock">Source (MIT)</a>
@@ -131,7 +132,7 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta">Monad Metropolis, Track 01 · results pending</p>
           <h3>Isotherm</h3>
-          <p class="desc">Daily temperature strike ladders on Monad testnet: YES/NO tokens on Kuru order books, a market-making bot, a MetaMask Agent Wallet plugin for AI agents, and settlement from airport METAR data by a Chainlink CRE workflow run with the official CRE CLI. 149 Foundry tests. Test AUSD only.</p>
+          <p class="desc">Each day it opens YES/NO markets on the Monad testnet for a city's high temperature, one per strike, and settles them from airport METAR reports through a Chainlink CRE workflow. A market maker quotes on Kuru order books, and AI agents can trade through a MetaMask Agent Wallet plugin. 149 Foundry tests.</p>
           <div class="actions">
             <a href="isotherm/">Open the app</a>
             <a href="https://youtu.be/15AFL_xz_3U">Demo video</a>
@@ -143,9 +144,9 @@ footer p{margin:0 0 6px}
       <article class="card">
         <img src="earthrise/img/cover_og.jpg" alt="EARTHRISE scene: Earth rising over a lunar crater rim" loading="lazy" width="1200" height="630">
         <div class="body">
-          <p class="meta">Tripothon S1 entry · results pending</p>
+          <p class="meta">Tripothon S1 entry · Oct 2026</p>
           <h3>EARTHRISE</h3>
-          <p class="desc">Real lunar elevation data and a Tripo-generated Earth, rendered live in three.js.</p>
+          <p class="desc">A three.js scene where a Tripo-generated Earth rises over a lunar crater rim rebuilt from real elevation data.</p>
           <div class="actions">
             <a href="earthrise/">Open the scene</a>
             <a href="https://earthrise-daedalus.pages.dev/">Official entry</a>
@@ -158,9 +159,9 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta">Voice AI · 2026</p>
           <h3>KAIKŌ</h3>
-          <p class="desc">Multi-tenant voice ordering: OpenAI Realtime over WebRTC that falls back to browser speech recognition, then typing. Every model tool call is checked on the server before an order is accepted. 118 tests passing. The case study includes a 90-second recording of a real voice order, from greeting to the kitchen display.</p>
+          <p class="desc">Voice ordering on OpenAI Realtime over WebRTC, shown in a demo store. The server checks every tool call the model makes and recomputes prices. The case study includes a 90-second recording of a full voice order, from greeting to the kitchen display.</p>
           <div class="actions">
-            <a href="kaiko/">Case study and demo video</a>
+            <a href="kaiko/">Case study and recording</a>
           </div>
         </div>
       </article>
@@ -170,7 +171,7 @@ footer p{margin:0 0 6px}
         <div class="body">
           <p class="meta">Hardware prototype · Aug–Sep 2026</p>
           <h3>ESP32-S3 voice-agent smartwatch</h3>
-          <p class="desc">A voice AI agent on an ESP32-S3 AMOLED watch, built on xiaozhi-esp32 (MIT) and ESP-Claw (Apache-2.0), with my own Go voice gateway. A single-variable control run traced cut-off answers to a missing barge-in confirmation window, not speaker echo. A single working prototype, not a product.</p>
+          <p class="desc">A personal prototype that runs a voice AI agent on an ESP32-S3 AMOLED watch, built on xiaozhi-esp32 (MIT) and ESP-Claw (Apache-2.0) with my own Go voice gateway. When answers kept getting cut off, a control run ruled out speaker echo and traced the cause to barge-in with no confirmation window.</p>
           <div class="actions">
             <a href="watch/">Project site (Chinese)</a>
           </div>
@@ -182,7 +183,7 @@ footer p{margin:0 0 6px}
   </main>
 
   <footer>
-    <p>All work here is testnet, demonstration or prototype work. Each project page on this site is hosted on GitHub Pages: a static copy of the demo, a case study with a recorded demo (KAIKŌ), or a page that loads the live app when you press its button (the Arena and Isotherm).</p>
+    <p>Each project page here is hosted on GitHub Pages: a static copy of the demo, a project overview (Upgrade Airlock), a case study with a recording (KAIKŌ), or a page that loads the live app when you press its button (the Arena and Isotherm).</p>
     <p>© 2026 Ted Chen</p>
   </footer>
 </div>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upgrade Airlock: a clearance gate for proxy upgrades</title>
+<meta name="description" content="2nd place at the ETH Shenzhen 2026 Hackathon. On the Ethereum Sepolia testnet, a proxy upgrade runs only after a block cooldown and an on-chain clearance; a Chainlink CRE workflow attacks the new implementation in simulation first.">
+<meta name="author" content="Ted Chen">
+<link rel="canonical" href="https://tedinroc.github.io/upgrade-airlock/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ted Chen">
+<meta property="og:title" content="Upgrade Airlock: a clearance gate for proxy upgrades">
+<meta property="og:description" content="2nd place at the ETH Shenzhen 2026 Hackathon. Proxy upgrades on the Ethereum Sepolia testnet wait out a cooldown and need an on-chain clearance, and a Chainlink CRE workflow attacks the new code in simulation first.">
+<meta property="og:url" content="https://tedinroc.github.io/upgrade-airlock/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tedinroc.github.io/assets/img/upgrade-airlock-war-room.jpg">
+<meta property="og:image:secure_url" content="https://tedinroc.github.io/assets/img/upgrade-airlock-war-room.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Upgrade Airlock war room: a replay of a malicious upgrade vetoed on Ethereum Sepolia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Upgrade Airlock: a clearance gate for proxy upgrades">
+<meta name="twitter:description" content="2nd place at the ETH Shenzhen 2026 Hackathon. Proxy upgrades on the Ethereum Sepolia testnet wait out a cooldown and need an on-chain clearance.">
+<meta name="twitter:image" content="https://tedinroc.github.io/assets/img/upgrade-airlock-war-room.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#edf1f6; --grid:#d8dfe8; --card:#ffffff; --ink:#0f1d33; --sub:#3d4d66; --muted:#5f6d84;
+  --accent:#2a55c9; --accent-ink:#ffffff; --line:#d3dbe6; --chip:#e3e9f2;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
+    --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
+  --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.6 "Avenir Next","Helvetica Neue",Helvetica,Arial,"PingFang TC","Noto Sans TC",sans-serif;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:96px 96px; background-position:-1px -1px;
+}
+a{color:var(--accent)}
+.wrap{max-width:880px; margin:0 auto; padding:40px 16px 56px}
+.eyebrow{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); margin:0 0 12px}
+.eyebrow a{color:inherit}
+h1{font-size:clamp(28px,5vw,42px); line-height:1.12; letter-spacing:-.4px; margin:0 0 10px; font-weight:600; text-wrap:balance}
+.meta{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; color:var(--muted); margin:0 0 24px}
+.meta b{color:var(--accent); font-weight:600}
+figure{margin:0 0 24px}
+figure img{display:block; width:100%; height:auto; aspect-ratio:1200/627; border-radius:12px; border:1px solid var(--line); background:var(--chip)}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:8px}
+.actions{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 28px; padding:0; list-style:none}
+.btn{display:inline-flex; align-items:center; min-height:42px; padding:8px 16px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink); text-decoration:none; font-weight:600; font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+section{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:0 0 16px}
+section h2{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:12.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); font-weight:600; margin:0 0 10px}
+section p{margin:0 0 12px; color:var(--sub); max-width:68ch}
+section p:last-child{margin-bottom:0}
+footer{color:var(--muted); font-size:14px; margin-top:24px}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+@media (max-width:520px){ .wrap{padding-top:28px} .actions .btn{flex:1 1 100%; justify-content:center} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow"><a href="../">Ted Chen</a> · Projects</p>
+  <h1>Upgrade Airlock</h1>
+  <p class="meta"><b>2nd place</b> · ETH Shenzhen 2026 Hackathon · Oct 2026 · Ethereum Sepolia testnet</p>
+
+  <figure>
+    <img src="../assets/img/upgrade-airlock-war-room.jpg" width="1200" height="627" alt="Upgrade Airlock war room: a replay of a malicious upgrade vetoed on Ethereum Sepolia">
+    <figcaption>The war room replays real proposals from the Sepolia testnet.</figcaption>
+  </figure>
+
+  <ul class="actions">
+    <li><a class="btn primary" href="https://upgrade-airlock.pages.dev/">Open the war room</a></li>
+    <li><a class="btn" href="https://upgrade-airlock.pages.dev/video/">Demo video</a></li>
+    <li><a class="btn" href="https://github.com/tedinroc/upgrade-airlock">Source (MIT)</a></li>
+  </ul>
+
+  <section>
+    <h2>How it works</h2>
+    <p>A proxy upgrade runs only after a block cooldown and an on-chain clearance. A Chainlink CRE workflow runs the new implementation against the proxy's real state, has a funded outside account call every new function, and compares supply, ownership and balances before and after. If the attack works, the upgrade gets a signed veto. A bytecode rule also catches code that behaves well in simulation but mints tokens on a real block.</p>
+    <p>Of the first ten proposals on the Sepolia testnet, the one honest upgrade was cleared and executed, and all nine test attacks were vetoed. I entered solo. Solidity and Foundry for the contracts, TypeScript for the workflow.</p>
+  </section>
+
+  <section lang="zh-Hant">
+    <h2>中文說明</h2>
+    <p>proxy 升級要等區塊冷卻期結束、拿到鏈上放行才能執行。Chainlink CRE 工作流會把新實作放進 proxy 的真實狀態裡執行，讓一個有資金的陌生地址呼叫每個新函式，再比對前後的總供給量、擁有權和餘額；攻擊成功，升級就會收到簽章否決。</p>
+    <p>Sepolia 測試網上的前十個提案裡，唯一一個正常升級拿到放行並順利執行，九個測試攻擊全都被否決。ETH Shenzhen 2026 黑客松第二名，單人參賽。</p>
+  </section>
+
+  <footer><a href="../">All projects</a> · <a href="../zh.html">中文作品集</a> · © 2026 Ted Chen</footer>
+</div>
+</body>
+</html>
