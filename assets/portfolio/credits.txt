@@ -1,0 +1,18 @@
+Portfolio imagery and type
+
+GapCaster review interface: tedinroc/gapcaster, docs/review_top.png.
+The embedded film frame is from Tears of Steel, Blender Foundation, licensed CC BY 3.0.
+Film: https://mango.blender.org/
+License: https://creativecommons.org/licenses/by/3.0/
+The displayed measurements are from the recorded laptop prototype sample, not ASUS B70 measurements.
+
+Remote Hands: tedinroc/remote-hands, site/poster.svg.
+Poster depicts a recorded, controlled demonstration. The test count and model-call cost are specific to that run.
+
+Undo for Bitcoin: tedinroc/undo, film/card.png. Testnet/signet demonstration.
+
+Eleven Seconds, Upgrade Airlock, Isotherm, KAIKŌ, voice-agent watch and EARTHRISE:
+Existing project images from tedinroc.github.io.
+
+DM Sans and Instrument Serif: Google Fonts. Self-hosted under the SIL Open Font License.
+License copies: ../fonts/DM-Sans-OFL.txt and ../fonts/Instrument-Serif-OFL.txt.

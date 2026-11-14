@@ -1,192 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ted Chen · Projects</title>
-<meta name="description" content="Ted Chen, independent AI engineer in Taiwan. Voice AI, LLM agents and tools that check smart-contract upgrades before they run. Demos, recordings and source.">
-<link rel="canonical" href="https://tedinroc.github.io/">
-<link rel="alternate" hreflang="zh-Hant" href="https://tedinroc.github.io/zh.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ted Chen">
-<meta property="og:title" content="Ted Chen · Independent AI engineer in Taiwan">
-<meta property="og:description" content="Voice AI, LLM agents and smart-contract upgrade safety. Eleven Seconds (1st place, Monad Blitz Shanghai V3), Upgrade Airlock (2nd place, ETH Shenzhen 2026), Isotherm (MetaMask bounty winner, Monad Metropolis), EARTHRISE, KAIKŌ and a voice-agent smartwatch.">
-<meta property="og:url" content="https://tedinroc.github.io/">
-<meta property="og:image" content="https://tedinroc.github.io/assets/og/home.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-<meta property="og:image:alt" content="Ted Chen, independent AI engineer in Taiwan: voice AI, LLM agents and smart-contract upgrade safety.">
-<meta property="og:image:type" content="image/jpeg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tedinroc.github.io/assets/og/home.jpg">
-<meta name="author" content="Ted Chen">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<style>
-:root{
-  --bg:#edf1f6; --grid:#d8dfe8; --card:#ffffff; --ink:#0f1d33; --sub:#3d4d66; --muted:#5f6d84;
-  --accent:#2a55c9; --accent-ink:#ffffff; --line:#d3dbe6; --chip:#e3e9f2;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
-    --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0c1524; --grid:#16233a; --card:#121e33; --ink:#e7edf7; --sub:#b4c0d4; --muted:#8e9bb2;
-  --accent:#7d9eff; --accent-ink:#0c1524; --line:#22324e; --chip:#1a2942; color-scheme: dark;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font:16px/1.55 "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size:96px 96px; background-position:-1px -1px;
-}
-a{color:var(--accent)}
-.mono{font-family:Menlo,"SF Mono",ui-monospace,monospace}
-.wrap{max-width:1040px; margin:0 auto; padding:0 16px}
-header{padding:56px 0 28px}
-.eyebrow{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
-h1{font-size:clamp(32px,6vw,52px); line-height:1.08; letter-spacing:-.5px; margin:0 0 14px; font-weight:600; text-wrap:balance}
-.lede{max-width:720px; font-size:18px; color:var(--sub); margin:0 0 10px}
-.since{max-width:720px; color:var(--muted); margin:0 0 22px}
-.links{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
-.btn{display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:8px 14px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink); text-decoration:none; font-weight:600; font-size:15px}
-.btn:hover{border-color:var(--accent)}
-.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
-main{padding:8px 0 40px}
-h2{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:600; margin:28px 0 14px}
-.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px}
-.card{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
-.card img{display:block; width:100%; height:auto; aspect-ratio:1200/627; object-fit:cover; background:var(--chip); border-bottom:1px solid var(--line)}
-.body{padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px; flex:1}
-.card h3{margin:0; font-size:20px; line-height:1.25}
-.meta{font-family:Menlo,"SF Mono",ui-monospace,monospace; font-size:12.5px; letter-spacing:.3px; color:var(--muted); margin:0}
-.meta b{color:var(--accent); font-weight:600}
-.card p.desc{margin:0; color:var(--sub); font-size:15px}
-.actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:4px}
-.actions a{font-size:14px; font-weight:600; text-decoration:none; padding:6px 10px; border-radius:7px; background:var(--chip); color:var(--ink)}
-.actions a:first-child{background:var(--accent); color:var(--accent-ink)}
-.actions a:hover{outline:2px solid var(--accent); outline-offset:0}
-footer{border-top:1px solid var(--line); padding:20px 0 40px; color:var(--muted); font-size:14px}
-footer p{margin:0 0 6px}
-:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
-@media (max-width:520px){ header{padding-top:36px} .lede{font-size:17px} }
-</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ted Chen — Independent AI Engineer</title><meta name="description" content="Voice AI, agents and onchain safety. Explore Ted Chen’s working demos, open source and engineering evidence. Independent AI engineer in Taiwan."><meta name="author" content="Ted Chen"><meta name="theme-color" content="#f5f5ee">
+<link rel="canonical" href="https://tedinroc.github.io/"><link rel="alternate" hreflang="en" href="https://tedinroc.github.io/"><link rel="alternate" hreflang="zh-Hant" href="https://tedinroc.github.io/zh.html"><link rel="alternate" hreflang="x-default" href="https://tedinroc.github.io/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Ted Chen"><meta property="og:title" content="Ted Chen — Independent AI Engineer"><meta property="og:description" content="Voice AI, agents and onchain safety. Explore Ted Chen’s working demos, open source and engineering evidence. Independent AI engineer in Taiwan."><meta property="og:url" content="https://tedinroc.github.io/"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tedinroc.github.io/assets/portfolio/social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Ted Chen — Voice AI, agents and onchain safety."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@tedinroc"><meta name="twitter:image" content="https://tedinroc.github.io/assets/portfolio/social.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/home.css"><script src="assets/home.js" defer></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ted Chen", "url": "https://tedinroc.github.io/", "jobTitle": "Independent AI Engineer", "sameAs": ["https://github.com/tedinroc", "https://x.com/tedinroc", "https://www.linkedin.com/in/tedinroc/"], "knowsAbout": ["Voice AI", "AI agents", "Smart-contract safety"]}</script>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <p class="eyebrow">Ted Chen · Independent AI Engineer · Taiwan</p>
-    <h1>Voice AI, LLM agents and smart-contract upgrade safety.</h1>
-    <p class="lede">I build voice AI, LLM agents and tools that check smart-contract upgrades before they run. Claude Code and Codex write most of my code from my designs, and I review, test and ship it.</p>
-    <p class="since">I started writing algorithmic trading strategies in 2006 and smart contracts in 2016, and have focused on AI systems since 2023.</p>
-    <ul class="links">
-      <li><a class="btn primary" href="https://github.com/tedinroc">GitHub</a></li>
-      <li><a class="btn" href="https://www.linkedin.com/in/tedinroc">LinkedIn</a></li>
-      <li><a class="btn" href="zh.html">中文</a></li>
-    </ul>
-  </header>
-
-  <main>
-    <h2>Selected work, 2026</h2>
-    <div class="grid">
-
-      <article class="card">
-        <img src="eleven-seconds-arena/og.jpg" alt="Eleven Seconds Arena: an attack proposal vetoed by three sentinels on Monad testnet" loading="lazy" width="1200" height="627">
-        <div class="body">
-          <p class="meta"><b>1st place</b> · Monad Blitz Shanghai V3 · Oct 2026</p>
-          <h3>Eleven Seconds</h3>
-          <p class="desc">On the Monad testnet, each contract upgrade waits 30 blocks while three sentinel processes attack the new code in simulation and veto it on chain if it breaks a rule. Built on site, entered solo.</p>
-          <div class="actions">
-            <a href="eleven-seconds-arena/">Arena: fire an attack</a>
-            <a href="eleven-seconds/">War room</a>
-            <a href="https://github.com/tedinroc/eleven-seconds">Source (MIT)</a>
-            <a href="https://mojo.devnads.com/events/17?tab=showcase">Official results</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/upgrade-airlock-war-room.jpg" alt="Upgrade Airlock war room: a real replay of an EvilDrain upgrade vetoed by Chainlink CRE on Ethereum Sepolia" loading="lazy" width="1200" height="627">
-        <div class="body">
-          <p class="meta"><b>2nd place</b> · ETH Shenzhen 2026 · Oct 2026</p>
-          <h3>Upgrade Airlock</h3>
-          <p class="desc">On the Ethereum Sepolia testnet, a proxy upgrade has to wait out a cooldown and get an on-chain clearance. A Chainlink CRE workflow attacks the new implementation in simulation first, then clears or vetoes it. Entered solo.</p>
-          <div class="actions">
-            <a href="upgrade-airlock/">Overview</a>
-            <a href="https://upgrade-airlock.pages.dev/">War room</a>
-            <a href="https://upgrade-airlock.pages.dev/video/">Demo video</a>
-            <a href="https://github.com/tedinroc/upgrade-airlock">Source (MIT)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="isotherm/og.jpg" alt="Isotherm cover art: daily max-temperature strike ladders on Monad testnet" loading="lazy" width="1200" height="627">
-        <div class="body">
-          <p class="meta"><b>MetaMask bounty winner</b> · Monad Metropolis · US$750</p>
-          <h3>Isotherm</h3>
-          <p class="desc">Each day it opens YES/NO markets on the Monad testnet for a city's high temperature, one per strike, and settles them from airport METAR reports through a Chainlink CRE workflow. A market maker quotes on Kuru order books, and AI agents can trade through a MetaMask Agent Wallet plugin. 149 Foundry tests.</p>
-          <div class="actions">
-            <a href="isotherm/">Open the app</a>
-            <a href="https://youtu.be/15AFL_xz_3U">Demo video</a>
-            <a href="https://github.com/tedinroc/isotherm">Source (MIT)</a>
-            <a href="https://github.com/tedinroc/isotherm/blob/main/docs/awards/metropolis-metamask-bounty.png">Award evidence</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="earthrise/img/cover_og.jpg" alt="EARTHRISE scene: Earth rising over a lunar crater rim" loading="lazy" width="1200" height="630">
-        <div class="body">
-          <p class="meta">Tripothon S1 entry · Oct 2026</p>
-          <h3>EARTHRISE</h3>
-          <p class="desc">A three.js scene where a Tripo-generated Earth rises over a lunar crater rim rebuilt from real elevation data.</p>
-          <div class="actions">
-            <a href="earthrise/">Open the scene</a>
-            <a href="https://earthrise-daedalus.pages.dev/">Official entry</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="kaiko/og.jpg" alt="KAIKŌ store page during a voice order: the waiter reads back a NT$270 ticket" loading="lazy" width="1200" height="627">
-        <div class="body">
-          <p class="meta">Voice AI · 2026</p>
-          <h3>KAIKŌ</h3>
-          <p class="desc">Voice ordering on OpenAI Realtime over WebRTC, shown in a demo store. The server checks every tool call the model makes and recomputes prices. The case study includes a 90-second recording of a full voice order, from greeting to the kitchen display.</p>
-          <div class="actions">
-            <a href="kaiko/">Case study and recording</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="watch/og.jpg" alt="ESP32-S3 voice-agent smartwatch prototype" loading="lazy" width="1200" height="627">
-        <div class="body">
-          <p class="meta">Hardware prototype · Aug–Sep 2026</p>
-          <h3>ESP32-S3 voice-agent smartwatch</h3>
-          <p class="desc">A personal prototype that runs a voice AI agent on an ESP32-S3 AMOLED watch, built on xiaozhi-esp32 (MIT) and ESP-Claw (Apache-2.0) with my own Go voice gateway. When answers kept getting cut off, a control run ruled out speaker echo and traced the cause to barge-in with no confirmation window.</p>
-          <div class="actions">
-            <a href="watch/">Project site (Chinese)</a>
-          </div>
-        </div>
-      </article>
-
-
-    </div>
-  </main>
-
-  <footer>
-    <p>Each project page here is hosted on GitHub Pages: a static copy of the demo, a project overview (Upgrade Airlock), a case study with a recording (KAIKŌ), or a page that loads the live app when you press its button (the Arena and Isotherm).</p>
-    <p>© 2026 Ted Chen</p>
-  </footer>
-</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a class="wordmark" href="./" aria-label="Ted Chen, home"><svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 20h7l4-10 6 21 5-17 3 6h7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Ted Chen<span style="color:var(--green)">.</span></span></a><nav class="header-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">About</a></nav><div class="nav-right"><a href="#contact" class="contact-nav">Let’s talk<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="language" href="zh.html" lang="zh-Hant" aria-label="切換至繁體中文">繁中</a></div></div></header>
+<main id="main">
+<section class="hero"><div class="container"><div class="hero-top"><p class="eyebrow">Independent AI engineer · Taiwan</p><span class="mono hero-index">PORTFOLIO / 2026</span></div><h1>AI you can try.<br>Work you can <em>inspect.</em></h1><div class="hero-bottom"><p class="hero-intro">I’m Ted. I build <strong>voice AI, agents and onchain safety tools.</strong> From system design to working demos, with source code and evidence you can open.</p><div class="hero-actions"><a href="#work" class="button">Explore the work<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc" class="text-link">GitHub<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="hero-tags"><span>VOICE AI</span><i aria-hidden="true"></i><span>AGENTS</span><i aria-hidden="true"></i><span>ONCHAIN SAFETY</span><span class="scroll-note">Ideas → systems → evidence<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></section>
+<section class="work container" id="work" aria-labelledby="work-heading"><div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="work-heading">Built. Tested. Open.</h2></div><p class="section-note">Six projects. Real interfaces.<br>A way to inspect every one.</p></div><div class="filters" role="group" aria-label="Filter projects" hidden><button class="filter" type="button" data-filter="all" aria-pressed="true">All work<span class="filter-count" aria-hidden="true">6</span></button><button class="filter" type="button" data-filter="voice" aria-pressed="false">Voice AI<span class="filter-count" aria-hidden="true">1</span></button><button class="filter" type="button" data-filter="agents" aria-pressed="false">Agents<span class="filter-count" aria-hidden="true">2</span></button><button class="filter" type="button" data-filter="onchain" aria-pressed="false">Onchain<span class="filter-count" aria-hidden="true">4</span></button></div><p id="filter-result" class="filter-result" role="status" aria-live="polite" aria-atomic="true"></p><div class="project-grid"><article class="project" id="gapcaster" data-category="voice">
+  <a class="project-visual gapcaster" href="https://github.com/tedinroc/gapcaster/blob/main/samples/tears-of-steel-0-140/clip_with_ad.mp4" aria-label="GapCaster — Watch the sample"><img src="assets/portfolio/gapcaster.webp" alt="GapCaster review screen with dialogue gaps, audio-description timing and a Tears of Steel film frame." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>01 / Voice & accessibility</span><span>Laptop prototype</span></div><div class="project-heading"><h3>GapCaster</h3></div><p class="project-desc">Audio description that fits between lines of dialogue. Runs locally, with evidence for each line and a human review step.</p><div class="project-links"><a href="https://github.com/tedinroc/gapcaster/blob/main/samples/tears-of-steel-0-140/clip_with_ad.mp4">Watch the sample<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/gapcaster" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article><article class="project" id="remote-hands" data-category="agents">
+  <a class="project-visual remote-hands" href="https://tedinroc.github.io/remote-hands/" aria-label="Remote Hands — Replay the repair"><img src="assets/portfolio/remote-hands.webp" alt="Remote Hands recorded test run, showing a Linux console and independent verification." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>02 / Agents & infrastructure</span><span>Controlled test prototype</span></div><div class="project-heading"><h3>Remote Hands</h3></div><p class="project-desc">An AI agent repairs Linux test servers through the console. An independent probe checks reboot, SSH and data integrity.</p><div class="project-links"><a href="https://tedinroc.github.io/remote-hands/">Replay the repair<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/remote-hands" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article><article class="project" id="undo" data-category="onchain">
+  <a class="project-visual undo" href="https://undo-btc.pages.dev/try/" aria-label="Undo for Bitcoin — Try the vault"><img src="assets/portfolio/undo.webp" alt="Undo for Bitcoin: a waiting period and phone-passkey cancellation before the second signature." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>03 / Bitcoin & key management</span><span>NEAR testnet + Mutinynet</span></div><div class="project-heading"><h3>Undo for Bitcoin</h3></div><p class="project-desc">A public waiting period before Bitcoin spending is co-signed. Cancel a pending request with a phone passkey; recover with a cold key.</p><div class="project-links"><a href="https://undo-btc.pages.dev/try/">Try the vault<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/undo" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article><article class="project" id="eleven-seconds" data-category="onchain">
+  <a class="project-visual eleven-seconds" href="eleven-seconds-arena/" aria-label="Eleven Seconds — Launch an attack"><img src="assets/portfolio/eleven-seconds.webp" alt="Eleven Seconds Arena with an upgrade proposal, three sentinels and an onchain veto." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>04 / Smart-contract safety</span><span>Monad testnet</span></div><div class="project-heading"><h3>Eleven Seconds</h3></div><p class="project-desc">A 30-block window to challenge a contract upgrade. Three sentinels simulate attacks and veto rule violations onchain.</p><div class="project-links"><a href="eleven-seconds-arena/">Launch an attack<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/eleven-seconds" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article><article class="project" id="upgrade-airlock" data-category="onchain">
+  <a class="project-visual upgrade-airlock" href="https://upgrade-airlock.pages.dev/video/" aria-label="Upgrade Airlock — Watch the demo"><img src="assets/portfolio/upgrade-airlock.webp" alt="Upgrade Airlock war room showing an EvilDrain upgrade rejected in a Sepolia replay." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>05 / Smart-contract safety</span><span>Sepolia testnet</span></div><div class="project-heading"><h3>Upgrade Airlock</h3></div><p class="project-desc">Contract upgrades must pass both a cooldown and simulation-based clearance. A Chainlink CRE workflow clears or vetoes the new implementation.</p><div class="project-links"><a href="https://upgrade-airlock.pages.dev/video/">Watch the demo<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/upgrade-airlock" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article><article class="project" id="isotherm" data-category="onchain agents">
+  <a class="project-visual isotherm" href="isotherm/" aria-label="Isotherm — Explore the project"><img src="assets/portfolio/isotherm.webp" alt="Isotherm daily city-temperature markets, with YES and NO temperature strikes." width="1200" height="760" loading="lazy" decoding="async"><span class="visual-arrow"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <div class="project-body"><div class="project-meta"><span>06 / Agent-accessible markets</span><span>Monad testnet</span></div><div class="project-heading"><h3>Isotherm</h3></div><p class="project-desc">City-temperature markets with Kuru order books, METAR-based settlement and a MetaMask Agent Wallet plugin for agent trading.</p><div class="project-links"><a href="isotherm/">Explore the project<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://github.com/tedinroc/isotherm" class="source">Source code<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></article></div></section>
+<section class="recognition" aria-labelledby="recognition-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Recognition</p><h2 id="recognition-heading">Put to the test, beyond my desk.</h2></div></div><div class="awards"><a class="award" href="https://github.com/tedinroc/gapcaster"><p class="award-number">Finalist</p><h3>ASUS UGen AI League 2026</h3><div class="award-bottom"><span>GapCaster</span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><a class="award" href="https://mojo.devnads.com/events/17?tab=showcase"><p class="award-number">1st place</p><h3>Monad Blitz Shanghai V3</h3><div class="award-bottom"><span>Eleven Seconds · Solo</span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><a class="award" href="https://github.com/tedinroc/upgrade-airlock"><p class="award-number">2nd place</p><h3>ETH Shenzhen 2026</h3><div class="award-bottom"><span>Upgrade Airlock · Solo</span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><a class="award" href="https://github.com/tedinroc/isotherm/blob/main/docs/awards/metropolis-metamask-bounty.png"><p class="award-number">Bounty winner</p><h3>MetaMask · Monad Metropolis</h3><div class="award-bottom"><span>Isotherm · US$750</span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a></div></div></section>
+<section class="experiments container" aria-labelledby="experiments-heading"><div class="section-heading"><div><p class="eyebrow">03 / Further explorations</p><h2 id="experiments-heading">Curiosity, in working form.</h2></div><p class="section-note">Voice, hardware and a view from the Moon.</p></div><div class="experiment-grid"><a class="experiment" href="kaiko/"><div class="experiment-image"><img src="assets/portfolio/kaiko.webp" alt="KAIKŌ" width="600" height="340" loading="lazy" decoding="async"></div><div><div class="experiment-title"><h3>KAIKŌ</h3><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Voice ordering, with server-validated tool calls and prices.</p></div></a><a class="experiment" href="watch/"><div class="experiment-image"><img src="assets/portfolio/watch.webp" alt="Voice-agent watch" width="600" height="340" loading="lazy" decoding="async"></div><div><div class="experiment-title"><h3>Voice-agent watch</h3><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>An ESP32-S3 prototype with a custom Go voice gateway.</p></div></a><a class="experiment" href="earthrise/"><div class="experiment-image"><img src="assets/portfolio/earthrise.webp" alt="EARTHRISE" width="600" height="340" loading="lazy" decoding="async"></div><div><div class="experiment-title"><h3>EARTHRISE</h3><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>A lunar scene built from real elevation data and a Tripo-generated Earth.</p></div></a></div><div class="more-repos"><p>Also exploring outcome-based agent payments with <a href="https://github.com/tedinroc/keyhold">Keyhold</a> and onchain red packets with <a href="https://github.com/tedinroc/hongbao">Hongbao</a>.</p><a href="https://github.com/tedinroc?tab=repositories" class="text-link">All repositories<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></section>
+<section class="approach" id="approach" aria-labelledby="approach-heading"><div class="container approach-layout"><div><p class="eyebrow">04 / How I work</p><h2 id="approach-heading">The demo is the start.<br><em>The details matter.</em></h2><p class="approach-intro">I design the systems and use Claude Code and Codex to write most of the code. I review, test and ship the results, documenting what was measured and what remains untested.</p></div><ol class="principles"><li><span class="principle-number">01</span><div><h3>Design the boundaries.</h3><p>Make the system’s responsibilities clear: what the model can decide, what code must validate and where a person stays in control.</p></div></li><li><span class="principle-number">02</span><div><h3>Test the failure path.</h3><p>A convincing happy path is a start. The more interesting question is what happens when a tool, a server or a proposed upgrade goes wrong.</p></div></li><li><span class="principle-number">03</span><div><h3>Leave the evidence open.</h3><p>Publish demos, source and reproducible checks. Keep prototype results distinct from production claims.</p></div></li></ol></div></section>
+<section class="about container" id="about" aria-labelledby="about-heading"><div class="about-layout"><div><p class="eyebrow">05 / A little context</p><h2 id="about-heading">Hi, I’m Ted.</h2></div><div><p class="about-copy">An independent AI engineer based in Taiwan. My work has moved from algorithmic trading to smart contracts to AI systems. The thread through it all: <em>turn an idea into something you can test.</em></p><dl class="timeline"><div><dt>2006</dt><dd>Algorithmic trading</dd></div><div><dt>2016</dt><dd>Smart contracts</dd></div><div><dt>2023 →</dt><dd>Focus on AI systems</dd></div></dl></div></div></section>
+<section class="contact" id="contact" aria-labelledby="contact-heading"><div class="container contact-inner"><div><p class="eyebrow">Have a problem worth solving?</p><h2 id="contact-heading">Let’s build<br><em>something useful.</em></h2></div><div class="contact-detail"><p>Open to engineering roles, contract work and thoughtful collaborations. Tell me what you’re trying to make work.</p><a href="https://www.linkedin.com/in/tedinroc/" class="button">Connect on LinkedIn<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><a class="wordmark" href="./"><svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 20h7l4-10 6 21 5-17 3 6h7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Ted Chen.</span></a><nav class="footer-links" aria-label="Social links"><a href="https://github.com/tedinroc">GitHub<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://x.com/tedinroc">X / Twitter<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://www.linkedin.com/in/tedinroc/">LinkedIn<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav></div><div class="footer-bottom"><span>© 2026 Ted Chen · Taiwan<br><a href="assets/portfolio/credits.txt">Image credits</a></span><a href="#main">Back to top ↑</a></div></div></footer>
 </body>
 </html>
