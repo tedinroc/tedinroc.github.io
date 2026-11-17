@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GapCaster — 塞得進空檔的口述影像</title>
+<meta name="description" content="GapCaster 在本地端為完成的影片草擬口述影像：找對話空檔、把每一句塞進可用時間、留下證據，最後由人類口述影像撰稿人決定。ASUS UGen AI League 2026 決賽入圍。">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="zh.html">Gap<span>Caster</span></a>
+    <nav class="navlinks" aria-label="主要導覽">
+      <a href="#sample">樣本</a>
+      <a href="#evidence">實測</a>
+      <a href="#how">怎麼運作</a>
+      <a href="#human-scale">Human-Scale</a>
+      <a href="#pilot">聆聽測試</a>
+      <a class="primary" href="https://github.com/tedinroc/gapcaster">GitHub ↗</a>
+      <a href="index.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:0">
+    <div>
+      <p class="eyebrow"><b>決賽入圍</b> · ASUS UGen AI League 2026 <span aria-hidden="true">·</span> 本地優先</p>
+      <h1>塞得進空檔的口述影像。</h1>
+      <p class="lede">GapCaster 為完成的影片草擬一條有時間碼的口述影像軌。它找出對話之間的空檔，按實際可用秒數寫旁白，念出來、量長度、塞不進就加速或改寫，最後由人類撰稿人決定。整套流程跑在一張本地顯卡上——影片不必離開你的機器。</p>
+      <div class="actions">
+        <a class="btn" href="#sample">看/聽描述版樣本</a>
+        <a class="btn secondary" href="#how">怎麼運作</a>
+        <a class="btn secondary" href="https://github.com/tedinroc/gapcaster">原始碼 ↗</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video controls preload="metadata" poster="pilot/media/poster-described.jpg" aria-label="《Tears of Steel》描述版片段">
+        <source src="pilot/media/described-140.mp4" type="video/mp4">
+        你的瀏覽器無法播放，<a href="pilot/media/described-140.m4a">改聽音訊</a>。
+      </video>
+      <div class="cap"><span>0:00–2:20 · 含 GapCaster 旁白</span><span>Tears of Steel · CC BY 3.0</span></div>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="實測數字">
+    <div class="stat"><b>17 / 17</b><small>旁白塞進空檔（2:20 片段）</small></div>
+    <div class="stat"><b>70 / 71</b><small>旁白塞進空檔（全片）</small></div>
+    <div class="stat"><b>0.0 秒</b><small>旁白壓到偵測到的對話</small></div>
+    <div class="stat"><b>33 GB</b><small>單機峰值記憶體</small></div>
+  </div>
+
+  <section id="sample">
+    <h2>聽出差別</h2>
+    <p class="sub">兩段是同一段 2 分 20 秒的影片。一段沒有口述，一段有 GapCaster 塞進空檔的旁白。逐字稿與時間碼都公開。</p>
+    <div class="grid2">
+      <div class="videocard">
+        <video controls preload="metadata" poster="pilot/media/poster-original.jpg" aria-label="原片，無口述影像">
+          <source src="pilot/media/original-140.mp4" type="video/mp4">
+          <a href="pilot/media/original-140.m4a">只有音訊</a>
+        </video>
+        <div class="body">
+          <span class="label orig">原片 · 無口述</span>
+          <h3>現在盲人觀眾聽到的版本</h3>
+          <p class="note">只有對白與配樂，沒有畫面資訊。多數華語影片根本沒有口述軌。</p>
+        </div>
+      </div>
+      <div class="videocard">
+        <video controls preload="metadata" poster="pilot/media/poster-described.jpg" aria-label="GapCaster 描述版">
+          <source src="pilot/media/described-140.mp4" type="video/mp4">
+          <a href="pilot/media/described-140.m4a">只有音訊</a>
+        </video>
+        <div class="body">
+          <span class="label desc">GapCaster · 描述版</span>
+          <h3>同一場戲，被描述出來</h3>
+          <p class="note">17 句，每句都塞進自己的空檔。撰稿人可逐句批准、編輯或退回，只有批准的被混音。</p>
+          <details><summary>旁白逐字稿（17 句）</summary><pre>00:00:11.350  Multiple rocket engines ignite, shooting bright white and pink flames downward.
+00:00:18.420  A bright beam of light shoots up from the industrial site.
+00:00:45.550  A caption: Forty years later.
+00:00:53.950  A caption: Simulation ready. Two people work at a cluttered electronics bench.
+00:01:02.650  A caption: Tears of Steel.
+00:01:09.920  A foggy city skyline blends old rooftops with industrial machinery.
+00:01:14.780  A person lies motionless on the floor near two lit candles.
+00:01:19.380  A headline: Roboticist creates killer robots.
+00:01:22.810  The sniper aims his rifle.
+00:01:25.070  A circular scope frames a large, stationary mechanical structure with turrets in the fog.
+00:01:32.420  The sniper peers through the rifle scope.
+00:01:35.420  The airship hovers above the city.
+00:01:38.210  The old man lies prone, eyes closed, while the sniper aims.
+00:01:42.420  A dark, armed airship hovers over red-roofed buildings, emitting smoke and bright light.
+00:01:52.070  The sniper aims his rifle through a scope.
+00:01:58.950  The old man raises his head and gestures, while the sniper aims in the background.
+00:02:13.250  The old man looks down.</pre></details>
+        </div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:18px"><a href="sample/review.html">打開這次跑的「撰稿人審核頁」</a>：時間軸、每句的畫面證據、塞入過程與警示。<a href="sample/ad_script.txt">純逐字稿</a>。</p>
+  </section>
+
+  <section id="evidence">
+    <h2>已經量了什麼</h2>
+    <p class="sub">數字來自 repo 裡公開的兩次跑。2:20 片段同時是開發片段（in-sample）；全片用同一套程式。已知的 miss 也列出來，不藏。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>指標</th><th>2:20 片段</th><th>全片（12:14）</th></tr></thead>
+        <tbody>
+          <tr><td>鏡頭 · 對話段 · 可用空檔</td><td><b>25 · 9 · 9</b></td><td><b>130 · 63 · 44</b></td></tr>
+          <tr><td>塞進空檔的句數</td><td><b>17 / 17</b></td><td><b>70 / 71</b></td></tr>
+          <tr><td>初稿就塞進 · 加速 · 改寫</td><td>15 · 2 · 0</td><td>60 · 2 · 5</td></tr>
+          <tr><td>旁白壓到偵測到的對話</td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td></tr>
+          <tr><td>旁白壓到官方字幕 cue</td><td>0.4 秒</td><td>5.8 秒（多在 cue 尾）</td></tr>
+          <tr><td>驗證器抓到明顯植入錯誤</td><td><b>17 / 17</b></td><td><b>40 / 40</b></td></tr>
+          <tr><td>驗證器抓到片內換詞/換人</td><td>15 / 17</td><td>34 / 40</td></tr>
+          <tr><td>每分鐘內容處理時間</td><td>125 秒</td><td>137 秒</td></tr>
+          <tr><td>峰值模型記憶體</td><td>33.2 GB</td><td>34 GB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:14px">已知限制：目前只支援英文；短句可能在後面的鏡頭出現前就講完（全片 70 句中有 10 句）；文字規則只強制改寫一次；時間是在同時跑其他工作的筆電上量的。<a href="https://github.com/tedinroc/gapcaster#known-limitations">完整清單在 README</a>。</p>
+  </section>
+
+  <section id="how">
+    <h2>六個階段，全部本地</h2>
+    <p class="sub">不呼叫 frontier API、不上傳雲端、不需要帳號。唯一的連網是第一次下載開源模型權重。</p>
+    <div class="how">
+      <div class="step"><span class="n">01</span><h3>畫出空檔</h3><p>Whisper 詞時間戳與 Silero VAD 各自獨立標記對話。台詞結束後 0.25 秒、下一句前 0.30 秒之間的空白才算可用；長空白在鏡頭切點拆開。</p></div>
+      <div class="step"><span class="n">02</span><h3>讀每個鏡頭</h3><p>視覺語言模型對每個鏡頭回傳 JSON 事實：誰、在哪、做什麼、螢幕文字、最關鍵的視覺事實、信心分數。角色表讓名字保持一致。</p></div>
+      <div class="step"><span class="n">03</span><h3>按預算寫</h3><p>依空檔長度以每秒 2.6 字估算字數（3–18 字）寫旁白；未讀出的螢幕文字排入佇列；工作人員名單、網址會被過濾。</p></div>
+      <div class="step"><span class="n">04</span><h3>念出來、量長度</h3><p>Kokoro TTS 念出每一句並量實際長度。塞不下就試 1.08×、1.15×，再用精確溢出量改寫，最多三輪。</p></div>
+      <div class="step"><span class="n">05</span><h3>規則與驗證</h3><p>硬規則擋鏡頭語言、臆測、第一人稱。驗證器逐句對照「播出當下畫面上的事實」；沒有判定也標記。</p></div>
+      <div class="step"><span class="n">06</span><h3>人類批准</h3><p>撰稿人看到每句的畫面、事實、嘗試與警示，逐句批准／編輯／退回。匯出只混入批准的句子，編輯過的重新對時。</p></div>
+    </div>
+    <div class="split" style="margin-top:26px">
+      <div class="shot">
+        <img src="media/review_top.png" alt="GapCaster 審核頁：對話與空檔時間軸，以及每句的畫面、時間、批准/編輯/退回按鈕">
+        <div class="body">審核頁才是產品：每句都有證據，不是黑盒。<a href="sample/review.html">打開它</a>。</div>
+      </div>
+      <div class="card">
+        <span class="tag">為什麼難</span>
+        <h3>口述影像是時間工藝</h3>
+        <p>多數工具產生文字，假設它塞得進去。口述影像必須塞進兩句對白之間的一個特定區間，還不能蓋住任何一邊。GapCaster 把它當控制迴路：念、量、調、重寫，並把時間證據留給人類檢查，而不是要人相信機器。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="human-scale">
+    <h2>為什麼是 Human-Scale</h2>
+    <p class="sub">Mozilla 的 Human-Scale AI 要求小而省、在意使用者控制、針對特定社群。GapCaster 的三個回答：</p>
+    <div class="principles">
+      <div class="principle"><h3><span>Small.</span></h3><p>一張本地加速卡、開源權重、不呼叫 frontier API。Stage I：Qwen3.8-27B（8-bit）讀鏡頭、Whisper large-v3-turbo 聽對話、Kokoro-82M 發聲，峰值 33–34 GB。Stage II：一張 ASUS UGen300（Intel Arc Pro B70，32 GB）；另有規畫中的 8B 小機器 profile。</p></div>
+      <div class="principle"><h3><span>Intentional.</span></h3><p>影片不離開機器：沒有帳號、沒有遙測、沒有雲端。每一句都帶著來源事實、所有草稿、塞入嘗試、風格警示與驗證判定；撰稿人可以稽核、退回，只有批准的句子被混音。程式 MIT，模型授權逐項記錄。</p></div>
+      <div class="principle"><h3><span>Tailored.</span></h3><p>為盲／低視力觀眾與口述影像撰稿人設計，繞著 AD 的定義性限制：空檔。下一步是華語／台語口述影像，與本地聽眾和撰稿人共同設計——因為好的旁白在每個語言與文化裡聽起來都不一樣。</p></div>
+    </div>
+  </section>
+
+  <section id="status">
+    <h2>現在與下一步</h2>
+    <div class="timeline">
+      <div class="tlrow"><div class="when">Stage I · 完成</div><div class="what">Apple M5 Max 筆電原型：完整 pipeline、2:20 與全片跑、審核頁、MIT repo、21 個單元測試。</div></div>
+      <div class="tlrow"><div class="when">2026 · 現在</div><div class="what">入選 ASUS UGen AI League 2026 的 20 支 Stage II 決賽隊伍；Stage II 於 11/6–12/4 進行，主辦提供 ASUS UGen300 32 GB 加速器與驗證環境。</div></div>
+      <div class="tlrow"><div class="when">下一步</div><div class="what">移植到 UGen300 並量測延遲、能耗、峰值記憶體；在 held-out 影片比較 27B 與 8B；與本地撰稿人做華語 AD；做聽眾理解度研究與撰稿人編輯時間研究。</div></div>
+      <div class="tlrow"><div class="when">公開</div><div class="what">開源程式、prompt、評測腳本、model card 與 AD 工作流程指南；做出無障礙的審核流程；把失敗也寫出來。</div></div>
+    </div>
+  </section>
+
+  <section id="pilot">
+    <div class="callout">
+      <h2>聆聽測試：它真的有幫助嗎？</h2>
+      <p>我們正在用描述版片段測試盲／低視力聽眾：15 分鐘、遠端、匿名、不錄音，同一段影片聽兩個版本。這是開發者自己做的研究，不是 Mozilla 官方活動。想參加，或是口述影像工作者想試審核頁，從這裡開始。</p>
+      <div class="actions">
+        <a class="btn" href="pilot/">進入聆聽測試</a>
+        <a class="btn secondary" href="https://github.com/tedinroc/gapcaster/issues">有問題／開 issue ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <p><b>GapCaster</b> · MIT 程式，© 2026 Ted Chen · 以 AI 編碼協助（Claude, Anthropic）開發，由作者審閱與實測。</p>
+      <p>模型：Qwen3.8-27B（Apache-2.0）、Whisper large-v3-turbo（MIT）、Silero VAD（MIT）、Kokoro-82M（Apache-2.0）。樣本影片：<em>Tears of Steel</em> © Blender Foundation，CC BY 3.0（改作，未獲 Blender Foundation 背書）。官方字幕僅用於評測。</p>
+      <p><a href="https://github.com/tedinroc/gapcaster">Repository</a> · <a href="sample/review.html">審核頁</a> · <a href="pilot/">聆聽測試</a> · <a href="index.html">English</a></p>
+    </div>
+    <div>
+      <p class="pill">ASUS UGen AI League 2026 決賽入圍</p>
+      <p class="pill">本地 · 無雲端</p>
+      <p class="pill">MIT</p>
+      <p style="margin-top:14px">這是專案頁，不是 Mozilla Foundation 的活動。Mozilla 的 Human-Scale AI Incubator 是獨立補助計畫；本頁不代表 Mozilla 背書。</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

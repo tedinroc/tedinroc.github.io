@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GapCaster — offline audio description that fits the silences</title>
+<meta name="description" content="GapCaster drafts audio description for finished films entirely offline: it finds the gaps between dialogue, fits every line to the time available, keeps the evidence, and leaves the final call to a human describer.">
+<meta property="og:title" content="GapCaster — audio description that fits the silences">
+<meta property="og:description" content="Offline, local-model audio description with evidence for every line and a human in control. ASUS UGen AI League 2026 finalist.">
+<meta property="og:image" content="https://tedinroc.github.io/gapcaster/media/review_top.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./">Gap<span>Caster</span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#sample">Sample</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#how">How it works</a>
+      <a href="#human-scale">Human-Scale</a>
+      <a href="#pilot">Listener pilot</a>
+      <a class="primary" href="https://github.com/tedinroc/gapcaster">GitHub ↗</a>
+      <a href="zh.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:0">
+    <div>
+      <p class="eyebrow"><b>Finalist</b> · ASUS UGen AI League 2026 <span aria-hidden="true">·</span> local-first</p>
+      <h1>Audio description that fits the silences.</h1>
+      <p class="lede">GapCaster drafts a timed, spoken description track for finished films. It finds the gaps between dialogue, writes to the exact time available, speaks and measures every line, rewrites what does not fit, and keeps a human describer in control. It runs on one local GPU — the video never leaves the machine.</p>
+      <div class="actions">
+        <a class="btn" href="#sample">Watch the described sample</a>
+        <a class="btn secondary" href="#how">How it works</a>
+        <a class="btn secondary" href="https://github.com/tedinroc/gapcaster">Source code ↗</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video controls preload="metadata" poster="pilot/media/poster-described.jpg" aria-label="Described excerpt of Tears of Steel">
+        <source src="pilot/media/described-140.mp4" type="video/mp4">
+        Your browser cannot play this video. <a href="pilot/media/described-140.m4a">Listen to the audio instead</a>.
+      </video>
+      <div class="cap"><span>0:00–2:20 · with GapCaster narration</span><span>Tears of Steel · CC BY 3.0</span></div>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="Measured results">
+    <div class="stat"><b>17 / 17</b><small>lines fit their silence (2:20 excerpt)</small></div>
+    <div class="stat"><b>70 / 71</b><small>lines fit their silence (full film)</small></div>
+    <div class="stat"><b>0.0 s</b><small>narration over detected dialogue</small></div>
+    <div class="stat"><b>33 GB</b><small>peak memory, one local machine</small></div>
+  </div>
+
+  <section id="sample">
+    <h2>Listen to the difference</h2>
+    <p class="sub">Both clips are the same 2 min 20 s excerpt. One has no description; the other has GapCaster's narration fitted into the pauses. The script and timing are published with the sample.</p>
+    <div class="grid2">
+      <div class="videocard">
+        <video controls preload="metadata" poster="pilot/media/poster-original.jpg" aria-label="Original excerpt without audio description">
+          <source src="pilot/media/original-140.mp4" type="video/mp4">
+          <a href="pilot/media/original-140.m4a">Audio only</a>
+        </video>
+        <div class="body">
+          <span class="label orig">Original · no description</span>
+          <h3>What a blind viewer hears today</h3>
+          <p class="note">Dialogue and score, with no information about the picture. Most Mandarin-language titles never get a described track at all.</p>
+          <details><summary>Transcript of the excerpt</summary><pre>Dialogue and sound only — no description is present in this version.</pre></details>
+        </div>
+      </div>
+      <div class="videocard">
+        <video controls preload="metadata" poster="pilot/media/poster-described.jpg" aria-label="Described excerpt with GapCaster narration">
+          <source src="pilot/media/described-140.mp4" type="video/mp4">
+          <a href="pilot/media/described-140.m4a">Audio only</a>
+        </video>
+        <div class="body">
+          <span class="label desc">GapCaster · described</span>
+          <h3>The same scene, described</h3>
+          <p class="note">17 lines, each fitted to its gap. A describer can approve, edit or reject every line before it is mixed.</p>
+          <details><summary>Description script (17 lines)</summary><pre>[00:00:11.350] Multiple rocket engines ignite, shooting bright white and pink flames downward.
+[00:00:18.420] A bright beam of light shoots up from the industrial site.
+[00:00:45.550] A caption: Forty years later.
+[00:00:53.950] A caption: Simulation ready. Two people work at a cluttered electronics bench.
+[00:01:02.650] A caption: Tears of Steel.
+[00:01:09.920] A foggy city skyline blends old rooftops with industrial machinery.
+[00:01:14.780] A person lies motionless on the floor near two lit candles.
+[00:01:19.380] A headline: Roboticist creates killer robots.
+[00:01:22.810] The sniper aims his rifle.
+[00:01:25.070] A circular scope frames a large, stationary mechanical structure with turrets in the fog.
+[00:01:32.420] The sniper peers through the rifle scope.
+[00:01:35.420] The airship hovers above the city.
+[00:01:38.210] The old man lies prone, eyes closed, while the sniper aims.
+[00:01:42.420] A dark, armed airship hovers over red-roofed buildings, emitting smoke and bright light.
+[00:01:52.070] The sniper aims his rifle through a scope.
+[00:01:58.950] The old man raises his head and gestures, while the sniper aims in the background.
+[00:02:13.250] The old man looks down.</pre></details>
+        </div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:18px"><a href="sample/review.html">Open the describer review page for this run</a> — timeline, every line with its evidence, fit attempts and flags. <a href="sample/ad_script.txt">Plain script</a>.</p>
+  </section>
+
+  <section id="evidence">
+    <h2>What has been measured</h2>
+    <p class="sub">Results are from the published runs in the repository. The 140 s excerpt was also the development clip, so it is in-sample; the full-film numbers use the same code. Known misses are listed, not hidden.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Measure</th><th>2:20 excerpt</th><th>Full film (12:14)</th></tr></thead>
+        <tbody>
+          <tr><td>Shots · dialogue spans · usable silences</td><td><b>25 · 9 · 9</b></td><td><b>130 · 63 · 44</b></td></tr>
+          <tr><td>Lines that fit their silence</td><td><b>17 / 17</b></td><td><b>70 / 71</b></td></tr>
+          <tr><td>First draft · speed ladder · rewrite</td><td>15 · 2 · 0</td><td>60 · 2 · 5</td></tr>
+          <tr><td>Narration over detected dialogue</td><td><b>0.0 s</b></td><td><b>0.0 s</b></td></tr>
+          <tr><td>Narration over official subtitle cues</td><td>0.4 s</td><td>5.8 s (mostly cue tails)</td></tr>
+          <tr><td>Verifier · obvious planted errors caught</td><td><b>17 / 17</b></td><td><b>40 / 40</b></td></tr>
+          <tr><td>Verifier · in-film word/character swaps caught</td><td>15 / 17</td><td>34 / 40</td></tr>
+          <tr><td>Processing time per content minute</td><td>125 s</td><td>137 s</td></tr>
+          <tr><td>Peak model memory</td><td>33.2 GB</td><td>34 GB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:14px">Known limitations: English only; a short line can finish before a later shot appears (10 of 70 lines in the full film); the text gate forces one rewrite; timings were measured on a laptop also running other work. <a href="https://github.com/tedinroc/gapcaster#known-limitations">Full list in the README</a>.</p>
+  </section>
+
+  <section id="how">
+    <h2>Six stages, all local</h2>
+    <p class="sub">No frontier API, no cloud upload, no account. The only network use is downloading open-weight models once.</p>
+    <div class="how">
+      <div class="step"><span class="n">01</span><h3>Map the silences</h3><p>Whisper word timestamps and Silero VAD independently mark dialogue. A silence is usable from 0.25 s after a line to 0.30 s before the next; long silences split at shot cuts.</p></div>
+      <div class="step"><span class="n">02</span><h3>Read the shots</h3><p>A vision-language model returns JSON facts per shot: who, where, action, on-screen text, the key visual fact, confidence. A cast sheet keeps names consistent.</p></div>
+      <div class="step"><span class="n">03</span><h3>Write to budget</h3><p>Narration is drafted for a word budget of the window at 2.6 words/s (3–18 words). Unread on-screen text is queued; credits and web addresses are filtered.</p></div>
+      <div class="step"><span class="n">04</span><h3>Speak and measure</h3><p>Kokoro TTS speaks each line; its real duration is measured. If it overflows, the line is tried at 1.08× and 1.15×, then rewritten with the exact overflow, up to three rounds.</p></div>
+      <div class="step"><span class="n">05</span><h3>Gate and verify</h3><p>Deterministic rules block camera language, speculation and first person. A verifier checks every claim against the shot facts on screen while the line plays; no verdict is flagged.</p></div>
+      <div class="step"><span class="n">06</span><h3>Human approves</h3><p>The describer sees each line with its frame, facts, attempts and flags, then approves, edits or rejects. Export mixes only approved lines and re-times edited ones.</p></div>
+    </div>
+    <div class="split" style="margin-top:26px">
+      <div class="shot">
+        <img src="media/review_top.png" alt="GapCaster review page: timeline of dialogue and silence, and lines with frames, timings and approve/edit/reject buttons">
+        <div class="body">The review page is the product: evidence per line, not a black box. <a href="sample/review.html">Open it</a>.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Why this is hard</span>
+        <h3>AD is a timing craft</h3>
+        <p>Most tools generate text and assume it will fit. Audio description has to fit a specific interval between two lines of dialogue without covering either. GapCaster treats that as a control loop: speak, measure, adjust, rewrite. Its output includes the timing evidence, so a human can check the machine instead of trusting it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="human-scale">
+    <h2>Built to be Human-Scale</h2>
+    <p class="sub">The Mozilla Foundation Incubator's Human-Scale AI cohort asks for technology that is small, intentional and tailored. This is how GapCaster answers each.</p>
+    <div class="principles">
+      <div class="principle"><h3><span>Small.</span></h3><p>One local acceleration device, open-weight models, no frontier API. Stage I: Qwen3.8-27B (8-bit) for shot facts, Whisper large-v3-turbo for dialogue, Kokoro-82M for speech; 33–34 GB peak. Stage II: one ASUS UGen300 (Intel Arc Pro B70, 32 GB), with a planned 8B profile for smaller hardware.</p></div>
+      <div class="principle"><h3><span>Intentional.</span></h3><p>The film never leaves the machine. No accounts, no telemetry, no cloud calls. Every line carries the facts it came from, its drafts, fit attempts, style flags and verifier verdict. The describer can audit and reject; only approved lines are mixed. Code is MIT; model licences are recorded.</p></div>
+      <div class="principle"><h3><span>Tailored.</span></h3><p>Designed for blind and low-vision viewers and the describers who serve them, around the constraint that defines AD: the gap. The next step is Mandarin and Taiwanese AD, co-designed with local listeners and describers — because a good line sounds different in each language and culture.</p></div>
+    </div>
+  </section>
+
+  <section id="status">
+    <h2>Status and next steps</h2>
+    <div class="timeline">
+      <div class="tlrow"><div class="when">Stage I · done</div><div class="what">Laptop prototype on an Apple M5 Max: full pipeline, 140 s and full-film runs, review page, MIT repository, 21 unit tests.</div></div>
+      <div class="tlrow"><div class="when">2026 · now</div><div class="what">Selected as one of 20 Stage II finalists in the ASUS UGen AI League 2026; Stage II runs Nov 6 – Dec 4 with an ASUS UGen300 32 GB accelerator and a validation environment.</div></div>
+      <div class="tlrow"><div class="when">Next</div><div class="what">Port and measure on the UGen300 (latency, energy, peak memory); compare 27B and 8B profiles on held-out films; build Mandarin AD with local describers; run a listener comprehension study and a describer edit-time study.</div></div>
+      <div class="tlrow"><div class="when">Open</div><div class="what">Publish code, prompts, evaluation scripts, model cards and an AD workflow guide; ship an accessible review workflow; document failures as well as wins.</div></div>
+    </div>
+  </section>
+
+  <section id="pilot">
+    <div class="callout">
+      <h2>Listener pilot: does it actually help?</h2>
+      <p>We are testing the described excerpt with blind and low-vision listeners: 15 minutes, remote and anonymous, no recording, two versions of the same scene. The study is run by the developer, not by Mozilla. If you would like to take part — or you are a describer who wants to try the review page — start here.</p>
+      <div class="actions">
+        <a class="btn" href="pilot/">Open the listening study</a>
+        <a class="btn secondary" href="https://github.com/tedinroc/gapcaster/issues">Ask a question / open an issue ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <p><b>GapCaster</b> · MIT code, © 2026 Ted Chen · built with AI coding assistance (Claude, Anthropic), reviewed and measured by the author.</p>
+      <p>Models: Qwen3.8-27B (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified work, not endorsed by the Blender Foundation. Official subtitles used only for evaluation.</p>
+      <p><a href="https://github.com/tedinroc/gapcaster">Repository</a> · <a href="sample/review.html">Review page</a> · <a href="pilot/">Listener study</a> · <a href="zh.html">繁體中文</a></p>
+    </div>
+    <div>
+      <p class="pill">ASUS UGen AI League 2026 finalist</p>
+      <p class="pill">Local · no cloud</p>
+      <p class="pill">MIT</p>
+      <p style="margin-top:14px">This site is a project page, not a Mozilla Foundation activity. Mozilla's Human-Scale AI Incubator is an independent grant program; nothing here is endorsed by Mozilla.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
