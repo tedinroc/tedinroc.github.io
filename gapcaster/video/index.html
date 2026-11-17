@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GapCaster — 2-minute demo</title>
+<meta name="description" content="A two-minute look at GapCaster: offline audio description that fits the silences, with evidence for every line and a human describer in control.">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../">Gap<span>Caster</span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="../#sample">Sample</a>
+      <a href="../#evidence">Evidence</a>
+      <a href="../#how">How it works</a>
+      <a href="https://github.com/tedinroc/gapcaster">GitHub ↗</a>
+      <a href="../zh.html" lang="zh-Hant">繁體中文</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section style="border-top:0;padding-top:36px">
+    <h1 style="font-size:clamp(30px,4.4vw,50px);max-width:none">Two minutes on GapCaster</h1>
+    <p class="sub">The actual sample output, the review workflow and the measured limits. Narration is synthesized for accessibility; captions are available in the player and as a sidecar file. Sample footage: <em>Tears of Steel</em>, Blender Foundation, CC BY 3.0.</p>
+    <div style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-width:1100px">
+      <video controls preload="metadata" style="width:100%;border-radius:10px;display:block;background:#000" poster="../media/review_top.png" aria-label="GapCaster two-minute demo">
+        <source src="gapcaster-demo.mp4" type="video/mp4">
+        <track kind="captions" src="captions.srt" srclang="en" label="English captions" default>
+        Your browser cannot play this video. <a href="gapcaster-demo.mp4">Download it</a>.
+      </video>
+    </div>
+    <p class="sub" style="margin-top:18px">Links from the film: <a href="../sample/review.html">review page</a> · <a href="https://github.com/tedinroc/gapcaster">repository</a> · <a href="../pilot/">listener study</a>.</p>
+  </section>
+</main>
+<footer><div class="wrap"><p><b>GapCaster</b> · MIT · made in Taiwan · narration synthesized with macOS text-to-speech. Not a Mozilla Foundation activity.</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+1
+00:00:00,200 --> 00:00:13,433
+GapCaster. Audio description that fits the silences.
+
+2
+00:00:13,833 --> 00:00:18,433
+Without audio description: dialogue and score, but not
+the picture.
+
+3
+00:00:18,833 --> 00:00:32,433
+With GapCaster: 17 lines, each fitted to its silence.
+
+4
+00:00:32,833 --> 00:00:44,300
+It maps the silences. It reads every shot with a local
+vision model. It writes to the
+
+5
+00:00:44,300 --> 00:00:55,767
+word budget, speaks the line, measures it, and
+rewrites until it fits. No cloud, no frontier API.
+
+6
+00:00:56,167 --> 00:01:04,117
+Every line keeps the evidence: shot facts, fit
+attempts, verifier verdict.
+
+7
+00:01:04,117 --> 00:01:12,067
+A human describer approves, edits or rejects; only
+approved lines are mixed.
+
+8
+00:01:12,467 --> 00:01:20,008
+Seventeen of seventeen lines fit, with zero overlap
+against dialogue.
+
+9
+00:01:20,008 --> 00:01:27,550
+The full film fits seventy of seventy-one, on one
+local machine.
+
+10
+00:01:27,950 --> 00:01:36,521
+ASUS UGen AI League 2026 finalist. Next: Mandarin and
+
+11
+00:01:36,521 --> 00:01:45,092
+Taiwanese audio description, co-designed with blind
+listeners and describers.
+
+12
+00:01:45,492 --> 00:01:52,592
+Small models. Local control. A human in charge. Open
+
+13
+00:01:52,592 --> 00:01:59,692
+source, and looking for partners to bring it to
+listeners.
