@@ -138,9 +138,10 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
     <section class="card" id="context">
       <h2 id="h-context-zh">先聽這兩個版本</h2>
       <h2 id="h-context-en" class="hidden">Two versions of the same scene</h2>
-      <p id="p-context-zh">兩個版本都是同一段 2 分 20 秒的片段（0:00–2:20），出自 Blender Foundation 的《Tears of Steel》。<strong>其中一個版本有語音描述</strong>（在對話空檔描述畫面），另一個沒有。請依主持人指定的順序聆聽；每聽完一個版本，先回答該版本的問題，再聽下一個。聽完兩個版本後，還有一組比較題。</p>
-      <p id="p-context-en" class="hidden">Both versions are the same 2 min 20 s excerpt (0:00–2:20) of <em>Tears of Steel</em> by the Blender Foundation. <strong>One version has audio description</strong> (narration fitted into the gaps between dialogue); the other does not. Follow the order your moderator gives you: after each version, answer the questions for that version before moving to the next. After both, there is a short comparison section.</p>
+      <p id="p-context-zh">兩個版本都是同一段 2 分 20 秒的片段（0:00–2:20），出自 Blender Foundation 的《Tears of Steel》。<strong>其中一個版本有語音描述</strong>（在對話空檔描述畫面），另一個沒有。片中對白是英文；口述預設是<strong>中文</strong>（可在下方切換成英文）。口述是 AI 產生的草稿，還沒有經過口述影像員修改，聽到錯誤或彆扭的地方請直接告訴我們。請依主持人指定的順序聆聽；每聽完一個版本，先回答該版本的問題，再聽下一個。聽完兩個版本後，還有一組比較題。</p>
+      <p id="p-context-en" class="hidden">Both versions are the same 2 min 20 s excerpt (0:00–2:20) of <em>Tears of Steel</em> by the Blender Foundation. <strong>One version has audio description</strong> (narration fitted into the gaps between dialogue); the other does not. The film's dialogue is in English; the narration defaults to <strong>Mandarin</strong> (you can switch to English below). The narration is an AI draft that no describer has edited yet, so please tell us about anything wrong or awkward. Follow the order your moderator gives you: after each version, answer the questions for that version before moving to the next. After both, there is a short comparison section.</p>
       <p class="note" id="order-note" role="status" aria-live="polite"></p>
+      <p class="note" id="ad-lang-switch"></p>
     </section>
 
     <section class="card" id="round-1-card">
@@ -411,9 +412,21 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 (function(){
   "use strict";
   var lang='zh';
-  var DESCRIBED={audio:'media/described-140.m4a',video:'media/described-140.mp4',poster:'media/poster-described.jpg'};
-  var ORIGINAL={audio:'media/original-140.m4a',video:'media/original-140.mp4',poster:'media/poster-original.jpg'};
   var params=new URLSearchParams(location.search);
+  // ?ad=zh : the described version uses Mandarin narration (dialogue in the film stays English)
+  var adLang=params.get('ad')==='en'?'en':'zh';
+  var DESCRIBED=adLang==='zh'
+    ?{audio:'media/described-140-zh.m4a',video:'media/described-140-zh.mp4',poster:'media/poster-described.jpg'}
+    :{audio:'media/described-140.m4a',video:'media/described-140.mp4',poster:'media/poster-described.jpg'};
+  var ORIGINAL={audio:'media/original-140.m4a',video:'media/original-140.mp4',poster:'media/poster-original.jpg'};
+  var adSwitch=document.getElementById('ad-lang-switch');
+  if(adSwitch){
+    var other=adLang==='zh'?'en':'zh';
+    var q=new URLSearchParams(location.search); q.set('ad',other);
+    adSwitch.innerHTML=(adLang==='zh'
+      ? '目前的口述語言：<strong>中文</strong>。<a href="?'+q.toString()+'">改用英文口述版</a> · Narration: Mandarin. <a href="?'+q.toString()+'">Use English narration</a>'
+      : '目前的口述語言：<strong>英文</strong>。<a href="?'+q.toString()+'">改用中文口述版</a> · Narration: English. <a href="?'+q.toString()+'">Use Mandarin narration</a>');
+  }
   var order=params.get('order');
   if(order!=='ad-first'&&order!=='orig-first'){order='orig-first';}
   var first=order==='ad-first'?DESCRIBED:ORIGINAL;
@@ -485,7 +498,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 
   function collect(){
     var data={version:1,id:(document.getElementById('p-id').value||'anonymous'),
-      order:order, started:new Date().toISOString(),
+      order:order, adLang:adLang, started:new Date().toISOString(),
       noQuote:(document.getElementById('no-quote').checked||document.getElementById('no-quote-en').checked),
       a:{}, b:{}, compare:{}, about:{}};
     for(var i=1;i<=6;i++) data.a['q'+i]=document.querySelector('input[name="q'+i+'"]:checked')?.value||null;
