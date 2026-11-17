@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GapCaster — 8B lean profile, measured</title>
+<meta name="description" content="A measured Qwen3-VL-8B profile of GapCaster: 19/19 lines fitted, 0.0 s over dialogue, 13.7 GB peak memory, 50 s per content minute on one laptop.">
+<link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../../">Gap<span>Caster</span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="../../#sample">Sample</a>
+      <a href="../../#evidence">Evidence</a>
+      <a href="../../#how">How it works</a>
+      <a href="../../video/">Film</a>
+      <a href="https://github.com/tedinroc/gapcaster">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section style="border-top:0;padding-top:36px">
+    <p class="eyebrow"><b>Measured</b> · 2026-11-17 · Apple M5 Max, 128 GB</p>
+    <h1 style="font-size:clamp(30px,4.5vw,52px);max-width:22ch">8B lean profile: half the memory, twice the speed.</h1>
+    <p class="sub">The Stage I results used Qwen3.8-27B for shot facts. To test whether the pipeline can run on smaller hardware, we swapped the vision-language model for <strong>Qwen3-VL-8B-Instruct (8-bit MLX)</strong> and ran the same 2 min 20 s excerpt with the same code, prompts and thresholds. This is a real measured run, not a projection.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Same 2:20 excerpt</th><th>27B (Stage I)</th><th>8B lean profile</th></tr></thead>
+        <tbody>
+          <tr><td>Vision-language model</td><td>Qwen3.8-27B, 8-bit</td><td>Qwen3-VL-8B, 8-bit</td></tr>
+          <tr><td>Peak memory</td><td>33.2 GB</td><td><b>13.7 GB</b></td></tr>
+          <tr><td>Processing per content minute</td><td>125 s</td><td><b>50 s</b></td></tr>
+          <tr><td>Lines that fit their silence</td><td>17 / 17</td><td><b>19 / 19</b></td></tr>
+          <tr><td>Narration over detected dialogue</td><td>0.0 s</td><td><b>0.0 s</b></td></tr>
+          <tr><td>First try · speed · rewrite</td><td>15 · 2 · 0</td><td>16 · 1 · 2</td></tr>
+          <tr><td>Verifier: obvious planted errors</td><td>17 / 17</td><td>18 / 19</td></tr>
+          <tr><td>Verifier: harder swaps</td><td>15 / 17</td><td>13 / 19</td></tr>
+          <tr><td>Lines flagged for a human</td><td>1</td><td>2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:16px">Honest read: the 8B profile fits more lines and runs far cheaper, but its shot facts are shallower and its verifier is weaker on hard cases (13/19 vs 15/17). Its description lines are shorter and occasionally less precise (e.g. "Mechanical flyer" for an airship). That is the trade-off a small model buys; the describer review step is where it gets caught. The 27B profile remains the quality option, and the 8B profile is the one that can run on a 16 GB machine.</p>
+    <div class="grid2" style="margin-top:24px">
+      <div class="card"><span class="tag">Run artefacts</span><h3>Inspect it yourself</h3><p><a href="review.html">Review page for the 8B run</a> · <a href="ad_script.txt">Script (19 lines)</a> · <a href="script.json">Full JSON with metrics</a>. Frames, per-line audio, drafts and flags are in the same folder.</p></div>
+      <div class="card"><span class="tag">Why it matters</span><h3>Small is a measurement, not a slogan</h3><p>The same orchestrator, the same prompts, one model swap: 13.7 GB instead of 33.2 GB, 50 s instead of 125 s per content minute. That is what makes a describer's laptop or a small studio's 16 GB card a realistic deployment target.</p></div>
+    </div>
+    <p class="sub" style="margin-top:24px">Environment note: the run used the repository's MLX path on macOS. Kokoro's espeak fallback was disabled for out-of-vocabulary words in this environment (a local library data-path issue), so a small number of rare words may have been skipped in speech; line timings and fit results are measured from the actual synthesized audio.</p>
+  </section>
+</main>
+<footer><div class="wrap"><p><b>GapCaster</b> · MIT · <a href="../../">project page</a> · <a href="https://github.com/tedinroc/gapcaster">repository</a></p></div></footer>
+</body>
+</html>

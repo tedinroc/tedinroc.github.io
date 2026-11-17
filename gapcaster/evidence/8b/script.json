@@ -1,0 +1,2091 @@
+{
+ "source": {
+  "file": "tears_of_steel_720p.mov",
+  "start": 0.0,
+  "end": 140.0
+ },
+ "settings": {
+  "lang": "en",
+  "merge_pause": 0.6,
+  "lead": 0.25,
+  "tail": 0.3,
+  "min_slot": 1.1,
+  "breath": 0.8,
+  "max_slot": 7.0,
+  "words_per_sec": 2.6,
+  "speeds": [
+   1.0,
+   1.08,
+   1.15
+  ],
+  "max_rewrites": 3,
+  "whisper_model": "mlx-community/whisper-large-v3-turbo",
+  "vlm_model": "a0093b9b5fda6f76ddd4a462c6830ae7c4fe47ec",
+  "tts_model": "mlx-community/Kokoro-82M-bf16",
+  "tts_voice": "af_heart",
+  "llm_backend": "mlx",
+  "llm_base_url": "http://127.0.0.1:8000/v1",
+  "llm_model_name": "qwen",
+  "concurrency": 8,
+  "asr_backend": "mlx",
+  "asr_ov_model": "OpenVINO/whisper-large-v3-turbo-int8-ov",
+  "asr_device": "CPU",
+  "tts_backend": "mlx",
+  "extra": {}
+ },
+ "cast": [
+  {
+   "name": "Celia",
+   "look": "young woman, red hair tied back, blue jacket under a dark vest, a robotic hand",
+   "named_from": 25
+  },
+  {
+   "name": "Thom",
+   "look": "young man, dark hair, black leather jacket over a printed T-shirt",
+   "named_from": 23
+  },
+  {
+   "name": "the sniper",
+   "look": "young Black man, short dark hair, dark padded jacket, futuristic rifle with a scope"
+  },
+  {
+   "name": "the old man",
+   "look": "older man, shoulder-length grey hair, dark checked jacket"
+  }
+ ],
+ "shots": [
+  {
+   "id": "S001",
+   "start": 0.0,
+   "end": 8.917,
+   "frames": [
+    "frames/S001_0.jpg",
+    "frames/S001_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a spacecraft",
+    "action": "The spacecraft's main engine is starting up, with a countdown displayed on a screen: 'Four, three, two, one.'",
+    "text": "We have main engine start. Four, three, two, one.",
+    "key": "A countdown for the main engine start is displayed on a screen inside a spacecraft.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S002",
+   "start": 8.917,
+   "end": 13.458,
+   "frames": [
+    "frames/S002_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a large, industrial-looking spacecraft or rocket engine bay",
+    "action": "four large rocket engines are firing, emitting bright pinkish-white flames from their nozzles",
+    "text": "",
+    "key": "Four rocket engines are actively firing with intense pinkish-white exhaust flames.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S003",
+   "start": 13.458,
+   "end": 18.417,
+   "frames": [
+    "frames/S003_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a spacecraft or space station",
+    "action": "large, cylindrical engines are firing, emitting bright white exhaust plumes",
+    "text": "",
+    "key": "multiple large engines are firing with bright white exhaust, indicating a spacecraft is launching or accelerating",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S004",
+   "start": 18.417,
+   "end": 25.0,
+   "frames": [
+    "frames/S004_0.jpg",
+    "frames/S004_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "an industrial complex with tall metal towers and pipes, under a hazy, bright sky",
+    "action": "a bright light shines from the center of the complex, illuminating smoke or steam rising from the structures",
+    "text": "This film is supported by the Netherlands Film Fund",
+    "key": "A bright, vertical beam of light is shining from the center of an industrial complex, surrounded by tall metal towers and pipes.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S005",
+   "start": 25.0,
+   "end": 40.25,
+   "frames": [
+    "frames/S005_0.jpg",
+    "frames/S005_1.jpg"
+   ],
+   "facts": {
+    "who": [
+     "Thom",
+     "Celia"
+    ],
+    "where": "a bridge over a canal in a city with trees and buildings in the background",
+    "action": "Thom and Celia are standing on the bridge, holding onto the railing. Celia, with her robotic hand, is gesturing toward Thom while speaking. Thom is looking at her, listening.",
+    "text": "",
+    "key": "Celia has a robotic hand and is gesturing toward Thom as they stand on a bridge over a canal.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S006",
+   "start": 40.25,
+   "end": 42.083,
+   "frames": [
+    "frames/S006_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "industrial setting with metal structures and debris",
+    "action": "two glowing holographic figures, one orange and one blue, are standing and gesturing toward each other",
+    "text": "",
+    "key": "Two holographic figures, one orange and one blue, are interacting in a dim, industrial environment.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S007",
+   "start": 42.083,
+   "end": 45.625,
+   "frames": [
+    "frames/S007_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a dark, ruined, industrial-looking interior with exposed pipes and broken structures",
+    "action": "a glowing pink energy sphere pulses on the left, while a small lit-up room and a platform with glowing figures are visible in the background",
+    "text": "40 YEARS LATER",
+    "key": "The scene is set 40 years later in a dark, decaying industrial environment with glowing pink energy and illuminated areas.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S008",
+   "start": 45.625,
+   "end": 49.792,
+   "frames": [
+    "frames/S008_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a dark, cluttered, industrial-looking space with glowing neon lights",
+    "action": "neon lights in pink, green, and orange glow in the foreground, casting bright streaks and outlines on the dark background, which appears to be filled with machinery or debris",
+    "text": "",
+    "key": "The scene is dominated by vibrant, glowing neon lights—pink, green, and orange—casting bright streaks and outlines over a dark, cluttered industrial background, suggesting a high-tech or cyberpunk environment.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S009",
+   "start": 49.792,
+   "end": 51.125,
+   "frames": [
+    "frames/S009_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a high-tech control room",
+    "action": "a hand is adjusting knobs and switches on a complex electronic panel with glowing digital displays",
+    "text": "LOCK-IN 10Hz - 100kHz, 98% RT, 00:00:02",
+    "key": "a hand is interacting with a futuristic control panel displaying holographic interfaces and digital readouts",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S010",
+   "start": 51.125,
+   "end": 53.667,
+   "frames": [
+    "frames/S010_0.jpg"
+   ],
+   "facts": {
+    "who": "a man with curly hair and glasses, wearing a hoodie; two other people in white hoodies, partially visible",
+    "where": "a high-tech lab or control room with glowing screens and equipment",
+    "action": "the man in the center looks up with a surprised expression, surrounded by holographic displays and glowing green and purple lights",
+    "text": "",
+    "key": "A man with curly hair and glasses is surrounded by glowing holographic interfaces in a futuristic lab setting.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S011",
+   "start": 53.667,
+   "end": 56.667,
+   "frames": [
+    "frames/S011_0.jpg"
+   ],
+   "facts": {
+    "who": "two people at a cluttered workbench; one with long dark hair tied back, wearing a light-colored shirt; the other with short hair, wearing a purple jacket",
+    "where": "a cluttered, tech-filled workspace with glowing digital displays in the background",
+    "action": "the two people are working at a cluttered workbench filled with electronic equipment and wires",
+    "text": "SIMULATION READY...",
+    "key": "The scene shows two people working at a cluttered workbench with glowing digital displays in the background, and the text 'SIMULATION READY...' is visible.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S012",
+   "start": 56.667,
+   "end": 64.458,
+   "frames": [
+    "frames/S012_0.jpg",
+    "frames/S012_1.jpg"
+   ],
+   "facts": {
+    "who": "an older man with a mechanical eye and a robotic arm",
+    "where": "a dimly lit, cluttered lab or workshop",
+    "action": "The older man leans over a table, intently observing a human brain model that is pierced with pins and surrounded by glowing purple holographic arcs. His robotic arm holds a tool near the brain, and his mechanical eye is focused on it.",
+    "text": "",
+    "key": "A human brain model is being examined with futuristic technology, including a robotic arm and a mechanical eye, suggesting a scientific or experimental procedure.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S013",
+   "start": 64.458,
+   "end": 69.917,
+   "frames": [
+    "frames/S013_0.jpg",
+    "frames/S013_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a black screen",
+    "action": "The screen is black with the title 'TEARS OF STEEL' displayed in the center.",
+    "text": "TEARS OF STEEL",
+    "key": "The title 'TEARS OF STEEL' is centered on a black background.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S014",
+   "start": 69.917,
+   "end": 74.083,
+   "frames": [
+    "frames/S014_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a cityscape under a dark, smoky sky, with rooftops, a tall tower, and ship masts visible",
+    "action": "a large, dark, mechanical structure dominates the center of the frame, partially obscuring the tower behind it",
+    "text": "",
+    "key": "A massive, dark mechanical structure looms over a cityscape filled with rooftops and ship masts under a gloomy, smoke-filled sky.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S015",
+   "start": 74.083,
+   "end": 79.375,
+   "frames": [
+    "frames/S015_0.jpg",
+    "frames/S015_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a dimly lit, cluttered ship's cabin or bridge, looking out through a window at a foggy or misty sea",
+    "action": "a person is lying on the floor, partially covered by blankets, with candles burning nearby",
+    "text": "",
+    "key": "A person is sleeping or resting on the floor inside a ship's cabin, with candles providing the only light source.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S016",
+   "start": 79.375,
+   "end": 82.125,
+   "frames": [
+    "frames/S016_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "indoor, dimly lit",
+    "action": "a hand holds a newspaper, showing a headline about killer robots",
+    "text": "Dr Amst... ROBOTICIST CREATES KILLER ROBOTS",
+    "key": "newspaper headline reads 'ROBOTICIST CREATES KILLER ROBOTS'",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S017",
+   "start": 82.125,
+   "end": 84.833,
+   "frames": [
+    "frames/S017_0.jpg"
+   ],
+   "facts": {
+    "who": "the sniper",
+    "where": "a dim, misty outdoor setting with stone balusters",
+    "action": "the sniper is aiming a futuristic rifle with a scope, holding it steady with both hands",
+    "text": "",
+    "key": "a young Black man with short dark hair, wearing a dark padded jacket, is focused on aiming a high-tech rifle equipped with a scope and a red laser sight.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S018",
+   "start": 84.833,
+   "end": 92.417,
+   "frames": [
+    "frames/S018_0.jpg",
+    "frames/S018_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a dark, circular tunnel or viewport, looking out at a large, complex mechanical vehicle floating in a misty, blue-toned environment",
+    "action": "A large, heavily modified mechanical vehicle, resembling a submarine or airship, is suspended in mid-air. It is covered in pipes, wires, and various mechanical components, and appears to be floating or hovering. The scene is viewed through a circular opening, with the edges of the frame dark and out of focus.",
+    "text": "",
+    "key": "A large, floating, heavily modified mechanical vehicle is viewed through a circular viewport in a dark, misty environment.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S019",
+   "start": 92.417,
+   "end": 95.417,
+   "frames": [
+    "frames/S019_0.jpg"
+   ],
+   "facts": {
+    "who": "the sniper: young Black man, short dark hair, dark padded jacket, holding a futuristic rifle with a scope",
+    "where": "indoor, dimly lit, blue-toned environment",
+    "action": "the sniper is aiming the rifle, looking intently through the scope",
+    "text": "",
+    "key": "a young Black man is aiming a futuristic rifle with a scope, his face partially visible as he focuses on a target",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S020",
+   "start": 95.417,
+   "end": 98.208,
+   "frames": [
+    "frames/S020_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a foggy, urban environment viewed through a circular lens",
+    "action": "a large, mechanical flying vehicle hovers over a cityscape with rooftops",
+    "text": "",
+    "key": "A large, mechanical flying vehicle is hovering over a cityscape, viewed through a circular lens.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S021",
+   "start": 98.208,
+   "end": 102.417,
+   "frames": [
+    "frames/S021_0.jpg"
+   ],
+   "facts": {
+    "who": [
+     "the old man",
+     "the sniper"
+    ],
+    "where": "a dimly lit, possibly indoor setting with a rope barrier and candlelight",
+    "action": "the old man lies motionless on a bed or cot, while the sniper crouches behind a rope barrier, aiming a rifle at him",
+    "text": "",
+    "key": "An older man with grey hair is lying down, while a young Black man in a padded jacket aims a rifle at him from behind a rope barrier.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S022",
+   "start": 102.417,
+   "end": 116.708,
+   "frames": [
+    "frames/S022_0.jpg",
+    "frames/S022_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a city with rooftops visible below, viewed through a circular lens or scope",
+    "action": "A large, complex, dark-colored flying machine with multiple bright lights and mechanical appendages hovers over the cityscape, emitting smoke or steam from its engines.",
+    "text": "",
+    "key": "A massive, steampunk-style flying vehicle is hovering menacingly over a city, seen through a circular viewfinder.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S023",
+   "start": 116.708,
+   "end": 119.875,
+   "frames": [
+    "frames/S023_0.jpg"
+   ],
+   "facts": {
+    "who": "the sniper: young Black man, short dark hair, dark padded jacket",
+    "where": "indoor, dimly lit, with a candle and stone balusters visible",
+    "action": "the sniper is aiming a futuristic rifle with a scope, holding it steady with both hands",
+    "text": "",
+    "key": "a young Black man in a dark padded jacket is aiming a futuristic rifle with a scope, suggesting a tense, action-oriented scene.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S024",
+   "start": 119.875,
+   "end": 134.917,
+   "frames": [
+    "frames/S024_0.jpg",
+    "frames/S024_1.jpg"
+   ],
+   "facts": {
+    "who": "the old man, the sniper",
+    "where": "a dim, cold, possibly makeshift balcony or upper level with a wooden railing, with a rope visible on the left",
+    "action": "the old man, with grey hair and a dark checked jacket, is leaning forward and then straightens up, clutching his chest with his right hand. In the background, the sniper, a young Black man in a dark padded jacket, is crouched and aiming his futuristic rifle.",
+    "text": "",
+    "key": "The old man is clutching his chest in apparent distress while the sniper remains in a combat-ready position behind him.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S025",
+   "start": 134.917,
+   "end": 140.0,
+   "frames": [
+    "frames/S025_0.jpg",
+    "frames/S025_1.jpg"
+   ],
+   "facts": {
+    "who": "the old man",
+    "where": "a dim, cluttered interior space with a wooden floor and a balcony in the background",
+    "action": "the old man is kneeling on a wooden platform, looking forward",
+    "text": "",
+    "key": "An older man with shoulder-length grey hair and a dark checked jacket is kneeling in a cluttered, dimly lit room.",
+    "confidence": 0.98
+   }
+  }
+ ],
+ "dialogue": [
+  {
+   "start": 2.9,
+   "end": 11.1,
+   "text": "We have main engine start. Four, three, two, one."
+  },
+  {
+   "start": 22.740000000000002,
+   "end": 36.1,
+   "text": "You're a jerk, Tom. Look, Celia, we have to follow our passions. You have your robotics and I just want to be awesome in space. Why don't you just admit that you're freaked out by my robot hand? I'm not freaked out by it's..."
+  },
+  {
+   "start": 37.36,
+   "end": 45.3,
+   "text": "Alright, fine. I'm freaked out. I'm having nightmares that I'm being chased by this giant robotic claw. Oh, whatever, Tom. We're done."
+  },
+  {
+   "start": 50.02,
+   "end": 53.7,
+   "text": "Robots memories synced and locked."
+  },
+  {
+   "start": 60.1,
+   "end": 62.4,
+   "text": "This is pretty freaky."
+  },
+  {
+   "start": 107.38,
+   "end": 110.2,
+   "text": "What is that?"
+  },
+  {
+   "start": 117.5,
+   "end": 118.7,
+   "text": "Shouldn't you be down there?"
+  },
+  {
+   "start": 130.98000000000002,
+   "end": 133.0,
+   "text": "I heard you guys talking last night."
+  },
+  {
+   "start": 136.16000000000003,
+   "end": 137.56,
+   "text": "It's not my fault, you know."
+  }
+ ],
+ "dialogue_asr": [
+  {
+   "start": 4.1800000000000015,
+   "end": 9.56,
+   "text": "We have main engine start. Four, three, two, one."
+  },
+  {
+   "start": 22.740000000000002,
+   "end": 35.88,
+   "text": "You're a jerk, Tom. Look, Celia, we have to follow our passions. You have your robotics and I just want to be awesome in space. Why don't you just admit that you're freaked out by my robot hand? I'm not freaked out by it's..."
+  },
+  {
+   "start": 37.36,
+   "end": 43.3,
+   "text": "Alright, fine. I'm freaked out. I'm having nightmares that I'm being chased by this giant robotic claw. Oh, whatever, Tom."
+  },
+  {
+   "start": 44.06,
+   "end": 44.84,
+   "text": "We're done."
+  },
+  {
+   "start": 50.02,
+   "end": 53.56,
+   "text": "Robots memories synced and locked."
+  },
+  {
+   "start": 60.1,
+   "end": 62.2,
+   "text": "This is pretty freaky."
+  },
+  {
+   "start": 107.38,
+   "end": 110.2,
+   "text": "What is that?"
+  },
+  {
+   "start": 117.5,
+   "end": 118.5,
+   "text": "Shouldn't you be down there?"
+  },
+  {
+   "start": 130.98000000000002,
+   "end": 132.78,
+   "text": "I heard you guys talking last night."
+  },
+  {
+   "start": 136.16000000000003,
+   "end": 137.56,
+   "text": "It's not my fault, you know."
+  }
+ ],
+ "speech_vad": [
+  {
+   "start": 2.9,
+   "end": 3.7
+  },
+  {
+   "start": 4.7,
+   "end": 6.6
+  },
+  {
+   "start": 6.8,
+   "end": 10.1
+  },
+  {
+   "start": 10.7,
+   "end": 11.1
+  },
+  {
+   "start": 24.6,
+   "end": 36.1
+  },
+  {
+   "start": 37.6,
+   "end": 43.7
+  },
+  {
+   "start": 44.3,
+   "end": 45.3
+  },
+  {
+   "start": 50.2,
+   "end": 51.9
+  },
+  {
+   "start": 52.1,
+   "end": 52.8
+  },
+  {
+   "start": 53.3,
+   "end": 53.7
+  },
+  {
+   "start": 60.9,
+   "end": 62.4
+  },
+  {
+   "start": 117.7,
+   "end": 118.7
+  },
+  {
+   "start": 131.5,
+   "end": 133.0
+  },
+  {
+   "start": 136.6,
+   "end": 137.5
+  }
+ ],
+ "gaps": [
+  {
+   "start": 0.3,
+   "end": 2.6
+  },
+  {
+   "start": 11.35,
+   "end": 22.44
+  },
+  {
+   "start": 45.55,
+   "end": 49.72
+  },
+  {
+   "start": 53.95,
+   "end": 59.8
+  },
+  {
+   "start": 62.65,
+   "end": 107.08
+  },
+  {
+   "start": 110.45,
+   "end": 117.2
+  },
+  {
+   "start": 118.95,
+   "end": 130.68
+  },
+  {
+   "start": 133.25,
+   "end": 135.86
+  },
+  {
+   "start": 137.81,
+   "end": 139.8
+  }
+ ],
+ "slots": [
+  {
+   "start": 0.3,
+   "end": 2.6,
+   "shots": [
+    "S001"
+   ],
+   "prev": []
+  },
+  {
+   "start": 11.35,
+   "end": 18.417,
+   "shots": [
+    "S002",
+    "S003"
+   ],
+   "prev": [
+    "S001"
+   ]
+  },
+  {
+   "start": 18.417,
+   "end": 22.44,
+   "shots": [
+    "S004"
+   ],
+   "prev": [
+    "S003"
+   ]
+  },
+  {
+   "start": 45.55,
+   "end": 49.72,
+   "shots": [
+    "S008"
+   ],
+   "prev": [
+    "S007"
+   ]
+  },
+  {
+   "start": 53.95,
+   "end": 59.8,
+   "shots": [
+    "S011",
+    "S012"
+   ],
+   "prev": [
+    "S010"
+   ]
+  },
+  {
+   "start": 62.65,
+   "end": 69.917,
+   "shots": [
+    "S012",
+    "S013"
+   ],
+   "prev": []
+  },
+  {
+   "start": 69.917,
+   "end": 74.083,
+   "shots": [
+    "S014"
+   ],
+   "prev": [
+    "S013"
+   ]
+  },
+  {
+   "start": 74.083,
+   "end": 79.375,
+   "shots": [
+    "S015"
+   ],
+   "prev": [
+    "S014"
+   ]
+  },
+  {
+   "start": 79.375,
+   "end": 82.125,
+   "shots": [
+    "S016"
+   ],
+   "prev": [
+    "S015"
+   ]
+  },
+  {
+   "start": 82.125,
+   "end": 84.833,
+   "shots": [
+    "S017"
+   ],
+   "prev": [
+    "S016"
+   ]
+  },
+  {
+   "start": 84.833,
+   "end": 92.417,
+   "shots": [
+    "S018"
+   ],
+   "prev": [
+    "S017"
+   ]
+  },
+  {
+   "start": 92.417,
+   "end": 95.417,
+   "shots": [
+    "S019"
+   ],
+   "prev": [
+    "S018"
+   ]
+  },
+  {
+   "start": 95.417,
+   "end": 98.208,
+   "shots": [
+    "S020"
+   ],
+   "prev": [
+    "S019"
+   ]
+  },
+  {
+   "start": 98.208,
+   "end": 102.417,
+   "shots": [
+    "S021"
+   ],
+   "prev": [
+    "S020"
+   ]
+  },
+  {
+   "start": 102.417,
+   "end": 107.08,
+   "shots": [
+    "S022"
+   ],
+   "prev": [
+    "S021"
+   ]
+  },
+  {
+   "start": 110.45,
+   "end": 117.2,
+   "shots": [
+    "S022",
+    "S023"
+   ],
+   "prev": []
+  },
+  {
+   "start": 118.95,
+   "end": 130.68,
+   "shots": [
+    "S023",
+    "S024"
+   ],
+   "prev": [
+    "S022"
+   ]
+  },
+  {
+   "start": 133.25,
+   "end": 135.86,
+   "shots": [
+    "S024",
+    "S025"
+   ],
+   "prev": []
+  },
+  {
+   "start": 137.81,
+   "end": 139.8,
+   "shots": [
+    "S025"
+   ],
+   "prev": []
+  }
+ ],
+ "lines": [
+  {
+   "id": "AD001",
+   "start": 0.3,
+   "window_end": 2.6,
+   "avail": 2.3,
+   "text": "Main engine start displayed",
+   "duration": 1.48,
+   "speed": 1.0,
+   "budget_words": 5,
+   "attempts": [
+    {
+     "text": "Countdown flashes on screen.",
+     "seconds": null,
+     "fit": false,
+     "reason": "text gate: on-screen text not read"
+    },
+    {
+     "text": "On-screen text: We have main engine start. Four, three, two, one. Countdown flashes on screen.",
+     "seconds": 5.79,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 5.8s > 2.3s"
+    },
+    {
+     "text": "Text: We have main engine start.",
+     "seconds": null,
+     "fit": false,
+     "reason": "style: first-person"
+    },
+    {
+     "text": "Main engine start displayed",
+     "seconds": 1.48,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S001"
+   ],
+   "text_read": [
+    "We have main engine start. Four, three, two, one."
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD001.wav",
+   "verify_shots": [
+    "S001"
+   ]
+  },
+  {
+   "id": "AD002",
+   "start": 11.35,
+   "window_end": 18.417,
+   "avail": 7.07,
+   "text": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+   "duration": 6.16,
+   "speed": 1.0,
+   "budget_words": 18,
+   "attempts": [
+    {
+     "text": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+     "seconds": 6.16,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S002",
+    "S003"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD002.wav",
+   "verify_shots": [
+    "S002",
+    "S003"
+   ]
+  },
+  {
+   "id": "AD003",
+   "start": 18.42,
+   "window_end": 22.44,
+   "avail": 4.02,
+   "text": "Bright vertical beam shines from industrial complex center.",
+   "duration": 3.45,
+   "speed": 1.0,
+   "budget_words": 10,
+   "attempts": [
+    {
+     "text": "Bright vertical beam shines from industrial complex center.",
+     "seconds": 3.45,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S004"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD003.wav",
+   "verify_shots": [
+    "S004"
+   ]
+  },
+  {
+   "id": "AD004",
+   "start": 45.55,
+   "window_end": 49.72,
+   "avail": 4.17,
+   "text": "Caption: Forty years later.",
+   "duration": 1.53,
+   "speed": 1.0,
+   "budget_words": 10,
+   "attempts": [
+    {
+     "text": "Caption: Forty years later.",
+     "seconds": 1.53,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S008"
+   ],
+   "text_read": [
+    "40 YEARS LATER"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD004.wav",
+   "verify_shots": [
+    "S007",
+    "S008"
+   ]
+  },
+  {
+   "id": "AD005",
+   "start": 53.95,
+   "window_end": 59.8,
+   "avail": 5.85,
+   "text": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+   "duration": 5.72,
+   "speed": 1.0,
+   "budget_words": 15,
+   "attempts": [
+    {
+     "text": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+     "seconds": 5.72,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S011",
+    "S012"
+   ],
+   "text_read": [
+    "SIMULATION READY..."
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD005.wav",
+   "verify_shots": [
+    "S011",
+    "S012"
+   ]
+  },
+  {
+   "id": "AD006",
+   "start": 62.65,
+   "window_end": 69.917,
+   "avail": 7.27,
+   "text": "Title: TEARS OF STEEL appears centered on black screen.",
+   "duration": 2.89,
+   "speed": 1.0,
+   "budget_words": 18,
+   "attempts": [
+    {
+     "text": "Title: TEARS OF STEEL appears centered on black screen.",
+     "seconds": 2.89,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S012",
+    "S013"
+   ],
+   "text_read": [
+    "TEARS OF STEEL"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD006.wav",
+   "verify_shots": [
+    "S012",
+    "S013"
+   ]
+  },
+  {
+   "id": "AD007",
+   "start": 69.92,
+   "window_end": 74.083,
+   "avail": 4.17,
+   "text": "Massive mechanical structure looms over smoky cityscape.",
+   "duration": 3.62,
+   "speed": 1.0,
+   "budget_words": 10,
+   "attempts": [
+    {
+     "text": "Massive mechanical structure looms over smoky cityscape.",
+     "seconds": 3.62,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S014"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD007.wav",
+   "verify_shots": [
+    "S014"
+   ]
+  },
+  {
+   "id": "AD008",
+   "start": 74.33,
+   "window_end": 79.375,
+   "avail": 5.04,
+   "text": "Candles flicker as a person rests on the floor near a window.",
+   "duration": 3.42,
+   "speed": 1.0,
+   "budget_words": 13,
+   "attempts": [
+    {
+     "text": "Candles flicker as a person rests on the floor near a window.",
+     "seconds": 3.42,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S015"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD008.wav",
+   "verify_shots": [
+    "S015"
+   ]
+  },
+  {
+   "id": "AD009",
+   "start": 79.38,
+   "window_end": 82.125,
+   "avail": 2.75,
+   "text": "Robotist creates killer robots",
+   "duration": 1.31,
+   "speed": 1.0,
+   "budget_words": 7,
+   "attempts": [
+    {
+     "text": "Newspaper headline: “ROBOTICIST CREATES KILLER ROBOTS”",
+     "seconds": 3.88,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 3.9s > 2.8s"
+    },
+    {
+     "text": "Robotist creates killer robots",
+     "seconds": 1.31,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S016"
+   ],
+   "text_read": [
+    "Dr Amst... ROBOTICIST CREATES KILLER ROBOTS"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD009.wav",
+   "verify_shots": [
+    "S016"
+   ]
+  },
+  {
+   "id": "AD010",
+   "start": 82.12,
+   "window_end": 84.833,
+   "avail": 2.71,
+   "text": "Sniper holds rifle steady, laser sight glowing.",
+   "duration": 2.69,
+   "speed": 1.15,
+   "budget_words": 7,
+   "attempts": [
+    {
+     "text": "Sniper holds rifle steady, laser sight glowing.",
+     "seconds": 2.99,
+     "fit": true,
+     "speed": 1.15,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S017"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD010.wav",
+   "verify_shots": [
+    "S017"
+   ]
+  },
+  {
+   "id": "AD011",
+   "start": 85.62,
+   "window_end": 92.417,
+   "avail": 6.8,
+   "text": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+   "duration": 5.12,
+   "speed": 1.0,
+   "budget_words": 17,
+   "attempts": [
+    {
+     "text": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+     "seconds": 5.12,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S018"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD011.wav",
+   "verify_shots": [
+    "S018"
+   ]
+  },
+  {
+   "id": "AD012",
+   "start": 92.42,
+   "window_end": 95.417,
+   "avail": 3.0,
+   "text": "Sniper’s focus tightens through rifle scope.",
+   "duration": 2.19,
+   "speed": 1.0,
+   "budget_words": 7,
+   "attempts": [
+    {
+     "text": "Sniper’s focus tightens through rifle scope.",
+     "seconds": 2.19,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S019"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD012.wav",
+   "verify_shots": [
+    "S019"
+   ]
+  },
+  {
+   "id": "AD013",
+   "start": 95.42,
+   "window_end": 98.208,
+   "avail": 2.79,
+   "text": "Mechanical flyer hovers over rooftops.",
+   "duration": 2.54,
+   "speed": 1.0,
+   "budget_words": 7,
+   "attempts": [
+    {
+     "text": "Mechanical flyer hovers over rooftops.",
+     "seconds": 2.54,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S020"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD013.wav",
+   "verify_shots": [
+    "S020"
+   ]
+  },
+  {
+   "id": "AD014",
+   "start": 98.76,
+   "window_end": 102.417,
+   "avail": 3.66,
+   "text": "Sniper aims rifle at motionless older man.",
+   "duration": 2.51,
+   "speed": 1.0,
+   "budget_words": 9,
+   "attempts": [
+    {
+     "text": "Sniper aims rifle at motionless older man.",
+     "seconds": 2.51,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S021"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD014.wav",
+   "verify_shots": [
+    "S021"
+   ]
+  },
+  {
+   "id": "AD015",
+   "start": 102.42,
+   "window_end": 107.08,
+   "avail": 4.66,
+   "text": "Massive steampunk flyer hovers, smoke billowing from engines.",
+   "duration": 3.61,
+   "speed": 1.0,
+   "budget_words": 12,
+   "attempts": [
+    {
+     "text": "Massive steampunk flyer hovers, smoke billowing from engines.",
+     "seconds": 3.61,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S022"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD015.wav",
+   "verify_shots": [
+    "S022"
+   ]
+  },
+  {
+   "id": "AD016",
+   "start": 110.45,
+   "window_end": 117.2,
+   "avail": 6.75,
+   "text": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+   "duration": 3.78,
+   "speed": 1.0,
+   "budget_words": 17,
+   "attempts": [
+    {
+     "text": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+     "seconds": 3.78,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S022",
+    "S023"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "Sniper",
+     "holds rifle steady",
+     "eyes focused through scope",
+     "in dim room"
+    ]
+   },
+   "flags": [
+    "unsupported: Sniper; holds rifle steady; eyes focused through scope; in dim room"
+   ],
+   "review": "pending",
+   "audio": "lines/AD016.wav",
+   "verify_shots": [
+    "S022"
+   ]
+  },
+  {
+   "id": "AD017",
+   "start": 118.95,
+   "window_end": 130.68,
+   "avail": 11.73,
+   "text": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+   "duration": 4.32,
+   "speed": 1.0,
+   "budget_words": 18,
+   "attempts": [
+    {
+     "text": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+     "seconds": 4.32,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S023",
+    "S024"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD017.wav",
+   "verify_shots": [
+    "S023",
+    "S024"
+   ]
+  },
+  {
+   "id": "AD018",
+   "start": 133.25,
+   "window_end": 135.86,
+   "avail": 2.61,
+   "text": "Old man kneels, gasping for breath.",
+   "duration": 1.94,
+   "speed": 1.0,
+   "budget_words": 6,
+   "attempts": [
+    {
+     "text": "Old man kneels, gasping for breath.",
+     "seconds": 1.94,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S024",
+    "S025"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD018.wav",
+   "verify_shots": [
+    "S024",
+    "S025"
+   ]
+  },
+  {
+   "id": "AD019",
+   "start": 137.81,
+   "window_end": 139.8,
+   "avail": 1.99,
+   "text": "Old man gasps, chest heaving.",
+   "duration": 1.7,
+   "speed": 1.0,
+   "budget_words": 5,
+   "attempts": [
+    {
+     "text": "Old man gasps, chest heaving.",
+     "seconds": 1.7,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S025"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "Old man gasps, chest heaving."
+    ]
+   },
+   "flags": [
+    "unsupported: Old man gasps, chest heaving."
+   ],
+   "review": "pending",
+   "audio": "lines/AD019.wav",
+   "verify_shots": [
+    "S025"
+   ]
+  }
+ ],
+ "metrics": {
+  "clip_seconds": 140.0,
+  "shots": 25,
+  "dialogue_spans": 9,
+  "gaps": 9,
+  "speech_seconds_asr": 37.9,
+  "speech_seconds_vad": 32.7,
+  "speech_seconds_merged": 42.9,
+  "usable_gap_seconds": 90.9,
+  "slots": 19,
+  "lines": 19,
+  "lines_placed": 19,
+  "skipped_repeats": 0,
+  "first_try_fit": 16,
+  "fit_after_loop": 19,
+  "mean_attempts": 1.21,
+  "rewrites": 4,
+  "ad_seconds": 60.0,
+  "ad_overlap_with_detected_dialogue_s": 0.0,
+  "flagged_lines": 2,
+  "unsupported_flags": 2,
+  "rescued_by_speed": 1,
+  "rescued_by_rewrite": 2,
+  "style_or_text_gate_rewrites": 2,
+  "shots_covered": 20,
+  "processing_seconds": 116.9,
+  "seconds_per_content_minute": 50.1,
+  "stages": {
+   "prepare": 3.41,
+   "shots": 3.03,
+   "dialogue_map": 5.5,
+   "load_models": 6.3,
+   "shot_facts": 73.38,
+   "write_fit_verify": 16.55,
+   "verify": 7.47,
+   "mix": 1.26,
+   "injected_error_test": 27.67
+  },
+  "llm": {
+   "calls": 67,
+   "seconds": 93.7,
+   "prompt_tokens": 28617,
+   "gen_tokens": 3242
+  },
+  "tts": {
+   "calls": 28,
+   "audio_seconds": 94.3
+  },
+  "mlx_peak_memory_gb": 13.7,
+  "injected_error_test": {
+   "clean_lines": 19,
+   "false_alarms_on_clean_lines": 2,
+   "verdict_missing": 0,
+   "cases": [
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD001",
+     "original": "Main engine start displayed",
+     "corrupted": "Main engine start displayed, holding a red umbrella.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "holding a red umbrella"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "noun",
+     "line": "AD001",
+     "original": "Main engine start displayed",
+     "corrupted": "Main rocket start displayed",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD002",
+     "original": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+     "corrupted": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines as rain falls.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "rain falls"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "verb",
+     "line": "AD002",
+     "original": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+     "corrupted": "Four rocket engines stand with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD003",
+     "original": "Bright vertical beam shines from industrial complex center.",
+     "corrupted": "Bright vertical beam shines from industrial complex center in a crowded train station.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "crowded train station"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD003",
+     "original": "Bright vertical beam shines from industrial complex center.",
+     "corrupted": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Simulation ready",
+      "Older man",
+      "brain model",
+      "robotic arm",
+      "glowing arcs"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD004",
+     "original": "Caption: Forty years later.",
+     "corrupted": "Caption: Forty years later. A sign reads EXIT.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD004",
+     "original": "Caption: Forty years later.",
+     "corrupted": "Title: TEARS OF STEEL appears centered on black screen.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Title: TEARS OF STEEL appears centered on black screen."
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD005",
+     "original": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+     "corrupted": "Simulation ready. Older woman examines brain model with robotic arm and glowing arcs.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Older woman",
+      "examines brain model with robotic arm and glowing arcs"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "noun",
+     "line": "AD005",
+     "original": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+     "corrupted": "orange ready. Older man examines brain model with robotic arm and glowing arcs.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "orange ready",
+      "Older man examines brain model with robotic arm and glowing arcs"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD006",
+     "original": "Title: TEARS OF STEEL appears centered on black screen.",
+     "corrupted": "Title: TEARS OF STEEL appears centered on black screen, holding a red umbrella.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "holding a red umbrella"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "verb",
+     "line": "AD006",
+     "original": "Title: TEARS OF STEEL appears centered on black screen.",
+     "corrupted": "Title: TEARS OF STEEL appears seen on black screen.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD007",
+     "original": "Massive mechanical structure looms over smoky cityscape.",
+     "corrupted": "Massive mechanical structure looms over smoky cityscape as rain falls.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "rain falls"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD007",
+     "original": "Massive mechanical structure looms over smoky cityscape.",
+     "corrupted": "Robotist creates killer robots",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Robotist",
+      "creates",
+      "killer robots"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD008",
+     "original": "Candles flicker as a person rests on the floor near a window.",
+     "corrupted": "Candles flicker as a person rests on the floor near a window in a crowded train station.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "crowded train station",
+      "candles flicker",
+      "person rests on the floor near a window"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD008",
+     "original": "Candles flicker as a person rests on the floor near a window.",
+     "corrupted": "Sniper holds rifle steady, laser sight glowing.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Sniper",
+      "holds rifle steady",
+      "laser sight glowing"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD009",
+     "original": "Robotist creates killer robots",
+     "corrupted": "Robotist creates killer robots. A sign reads EXIT.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "A sign reads EXIT."
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "noun",
+     "line": "AD009",
+     "original": "Robotist creates killer robots",
+     "corrupted": "Robotist creates tool robots",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Robotist creates tool robots"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD010",
+     "original": "Sniper holds rifle steady, laser sight glowing.",
+     "corrupted": "Sniper holds rifle steady, laser sight glowing beside a white horse.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "laser sight glowing beside a white horse"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "verb",
+     "line": "AD010",
+     "original": "Sniper holds rifle steady, laser sight glowing.",
+     "corrupted": "Sniper straightens rifle steady, laser sight glowing.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD011",
+     "original": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+     "corrupted": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport, holding a red umbrella.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "holding a red umbrella"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD011",
+     "original": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+     "corrupted": "Mechanical flyer hovers over rooftops.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Mechanical flyer",
+      "hovers over rooftops"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD012",
+     "original": "Sniper’s focus tightens through rifle scope.",
+     "corrupted": "Sniper’s focus tightens through rifle scope as rain falls.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "rain falls"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD012",
+     "original": "Sniper’s focus tightens through rifle scope.",
+     "corrupted": "Sniper aims rifle at motionless older man.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "motionless older man"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD013",
+     "original": "Mechanical flyer hovers over rooftops.",
+     "corrupted": "Mechanical flyer hovers over rooftops in a crowded train station.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "crowded train station"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "noun",
+     "line": "AD013",
+     "original": "Mechanical flyer hovers over rooftops.",
+     "corrupted": "Mechanical sniper hovers over rooftops.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Mechanical sniper"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD014",
+     "original": "Sniper aims rifle at motionless older man.",
+     "corrupted": "Sniper aims rifle at motionless older woman.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Sniper",
+      "aims rifle at motionless older woman"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "verb",
+     "line": "AD014",
+     "original": "Sniper aims rifle at motionless older man.",
+     "corrupted": "Sniper shines rifle at motionless older man.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD015",
+     "original": "Massive steampunk flyer hovers, smoke billowing from engines.",
+     "corrupted": "Massive steampunk flyer hovers, smoke billowing from engines beside a white horse.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "white horse"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD015",
+     "original": "Massive steampunk flyer hovers, smoke billowing from engines.",
+     "corrupted": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Old man clutches chest, gasps",
+      "sniper holds rifle steady, focused"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD016",
+     "original": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+     "corrupted": "Sniper holds rifle steady, eyes focused through scope in dim room, holding a red umbrella.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Sniper",
+      "holds rifle steady",
+      "eyes focused through scope",
+      "in dim room",
+      "holding a red umbrella"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD016",
+     "original": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+     "corrupted": "Old man kneels, gasping for breath.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Old man",
+      "kneels",
+      "gasping for breath"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD017",
+     "original": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+     "corrupted": "Old woman clutches chest, gasps; sniper holds rifle steady, focused.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Old woman",
+      "gasps"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "noun",
+     "line": "AD017",
+     "original": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+     "corrupted": "Old man clutches chest, flames; sniper holds rifle steady, focused.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "flames"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD018",
+     "original": "Old man kneels, gasping for breath.",
+     "corrupted": "Old man kneels, gasping for breath in a crowded train station.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "gasping for breath",
+      "crowded train station"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "verb",
+     "line": "AD018",
+     "original": "Old man kneels, gasping for breath.",
+     "corrupted": "Old man kneels, hovering for breath.",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD019",
+     "original": "Old man gasps, chest heaving.",
+     "corrupted": "Old man gasps, chest heaving. A sign reads EXIT.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Old man gasps, chest heaving",
+      "A sign reads EXIT"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD019",
+     "original": "Old man gasps, chest heaving.",
+     "corrupted": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "Old man clutches chest, gasps",
+      "sniper holds rifle steady, focused"
+     ]
+    }
+   ],
+   "easy": {
+    "planted": 19,
+    "caught": 18,
+    "catch_rate": 0.95
+   },
+   "hard": {
+    "planted": 19,
+    "caught": 13,
+    "catch_rate": 0.68,
+    "by_kind": {
+     "noun": "4/5",
+     "verb": "0/5",
+     "character": "0/0",
+     "neighbour": "9/9"
+    }
+   },
+   "planted": 19,
+   "caught": 18,
+   "catch_rate": 0.95
+  }
+ }
+}
