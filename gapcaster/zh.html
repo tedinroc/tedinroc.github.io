@@ -117,7 +117,7 @@
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px"><a href="evidence/8b/">實測 8B 精簡版：峰值 13.7 GB、每分鐘內容 50 秒、19/19 句塞進空檔</a>——可打開那次跑與取捨。已知限制：目前只支援英文；短句可能在後面的鏡頭出現前就講完（全片 70 句中有 10 句）；文字規則只強制改寫一次；時間是在同時跑其他工作的筆電上量的。<a href="https://github.com/tedinroc/gapcaster#known-limitations">完整清單在 README</a>。</p>
+    <p class="sub" style="margin-top:14px"><a href="evidence/8b/">實測 8B 精簡版：峰值 13.7 GB、每分鐘內容 50 秒、19/19 句塞進空檔</a>——可打開那次跑與取捨。繁體中文 8B 版（<a href='sample-zh/review.html'>中文審核頁</a>）峰值 13.8 GB、15/15 句塞進空檔。已知限制：短句可能在後面的鏡頭出現前就講完（全片 70 句中有 10 句）；文字規則只強制改寫一次；時間是在同時跑其他工作的筆電上量的。<a href="https://github.com/tedinroc/gapcaster#known-limitations">完整清單在 README</a>。</p>
   </section>
 
   <section id="how">
@@ -148,7 +148,7 @@
     <h2>為什麼是 Human-Scale</h2>
     <p class="sub">Mozilla 的 Human-Scale AI 要求小而省、在意使用者控制、針對特定社群。GapCaster 的三個回答：</p>
     <div class="principles">
-      <div class="principle"><h3><span>Small.</span></h3><p>一張本地加速卡、開源權重、不呼叫 frontier API。Stage I：Qwen3.8-27B（8-bit）讀鏡頭、Whisper large-v3-turbo 聽對話、Kokoro-82M 發聲，峰值 33–34 GB。Stage II：一張 ASUS UGen300（Intel Arc Pro B70，32 GB）；另有規畫中的 8B 小機器 profile。</p></div>
+      <div class="principle"><h3><span>Small.</span></h3><p>一張本地加速卡、開源權重、不呼叫 frontier API。Stage I：Qwen3.8-27B（8-bit）讀鏡頭、Whisper large-v3-turbo 聽對話、Kokoro-82M 發聲，峰值 33–34 GB。Human-Scale 8B 版（<a href='../gapcaster-small/zh.html'>GapCaster Small</a>）支援英文與繁體中文，單台筆電峰值 13.7–13.8 GB。</p></div>
       <div class="principle"><h3><span>Intentional.</span></h3><p>影片不離開機器：沒有帳號、沒有遙測、沒有雲端。每一句都帶著來源事實、所有草稿、塞入嘗試、風格警示與驗證判定；撰稿人可以稽核、退回，只有批准的句子被混音。程式 MIT，模型授權逐項記錄。</p></div>
       <div class="principle"><h3><span>Tailored.</span></h3><p>為盲／低視力觀眾與口述影像撰稿人設計，繞著 AD 的定義性限制：空檔。下一步是華語／台語口述影像，與本地聽眾和撰稿人共同設計——因為好的旁白在每個語言與文化裡聽起來都不一樣。</p></div>
     </div>
@@ -158,8 +158,8 @@
     <h2>現在與下一步</h2>
     <div class="timeline">
       <div class="tlrow"><div class="when">Stage I · 完成</div><div class="what">Apple M5 Max 筆電原型：完整 pipeline、2:20 與全片跑、審核頁、MIT repo、21 個單元測試。</div></div>
-      <div class="tlrow"><div class="when">2026 · 現在</div><div class="what">入選 ASUS UGen AI League 2026 的 20 支 Stage II 決賽隊伍；Stage II 於 11/6–12/4 進行，主辦提供 ASUS UGen300 32 GB 加速器與驗證環境。</div></div>
-      <div class="tlrow"><div class="when">下一步</div><div class="what">移植到 UGen300 並量測延遲、能耗、峰值記憶體；在 held-out 影片比較 27B 與 8B；與本地撰稿人做華語 AD；做聽眾理解度研究與撰稿人編輯時間研究。</div></div>
+      <div class="tlrow"><div class="when">2026 · 現在</div><div class="what">入選 ASUS UGen AI League 2026 的 20 支 Stage II 決賽隊伍；Human-Scale 8B 版（<a href='../gapcaster-small/zh.html'>GapCaster Small</a>）已完成繁體中文口述草稿與本機審核工作台。</div></div>
+      <div class="tlrow"><div class="when">下一步</div><div class="what">在未調校新片比較 8B 與 27B；與台灣口述影像員調校繁體中文規則與語音；做聽眾理解度研究與撰稿人編輯時間研究。</div></div>
       <div class="tlrow"><div class="when">公開</div><div class="what">開源程式、prompt、評測腳本、model card 與 AD 工作流程指南；做出無障礙的審核流程；把失敗也寫出來。</div></div>
     </div>
   </section>

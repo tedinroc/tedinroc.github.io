@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GapCaster Small — 塞進對白空隙的本地口述影像（繁中／英文）</title>
+<meta name="description" content="GapCaster 的 Human-Scale 版本：以 10B 以下開源小模型在單台筆電離線草擬繁體中文與英文口述影像，每句附畫面證據，由口述影像員核准後才匯出。">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="zh.html">Gap<span>Caster</span> Small</a>
+    <nav class="navlinks" aria-label="主要導覽">
+      <a href="#sample">中英樣本</a>
+      <a href="video/">2 分鐘短片</a>
+      <a href="#evidence">實測數據</a>
+      <a href="#how">運作方式</a>
+      <a href="#human-scale">Human-Scale</a>
+      <a href="#pilot">聆聽測試</a>
+      <a class="primary" href="https://github.com/tedinroc/gapcaster-small">GitHub ↗</a>
+      <a href="index.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:0">
+    <div>
+      <p class="eyebrow"><b>Human-Scale 版本</b> · ≤10B 開源小模型 · 繁體中文／英文 · 全程本機</p>
+      <h1>塞進對白空隙的口述影像。</h1>
+      <p class="lede">GapCaster Small 在一台筆電上為完成的影片草擬口述影像：找出對白之間的空檔、按可用秒數寫旁白、念出來量實際長度、太長就微幅加速或縮短改寫，並把每句的畫面證據交給口述影像員審核。影片與草稿絕不離開本機。</p>
+      <div class="actions">
+        <a class="btn" href="#sample">試聽中文與英文樣本</a>
+        <a class="btn secondary" href="video/">觀看 2 分鐘介紹片</a>
+        <a class="btn secondary" href="https://github.com/tedinroc/gapcaster-small">原始碼 ↗</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="《Tears of Steel》中文口述草稿片段">
+        <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
+        你的瀏覽器無法播放，<a href="../gapcaster/pilot/media/described-140-zh.m4a">改聽音訊</a>。
+      </video>
+      <div class="cap"><span>0:00–2:20 · 8B 中文口述草稿（峰值 13.8 GB）</span><span>Tears of Steel · CC BY 3.0</span></div>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="小模型實測數字">
+    <div class="stat"><b>19 / 19</b><small>英文旁白塞進空檔（8B）</small></div>
+    <div class="stat"><b>15 / 15</b><small>繁中旁白塞進空檔（8B）</small></div>
+    <div class="stat"><b>0.0 秒</b><small>旁白壓到偵測到的對話</small></div>
+    <div class="stat"><b>13.8 GB</b><small>單台筆電峰值記憶體（原 27B 需 33.2 GB）</small></div>
+  </div>
+
+  <section id="sample">
+    <h2>聽出差別</h2>
+    <p class="sub">下方是同一段 2 分 20 秒的《Tears of Steel》：左邊沒有口述，右邊是 GapCaster Small 產生的繁體中文口述草稿（尚未經人工編修，誠實呈現優缺點）。</p>
+    <div class="grid2">
+      <div class="videocard">
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-original.jpg" aria-label="原片，無口述影像">
+          <source src="../gapcaster/pilot/media/original-140.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/original-140.m4a">只有音訊</a>
+        </video>
+        <div class="body">
+          <span class="label orig">原片 · 無口述</span>
+          <h3>視障觀眾平常聽到的版本</h3>
+          <p class="note">只有英文對白與配樂，沒有任何畫面資訊。依 NCC 報告，2025 年台灣所有無線電視台合計僅播出 269.75 小時口述影像節目（公視新製僅 53 小時）。</p>
+        </div>
+      </div>
+      <div class="videocard">
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="GapCaster Small 中文口述草稿版">
+          <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/described-140-zh.m4a">只有音訊</a>
+        </video>
+        <div class="body">
+          <span class="label desc">GapCaster Small · 繁中草稿（8B）</span>
+          <h3>同一場戲，塞進空檔的中文口述</h3>
+          <p class="note">15 句全部塞進對白空檔、0.0 秒壓到偵測對話。這是未經口述影像員修改的 AI 初稿——點下方審核頁可直接看每句證據與錯誤。</p>
+          <details><summary>繁中旁白逐字稿（15 句）</summary><pre>[00:00:11.350] 四具引擎噴出粉白火光，煙霧翻滾。
+[00:00:18.420] 工業區中央射出強光，照亮灰濛天空。
+[00:00:45.550] 四十年後，霓虹燈閃爍
+[00:00:53.950] 字幕：SIMULATION READY...
+[00:01:02.650] 字幕：TEARS OF STEEL。
+[00:01:09.920] 巨大的機械結構壓住高樓與船桅
+[00:01:14.080] 席莉雅躺在地板上，兩盞蠟燭亮著。
+[00:01:19.380] 字幕：機械師製造殺人機器。
+[00:01:22.730] 狙擊手穩穩扣住槍機。
+[00:01:32.420] 狙擊手凝視前方，呼吸放緩。
+[00:01:36.000] 機械飛行器盤旋城上。
+[00:01:39.000] 老人靜躺床上，狙擊手低姿瞄準。
+[00:01:43.150] 蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。
+[00:01:58.950] 老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。
+[00:02:13.250] 老人跪地，仰頭。</pre></details>
+        </div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:18px">打開撰稿人審核頁：<a href="sample-zh/review.html">繁體中文 8B 審核頁</a>（<a href="sample-zh/ad_script.txt">純文字稿</a>）· <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/sample/review.html">27B 對照組審核頁</a>。</p>
+  </section>
+
+  <section id="evidence">
+    <h2>小模型實測與誠實限制</h2>
+    <p class="sub">於單台 Apple M5 Max 筆電實測《Tears of Steel》0:00–2:20（開發用片段，屬 in-sample；下一步為未調校新片測試）。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>指標（0:00–2:20）</th><th>8B 英文</th><th>8B 繁體中文</th><th>27B 對照組（2:20 / 全片 12:14）</th></tr></thead>
+        <tbody>
+          <tr><td>塞進空檔的句數</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><td>旁白壓到偵測到的對話</td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
+          <tr><td>旁白壓到官方字幕 cue</td><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>0.4 秒 · 5.8 秒</td></tr>
+          <tr><td>驗證器抓到明顯植入錯誤</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><td>驗證器抓到片內隱蔽錯誤</td><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><td>中點畫面逐句檢查（正確 · 小錯 · 錯）</td><td>—</td><td>7 · 7 · 1</td><td>13 · 4 · 0 · —</td></tr>
+          <tr><td>每分鐘影片處理時間</td><td>50 秒</td><td>39 秒</td><td>125 秒 · 137 秒</td></tr>
+          <tr><td>峰值模型記憶體</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:14px">誠實取捨：從 27B 降到 8B 省下近六成記憶體、時間貼合率維持 100%，但畫面辨識變弱（中文 <code>AD007</code> 把躺著的老人誤認成席莉雅，且 8B 驗證器漏掉細微動詞替換）。因此人工審核是強制放行關卡，不是事後點綴。</p>
+  </section>
+
+  <section id="how">
+    <h2>六個本機階段＋免指令稿本機工作台</h2>
+    <div class="how">
+      <div class="step"><span class="n">01</span><h3>標出對白空檔</h3><p>Whisper large-v3-turbo（0.8B）與 Silero VAD 雙重偵測語音，保留前後緩衝並於鏡頭切換處分段。</p></div>
+      <div class="step"><span class="n">02</span><h3>擷取鏡頭事實</h3><p>Qwen3-VL-8B 輸出結構化畫面事實；由口述影像員撰寫的角色表決定人物何時具名。</p></div>
+      <div class="step"><span class="n">03</span><h3>依字數預算撰寫</h3><p>中文以每秒 4.0 字計算上限、繁體中文儲存；自動過濾片頭贊助與演職員名單。</p></div>
+      <div class="step"><span class="n">04</span><h3>配音並實測秒數</h3><p>Kokoro-82M 實際念出每一句並量測時長，超時就試 1.08×／1.15× 或依溢出秒數重寫。</p></div>
+      <div class="step"><span class="n">05</span><h3>風格把關與查核</h3><p>中文規則擋下「我們看到」「鏡頭」「似乎／好像」；驗證器核對播出當下的畫面事實。</p></div>
+      <div class="step"><span class="n">06</span><h3>本機審核工作台</h3><p><code>gapcaster web</code> 啟動 <code>127.0.0.1</code> 網頁介面，讓口述影像員免打指令審核修改並一鍵匯出核准音軌。</p></div>
+    </div>
+  </section>
+
+  <section id="human-scale">
+    <h2>Small · Intentional · Tailored</h2>
+    <div class="principles">
+      <div class="principle"><h3><span>Small.</span></h3><p>核心模型全數 ≤10B 開源權重（Qwen3-VL-8B、Whisper 0.8B、Silero VAD、Kokoro-82M），單台筆電約 14 GB 即可離線執行，適合處理未公開片源與預算有限的單位。</p></div>
+      <div class="principle"><h3><span>Intentional.</span></h3><p>影片、字幕與草稿全程留在 <code>127.0.0.1</code>，無雲端、無遙測。每句保留完整 JSON 證據鏈，未經人工核准絕不混音。</p></div>
+      <div class="principle"><h3><span>Tailored.</span></h3><p>針對對白空隙這項口述影像核心限制設計，並為台灣補上繁體中文規則、字數預算、本機瀏覽器工作台與螢幕閱讀器友善的聆聽測試。</p></div>
+    </div>
+  </section>
+
+  <section id="pilot">
+    <div class="callout">
+      <h2>視障聽眾與口述影像員試用招募中</h2>
+      <p>15 分鐘線上匿名測試（不錄音、支援螢幕閱讀器）：比較同一段 2 分 20 秒影片「無口述」與「中文／英文口述草稿」的差異。負面回饋對我們最有幫助。</p>
+      <div class="actions">
+        <a class="btn" href="../gapcaster/pilot/">進入線上聆聽測試</a>
+        <a class="btn secondary" href="sample-zh/review.html">試用中文審核頁</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <p><b>GapCaster Small</b> · MIT 開源，© 2026 Ted Chen。延續自已凍結的 <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> 原型。</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-zh/review.html">中文審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/pilot/">聆聽測試</a> · <a href="index.html">English</a></p>
+    </div>
+    <div>
+      <p class="pill">≤10B 開源小模型</p>
+      <p class="pill">繁體中文 · English</p>
+      <p class="pill">本機離線 · MIT</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

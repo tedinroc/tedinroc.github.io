@@ -1,0 +1,545 @@
+{
+ "clip_seconds": 140.0,
+ "shots": 25,
+ "dialogue_spans": 9,
+ "gaps": 9,
+ "speech_seconds_asr": 37.9,
+ "speech_seconds_vad": 32.7,
+ "speech_seconds_merged": 42.9,
+ "usable_gap_seconds": 90.9,
+ "slots": 19,
+ "lines": 19,
+ "lines_placed": 19,
+ "skipped_repeats": 0,
+ "first_try_fit": 16,
+ "fit_after_loop": 19,
+ "mean_attempts": 1.21,
+ "rewrites": 4,
+ "ad_seconds": 60.0,
+ "ad_overlap_with_detected_dialogue_s": 0.0,
+ "flagged_lines": 2,
+ "unsupported_flags": 2,
+ "rescued_by_speed": 1,
+ "rescued_by_rewrite": 2,
+ "style_or_text_gate_rewrites": 2,
+ "shots_covered": 20,
+ "processing_seconds": 116.9,
+ "seconds_per_content_minute": 50.1,
+ "stages": {
+  "prepare": 3.41,
+  "shots": 3.03,
+  "dialogue_map": 5.5,
+  "load_models": 6.3,
+  "shot_facts": 73.38,
+  "write_fit_verify": 16.55,
+  "verify": 7.47,
+  "mix": 1.26,
+  "injected_error_test": 27.67
+ },
+ "llm": {
+  "calls": 67,
+  "seconds": 93.7,
+  "prompt_tokens": 28617,
+  "gen_tokens": 3242
+ },
+ "tts": {
+  "calls": 28,
+  "audio_seconds": 94.3
+ },
+ "mlx_peak_memory_gb": 13.7,
+ "injected_error_test": {
+  "clean_lines": 19,
+  "false_alarms_on_clean_lines": 2,
+  "verdict_missing": 0,
+  "cases": [
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD001",
+    "original": "Main engine start displayed",
+    "corrupted": "Main engine start displayed, holding a red umbrella.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "holding a red umbrella"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "noun",
+    "line": "AD001",
+    "original": "Main engine start displayed",
+    "corrupted": "Main rocket start displayed",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD002",
+    "original": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+    "corrupted": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines as rain falls.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "rain falls"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "verb",
+    "line": "AD002",
+    "original": "Four rocket engines roar with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+    "corrupted": "Four rocket engines stand with pinkish-white flames; white exhaust plumes surge from cylindrical engines.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD003",
+    "original": "Bright vertical beam shines from industrial complex center.",
+    "corrupted": "Bright vertical beam shines from industrial complex center in a crowded train station.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "crowded train station"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD003",
+    "original": "Bright vertical beam shines from industrial complex center.",
+    "corrupted": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Simulation ready",
+     "Older man",
+     "brain model",
+     "robotic arm",
+     "glowing arcs"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD004",
+    "original": "Caption: Forty years later.",
+    "corrupted": "Caption: Forty years later. A sign reads EXIT.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD004",
+    "original": "Caption: Forty years later.",
+    "corrupted": "Title: TEARS OF STEEL appears centered on black screen.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Title: TEARS OF STEEL appears centered on black screen."
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD005",
+    "original": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+    "corrupted": "Simulation ready. Older woman examines brain model with robotic arm and glowing arcs.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Older woman",
+     "examines brain model with robotic arm and glowing arcs"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "noun",
+    "line": "AD005",
+    "original": "Simulation ready. Older man examines brain model with robotic arm and glowing arcs.",
+    "corrupted": "orange ready. Older man examines brain model with robotic arm and glowing arcs.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "orange ready",
+     "Older man examines brain model with robotic arm and glowing arcs"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD006",
+    "original": "Title: TEARS OF STEEL appears centered on black screen.",
+    "corrupted": "Title: TEARS OF STEEL appears centered on black screen, holding a red umbrella.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "holding a red umbrella"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "verb",
+    "line": "AD006",
+    "original": "Title: TEARS OF STEEL appears centered on black screen.",
+    "corrupted": "Title: TEARS OF STEEL appears seen on black screen.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD007",
+    "original": "Massive mechanical structure looms over smoky cityscape.",
+    "corrupted": "Massive mechanical structure looms over smoky cityscape as rain falls.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "rain falls"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD007",
+    "original": "Massive mechanical structure looms over smoky cityscape.",
+    "corrupted": "Robotist creates killer robots",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Robotist",
+     "creates",
+     "killer robots"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD008",
+    "original": "Candles flicker as a person rests on the floor near a window.",
+    "corrupted": "Candles flicker as a person rests on the floor near a window in a crowded train station.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "crowded train station",
+     "candles flicker",
+     "person rests on the floor near a window"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD008",
+    "original": "Candles flicker as a person rests on the floor near a window.",
+    "corrupted": "Sniper holds rifle steady, laser sight glowing.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Sniper",
+     "holds rifle steady",
+     "laser sight glowing"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD009",
+    "original": "Robotist creates killer robots",
+    "corrupted": "Robotist creates killer robots. A sign reads EXIT.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "A sign reads EXIT."
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "noun",
+    "line": "AD009",
+    "original": "Robotist creates killer robots",
+    "corrupted": "Robotist creates tool robots",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Robotist creates tool robots"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD010",
+    "original": "Sniper holds rifle steady, laser sight glowing.",
+    "corrupted": "Sniper holds rifle steady, laser sight glowing beside a white horse.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "laser sight glowing beside a white horse"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "verb",
+    "line": "AD010",
+    "original": "Sniper holds rifle steady, laser sight glowing.",
+    "corrupted": "Sniper straightens rifle steady, laser sight glowing.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD011",
+    "original": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+    "corrupted": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport, holding a red umbrella.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "holding a red umbrella"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD011",
+    "original": "A large, floating mechanical vehicle hovers in misty blue light through a circular viewport.",
+    "corrupted": "Mechanical flyer hovers over rooftops.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Mechanical flyer",
+     "hovers over rooftops"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD012",
+    "original": "Sniper’s focus tightens through rifle scope.",
+    "corrupted": "Sniper’s focus tightens through rifle scope as rain falls.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "rain falls"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD012",
+    "original": "Sniper’s focus tightens through rifle scope.",
+    "corrupted": "Sniper aims rifle at motionless older man.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "motionless older man"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD013",
+    "original": "Mechanical flyer hovers over rooftops.",
+    "corrupted": "Mechanical flyer hovers over rooftops in a crowded train station.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "crowded train station"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "noun",
+    "line": "AD013",
+    "original": "Mechanical flyer hovers over rooftops.",
+    "corrupted": "Mechanical sniper hovers over rooftops.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Mechanical sniper"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD014",
+    "original": "Sniper aims rifle at motionless older man.",
+    "corrupted": "Sniper aims rifle at motionless older woman.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Sniper",
+     "aims rifle at motionless older woman"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "verb",
+    "line": "AD014",
+    "original": "Sniper aims rifle at motionless older man.",
+    "corrupted": "Sniper shines rifle at motionless older man.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD015",
+    "original": "Massive steampunk flyer hovers, smoke billowing from engines.",
+    "corrupted": "Massive steampunk flyer hovers, smoke billowing from engines beside a white horse.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "white horse"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD015",
+    "original": "Massive steampunk flyer hovers, smoke billowing from engines.",
+    "corrupted": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Old man clutches chest, gasps",
+     "sniper holds rifle steady, focused"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD016",
+    "original": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+    "corrupted": "Sniper holds rifle steady, eyes focused through scope in dim room, holding a red umbrella.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Sniper",
+     "holds rifle steady",
+     "eyes focused through scope",
+     "in dim room",
+     "holding a red umbrella"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD016",
+    "original": "Sniper holds rifle steady, eyes focused through scope in dim room.",
+    "corrupted": "Old man kneels, gasping for breath.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Old man",
+     "kneels",
+     "gasping for breath"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD017",
+    "original": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+    "corrupted": "Old woman clutches chest, gasps; sniper holds rifle steady, focused.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Old woman",
+     "gasps"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "noun",
+    "line": "AD017",
+    "original": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+    "corrupted": "Old man clutches chest, flames; sniper holds rifle steady, focused.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "flames"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD018",
+    "original": "Old man kneels, gasping for breath.",
+    "corrupted": "Old man kneels, gasping for breath in a crowded train station.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "gasping for breath",
+     "crowded train station"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "verb",
+    "line": "AD018",
+    "original": "Old man kneels, gasping for breath.",
+    "corrupted": "Old man kneels, hovering for breath.",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD019",
+    "original": "Old man gasps, chest heaving.",
+    "corrupted": "Old man gasps, chest heaving. A sign reads EXIT.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Old man gasps, chest heaving",
+     "A sign reads EXIT"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD019",
+    "original": "Old man gasps, chest heaving.",
+    "corrupted": "Old man clutches chest, gasps; sniper holds rifle steady, focused.",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "Old man clutches chest, gasps",
+     "sniper holds rifle steady, focused"
+    ]
+   }
+  ],
+  "easy": {
+   "planted": 19,
+   "caught": 18,
+   "catch_rate": 0.95
+  },
+  "hard": {
+   "planted": 19,
+   "caught": 13,
+   "catch_rate": 0.68,
+   "by_kind": {
+    "noun": "4/5",
+    "verb": "0/5",
+    "character": "0/0",
+    "neighbour": "9/9"
+   }
+  },
+  "planted": 19,
+  "caught": 18,
+  "catch_rate": 0.95
+ },
+ "reference_dialogue_cues": 14,
+ "ad_overlap_with_reference_subtitles_s": 0.59
+}

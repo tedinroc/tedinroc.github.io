@@ -1,0 +1,41 @@
+WEBVTT
+
+1
+00:00:00.150 --> 00:00:10.800
+I'm Ted Chen, an independent engineer in Taiwan. This is GapCaster: audio description that fits the silences between dialogue, on small models that run on one laptop.
+
+2
+00:00:11.104 --> 00:00:16.104
+[Original film without audio description: dialogue and score, but not the picture.]
+
+3
+00:00:16.104 --> 00:00:21.500
+[Mandarin AD draft] 字幕：機械師製造殺人機器。 (Headline: robot maker creates killer robots.)
+
+4
+00:00:21.500 --> 00:00:27.500
+[Mandarin AD draft] 狙擊手穩穩扣住槍機。 (The sniper holds the trigger steady.)
+
+5
+00:00:28.000 --> 00:00:34.104
+[Mandarin AD draft] 狙擊手凝視前方，呼吸放緩。 (The sniper stares ahead, breathing slowly.)
+
+6
+00:00:34.200 --> 00:00:48.300
+It maps the silences with two speech detectors, reads every shot with an 8B vision model, writes to the time available, speaks the line, measures it, and rewrites until it fits. No cloud, no frontier API.
+
+7
+00:00:48.600 --> 00:00:56.300
+Every line keeps its evidence. A human describer approves, edits or rejects each one, and only approved lines are mixed.
+
+8
+00:00:56.550 --> 00:01:08.000
+On a laptop, every placed line fits its silence, in English and in Mandarin, at about 14 GB. The descriptions still make mistakes, so a describer stays in charge.
+
+9
+00:01:08.250 --> 00:01:22.400
+In Taiwan, all terrestrial channels together aired about 270 hours of described TV last year. I want describer groups, schools and small studios to describe what they now skip, with blind listeners shaping the tool.
+
+10
+00:01:22.600 --> 00:01:30.500
+Small models. Local control. A person in charge. GapCaster is open source, and I'm looking for partners.

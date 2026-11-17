@@ -123,7 +123,7 @@
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px"><a href="evidence/8b/">Measured 8B lean profile: 13.7 GB peak, 50 s per content minute, 19/19 lines fitted</a> — inspect the run and its trade-offs. Known limitations: English only; a short line can finish before a later shot appears (10 of 70 lines in the full film); the text gate forces one rewrite; timings were measured on a laptop also running other work. <a href="https://github.com/tedinroc/gapcaster#known-limitations">Full list in the README</a>.</p>
+    <p class="sub" style="margin-top:14px"><a href="evidence/8b/">Measured 8B lean profile: 13.7 GB peak, 50 s per content minute, 19/19 lines fitted</a> — inspect the run and its trade-offs. Mandarin mode (<a href='sample-zh/review.html'>review page</a>) now runs at 13.8 GB (15/15 lines fitted). Known limitations: a short line can finish before a later shot appears (10 of 70 lines in the full film); the text gate forces one rewrite; timings were measured on a laptop also running other work. <a href="https://github.com/tedinroc/gapcaster#known-limitations">Full list in the README</a>.</p>
   </section>
 
   <section id="how">
@@ -154,7 +154,7 @@
     <h2>Built to be Human-Scale</h2>
     <p class="sub">The Mozilla Foundation Incubator's Human-Scale AI cohort asks for technology that is small, intentional and tailored. This is how GapCaster answers each.</p>
     <div class="principles">
-      <div class="principle"><h3><span>Small.</span></h3><p>One local acceleration device, open-weight models, no frontier API. Stage I: Qwen3.8-27B (8-bit) for shot facts, Whisper large-v3-turbo for dialogue, Kokoro-82M for speech; 33–34 GB peak. Stage II: one ASUS UGen300 (Intel Arc Pro B70, 32 GB), with a planned 8B profile for smaller hardware.</p></div>
+      <div class="principle"><h3><span>Small.</span></h3><p>One local acceleration device, open-weight models, no frontier API. Stage I: Qwen3.8-27B (8-bit) for shot facts, Whisper large-v3-turbo for dialogue, Kokoro-82M for speech; 33–34 GB peak. A Human-Scale 8B edition (<a href='../gapcaster-small/'>GapCaster Small</a>) runs in English and Mandarin at 13.7–13.8 GB peak on one laptop.</p></div>
       <div class="principle"><h3><span>Intentional.</span></h3><p>The film never leaves the machine. No accounts, no telemetry, no cloud calls. Every line carries the facts it came from, its drafts, fit attempts, style flags and verifier verdict. The describer can audit and reject; only approved lines are mixed. Code is MIT; model licences are recorded.</p></div>
       <div class="principle"><h3><span>Tailored.</span></h3><p>Designed for blind and low-vision viewers and the describers who serve them, around the constraint that defines AD: the gap. The next step is Mandarin and Taiwanese AD, co-designed with local listeners and describers — because a good line sounds different in each language and culture.</p></div>
     </div>
@@ -164,8 +164,8 @@
     <h2>Status and next steps</h2>
     <div class="timeline">
       <div class="tlrow"><div class="when">Stage I · done</div><div class="what">Laptop prototype on an Apple M5 Max: full pipeline, 140 s and full-film runs, review page, MIT repository, 21 unit tests.</div></div>
-      <div class="tlrow"><div class="when">2026 · now</div><div class="what">Selected as one of 20 Stage II finalists in the ASUS UGen AI League 2026; Stage II runs Nov 6 – Dec 4 with an ASUS UGen300 32 GB accelerator and a validation environment.</div></div>
-      <div class="tlrow"><div class="when">Next</div><div class="what">Port and measure on the UGen300 (latency, energy, peak memory); compare 27B and 8B profiles on held-out films; build Mandarin AD with local describers; run a listener comprehension study and a describer edit-time study.</div></div>
+      <div class="tlrow"><div class="when">2026 · now</div><div class="what">Selected as one of 20 Stage II finalists in the ASUS UGen AI League 2026; the Human-Scale 8B edition (<a href='../gapcaster-small/'>GapCaster Small</a>) adds Mandarin narration and a local Describer Web Studio.</div></div>
+      <div class="tlrow"><div class="when">Next</div><div class="what">Compare 8B and 27B profiles on held-out films; refine Mandarin AD with Taiwanese describers; run a listener comprehension study and a describer edit-time study.</div></div>
       <div class="tlrow"><div class="when">Open</div><div class="what">Publish code, prompts, evaluation scripts, model cards and an AD workflow guide; ship an accessible review workflow; document failures as well as wins.</div></div>
     </div>
   </section>

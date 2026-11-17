@@ -1,0 +1,435 @@
+{
+ "clip_seconds": 140.0,
+ "shots": 25,
+ "dialogue_spans": 9,
+ "gaps": 9,
+ "speech_seconds_asr": 35.5,
+ "speech_seconds_vad": 32.7,
+ "speech_seconds_merged": 40.5,
+ "usable_gap_seconds": 93.4,
+ "slots": 18,
+ "lines": 15,
+ "lines_placed": 15,
+ "skipped_repeats": 3,
+ "first_try_fit": 12,
+ "fit_after_loop": 15,
+ "mean_attempts": 1.2,
+ "rewrites": 3,
+ "ad_seconds": 42.0,
+ "ad_overlap_with_detected_dialogue_s": 0.0,
+ "flagged_lines": 1,
+ "unsupported_flags": 1,
+ "rescued_by_speed": 0,
+ "rescued_by_rewrite": 1,
+ "style_or_text_gate_rewrites": 2,
+ "shots_covered": 19,
+ "processing_seconds": 91.6,
+ "seconds_per_content_minute": 39.3,
+ "stages": {
+  "prepare": 2.67,
+  "shots": 2.26,
+  "dialogue_map": 7.07,
+  "load_models": 3.2,
+  "shot_facts": 56.65,
+  "write_fit_verify": 13.86,
+  "verify": 4.53,
+  "mix": 1.37,
+  "injected_error_test": 17.73
+ },
+ "llm": {
+  "calls": 64,
+  "seconds": 72.5,
+  "prompt_tokens": 31696,
+  "gen_tokens": 3258
+ },
+ "tts": {
+  "calls": 19,
+  "audio_seconds": 60.0
+ },
+ "mlx_peak_memory_gb": 13.8,
+ "reference_dialogue_cues": 14,
+ "ad_overlap_with_reference_subtitles_s": 0.4,
+ "injected_error_test": {
+  "clean_lines": 15,
+  "false_alarms_on_clean_lines": 1,
+  "verdict_missing": 0,
+  "cases": [
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD001",
+    "original": "四具引擎噴出粉白火光，煙霧翻滾。",
+    "corrupted": "四具引擎噴出粉白火光，煙霧翻滾，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手裡拿著一把紅傘。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD001",
+    "original": "四具引擎噴出粉白火光，煙霧翻滾。",
+    "corrupted": "四十年後，霓虹燈閃爍",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "四十年後",
+     "霓虹燈閃爍"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD002",
+    "original": "工業區中央射出強光，照亮灰濛天空。",
+    "corrupted": "工業區中央射出強光，照亮灰濛天空，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD002",
+    "original": "工業區中央射出強光，照亮灰濛天空。",
+    "corrupted": "字幕：SIMULATION READY...",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "字幕：SIMULATION READY..."
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD003",
+    "original": "四十年後，霓虹燈閃爍",
+    "corrupted": "四十年後，霓虹燈閃爍，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身處擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD003",
+    "original": "四十年後，霓虹燈閃爍",
+    "corrupted": "字幕：TEARS OF STEEL。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD004",
+    "original": "字幕：SIMULATION READY...",
+    "corrupted": "字幕：SIMULATION READY。招牌寫著「出口」。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD004",
+    "original": "字幕：SIMULATION READY...",
+    "corrupted": "巨大的機械結構壓住高樓與船桅",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "巨大的機械結構壓住高樓與船桅"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD005",
+    "original": "字幕：TEARS OF STEEL。",
+    "corrupted": "字幕：TEARS OF STEEL，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身旁有一匹白馬。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD005",
+    "original": "字幕：TEARS OF STEEL。",
+    "corrupted": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "席莉雅躺在地板上",
+     "兩盞蠟燭亮著"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD006",
+    "original": "巨大的機械結構壓住高樓與船桅",
+    "corrupted": "巨大的機械結構壓住高樓與船桅，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手裡拿著一把紅傘。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD006",
+    "original": "巨大的機械結構壓住高樓與船桅",
+    "corrupted": "字幕：機械師製造殺人機器。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "字幕：機械師製造殺人機器。"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD007",
+    "original": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+    "corrupted": "席莉雅躺在地板上，兩盞蠟燭亮著，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "character",
+    "line": "AD007",
+    "original": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+    "corrupted": "湯姆躺在地板上，兩盞蠟燭亮著。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD008",
+    "original": "字幕：機械師製造殺人機器。",
+    "corrupted": "字幕：機械師製造殺人機器，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "機械師製造殺人機器",
+     "身處擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD008",
+    "original": "字幕：機械師製造殺人機器。",
+    "corrupted": "狙擊手凝視前方，呼吸放緩。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "狙擊手凝視前方"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD009",
+    "original": "狙擊手穩穩扣住槍機。",
+    "corrupted": "狙擊手穩穩扣住槍機。招牌寫著「出口」。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "招牌寫著「出口」"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "character",
+    "line": "AD009",
+    "original": "狙擊手穩穩扣住槍機。",
+    "corrupted": "老人穩穩扣住槍機。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "老人穩穩扣住槍機。"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD010",
+    "original": "狙擊手凝視前方，呼吸放緩。",
+    "corrupted": "狙擊手凝視前方，呼吸放緩，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "狙擊手凝視前方",
+     "呼吸放緩",
+     "身旁有一匹白馬"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD010",
+    "original": "狙擊手凝視前方，呼吸放緩。",
+    "corrupted": "老人靜躺床上，狙擊手低姿瞄準。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "老人靜躺床上",
+     "狙擊手低姿瞄準"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD011",
+    "original": "機械飛行器盤旋城上。",
+    "corrupted": "機械飛行器盤旋城上，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手裡拿著一把紅傘。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD011",
+    "original": "機械飛行器盤旋城上。",
+    "corrupted": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD012",
+    "original": "老人靜躺床上，狙擊手低姿瞄準。",
+    "corrupted": "老人靜躺床上，狙擊手低姿瞄準，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨。"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD012",
+    "original": "老人靜躺床上，狙擊手低姿瞄準。",
+    "corrupted": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD013",
+    "original": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+    "corrupted": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身處擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD013",
+    "original": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+    "corrupted": "老人跪地，仰頭。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "老人跪地，仰頭。"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD014",
+    "original": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+    "corrupted": "老人前傾身子，抬手比劃。老人低姿瞄準不動。",
+    "caught": false,
+    "verdict_missing": false,
+    "unsupported": []
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD014",
+    "original": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+    "corrupted": "老人靜躺床上，狙擊手低姿瞄準。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "老人靜躺床上",
+     "狙擊手低姿瞄準"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD015",
+    "original": "老人跪地，仰頭。",
+    "corrupted": "老人跪地，仰頭，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "老人跪地",
+     "仰頭",
+     "身旁有一匹白馬"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "character",
+    "line": "AD015",
+    "original": "老人跪地，仰頭。",
+    "corrupted": "狙擊手跪地，仰頭。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "狙擊手跪地，仰頭。"
+    ]
+   }
+  ],
+  "easy": {
+   "planted": 15,
+   "caught": 13,
+   "catch_rate": 0.87
+  },
+  "hard": {
+   "planted": 15,
+   "caught": 11,
+   "catch_rate": 0.73,
+   "by_kind": {
+    "noun": "0/0",
+    "verb": "0/0",
+    "character": "2/3",
+    "neighbour": "9/12"
+   }
+  },
+  "planted": 15,
+  "caught": 13,
+  "catch_rate": 0.87
+ }
+}
