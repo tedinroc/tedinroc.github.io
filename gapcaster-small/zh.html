@@ -38,94 +38,96 @@
       </div>
     </div>
     <div class="hero-media">
-      <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="《Tears of Steel》中文口述草稿片段">
-        <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
-        你的瀏覽器無法播放，<a href="../gapcaster/pilot/media/described-140-zh.m4a">改聽音訊</a>。
+      <video controls preload="metadata" poster="media/poster-gw-described.jpg" aria-label="《阿嬤的話》9B 台灣國語口述草稿片段">
+        <source src="media/described-gw-140-zh.mp4" type="video/mp4">
+        你的瀏覽器無法播放，<a href="media/described-gw-140-zh.m4a">改聽音訊</a>。
       </video>
-      <div class="cap"><span>0:00–2:20 · 8B 中文口述草稿（峰值 13.8 GB）</span><span>Tears of Steel · CC BY 3.0</span></div>
+      <div class="cap"><span>0:00–2:20 · 9B 台灣腔國語口述草稿（16/16 塞入、峰值 13.1 GB）</span><span>《阿嬤的話》 · CC BY 3.0</span></div>
     </div>
   </section>
 
   <div class="stats" aria-label="小模型實測數字">
-    <div class="stat"><b>13 / 13</b><small>台灣國語紀實片旁白塞進空檔（未調校新片，8B）</small></div>
+    <div class="stat"><b>16 / 16 · 0 錯誤</b><small>台灣國語劇情片《阿嬤的話》塞進空檔（9B＋台灣腔國語）</small></div>
     <div class="stat"><b>15 / 15 · 19 / 19</b><small>《Tears of Steel》繁中／英文旁白塞進空檔（8B）</small></div>
     <div class="stat"><b>0.0 秒</b><small>旁白壓到偵測到的對話</small></div>
-    <div class="stat"><b>13.6–13.8 GB</b><small>單台筆電峰值記憶體（原 27B 需 33.2 GB）</small></div>
+    <div class="stat"><b>13.1–13.7 GB</b><small>單台筆電峰值記憶體（原 27B 需 33.2 GB）</small></div>
   </div>
 
   <section id="sample">
-    <h2>聽出差別——台灣原生國語紀實短片實測</h2>
-    <p class="sub">未調校新片（held-out）實測：台灣失智症協會人物紀實短片《Young Coffee Story》0:00–2:20（觀賞故事，CC BY 3.0；全程台灣國語訪談、含內嵌雙語對白字幕與慢速疊化轉場）。左邊是無口述原片，右邊是 GapCaster Small 在本機產生的繁體中文口述初稿。</p>
+    <h2>聽出差別——台灣國語劇情短片《阿嬤的話》實測（9B＋台灣腔國語）</h2>
+    <p class="sub">未調校新片（held-out）實測：國立聯合大學創新育成中心／黃子彥導演《阿嬤的話》0:00–2:20（CC BY 3.0；前段簡短回憶對白後，進入長達 86 秒無對白視覺轉折——抽屜裡的白城堡餅乾鐵盒裝滿阿嬤的藥排與白沙屯媽祖平安符）。左邊是無口述原片，右邊是 GapCaster Small 以 <strong>Qwen3.5-9B</strong> 與本機台灣腔國語神經語音產生的口述初稿。</p>
     <div class="grid2">
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-original.jpg" aria-label="《Young Coffee Story》原片，無口述影像">
-          <source src="../gapcaster/pilot/media/original-yc-140.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/original-yc-140.m4a">只有音訊</a>
+        <video controls preload="metadata" poster="media/poster-gw-original.jpg" aria-label="《阿嬤的話》原片，無口述影像">
+          <source src="media/original-gw-140.mp4" type="video/mp4">
+          <a href="media/original-gw-140.m4a">只有音訊</a>
         </video>
         <div class="body">
-          <span class="label orig">原片 · 無口述（台灣國語紀實短片）</span>
-          <h3>視障觀眾平常聽到的版本</h3>
-          <p class="note">片頭木吉他配樂、手寫字卡、年輕合照、多肉盆栽與門口互動全數無聲閃過。依 NCC 報告，2025 年台灣所有無線電視台合計僅播出 269.75 小時口述影像節目（公視新製僅 53 小時）。</p>
+          <span class="label orig">原片 · 無口述（台灣國語劇情短片）</span>
+          <h3>86 秒關鍵劇情轉折全數無聲</h3>
+          <p class="note">自 0:54 起幾乎沒有對白，拉開抽屜、掰開餅乾鐵盒、拿出藥排與壓在盒底的紅平安符全在鋼琴配樂中無聲推進。依 NCC 報告，2025 年台灣所有無線電視台合計僅播出 269.75 小時口述影像節目（公視新製僅 53 小時）。</p>
         </div>
       </div>
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-described.jpg" aria-label="《Young Coffee Story》GapCaster Small 繁中口述草稿版">
-          <source src="../gapcaster/pilot/media/described-yc-140-zh.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/described-yc-140-zh.m4a">只有音訊</a>
+        <video controls preload="metadata" poster="media/poster-gw-described.jpg" aria-label="《阿嬤的話》GapCaster Small 9B 台灣腔國語口述草稿版">
+          <source src="media/described-gw-140-zh.mp4" type="video/mp4">
+          <a href="media/described-gw-140-zh.m4a">只有音訊</a>
         </video>
         <div class="body">
-          <span class="label desc">GapCaster Small · 台灣國語新片繁中草稿（8B）</span>
-          <h3>13 句全數塞進訪談空檔、自動略過重複對白字幕</h3>
-          <p class="note">自動過濾與語音重複的內嵌開路字幕、切分慢速疊化鏡頭，0.0 秒壓到對白。這是未經口述影像員編修的 AI 初稿——點開 <a href="sample-yc-zh/review.html">《Young Coffee Story》審核頁</a> 可直接檢視每句畫面證據與驗證器抓出的 3 處疊化時間差。</p>
-          <details><summary>《Young Coffee Story》繁中旁白逐字稿（13 句）</summary><pre>[00:00:00.300] 年輕失智者獻上一杯
-[00:00:04.350] 老先生遞出一杯咖啡，微笑。
-[00:00:07.900] 字幕：YOUNG COFFEE STORY。
-[00:00:15.810] 字幕：是咖啡裡的故事。
-[00:00:26.550] 鳳蓮比出和平手勢，微笑。
-[00:00:31.620] 鳳蓮舉右手比出和平手勢，嘴角微揚。
-[00:01:11.650] 善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。
-[00:01:16.920] 樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。
-[00:01:22.670] 四盆多肉植物排成一列。
-[00:01:26.400] 字幕：Young。
-[00:01:39.650] 老伯門口戴帽
-[00:01:47.050] 鳳蓮笑著說。
-[00:02:13.110] 鳳蓮幫善仁整理外套。</pre></details>
+          <span class="label desc">GapCaster Small · Qwen3.5-9B＋台灣腔國語（zh-TW）</span>
+          <h3>16 句全數塞進空檔、0 處常識幻覺、峰值 13.1 GB</h3>
+          <p class="note">從 8B 升級至原生多模態 9B 後，徹底消除了 8B 把餅乾盒翻成「牛肉餅」及掀蓋腦補「露出奶油餅乾」的幻覺，正確讀出藥排與紅符媽祖字樣，且植入錯誤攔截達 15/15。點開 <a href="sample-gw-zh/review.html">《阿嬤的話》9B 審核頁</a> 可檢視每句畫面證據。</p>
+          <details><summary>《阿嬤的話》繁中旁白逐字稿（16 句）</summary><pre>[00:00:00.300] 穿灰衫戴金十字架者立沙灘。
+[00:00:04.550] 灰天海灘浪打濕沙。
+[00:00:10.220] 黑髮灰衫男看右再望下。
+[00:00:15.310] 灰衫男胸前白字與金十字架項鍊。
+[00:00:36.410] 灰衫男觸碰項鍊再望遠處。
+[00:00:41.790] 灰衫男靜立海灘，海平線遠處有船。
+[00:00:54.450] 灰衫男開啟木門。
+[00:01:02.600] 灰衫男的手放在大型深色長方物體頂端。
+[00:01:09.530] 雙手放於深色木桌邊緣。
+[00:01:13.450] 木櫃內有「白城堡」字樣的圓鐵盒。
+[00:01:35.140] 雙手掰開圓鐵盒蓋子。
+[00:01:41.850] 一手持圓鐵盒，一手拿深色藥排。
+[00:01:46.840] 手拿出白包，露出紅繩綁的紅方塊。
+[00:01:57.030] 白衣男子低頭，手中捧著紅方塊。
+[00:02:02.620] 手捧紅牌寫白拱沙天屯宮媽祖。
+[00:02:12.670] 白衣男子側臉凝望，手放鍵盤滑鼠。</pre></details>
         </div>
       </div>
     </div>
-    <p class="sub" style="margin-top:18px">打開撰稿人審核頁：<a href="sample-yc-zh/review.html"><b>台灣國語紀實片《Young Coffee Story》8B 審核頁</b></a>（<a href="sample-yc-zh/ad_script.txt">純文字稿</a>）· <a href="sample-zh/review.html">《Tears of Steel》繁中 8B 審核頁</a>（<a href="sample-zh/ad_script.txt">純文字稿</a>）· <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/sample/review.html">27B 對照組審核頁</a>。</p>
+    <p class="sub" style="margin-top:18px">打開撰稿人審核頁：<a href="sample-gw-zh/review.html"><b>《阿嬤的話》9B 審核頁</b></a>（<a href="sample-gw-zh/ad_script.txt">純文字稿</a>）· <a href="sample-yc-zh/review.html">《Young Coffee Story》紀實片 8B 審核頁</a> · <a href="sample-zh/review.html">《Tears of Steel》繁中 8B 審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/sample/review.html">27B 對照組審核頁</a>。</p>
   </section>
 
   <section id="evidence">
-    <h2>小模型實測與誠實限制（開發片＋未調校台灣紀實片）</h2>
-    <p class="sub">於單台 Apple M5 Max 筆電實測《Tears of Steel》0:00–2:20（開發用片段，in-sample）與台灣失智症協會《Young Coffee Story》0:00–2:20（未調校原生國語紀實短片，held-out）。</p>
+    <h2>小模型實測與 8B vs. 9B 對照（≤10B 級距內）</h2>
+    <p class="sub">於單台 Apple M5 Max 筆電實測《阿嬤的話》（8B vs. 9B 台灣劇情片對照）、《Young Coffee Story》（台灣紀實片）與《Tears of Steel》（開發對照片段）。</p>
     <div class="tablewrap">
       <table>
-        <caption class="sr-only">8B 英文、8B 繁體中文（Tears of Steel 與未調校台灣國語紀實片 Young Coffee Story）及 27B 對照組實測數據比較</caption>
-        <thead><tr><th scope="col">指標（0:00–2:20）</th><th scope="col">8B 英文（ToS）</th><th scope="col">8B 繁中（ToS）</th><th scope="col">8B 繁中（台灣國語新片 Young Coffee）</th><th scope="col">27B 對照組（2:20 / 12:14）</th></tr></thead>
+        <caption class="sr-only">8B 與 9B 小模型在繁體中文台灣短片、英文電影及 27B 對照組之實測數據比較</caption>
+        <thead><tr><th scope="col">指標（0:00–2:20）</th><th scope="col">8B 英文（ToS）</th><th scope="col">8B 繁中（阿嬤的話）</th><th scope="col">9B 繁中（阿嬤的話）</th><th scope="col">8B 繁中（Young Coffee）</th><th scope="col">27B 對照組（2:20 / 12:14）</th></tr></thead>
         <tbody>
-          <tr><th scope="row">塞進空檔的句數</th><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
-          <tr><th scope="row">旁白壓到偵測到的對話</th><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
-          <tr><th scope="row">旁白壓到官方字幕 cue</th><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>不適用（原片為內嵌開路字幕）</td><td>0.4 秒 · 5.8 秒</td></tr>
-          <tr><th scope="row">驗證器抓到明顯植入錯誤</th><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
-          <tr><th scope="row">驗證器抓到片內隱蔽錯誤</th><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td><b>12 / 13</b>（鄰句置換）</td><td>15 / 17 · 34 / 40</td></tr>
-          <tr><th scope="row">原稿被驗證器標記句數</th><td>2 / 19</td><td>1 / 15</td><td>3 / 13（3 處皆為真實疊化時間差）</td><td>1 / 17 · —</td></tr>
-          <tr><th scope="row">中點畫面逐句檢查（正確 · 小錯 · 錯）</th><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
-          <tr><th scope="row">每分鐘影片處理時間</th><td>50 秒</td><td>39 秒</td><td><b>39 秒</b></td><td>125 秒 · 137 秒</td></tr>
-          <tr><th scope="row">峰值模型記憶體</th><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+          <tr><th scope="row">塞進空檔的句數</th><td><b>19 / 19</b></td><td>17 / 18（1 句保留）</td><td><b>16 / 16</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><th scope="row">旁白壓到偵測到的對話</th><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
+          <tr><th scope="row">驗證器抓到明顯植入錯誤</th><td><b>18 / 19</b></td><td>13 / 15</td><td><b>15 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><th scope="row">驗證器抓到片內隱蔽錯誤</th><td>13 / 19（換動詞 0/5）</td><td>12 / 15（鄰句）</td><td><b>15 / 15</b>（鄰句）</td><td><b>12 / 13</b>（鄰句）</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><th scope="row">原稿被驗證器標記句數</th><td>2 / 19</td><td>0 / 17</td><td>5 / 16（跨鏡時間／神明稱謂查核）</td><td>3 / 13（真實疊化時間差）</td><td>1 / 17 · —</td></tr>
+          <tr><th scope="row">中點畫面逐句檢查（正確 · 小錯 · 錯）</th><td>—</td><td>11 · 5 · 1</td><td><b>12 · 4 · 0</b></td><td>6 · 5 · 2</td><td>13 · 4 · 0 · —</td></tr>
+          <tr><th scope="row">每分鐘影片處理時間</th><td>50 秒</td><td>38 秒</td><td><b>43.5 秒</b></td><td>39 秒</td><td>125 秒 · 137 秒</td></tr>
+          <tr><th scope="row">峰值模型記憶體</th><td>13.7 GB</td><td>14.0 GB</td><td><b>13.1 GB</b></td><td>13.6 GB</td><td>33.2 GB · 34 GB</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px">誠實取捨：從 27B 降到 8B 省下近六成記憶體，在英文電影與台灣國語紀實片皆維持 100% 空檔貼合與 0.0 秒壓對話。在《Young Coffee Story》中，驗證器標記的 3 句原稿全數是慢速疊化造成的真實時間差（成功攔下 2 句錯誤中的 <code>AD002</code>），僅剩 1 句穿插單車照的 <code>AD012</code> 未被標出，交由真人審核剔除。</p>
+    <p class="sub" style="margin-top:14px">誠實取捨：同樣在 ≤10B 級距內，從 Qwen3-VL-8B 升級至原生多模態 Qwen3.5-9B 反而將峰值記憶體壓低至 13.1 GB，在《阿嬤的話》達成 16/16 全數塞入、15/15 隱蔽錯誤攔截與 0 處事實幻覺（4 處小瑕疵如橫排宮廟字序顛倒，其中 3 處已由驗證器主動標出交給真人複核）。</p>
   </section>
 
   <section id="how">
     <h2>六個本機階段＋免指令稿本機工作台</h2>
     <div class="how">
       <div class="step"><span class="n">01</span><h3>標出對白空檔</h3><p>Whisper large-v3-turbo（0.8B）與 Silero VAD 雙重偵測語音，保留前後緩衝並於鏡頭切換處分段。</p></div>
-      <div class="step"><span class="n">02</span><h3>擷取鏡頭事實</h3><p>Qwen3-VL-8B 輸出結構化畫面事實；由口述影像員撰寫的角色表決定人物何時具名。</p></div>
+      <div class="step"><span class="n">02</span><h3>擷取鏡頭事實</h3><p>Qwen3.5-9B（或 Qwen3-VL-8B）輸出結構化畫面事實；由口述影像員撰寫的角色表決定人物何時具名。</p></div>
       <div class="step"><span class="n">03</span><h3>依字數預算撰寫</h3><p>中文以每秒 4.0 字計算上限、繁體中文儲存；自動過濾片頭贊助與演職員名單。</p></div>
-      <div class="step"><span class="n">04</span><h3>配音並實測秒數</h3><p>Kokoro-82M 實際念出每一句並量測時長，超時就試 1.08×／1.15× 或依溢出秒數重寫。</p></div>
+      <div class="step"><span class="n">04</span><h3>台灣腔配音並實測秒數</h3><p>本機台灣腔國語神經語音（或跨平台 Kokoro-82M）實際念出每一句並量測時長，超時就試 1.08×／1.15× 或依溢出秒數重寫。</p></div>
       <div class="step"><span class="n">05</span><h3>風格把關與查核</h3><p>中文規則擋下「我們看到」「鏡頭」「似乎／好像」；驗證器核對播出當下的畫面事實。</p></div>
       <div class="step"><span class="n">06</span><h3>本機審核工作台</h3><p><code>gapcaster web</code> 啟動 <code>127.0.0.1</code> 網頁介面，讓口述影像員免打指令審核修改並一鍵匯出核准音軌。</p></div>
     </div>
@@ -134,7 +136,7 @@
   <section id="human-scale">
     <h2>Small · Intentional · Tailored</h2>
     <div class="principles">
-      <div class="principle"><h3><span>Small.</span></h3><p>核心模型全數 ≤10B 開源權重（Qwen3-VL-8B、Whisper 0.8B、Silero VAD、Kokoro-82M），單台筆電約 14 GB 即可離線執行，適合處理未公開片源與預算有限的單位。</p></div>
+      <div class="principle"><h3><span>Small.</span></h3><p>核心模型全數 ≤10B 開源權重（Qwen3.5-9B／Qwen3-VL-8B、Whisper 0.8B、Silero VAD、Kokoro-82M），單台筆電峰值僅 13.1–13.7 GB 即可離線執行，適合處理未公開片源與預算有限的單位。</p></div>
       <div class="principle"><h3><span>Intentional.</span></h3><p>影片、字幕與草稿全程留在 <code>127.0.0.1</code>，無雲端、無遙測。每句保留完整 JSON 證據鏈，未經人工核准絕不混音。</p></div>
       <div class="principle"><h3><span>Tailored.</span></h3><p>針對對白空隙這項口述影像核心限制設計，並為台灣補上繁體中文規則、字數預算、本機瀏覽器工作台與螢幕閱讀器友善的聆聽測試。</p></div>
     </div>
@@ -143,10 +145,10 @@
   <section id="pilot">
     <div class="callout">
       <h2>視障聽眾與口述影像員試用邀請</h2>
-      <p>15 分鐘線上無障礙試聽回饋（支援螢幕閱讀器、一鍵匿名送出免傳檔）：比較同一段 2 分 20 秒台灣國語紀實短片「原片」與「中文口述初稿」的差異。直接指出問題的回饋對我們最有幫助。</p>
+      <p>15 分鐘線上無障礙試聽回饋（支援螢幕閱讀器、一鍵匿名送出免傳檔）：比較同一段 2 分 20 秒台灣國語劇情短片《阿嬤的話》「原片」與「台灣腔國語口述初稿」的差異。直接指出問題的回饋對我們最有幫助。</p>
       <div class="actions">
         <a class="btn" href="https://ad-listen.pages.dev/">進入線上無障礙試聽頁</a>
-        <a class="btn secondary" href="sample-yc-zh/review.html">開啟台灣紀實片審核頁</a>
+        <a class="btn secondary" href="sample-gw-zh/review.html">開啟《阿嬤的話》9B 審核頁</a>
       </div>
     </div>
   </section>
@@ -155,8 +157,8 @@
 <footer>
   <div class="wrap footgrid">
     <div>
-      <p><b>GapCaster Small</b> · MIT 開源，© 2026 Ted Chen。延續自已凍結的 <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> 原型。樣本影片：台灣失智症協會《Young Coffee Story》（觀賞故事，CC BY 3.0）及 Blender Foundation《Tears of Steel》（CC BY 3.0）；均為混入合成口述初稿之改作，非原單位背書。</p>
-      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">台灣國語紀實片審核頁</a> · <a href="sample-zh/review.html">ToS 中文審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="https://ad-listen.pages.dev/">聆聽測試</a> · <a href="index.html">English</a></p>
+      <p><b>GapCaster Small</b> · MIT 開源，© 2026 Ted Chen。延續自已凍結的 <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> 原型。樣本影片：國立聯合大學創新育成中心《阿嬤的話》（黃子彥導演，CC BY 3.0）、台灣失智症協會《Young Coffee Story》（觀賞故事，CC BY 3.0）及 Blender Foundation《Tears of Steel》（CC BY 3.0）；均為混入合成口述初稿之改作，非原單位背書。</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-gw-zh/review.html">《阿嬤的話》9B 審核頁</a> · <a href="sample-yc-zh/review.html">台灣國語紀實片審核頁</a> · <a href="sample-zh/review.html">ToS 中文審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="https://ad-listen.pages.dev/">聆聽測試</a> · <a href="index.html">English</a></p>
     </div>
     <div>
       <p class="pill">≤10B 開源小模型</p>

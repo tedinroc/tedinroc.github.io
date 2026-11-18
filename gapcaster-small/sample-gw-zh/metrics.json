@@ -1,0 +1,458 @@
+{
+ "clip_seconds": 140.0,
+ "shots": 26,
+ "dialogue_spans": 9,
+ "gaps": 5,
+ "speech_seconds_asr": 21.5,
+ "speech_seconds_vad": 13.4,
+ "speech_seconds_merged": 23.6,
+ "usable_gap_seconds": 110.1,
+ "slots": 20,
+ "lines": 16,
+ "lines_placed": 16,
+ "skipped_repeats": 4,
+ "first_try_fit": 14,
+ "fit_after_loop": 16,
+ "mean_attempts": 1.12,
+ "rewrites": 2,
+ "ad_seconds": 48.0,
+ "ad_overlap_with_detected_dialogue_s": 0.0,
+ "flagged_lines": 6,
+ "unsupported_flags": 5,
+ "rescued_by_speed": 1,
+ "rescued_by_rewrite": 2,
+ "style_or_text_gate_rewrites": 0,
+ "shots_covered": 20,
+ "processing_seconds": 101.5,
+ "seconds_per_content_minute": 43.5,
+ "stages": {
+  "prepare": 2.89,
+  "shots": 2.74,
+  "dialogue_map": 5.83,
+  "load_models": 3.29,
+  "shot_facts": 61.18,
+  "write_fit_verify": 17.43,
+  "verify": 6.78,
+  "mix": 1.4,
+  "injected_error_test": 21.73
+ },
+ "llm": {
+  "calls": 66,
+  "seconds": 79.0,
+  "prompt_tokens": 36700,
+  "gen_tokens": 3304
+ },
+ "tts": {
+  "calls": 24,
+  "audio_seconds": 76.8,
+  "voice": "com.apple.ttsbundle.gryphon-neural_Shufen_zh-TW_premium",
+  "backend": "avspeech"
+ },
+ "mlx_peak_memory_gb": 13.1,
+ "injected_error_test": {
+  "clean_lines": 15,
+  "false_alarms_on_clean_lines": 4,
+  "verdict_missing": 0,
+  "cases": [
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD001",
+    "original": "穿灰衫戴金十字架者立沙灘。",
+    "corrupted": "穿灰衫戴金十字架者立沙灘，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手裡拿著一把紅傘"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD001",
+    "original": "穿灰衫戴金十字架者立沙灘。",
+    "corrupted": "黑髮灰衫男看右再望下。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "黑髮",
+     "男"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD002",
+    "original": "灰天海灘浪打濕沙。",
+    "corrupted": "灰天海灘浪打濕沙，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD002",
+    "original": "灰天海灘浪打濕沙。",
+    "corrupted": "灰衫男胸前白字與金十字架項鍊。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "灰衫男",
+     "白字",
+     "金十字架項鍊"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD003",
+    "original": "黑髮灰衫男看右再望下。",
+    "corrupted": "黑髮灰衫男看右再望下，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD003",
+    "original": "黑髮灰衫男看右再望下。",
+    "corrupted": "灰衫男觸碰項鍊再望遠處。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "灰衫男觸碰項鍊",
+     "望遠處"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD004",
+    "original": "灰衫男胸前白字與金十字架項鍊。",
+    "corrupted": "灰衫男胸前白字與金十字架項鍊。招牌寫著「出口」。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "招牌寫著「出口」"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD004",
+    "original": "灰衫男胸前白字與金十字架項鍊。",
+    "corrupted": "灰衫男靜立海灘，海平線遠處有船。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "海平線遠處有船"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD005",
+    "original": "灰衫男觸碰項鍊再望遠處。",
+    "corrupted": "灰衫男觸碰項鍊再望遠處，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身旁有一匹白馬"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD005",
+    "original": "灰衫男觸碰項鍊再望遠處。",
+    "corrupted": "灰衫男開啟木門。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "灰衫男開啟木門"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD006",
+    "original": "灰衫男靜立海灘，海平線遠處有船。",
+    "corrupted": "灰衫男靜立海灘，海平線遠處有船，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "灰衫男靜立海灘",
+     "手裡拿著一把紅傘"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD006",
+    "original": "灰衫男靜立海灘，海平線遠處有船。",
+    "corrupted": "灰衫男的手放在大型深色長方物體頂端。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "灰衫男的手放在大型深色長方物體頂端。"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD007",
+    "original": "灰衫男開啟木門。",
+    "corrupted": "灰衫男開啟木門，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD007",
+    "original": "灰衫男開啟木門。",
+    "corrupted": "雙手放於深色木桌邊緣。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "雙手放於深色木桌邊緣"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD008",
+    "original": "灰衫男的手放在大型深色長方物體頂端。",
+    "corrupted": "灰衫男的手放在大型深色長方物體頂端，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身處擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD008",
+    "original": "灰衫男的手放在大型深色長方物體頂端。",
+    "corrupted": "木櫃內有「白城堡」字樣的圓鐵盒。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "木櫃內有「白城堡」字樣的圓鐵盒。"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD009",
+    "original": "雙手放於深色木桌邊緣。",
+    "corrupted": "雙手放於深色木桌邊緣。招牌寫著「出口」。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "招牌寫著「出口」"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD009",
+    "original": "雙手放於深色木桌邊緣。",
+    "corrupted": "雙手掰開圓鐵盒蓋子。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "圓鐵盒",
+     "蓋子",
+     "掰開"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD010",
+    "original": "木櫃內有「白城堡」字樣的圓鐵盒。",
+    "corrupted": "木櫃內有「白城堡」字樣的圓鐵盒，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身旁有一匹白馬"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD010",
+    "original": "木櫃內有「白城堡」字樣的圓鐵盒。",
+    "corrupted": "一手持圓鐵盒，一手拿深色藥排。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "一手持圓鐵盒",
+     "一手拿深色藥排"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD011",
+    "original": "雙手掰開圓鐵盒蓋子。",
+    "corrupted": "雙手掰開圓鐵盒蓋子，手裡拿著一把紅傘。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手裡拿著一把紅傘"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD011",
+    "original": "雙手掰開圓鐵盒蓋子。",
+    "corrupted": "手拿出白包，露出紅繩綁的紅方塊。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手拿出白包",
+     "露出紅繩綁的紅方塊"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD012",
+    "original": "一手持圓鐵盒，一手拿深色藥排。",
+    "corrupted": "一手持圓鐵盒，一手拿深色藥排，天空下著大雨。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "天空下著大雨"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD012",
+    "original": "一手持圓鐵盒，一手拿深色藥排。",
+    "corrupted": "白衣男子低頭，手中捧著紅方塊。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "白衣男子",
+     "低頭",
+     "紅方塊"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD013",
+    "original": "手拿出白包，露出紅繩綁的紅方塊。",
+    "corrupted": "手拿出白包，露出紅繩綁的紅方塊，身處擁擠的火車站。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "白包",
+     "紅繩",
+     "紅方塊",
+     "擁擠的火車站"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD013",
+    "original": "手拿出白包，露出紅繩綁的紅方塊。",
+    "corrupted": "手捧紅牌寫白拱沙天屯宮媽祖",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手捧",
+     "紅牌",
+     "寫",
+     "白拱沙天屯宮媽祖"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD014",
+    "original": "白衣男子低頭，手中捧著紅方塊。",
+    "corrupted": "白衣女子低頭，手中捧著紅方塊。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "白衣女子",
+     "捧著"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD014",
+    "original": "白衣男子低頭，手中捧著紅方塊。",
+    "corrupted": "白衣男子側臉凝望，手放鍵盤滑鼠。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手放鍵盤滑鼠"
+    ]
+   },
+   {
+    "set": "easy",
+    "kind": "append/swap",
+    "line": "AD015",
+    "original": "手捧紅牌寫白拱沙天屯宮媽祖",
+    "corrupted": "手捧紅牌寫白拱沙天屯宮媽祖，身旁有一匹白馬。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "身旁有一匹白馬",
+     "媽祖"
+    ]
+   },
+   {
+    "set": "hard",
+    "kind": "neighbour",
+    "line": "AD015",
+    "original": "手捧紅牌寫白拱沙天屯宮媽祖",
+    "corrupted": "手拿出白包，露出紅繩綁的紅方塊。",
+    "caught": true,
+    "verdict_missing": false,
+    "unsupported": [
+     "手拿出白包",
+     "露出"
+    ]
+   }
+  ],
+  "easy": {
+   "planted": 15,
+   "caught": 15,
+   "catch_rate": 1.0
+  },
+  "hard": {
+   "planted": 15,
+   "caught": 15,
+   "catch_rate": 1.0,
+   "by_kind": {
+    "noun": "0/0",
+    "verb": "0/0",
+    "character": "0/0",
+    "neighbour": "15/15"
+   }
+  },
+  "planted": 15,
+  "caught": 15,
+  "catch_rate": 1.0
+ }
+}

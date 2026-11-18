@@ -51,86 +51,89 @@
   </section>
 
   <div class="stats" aria-label="Measured small-model results">
-    <div class="stat"><b>13 / 13</b><small>Taiwanese Mandarin doc lines fit (held-out, 8B)</small></div>
-    <div class="stat"><b>15 / 15 · 19 / 19</b><small>Mandarin &amp; English *Tears of Steel* lines fit (8B)</small></div>
+    <div class="stat"><b>16 / 16 · 0 wrong</b><small>Taiwanese Mandarin drama lines fit (9B, <code>zh-TW</code> voice)</small></div>
+    <div class="stat"><b>15 / 15 · 19 / 19</b><small>Mandarin &amp; English <em>Tears of Steel</em> lines fit (8B)</small></div>
     <div class="stat"><b>0.0 s</b><small>narration over detected dialogue across all runs</small></div>
-    <div class="stat"><b>13.6–13.8 GB</b><small>peak memory on one laptop (down from 33.2 GB)</small></div>
+    <div class="stat"><b>13.1–13.7 GB</b><small>peak memory on one laptop (down from 33.2 GB)</small></div>
   </div>
 
   <section id="sample">
-    <h2>Listen to the difference — on a native Taiwanese Mandarin documentary</h2>
-    <p class="sub">Held-out out-of-sample test: 0:00–2:20 of <em>Young Coffee Story</em> (<span lang="zh-Hant">《【Young Coffee Story】人物紀實短片》</span>, Taiwan Alzheimer's Disease Association / <span lang="zh-Hant">觀賞故事</span>, CC BY 3.0), spoken in Taiwanese Mandarin with burned-in open captions and slow cross-dissolves. Below: original vs. GapCaster Small's 8B Mandarin draft — alongside the English 8B track in the player above.</p>
+    <h2>Listen to the difference — on a Taiwanese Mandarin narrative drama</h2>
+    <p class="sub">Held-out out-of-sample test: 0:00–2:20 of <em>Grandma's Words</em> (<span lang="zh-Hant">《阿嬤的話》</span>, National United University / dir. Huang Tzu-Yen, CC BY 3.0), where brief Taiwanese Mandarin dialogue gives way to 86 seconds of silent visual discovery (a grandma's <em>White Castle</em> cookie tin containing hospital medication packs and an embossed Baishatun Mazu temple amulet). Below: original vs. GapCaster Small's <strong>Qwen3.5-9B</strong> draft spoken in local Taiwanese Mandarin (<code>zh-TW</code>) — alongside our English 8B player above and our <a href="sample-yc-zh/review.html"><em>Young Coffee Story</em> documentary test</a>.</p>
     <div class="grid2">
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-original.jpg" aria-label="Original Taiwanese documentary excerpt without audio description">
-          <source src="../gapcaster/pilot/media/original-yc-140.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/original-yc-140.m4a">Audio only</a>
+        <video controls preload="metadata" poster="media/poster-gw-original.jpg" aria-label="Original Taiwanese drama excerpt without audio description">
+          <source src="media/original-gw-140.mp4" type="video/mp4">
+          <a href="media/original-gw-140.m4a">Audio only</a>
         </video>
         <div class="body">
-          <span class="label orig">Original · Young Coffee Story (no AD)</span>
-          <h3>Taiwanese documentary without description</h3>
-          <p class="note">Acoustic guitar intro, book-page captions, archival photos and café scenes pass in silence between interview segments. In Taiwan, all terrestrial TV stations together aired only 269.75 hours of AD in 2025 (53 newly produced hours on public TV).</p>
+          <span class="label orig">Original · Grandma's Words (no AD)</span>
+          <h3>86 seconds of silent plot twist</h3>
+          <p class="note">From 0:54 onward there is almost no dialogue — only footsteps, a drawer opening, pill packs inside a butter-cookie tin, and a red temple amulet. Without AD, the entire narrative twist happens in silence. In Taiwan, all terrestrial TV stations aired only 269.75 hours of AD in 2025 (53 newly produced hours on public TV).</p>
         </div>
       </div>
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-described.jpg" aria-label="Mandarin described excerpt of Young Coffee Story">
-          <source src="../gapcaster/pilot/media/described-yc-140-zh.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/described-yc-140-zh.m4a">Audio only</a>
+        <video controls preload="metadata" poster="media/poster-gw-described.jpg" aria-label="Taiwanese Mandarin described excerpt of Grandma's Words">
+          <source src="media/described-gw-140-zh.mp4" type="video/mp4">
+          <a href="media/described-gw-140-zh.m4a">Audio only</a>
         </video>
         <div class="body">
-          <span class="label desc">GapCaster Small · Held-out Taiwanese Mandarin (8B)</span>
-          <h3>13 / 13 lines fitted into Mandarin dialogue pauses</h3>
-          <p class="note">Open dialogue captions are suppressed automatically so spoken words are not read twice; slow cross-dissolves are subdivided; 0.0 s overlap over speech. Unedited AI draft — inspect all 13 lines and the 3 true-positive verifier flags on the <a href="sample-yc-zh/review.html">Young Coffee review page</a>.</p>
-          <details><summary>Mandarin description script — Young Coffee Story (13 lines)</summary><pre lang="zh-Hant">[00:00:00.300] 年輕失智者獻上一杯
-[00:00:04.350] 老先生遞出一杯咖啡，微笑。
-[00:00:07.900] 字幕：YOUNG COFFEE STORY。
-[00:00:15.810] 字幕：是咖啡裡的故事。
-[00:00:26.550] 鳳蓮比出和平手勢，微笑。
-[00:00:31.620] 鳳蓮舉右手比出和平手勢，嘴角微揚。
-[00:01:11.650] 善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。
-[00:01:16.920] 樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。
-[00:01:22.670] 四盆多肉植物排成一列。
-[00:01:26.400] 字幕：Young。
-[00:01:39.650] 老伯門口戴帽
-[00:01:47.050] 鳳蓮笑著說。
-[00:02:13.110] 鳳蓮幫善仁整理外套。</pre></details>
+          <span class="label desc">GapCaster Small · Qwen3.5-9B + Taiwanese Mandarin (zh-TW)</span>
+          <h3>16 / 16 lines fitted · 0 factual hallucinations · 13.1 GB peak</h3>
+          <p class="note">Upgrading from late-fusion Qwen3-VL-8B to early-fusion Qwen3.5-9B eliminated 8B's US-prior mistakes (calling the <em>White Castle</em> cookie tin "beef patties" and assuming cookies inside instead of medication packs and the red Mazu amulet), while catching 15/15 easy &amp; 15/15 subtle planted errors. Inspect all 16 lines on the <a href="sample-gw-zh/review.html">Grandma's Words review page</a>.</p>
+          <details><summary>Taiwanese Mandarin description script — Grandma's Words (16 lines)</summary><pre lang="zh-Hant">[00:00:00.300] 穿灰衫戴金十字架者立沙灘。
+[00:00:04.550] 灰天海灘浪打濕沙。
+[00:00:10.220] 黑髮灰衫男看右再望下。
+[00:00:15.310] 灰衫男胸前白字與金十字架項鍊。
+[00:00:36.410] 灰衫男觸碰項鍊再望遠處。
+[00:00:41.790] 灰衫男靜立海灘，海平線遠處有船。
+[00:00:54.450] 灰衫男開啟木門。
+[00:01:02.600] 灰衫男的手放在大型深色長方物體頂端。
+[00:01:09.530] 雙手放於深色木桌邊緣。
+[00:01:13.450] 木櫃內有「白城堡」字樣的圓鐵盒。
+[00:01:35.140] 雙手掰開圓鐵盒蓋子。
+[00:01:41.850] 一手持圓鐵盒，一手拿深色藥排。
+[00:01:46.840] 手拿出白包，露出紅繩綁的紅方塊。
+[00:01:57.030] 白衣男子低頭，手中捧著紅方塊。
+[00:02:02.620] 手捧紅牌寫白拱沙天屯宮媽祖。
+[00:02:12.670] 白衣男子側臉凝望，手放鍵盤滑鼠。</pre></details>
         </div>
       </div>
     </div>
-    <p class="sub" style="margin-top:18px">Inspect every describer review page (frames, rejected drafts, timings, verifier flags): <a href="sample-yc-zh/review.html"><b>Taiwanese Mandarin doc review (held-out)</b></a> (<a href="sample-yc-zh/ad_script.txt">script</a>) · <a href="sample-zh/review.html">Tears of Steel Mandarin 8B review</a> (<a href="sample-zh/ad_script.txt">script</a>) · <a href="sample-8b/review.html">Tears of Steel English 8B review</a> (<a href="sample-8b/ad_script.txt">script</a>) · <a href="../gapcaster/sample/review.html">27B reference review</a>.</p>
+    <p class="sub" style="margin-top:18px">Inspect every describer review page (frames, rejected drafts, timings, verifier flags): <a href="sample-gw-zh/review.html"><b>Grandma's Words 9B review (zh-TW)</b></a> (<a href="sample-gw-zh/ad_script.txt">script</a>) · <a href="sample-yc-zh/review.html">Young Coffee doc 8B review</a> (<a href="sample-yc-zh/ad_script.txt">script</a>) · <a href="sample-zh/review.html">Tears of Steel Mandarin 8B review</a> · <a href="sample-8b/review.html">Tears of Steel English 8B review</a> · <a href="../gapcaster/sample/review.html">27B reference review</a>.</p>
   </section>
 
   <section id="evidence">
-    <h2>What has been measured on small models</h2>
-    <p class="sub">Measured on one Apple M5 Max laptop across <em>Tears of Steel</em> 0:00–2:20 (in-sample development clip) and <em>Young Coffee Story</em> 0:00–2:20 (held-out Taiwanese Mandarin documentary). Known misses are published alongside wins.</p>
+    <h2>What has been measured on small models (8B vs. 9B ≤10B)</h2>
+    <p class="sub">Measured on one Apple M5 Max laptop across <em>Tears of Steel</em> (in-sample EN/zh), <em>Grandma's Words</em> (held-out Taiwanese Mandarin drama, head-to-head <strong>Qwen3-VL-8B</strong> vs. <strong>Qwen3.5-9B</strong>), and <em>Young Coffee Story</em> (held-out Taiwanese documentary). Known misses are published alongside wins.</p>
     <div class="tablewrap">
       <table>
-        <caption class="sr-only">Measured performance across 8B English, 8B Mandarin (Tears of Steel and held-out Young Coffee Story), and 27B reference</caption>
-        <thead><tr><th scope="col">Measure (0:00–2:20)</th><th scope="col">8B, EN (<em>ToS</em>)</th><th scope="col">8B, Mandarin (<em>ToS</em>)</th><th scope="col">8B, Mandarin (<em>Young Coffee</em>, held-out)</th><th scope="col">27B ref (EN, 2:20 / 12:14)</th></tr></thead>
+        <caption class="sr-only">Measured performance across 8B English, 8B and 9B Taiwanese Mandarin, and 27B reference</caption>
+        <thead><tr><th scope="col">Measure (0:00–2:20)</th><th scope="col">8B, EN (<em>ToS</em>)</th><th scope="col">8B, zh (<em>Grandma's Words</em>)</th><th scope="col">9B, zh (<em>Grandma's Words</em>)</th><th scope="col">8B, zh (<em>Young Coffee</em>)</th><th scope="col">27B ref (EN, 2:20 / 12:14)</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Lines that fit their silence</th><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
-          <tr><th scope="row">Narration over detected speech</th><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td>0.0 s · 0.0 s</td></tr>
-          <tr><th scope="row">Narration over official subtitle cues</th><td>0.6 s (cue tails)</td><td>0.4 s</td><td>n/a (open-captioned)</td><td>0.4 s · 5.8 s</td></tr>
-          <tr><th scope="row">Verifier · obvious planted errors caught</th><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
-          <tr><th scope="row">Verifier · subtle in-film swaps caught</th><td>13 / 19 (verb 0/5)</td><td>11 / 15 (char/nbr)</td><td><b>12 / 13</b> (neighbour)</td><td>15 / 17 · 34 / 40</td></tr>
-          <tr><th scope="row">Verifier flags on unmodified lines</th><td>2 / 19</td><td>1 / 15</td><td>3 / 13 (all 3 true dissolve leads)</td><td>1 / 17 · —</td></tr>
-          <tr><th scope="row">AI-assisted midpoint frame check (acc · minor · wrong)</th><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
-          <tr><th scope="row">Processing per content minute</th><td>50 s</td><td>39 s</td><td><b>39 s</b></td><td>125 s · 137 s</td></tr>
-          <tr><th scope="row">Peak model memory</th><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+          <tr><th scope="row">Lines that fit their silence</th><td><b>19 / 19</b></td><td>17 / 18 (1 held)</td><td><b>16 / 16</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><th scope="row">Narration over detected speech</th><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td>0.0 s · 0.0 s</td></tr>
+          <tr><th scope="row">Narration over official subtitle cues</th><td>0.6 s (cue tails)</td><td>n/a</td><td>n/a</td><td>n/a (open-captioned)</td><td>0.4 s · 5.8 s</td></tr>
+          <tr><th scope="row">Verifier · obvious planted errors caught</th><td><b>18 / 19</b></td><td>13 / 15</td><td><b>15 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><th scope="row">Verifier · subtle in-film swaps caught</th><td>13 / 19 (verb 0/5)</td><td>12 / 15 (nbr)</td><td><b>15 / 15</b> (nbr)</td><td><b>12 / 13</b> (nbr)</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><th scope="row">Verifier flags on unmodified lines</th><td>2 / 19</td><td>0 / 17</td><td>5 / 16 (shot-cut timing / paraphrase)</td><td>3 / 13 (dissolve leads)</td><td>1 / 17 · —</td></tr>
+          <tr><th scope="row">Midpoint frame check (acc · minor · wrong)</th><td>—</td><td>11 · 5 · 1</td><td><b>12 · 4 · 0</b></td><td>6 · 5 · 2</td><td>13 · 4 · 0 · —</td></tr>
+          <tr><th scope="row">Processing per content minute</th><td>50 s</td><td>38 s</td><td><b>43.5 s</b></td><td>39 s</td><td>125 s · 137 s</td></tr>
+          <tr><th scope="row">Peak model memory</th><td>13.7 GB</td><td>14.0 GB</td><td><b>13.1 GB</b></td><td>13.6 GB</td><td>33.2 GB · 34 GB</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px">Honest trade-off: moving from 27B to 8B cuts peak memory by nearly 60% and keeps 100% silence fit across both English cinema and a held-out Taiwanese documentary. On <em>Young Coffee Story</em>, all 3 verifier flags on unmodified lines caught real cross-dissolve timing leads (including 1 of the 2 wrong lines, <code>AD002</code>), leaving 1 unflagged B-roll cut-in error (<code>AD012</code>) for the human describer to reject. <a href="https://github.com/tedinroc/gapcaster-small#known-limitations">Full known-limitations list in the README</a>.</p>
+    <p class="sub" style="margin-top:14px">Honest trade-off: staying strictly within ≤10B parameters, moving from Qwen3-VL-8B to early-fusion Qwen3.5-9B lowers peak memory to 13.1 GB, achieves 16/16 silence fit, catches 15/15 subtle planted swaps, and eliminates 8B's cookie-tin hallucination on <em>Grandma's Words</em> (0 wrong lines; 4 minor shirt-carryover or right-to-left character-order notes, 3 of which the verifier itself flagged for the human describer). <a href="https://github.com/tedinroc/gapcaster-small#known-limitations">Full known-limitations list in the README</a>.</p>
   </section>
 
   <section id="how">
     <h2>Six stages, all local — plus a browser studio for describers</h2>
-    <p class="sub">No frontier API, no cloud upload, no account. Four of the six stages use deterministic code or tiny speech models under 1B; only visual facts, short-line drafting and checking call Qwen3-VL-8B.</p>
+    <p class="sub">No frontier API, no cloud upload, no account. Four of the six stages use deterministic code or tiny speech models under 1B; only visual facts, short-line drafting and checking call Qwen3.5-9B (or Qwen3-VL-8B).</p>
     <div class="how">
       <div class="step"><span class="n">01</span><h3>Map the silences</h3><p>Whisper large-v3-turbo (0.8B) word timestamps and Silero VAD independently mark dialogue. Silences keep 0.25 s lead and 0.30 s tail; long silences split at PySceneDetect shot cuts.</p></div>
-      <div class="step"><span class="n">02</span><h3>Read the shots</h3><p>Qwen3-VL-8B returns JSON facts per shot: who, where, action, on-screen text, key visual fact and confidence. A describer-written cast sheet controls how characters are named.</p></div>
+      <div class="step"><span class="n">02</span><h3>Read the shots</h3><p>Qwen3.5-9B (or Qwen3-VL-8B) returns JSON facts per shot: who, where, action, on-screen text, key visual fact and confidence. A describer-written cast sheet controls how characters are named.</p></div>
       <div class="step"><span class="n">03</span><h3>Write to budget</h3><p>Drafts are budgeted at 2.6 words/s in English or 4.0 characters/s in Traditional Chinese. Unread story text is queued; production credits and URLs are filtered.</p></div>
-      <div class="step"><span class="n">04</span><h3>Speak and measure</h3><p>Kokoro-82M (0.08B) speaks each draft and measures its real spoken duration. Overflows try 1.08× and 1.15× speed, then rewrite against the exact overflow, up to three rounds.</p></div>
+      <div class="step"><span class="n">04</span><h3>Speak and measure</h3><p>Local Taiwanese Mandarin (<code>zh-TW</code>) neural speech or Kokoro-82M (0.08B) speaks each draft and measures its real duration. Overflows try 1.08× and 1.15× speed, then rewrite against the exact overflow.</p></div>
       <div class="step"><span class="n">05</span><h3>Gate and verify</h3><p>Deterministic English and Mandarin AD rules block camera language, speculation and first person. A grounded verifier checks each claim against the shots on screen while it plays.</p></div>
       <div class="step"><span class="n">06</span><h3>Describer Studio</h3><p><code>gapcaster web</code> opens a local-only (<code>127.0.0.1</code>) studio where describers audit frames and provenance, approve/edit/reject lines, and re-mix only approved lines in one click.</p></div>
     </div>
@@ -150,7 +153,7 @@
   <section id="human-scale">
     <h2>Small. Intentional. Tailored.</h2>
     <div class="principles">
-      <div class="principle"><h3><span>Small.</span></h3><p>All core models are ≤10B open weights: Qwen3-VL-8B, Whisper large-v3-turbo (0.8B), Silero VAD and Kokoro-82M (0.08B) — 13.7–13.8 GB peak on one laptop, ~39–50 s per minute of video, zero cloud compute. Small studios and schools often handle unreleased or licensed footage that cannot be uploaded, on tiny budgets.</p></div>
+      <div class="principle"><h3><span>Small.</span></h3><p>All core models are ≤10B open weights: Qwen3.5-9B / Qwen3-VL-8B, Whisper large-v3-turbo (0.8B), Silero VAD and Kokoro-82M (0.08B) — 13.1–13.7 GB peak on one laptop, ~38–50 s per minute of video, zero cloud compute. Small studios and schools often handle unreleased or licensed footage that cannot be uploaded, on tiny budgets.</p></div>
       <div class="principle"><h3><span>Intentional.</span></h3><p>Footage, transcripts and drafts stay on <code>127.0.0.1</code>: no accounts, no telemetry, no API calls. Every line keeps full JSON provenance, the describer's cast sheet governs naming, and export mixes only human-approved lines. Plain-text AD rules are open for describers and blind listeners to govern.</p></div>
       <div class="principle"><h3><span>Tailored.</span></h3><p>Built specifically around dialogue silences, professional AD guidelines, and a non-CLI browser review workflow. Tailored for Taiwan's AD gap with Traditional Chinese text tracks, character-rate budgets, Mandarin style rules, and an accessible screen-reader listening study.</p></div>
     </div>
@@ -172,8 +175,8 @@
   <div class="wrap footgrid">
     <div>
       <p><b>GapCaster Small</b> · MIT code, © 2026 Ted Chen · built with AI coding assistance, reviewed and measured by the author. Continuation of the frozen <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> prototype.</p>
-      <p>Models: Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Young Coffee Story</em> © <span lang="zh-Hant">台灣失智症協會</span> (Taiwan Alzheimer's Disease Association) / <span lang="zh-Hant">觀賞故事</span>, CC BY 3.0, and <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified excerpts with synthetic AD drafts, not endorsed by the original creators.</p>
-      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">Taiwanese doc review</a> · <a href="sample-zh/review.html">ToS Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="https://ad-listen.pages.dev/en">English listener study</a> · <a href="zh.html" lang="zh-Hant">繁體中文</a></p>
+      <p>Models: Qwen3.5-9B (Apache-2.0), Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0), macOS local <code>zh-TW</code> neural TTS. Sample footage: <em>Grandma's Words</em> (<span lang="zh-Hant">阿嬤的話</span>) © National United University / dir. Huang Tzu-Yen, CC BY 3.0; <em>Young Coffee Story</em> © <span lang="zh-Hant">台灣失智症協會</span> / <span lang="zh-Hant">觀賞故事</span>, CC BY 3.0; and <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified excerpts with synthetic AD drafts, not endorsed by the original creators.</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-gw-zh/review.html">Grandma's Words 9B review</a> · <a href="sample-yc-zh/review.html">Taiwanese doc review</a> · <a href="sample-zh/review.html">ToS Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="https://ad-listen.pages.dev/en">Listener study</a> · <a href="zh.html" lang="zh-Hant">繁體中文</a></p>
     </div>
     <div>
       <p class="pill">≤10B open models</p>
