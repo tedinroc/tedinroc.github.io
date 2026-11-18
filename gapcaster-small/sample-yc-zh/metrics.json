@@ -1,0 +1,391 @@
+{
+  "clip_seconds": 140.0,
+  "shots": 23,
+  "dialogue_spans": 11,
+  "gaps": 7,
+  "speech_seconds_asr": 64.7,
+  "speech_seconds_vad": 57.7,
+  "speech_seconds_merged": 72.5,
+  "usable_gap_seconds": 59.0,
+  "slots": 13,
+  "lines": 13,
+  "lines_placed": 13,
+  "skipped_repeats": 0,
+  "first_try_fit": 10,
+  "fit_after_loop": 13,
+  "mean_attempts": 1.31,
+  "rewrites": 4,
+  "ad_seconds": 30.9,
+  "ad_overlap_with_detected_dialogue_s": 0.0,
+  "flagged_lines": 3,
+  "unsupported_flags": 3,
+  "rescued_by_speed": 2,
+  "rescued_by_rewrite": 2,
+  "style_or_text_gate_rewrites": 0,
+  "shots_covered": 16,
+  "processing_seconds": 91.0,
+  "seconds_per_content_minute": 39.0,
+  "stages": {
+    "prepare": 3.13,
+    "shots": 3.17,
+    "dialogue_map": 4.82,
+    "load_models": 1.87,
+    "shot_facts": 61.61,
+    "write_fit_verify": 10.84,
+    "verify": 4.58,
+    "mix": 0.95,
+    "injected_error_test": 15.36
+  },
+  "llm": {
+    "calls": 55,
+    "seconds": 74.2,
+    "prompt_tokens": 34384,
+    "gen_tokens": 3356
+  },
+  "tts": {
+    "calls": 30,
+    "audio_seconds": 73.4
+  },
+  "mlx_peak_memory_gb": 13.6,
+  "injected_error_test": {
+    "clean_lines": 13,
+    "false_alarms_on_clean_lines": 3,
+    "verdict_missing": 0,
+    "cases": [
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD001",
+        "original": "年輕失智者獻上一杯",
+        "corrupted": "年輕失智者獻上一杯，手裡拿著一把紅傘。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "年輕失智者獻上一杯",
+          "手裡拿著一把紅傘"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD001",
+        "original": "年輕失智者獻上一杯",
+        "corrupted": "字幕：YOUNG COFFEE STORY。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "字幕：YOUNG COFFEE STORY。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD002",
+        "original": "老先生遞出一杯咖啡，微笑。",
+        "corrupted": "老先生遞出一杯咖啡，微笑，天空下著大雨。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "老先生遞出一杯咖啡",
+          "微笑",
+          "天空下著大雨"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD002",
+        "original": "老先生遞出一杯咖啡，微笑。",
+        "corrupted": "字幕：是咖啡裡的故事。",
+        "caught": false,
+        "verdict_missing": false,
+        "unsupported": []
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD003",
+        "original": "字幕：YOUNG COFFEE STORY。",
+        "corrupted": "字幕：YOUNG COFFEE STORY，身處擁擠的火車站。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "身處擁擠的火車站"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD003",
+        "original": "字幕：YOUNG COFFEE STORY。",
+        "corrupted": "鳳蓮比出和平手勢，微笑。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮比出和平手勢，微笑。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD004",
+        "original": "字幕：是咖啡裡的故事。",
+        "corrupted": "字幕：是咖啡裡的故事。招牌寫著「出口」。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "招牌寫著「出口」"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD004",
+        "original": "字幕：是咖啡裡的故事。",
+        "corrupted": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮舉右手比出和平手勢，嘴角微揚。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD005",
+        "original": "鳳蓮比出和平手勢，微笑。",
+        "corrupted": "善仁比出和平手勢，微笑。",
+        "caught": false,
+        "verdict_missing": false,
+        "unsupported": []
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD005",
+        "original": "鳳蓮比出和平手勢，微笑。",
+        "corrupted": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD006",
+        "original": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+        "corrupted": "鳳蓮舉右手比出和平手勢，嘴角微揚，手裡拿著一把紅傘。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮舉右手比出和平手勢",
+          "手裡拿著一把紅傘"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD006",
+        "original": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+        "corrupted": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "樣書擺在玻璃櫃",
+          "寫著翻轉失智友善咖啡"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD007",
+        "original": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+        "corrupted": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣，天空下著大雨。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "天空下著大雨。"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD007",
+        "original": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+        "corrupted": "四盆多肉植物排成一列。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "四盆多肉植物排成一列。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD008",
+        "original": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+        "corrupted": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡，身處擁擠的火車站。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "身處擁擠的火車站"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD008",
+        "original": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+        "corrupted": "字幕：Young。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "字幕：Young。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD009",
+        "original": "四盆多肉植物排成一列。",
+        "corrupted": "四盆多肉植物排成一列。招牌寫著「出口」。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "招牌寫著「出口」"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD009",
+        "original": "四盆多肉植物排成一列。",
+        "corrupted": "老伯門口戴帽",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "老伯門口戴帽"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD010",
+        "original": "字幕：Young。",
+        "corrupted": "字幕：Young，身旁有一匹白馬。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "身旁有一匹白馬。"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD010",
+        "original": "字幕：Young。",
+        "corrupted": "鳳蓮笑著說。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮笑著說。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD011",
+        "original": "老伯門口戴帽",
+        "corrupted": "老伯門口戴帽，手裡拿著一把紅傘。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "老伯門口戴帽",
+          "手裡拿著一把紅傘"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD011",
+        "original": "老伯門口戴帽",
+        "corrupted": "鳳蓮幫善仁整理外套。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮幫善仁整理外套。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD012",
+        "original": "鳳蓮笑著說。",
+        "corrupted": "鳳蓮笑著說，天空下著大雨。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮笑著說，天空下著大雨。"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD012",
+        "original": "鳳蓮笑著說。",
+        "corrupted": "字幕：Young。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "字幕：Young。"
+        ]
+      },
+      {
+        "set": "easy",
+        "kind": "append/swap",
+        "line": "AD013",
+        "original": "鳳蓮幫善仁整理外套。",
+        "corrupted": "鳳蓮幫善仁整理外套，身處擁擠的火車站。",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "鳳蓮幫善仁整理外套",
+          "身處擁擠的火車站"
+        ]
+      },
+      {
+        "set": "hard",
+        "kind": "neighbour",
+        "line": "AD013",
+        "original": "鳳蓮幫善仁整理外套。",
+        "corrupted": "老伯門口戴帽",
+        "caught": true,
+        "verdict_missing": false,
+        "unsupported": [
+          "老伯門口戴帽"
+        ]
+      }
+    ],
+    "easy": {
+      "planted": 13,
+      "caught": 12,
+      "catch_rate": 0.92
+    },
+    "hard": {
+      "planted": 13,
+      "caught": 12,
+      "catch_rate": 0.92,
+      "by_kind": {
+        "noun": "0/0",
+        "verb": "0/0",
+        "character": "0/0",
+        "neighbour": "12/13"
+      }
+    },
+    "planted": 13,
+    "caught": 12,
+    "catch_rate": 0.92
+  }
+}

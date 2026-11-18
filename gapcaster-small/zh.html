@@ -46,76 +46,75 @@
   </section>
 
   <div class="stats" aria-label="小模型實測數字">
-    <div class="stat"><b>19 / 19</b><small>英文旁白塞進空檔（8B）</small></div>
-    <div class="stat"><b>15 / 15</b><small>繁中旁白塞進空檔（8B）</small></div>
+    <div class="stat"><b>13 / 13</b><small>台灣國語紀實片旁白塞進空檔（未調校新片，8B）</small></div>
+    <div class="stat"><b>15 / 15 · 19 / 19</b><small>《Tears of Steel》繁中／英文旁白塞進空檔（8B）</small></div>
     <div class="stat"><b>0.0 秒</b><small>旁白壓到偵測到的對話</small></div>
-    <div class="stat"><b>13.8 GB</b><small>單台筆電峰值記憶體（原 27B 需 33.2 GB）</small></div>
+    <div class="stat"><b>13.6–13.8 GB</b><small>單台筆電峰值記憶體（原 27B 需 33.2 GB）</small></div>
   </div>
 
   <section id="sample">
-    <h2>聽出差別</h2>
-    <p class="sub">下方是同一段 2 分 20 秒的《Tears of Steel》：左邊沒有口述，右邊是 GapCaster Small 產生的繁體中文口述草稿（尚未經人工編修，誠實呈現優缺點）。</p>
+    <h2>聽出差別——台灣原生國語紀實短片實測</h2>
+    <p class="sub">未調校新片（held-out）實測：台灣失智症協會人物紀實短片《Young Coffee Story》0:00–2:20（觀賞故事，CC BY 3.0；全程台灣國語訪談、含內嵌雙語對白字幕與慢速疊化轉場）。左邊是無口述原片，右邊是 GapCaster Small 在本機產生的繁體中文口述初稿。</p>
     <div class="grid2">
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-original.jpg" aria-label="原片，無口述影像">
-          <source src="../gapcaster/pilot/media/original-140.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/original-140.m4a">只有音訊</a>
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-original.jpg" aria-label="《Young Coffee Story》原片，無口述影像">
+          <source src="../gapcaster/pilot/media/original-yc-140.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/original-yc-140.m4a">只有音訊</a>
         </video>
         <div class="body">
-          <span class="label orig">原片 · 無口述</span>
+          <span class="label orig">原片 · 無口述（台灣國語紀實短片）</span>
           <h3>視障觀眾平常聽到的版本</h3>
-          <p class="note">只有英文對白與配樂，沒有任何畫面資訊。依 NCC 報告，2025 年台灣所有無線電視台合計僅播出 269.75 小時口述影像節目（公視新製僅 53 小時）。</p>
+          <p class="note">片頭木吉他配樂、手寫字卡、年輕合照、多肉盆栽與門口互動全數無聲閃過。依 NCC 報告，2025 年台灣所有無線電視台合計僅播出 269.75 小時口述影像節目（公視新製僅 53 小時）。</p>
         </div>
       </div>
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="GapCaster Small 中文口述草稿版">
-          <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/described-140-zh.m4a">只有音訊</a>
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-described.jpg" aria-label="《Young Coffee Story》GapCaster Small 繁中口述草稿版">
+          <source src="../gapcaster/pilot/media/described-yc-140-zh.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/described-yc-140-zh.m4a">只有音訊</a>
         </video>
         <div class="body">
-          <span class="label desc">GapCaster Small · 繁中草稿（8B）</span>
-          <h3>同一場戲，塞進空檔的中文口述</h3>
-          <p class="note">15 句全部塞進對白空檔、0.0 秒壓到偵測對話。這是未經口述影像員修改的 AI 初稿——點下方審核頁可直接看每句證據與錯誤。</p>
-          <details><summary>繁中旁白逐字稿（15 句）</summary><pre>[00:00:11.350] 四具引擎噴出粉白火光，煙霧翻滾。
-[00:00:18.420] 工業區中央射出強光，照亮灰濛天空。
-[00:00:45.550] 四十年後，霓虹燈閃爍
-[00:00:53.950] 字幕：SIMULATION READY...
-[00:01:02.650] 字幕：TEARS OF STEEL。
-[00:01:09.920] 巨大的機械結構壓住高樓與船桅
-[00:01:14.080] 席莉雅躺在地板上，兩盞蠟燭亮著。
-[00:01:19.380] 字幕：機械師製造殺人機器。
-[00:01:22.730] 狙擊手穩穩扣住槍機。
-[00:01:32.420] 狙擊手凝視前方，呼吸放緩。
-[00:01:36.000] 機械飛行器盤旋城上。
-[00:01:39.000] 老人靜躺床上，狙擊手低姿瞄準。
-[00:01:43.150] 蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。
-[00:01:58.950] 老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。
-[00:02:13.250] 老人跪地，仰頭。</pre></details>
+          <span class="label desc">GapCaster Small · 台灣國語新片繁中草稿（8B）</span>
+          <h3>13 句全數塞進訪談空檔、自動略過重複對白字幕</h3>
+          <p class="note">自動過濾與語音重複的內嵌開路字幕、切分慢速疊化鏡頭，0.0 秒壓到對白。這是未經口述影像員編修的 AI 初稿——點開 <a href="sample-yc-zh/review.html">《Young Coffee Story》審核頁</a> 可直接檢視每句畫面證據與驗證器抓出的 3 處疊化時間差。</p>
+          <details><summary>《Young Coffee Story》繁中旁白逐字稿（13 句）</summary><pre>[00:00:00.300] 年輕失智者獻上一杯
+[00:00:04.350] 老先生遞出一杯咖啡，微笑。
+[00:00:07.900] 字幕：YOUNG COFFEE STORY。
+[00:00:15.810] 字幕：是咖啡裡的故事。
+[00:00:26.550] 鳳蓮比出和平手勢，微笑。
+[00:00:31.620] 鳳蓮舉右手比出和平手勢，嘴角微揚。
+[00:01:11.650] 善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。
+[00:01:16.920] 樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。
+[00:01:22.670] 四盆多肉植物排成一列。
+[00:01:26.400] 字幕：Young。
+[00:01:39.650] 老伯門口戴帽
+[00:01:47.050] 鳳蓮笑著說。
+[00:02:13.110] 鳳蓮幫善仁整理外套。</pre></details>
         </div>
       </div>
     </div>
-    <p class="sub" style="margin-top:18px">打開撰稿人審核頁：<a href="sample-zh/review.html">繁體中文 8B 審核頁</a>（<a href="sample-zh/ad_script.txt">純文字稿</a>）· <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/sample/review.html">27B 對照組審核頁</a>。</p>
+    <p class="sub" style="margin-top:18px">打開撰稿人審核頁：<a href="sample-yc-zh/review.html"><b>台灣國語紀實片《Young Coffee Story》8B 審核頁</b></a>（<a href="sample-yc-zh/ad_script.txt">純文字稿</a>）· <a href="sample-zh/review.html">《Tears of Steel》繁中 8B 審核頁</a>（<a href="sample-zh/ad_script.txt">純文字稿</a>）· <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/sample/review.html">27B 對照組審核頁</a>。</p>
   </section>
 
   <section id="evidence">
-    <h2>小模型實測與誠實限制</h2>
-    <p class="sub">於單台 Apple M5 Max 筆電實測《Tears of Steel》0:00–2:20（開發用片段，屬 in-sample；下一步為未調校新片測試）。</p>
+    <h2>小模型實測與誠實限制（開發片＋未調校台灣紀實片）</h2>
+    <p class="sub">於單台 Apple M5 Max 筆電實測《Tears of Steel》0:00–2:20（開發用片段，in-sample）與台灣失智症協會《Young Coffee Story》0:00–2:20（未調校原生國語紀實短片，held-out）。</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>指標（0:00–2:20）</th><th>8B 英文</th><th>8B 繁體中文</th><th>27B 對照組（2:20 / 全片 12:14）</th></tr></thead>
+        <thead><tr><th>指標（0:00–2:20）</th><th>8B 英文（ToS）</th><th>8B 繁中（ToS）</th><th>8B 繁中（台灣國語新片 Young Coffee）</th><th>27B 對照組（2:20 / 12:14）</th></tr></thead>
         <tbody>
-          <tr><td>塞進空檔的句數</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td>17 / 17 · 70 / 71</td></tr>
-          <tr><td>旁白壓到偵測到的對話</td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
-          <tr><td>旁白壓到官方字幕 cue</td><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>0.4 秒 · 5.8 秒</td></tr>
-          <tr><td>驗證器抓到明顯植入錯誤</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td>17 / 17 · 40 / 40</td></tr>
-          <tr><td>驗證器抓到片內隱蔽錯誤</td><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td>15 / 17 · 34 / 40</td></tr>
-          <tr><td>中點畫面逐句檢查（正確 · 小錯 · 錯）</td><td>—</td><td>7 · 7 · 1</td><td>13 · 4 · 0 · —</td></tr>
-          <tr><td>每分鐘影片處理時間</td><td>50 秒</td><td>39 秒</td><td>125 秒 · 137 秒</td></tr>
-          <tr><td>峰值模型記憶體</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+          <tr><td>塞進空檔的句數</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><td>旁白壓到偵測到的對話</td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
+          <tr><td>旁白壓到官方字幕 cue</td><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>不適用（原片為內嵌開路字幕）</td><td>0.4 秒 · 5.8 秒</td></tr>
+          <tr><td>驗證器抓到明顯植入錯誤</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><td>驗證器抓到片內隱蔽錯誤</td><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td><b>12 / 13</b>（鄰句置換）</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><td>原稿被驗證器標記句數</td><td>2 / 19</td><td>1 / 15</td><td>3 / 13（3 處皆為真實疊化時間差）</td><td>1 / 17 · —</td></tr>
+          <tr><td>中點畫面逐句檢查（正確 · 小錯 · 錯）</td><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
+          <tr><td>每分鐘影片處理時間</td><td>50 秒</td><td>39 秒</td><td><b>39 秒</b></td><td>125 秒 · 137 秒</td></tr>
+          <tr><td>峰值模型記憶體</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px">誠實取捨：從 27B 降到 8B 省下近六成記憶體、時間貼合率維持 100%，但畫面辨識變弱（中文 <code>AD007</code> 把躺著的老人誤認成席莉雅，且 8B 驗證器漏掉細微動詞替換）。因此人工審核是強制放行關卡，不是事後點綴。</p>
+    <p class="sub" style="margin-top:14px">誠實取捨：從 27B 降到 8B 省下近六成記憶體，在英文電影與台灣國語紀實片皆維持 100% 空檔貼合與 0.0 秒壓對話。在《Young Coffee Story》中，驗證器標記的 3 句原稿全數是慢速疊化造成的真實時間差（成功攔下 2 句錯誤中的 <code>AD002</code>），僅剩 1 句穿插單車照的 <code>AD012</code> 未被標出，交由真人審核剔除。</p>
   </section>
 
   <section id="how">
@@ -154,8 +153,8 @@
 <footer>
   <div class="wrap footgrid">
     <div>
-      <p><b>GapCaster Small</b> · MIT 開源，© 2026 Ted Chen。延續自已凍結的 <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> 原型。</p>
-      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-zh/review.html">中文審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/pilot/">聆聽測試</a> · <a href="index.html">English</a></p>
+      <p><b>GapCaster Small</b> · MIT 開源，© 2026 Ted Chen。延續自已凍結的 <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> 原型。樣本影片：台灣失智症協會《Young Coffee Story》（觀賞故事，CC BY 3.0）及 Blender Foundation《Tears of Steel》（CC BY 3.0）；均為混入合成口述初稿之改作，非原單位背書。</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">台灣國語紀實片審核頁</a> · <a href="sample-zh/review.html">ToS 中文審核頁</a> · <a href="sample-8b/review.html">英文 8B 審核頁</a> · <a href="../gapcaster/pilot/">聆聽測試</a> · <a href="index.html">English</a></p>
     </div>
     <div>
       <p class="pill">≤10B 開源小模型</p>

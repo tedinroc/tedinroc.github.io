@@ -50,76 +50,75 @@
   </section>
 
   <div class="stats" aria-label="Measured small-model results">
-    <div class="stat"><b>19 / 19</b><small>English lines fit their silence (8B)</small></div>
-    <div class="stat"><b>15 / 15</b><small>Mandarin lines fit their silence (8B)</small></div>
-    <div class="stat"><b>0.0 s</b><small>narration over detected dialogue</small></div>
-    <div class="stat"><b>13.8 GB</b><small>peak memory on one laptop (down from 33.2 GB)</small></div>
+    <div class="stat"><b>13 / 13</b><small>Taiwanese Mandarin doc lines fit (held-out, 8B)</small></div>
+    <div class="stat"><b>15 / 15 · 19 / 19</b><small>Mandarin &amp; English *Tears of Steel* lines fit (8B)</small></div>
+    <div class="stat"><b>0.0 s</b><small>narration over detected dialogue across all runs</small></div>
+    <div class="stat"><b>13.6–13.8 GB</b><small>peak memory on one laptop (down from 33.2 GB)</small></div>
   </div>
 
   <section id="sample">
-    <h2>Listen to the difference</h2>
-    <p class="sub">All clips below are the same 2 min 20 s excerpt of <em>Tears of Steel</em>. One has no description; the second adds GapCaster Small's Mandarin narration (Traditional Chinese script); <a href="../gapcaster/pilot/?ad=en">an 8B/reference English track is also available</a>.</p>
+    <h2>Listen to the difference — on a native Taiwanese Mandarin documentary</h2>
+    <p class="sub">Held-out out-of-sample test: 0:00–2:20 of <em>Young Coffee Story</em> (《【Young Coffee Story】人物紀實短片》, Taiwan Alzheimer's Disease Association / 觀賞故事, CC BY 3.0), spoken in Taiwanese Mandarin with burned-in open captions and slow cross-dissolves. Below: original vs. GapCaster Small's 8B Mandarin draft — followed by <em>Tears of Steel</em> in Mandarin and English.</p>
     <div class="grid2">
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-original.jpg" aria-label="Original excerpt without audio description">
-          <source src="../gapcaster/pilot/media/original-140.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/original-140.m4a">Audio only</a>
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-original.jpg" aria-label="Original Taiwanese documentary excerpt without audio description">
+          <source src="../gapcaster/pilot/media/original-yc-140.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/original-yc-140.m4a">Audio only</a>
         </video>
         <div class="body">
-          <span class="label orig">Original · no description</span>
-          <h3>What a blind viewer hears today</h3>
-          <p class="note">Dialogue and score, with no information about the picture. In Taiwan, all terrestrial TV stations together aired only 269.75 hours of described programming in 2025 (53 newly produced hours on public TV).</p>
+          <span class="label orig">Original · Young Coffee Story (no AD)</span>
+          <h3>Taiwanese documentary without description</h3>
+          <p class="note">Acoustic guitar intro, book-page captions, archival photos and café scenes pass in silence between interview segments. In Taiwan, all terrestrial TV stations together aired only 269.75 hours of AD in 2025 (53 newly produced hours on public TV).</p>
         </div>
       </div>
       <div class="videocard">
-        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="Mandarin described excerpt with GapCaster Small narration">
-          <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
-          <a href="../gapcaster/pilot/media/described-140-zh.m4a">Audio only</a>
+        <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-described.jpg" aria-label="Mandarin described excerpt of Young Coffee Story">
+          <source src="../gapcaster/pilot/media/described-yc-140-zh.mp4" type="video/mp4">
+          <a href="../gapcaster/pilot/media/described-yc-140-zh.m4a">Audio only</a>
         </video>
         <div class="body">
-          <span class="label desc">GapCaster Small · Mandarin (`--lang zh`, 8B)</span>
-          <h3>The same scene, drafted in Mandarin</h3>
-          <p class="note">15 lines budgeted at 4.0 characters/s, stored in Traditional Chinese, fitted with zero overlap over detected speech. Unedited AI draft — inspect its mistakes on the review page.</p>
-          <details><summary>Mandarin description script (15 lines)</summary><pre>[00:00:11.350] 四具引擎噴出粉白火光，煙霧翻滾。
-[00:00:18.420] 工業區中央射出強光，照亮灰濛天空。
-[00:00:45.550] 四十年後，霓虹燈閃爍
-[00:00:53.950] 字幕：SIMULATION READY...
-[00:01:02.650] 字幕：TEARS OF STEEL。
-[00:01:09.920] 巨大的機械結構壓住高樓與船桅
-[00:01:14.080] 席莉雅躺在地板上，兩盞蠟燭亮著。
-[00:01:19.380] 字幕：機械師製造殺人機器。
-[00:01:22.730] 狙擊手穩穩扣住槍機。
-[00:01:32.420] 狙擊手凝視前方，呼吸放緩。
-[00:01:36.000] 機械飛行器盤旋城上。
-[00:01:39.000] 老人靜躺床上，狙擊手低姿瞄準。
-[00:01:43.150] 蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。
-[00:01:58.950] 老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。
-[00:02:13.250] 老人跪地，仰頭。</pre></details>
+          <span class="label desc">GapCaster Small · Held-out Taiwanese Mandarin (8B)</span>
+          <h3>13 / 13 lines fitted into Mandarin dialogue pauses</h3>
+          <p class="note">Open dialogue captions are suppressed automatically so spoken words are not read twice; slow cross-dissolves are subdivided; 0.0 s overlap over speech. Unedited AI draft — inspect all 13 lines and the 3 true-positive verifier flags on the <a href="sample-yc-zh/review.html">Young Coffee review page</a>.</p>
+          <details><summary>Mandarin description script — Young Coffee Story (13 lines)</summary><pre>[00:00:00.300] 年輕失智者獻上一杯
+[00:00:04.350] 老先生遞出一杯咖啡，微笑。
+[00:00:07.900] 字幕：YOUNG COFFEE STORY。
+[00:00:15.810] 字幕：是咖啡裡的故事。
+[00:00:26.550] 鳳蓮比出和平手勢，微笑。
+[00:00:31.620] 鳳蓮舉右手比出和平手勢，嘴角微揚。
+[00:01:11.650] 善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。
+[00:01:16.920] 樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。
+[00:01:22.670] 四盆多肉植物排成一列。
+[00:01:26.400] 字幕：Young。
+[00:01:39.650] 老伯門口戴帽
+[00:01:47.050] 鳳蓮笑著說。
+[00:02:13.110] 鳳蓮幫善仁整理外套。</pre></details>
         </div>
       </div>
     </div>
-    <p class="sub" style="margin-top:18px">Inspect the describer review pages: <a href="sample-zh/review.html">Mandarin 8B review page</a> (<a href="sample-zh/ad_script.txt">plain script</a>) · <a href="sample-8b/review.html">English 8B review page</a> (<a href="sample-8b/ad_script.txt">plain script</a>) · <a href="../gapcaster/sample/review.html">27B reference review page</a>.</p>
+    <p class="sub" style="margin-top:18px">Inspect every describer review page (frames, rejected drafts, timings, verifier flags): <a href="sample-yc-zh/review.html"><b>Taiwanese Mandarin doc review (held-out)</b></a> (<a href="sample-yc-zh/ad_script.txt">script</a>) · <a href="sample-zh/review.html">Tears of Steel Mandarin 8B review</a> (<a href="sample-zh/ad_script.txt">script</a>) · <a href="sample-8b/review.html">Tears of Steel English 8B review</a> (<a href="sample-8b/ad_script.txt">script</a>) · <a href="../gapcaster/sample/review.html">27B reference review</a>.</p>
   </section>
 
   <section id="evidence">
     <h2>What has been measured on small models</h2>
-    <p class="sub">Measured on one Apple M5 Max laptop on <em>Tears of Steel</em> 0:00–2:20 (in-sample development clip; held-out films are next). Known misses are published alongside wins.</p>
+    <p class="sub">Measured on one Apple M5 Max laptop across <em>Tears of Steel</em> 0:00–2:20 (in-sample development clip) and <em>Young Coffee Story</em> 0:00–2:20 (held-out Taiwanese Mandarin documentary). Known misses are published alongside wins.</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Measure (0:00–2:20)</th><th>8B, English</th><th>8B, Mandarin</th><th>27B reference (EN, 2:20 / full 12:14)</th></tr></thead>
+        <thead><tr><th>Measure (0:00–2:20)</th><th>8B, EN (<em>ToS</em>)</th><th>8B, Mandarin (<em>ToS</em>)</th><th>8B, Mandarin (<em>Young Coffee</em>, held-out)</th><th>27B ref (EN, 2:20 / 12:14)</th></tr></thead>
         <tbody>
-          <tr><td>Lines that fit their silence</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td>17 / 17 · 70 / 71</td></tr>
-          <tr><td>Narration over detected speech</td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td>0.0 s · 0.0 s</td></tr>
-          <tr><td>Narration over official subtitle cues</td><td>0.6 s (cue tails)</td><td>0.4 s</td><td>0.4 s · 5.8 s</td></tr>
-          <tr><td>Verifier · obvious planted errors caught</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td>17 / 17 · 40 / 40</td></tr>
-          <tr><td>Verifier · subtle in-film swaps caught</td><td>13 / 19 (verb swaps 0/5)</td><td>11 / 15 (char/neighbour)</td><td>15 / 17 · 34 / 40</td></tr>
-          <tr><td>AI-assisted midpoint frame check (acc · minor · wrong)</td><td>—</td><td>7 · 7 · 1</td><td>13 · 4 · 0 · —</td></tr>
-          <tr><td>Processing per content minute</td><td>50 s</td><td>39 s</td><td>125 s · 137 s</td></tr>
-          <tr><td>Peak model memory</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+          <tr><td>Lines that fit their silence</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><td>Narration over detected speech</td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td><b>0.0 s</b></td><td>0.0 s · 0.0 s</td></tr>
+          <tr><td>Narration over official subtitle cues</td><td>0.6 s (cue tails)</td><td>0.4 s</td><td>n/a (open-captioned)</td><td>0.4 s · 5.8 s</td></tr>
+          <tr><td>Verifier · obvious planted errors caught</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><td>Verifier · subtle in-film swaps caught</td><td>13 / 19 (verb 0/5)</td><td>11 / 15 (char/nbr)</td><td><b>12 / 13</b> (neighbour)</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><td>Verifier flags on unmodified lines</td><td>2 / 19</td><td>1 / 15</td><td>3 / 13 (all 3 true dissolve leads)</td><td>1 / 17 · —</td></tr>
+          <tr><td>AI-assisted midpoint frame check (acc · minor · wrong)</td><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
+          <tr><td>Processing per content minute</td><td>50 s</td><td>39 s</td><td><b>39 s</b></td><td>125 s · 137 s</td></tr>
+          <tr><td>Peak model memory</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px">Honest trade-off: moving from 27B to 8B cuts peak memory by nearly 60% and preserves every timing guarantee, but visual accuracy drops — in Mandarin, <code>AD007</code> misidentified the resting character as Celia and the 8B verifier missed verb swaps. That is why human describer approval is a hard release gate, not an optional review. <a href="https://github.com/tedinroc/gapcaster-small#known-limitations">Full known-limitations list in the README</a>.</p>
+    <p class="sub" style="margin-top:14px">Honest trade-off: moving from 27B to 8B cuts peak memory by nearly 60% and keeps 100% silence fit across both English cinema and a held-out Taiwanese documentary. On <em>Young Coffee Story</em>, all 3 verifier flags on unmodified lines caught real cross-dissolve timing leads (including 1 of the 2 wrong lines, <code>AD002</code>), leaving 1 unflagged B-roll cut-in error (<code>AD012</code>) for the human describer to reject. <a href="https://github.com/tedinroc/gapcaster-small#known-limitations">Full known-limitations list in the README</a>.</p>
   </section>
 
   <section id="how">
@@ -171,8 +170,8 @@
   <div class="wrap footgrid">
     <div>
       <p><b>GapCaster Small</b> · MIT code, © 2026 Ted Chen · built with AI coding assistance, reviewed and measured by the author. Continuation of the frozen <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> prototype.</p>
-      <p>Models: Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified work, not endorsed by the Blender Foundation. Official subtitles used only for evaluation.</p>
-      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-zh/review.html">Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="../gapcaster/pilot/">Listener study</a> · <a href="zh.html">繁體中文</a></p>
+      <p>Models: Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Young Coffee Story</em> © 台灣失智症協會 (Taiwan Alzheimer's Disease Association) / 觀賞故事, CC BY 3.0, and <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified excerpts with synthetic AD drafts, not endorsed by the original creators.</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">Taiwanese doc review</a> · <a href="sample-zh/review.html">ToS Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="../gapcaster/pilot/">Listener study</a> · <a href="zh.html">繁體中文</a></p>
     </div>
     <div>
       <p class="pill">≤10B open models</p>
