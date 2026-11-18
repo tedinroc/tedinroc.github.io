@@ -42,11 +42,11 @@
       </div>
     </div>
     <div class="hero-media">
-      <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="Mandarin described excerpt of Tears of Steel">
-        <source src="../gapcaster/pilot/media/described-140-zh.mp4" type="video/mp4">
-        Your browser cannot play this video. <a href="../gapcaster/pilot/media/described-140-zh.m4a">Listen to the audio instead</a>.
+      <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-described.jpg" aria-label="English 8B described excerpt of Tears of Steel">
+        <source src="../gapcaster/pilot/media/described-140-8b.mp4" type="video/mp4">
+        Your browser cannot play this video. <a href="../gapcaster/pilot/media/described-140-8b.m4a">Listen to the English 8B audio instead</a>.
       </video>
-      <div class="cap"><span>0:00–2:20 · Mandarin AI draft (8B model, 13.8 GB peak)</span><span>Tears of Steel · CC BY 3.0</span></div>
+      <div class="cap"><span>0:00–2:20 · English AI draft (8B model, 19/19 fit, 13.7 GB peak)</span><span>Tears of Steel · CC BY 3.0</span></div>
     </div>
   </section>
 
@@ -59,7 +59,7 @@
 
   <section id="sample">
     <h2>Listen to the difference — on a native Taiwanese Mandarin documentary</h2>
-    <p class="sub">Held-out out-of-sample test: 0:00–2:20 of <em>Young Coffee Story</em> (《【Young Coffee Story】人物紀實短片》, Taiwan Alzheimer's Disease Association / 觀賞故事, CC BY 3.0), spoken in Taiwanese Mandarin with burned-in open captions and slow cross-dissolves. Below: original vs. GapCaster Small's 8B Mandarin draft — followed by <em>Tears of Steel</em> in Mandarin and English.</p>
+    <p class="sub">Held-out out-of-sample test: 0:00–2:20 of <em>Young Coffee Story</em> (<span lang="zh-Hant">《【Young Coffee Story】人物紀實短片》</span>, Taiwan Alzheimer's Disease Association / <span lang="zh-Hant">觀賞故事</span>, CC BY 3.0), spoken in Taiwanese Mandarin with burned-in open captions and slow cross-dissolves. Below: original vs. GapCaster Small's 8B Mandarin draft — alongside the English 8B track in the player above.</p>
     <div class="grid2">
       <div class="videocard">
         <video controls preload="metadata" poster="../gapcaster/pilot/media/poster-yc-original.jpg" aria-label="Original Taiwanese documentary excerpt without audio description">
@@ -81,7 +81,7 @@
           <span class="label desc">GapCaster Small · Held-out Taiwanese Mandarin (8B)</span>
           <h3>13 / 13 lines fitted into Mandarin dialogue pauses</h3>
           <p class="note">Open dialogue captions are suppressed automatically so spoken words are not read twice; slow cross-dissolves are subdivided; 0.0 s overlap over speech. Unedited AI draft — inspect all 13 lines and the 3 true-positive verifier flags on the <a href="sample-yc-zh/review.html">Young Coffee review page</a>.</p>
-          <details><summary>Mandarin description script — Young Coffee Story (13 lines)</summary><pre>[00:00:00.300] 年輕失智者獻上一杯
+          <details><summary>Mandarin description script — Young Coffee Story (13 lines)</summary><pre lang="zh-Hant">[00:00:00.300] 年輕失智者獻上一杯
 [00:00:04.350] 老先生遞出一杯咖啡，微笑。
 [00:00:07.900] 字幕：YOUNG COFFEE STORY。
 [00:00:15.810] 字幕：是咖啡裡的故事。
@@ -172,12 +172,12 @@
   <div class="wrap footgrid">
     <div>
       <p><b>GapCaster Small</b> · MIT code, © 2026 Ted Chen · built with AI coding assistance, reviewed and measured by the author. Continuation of the frozen <a href="https://github.com/tedinroc/gapcaster">GapCaster</a> prototype.</p>
-      <p>Models: Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Young Coffee Story</em> © 台灣失智症協會 (Taiwan Alzheimer's Disease Association) / 觀賞故事, CC BY 3.0, and <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified excerpts with synthetic AD drafts, not endorsed by the original creators.</p>
-      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">Taiwanese doc review</a> · <a href="sample-zh/review.html">ToS Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="../gapcaster/pilot/">Listener study</a> · <a href="zh.html">繁體中文</a></p>
+      <p>Models: Qwen3-VL-8B-Instruct (Apache-2.0), Whisper large-v3-turbo (MIT), Silero VAD (MIT), Kokoro-82M (Apache-2.0). Sample footage: <em>Young Coffee Story</em> © <span lang="zh-Hant">台灣失智症協會</span> (Taiwan Alzheimer's Disease Association) / <span lang="zh-Hant">觀賞故事</span>, CC BY 3.0, and <em>Tears of Steel</em> © Blender Foundation, CC BY 3.0; modified excerpts with synthetic AD drafts, not endorsed by the original creators.</p>
+      <p><a href="https://github.com/tedinroc/gapcaster-small">Repository</a> · <a href="sample-yc-zh/review.html">Taiwanese doc review</a> · <a href="sample-zh/review.html">ToS Mandarin review</a> · <a href="sample-8b/review.html">English 8B review</a> · <a href="../gapcaster/pilot/en.html">English listener study</a> · <a href="zh.html" lang="zh-Hant">繁體中文</a></p>
     </div>
     <div>
       <p class="pill">≤10B open models</p>
-      <p class="pill">English · 繁體中文</p>
+      <p class="pill">English · <span lang="zh-Hant">繁體中文</span></p>
       <p class="pill">Local · no cloud · MIT</p>
       <p style="margin-top:14px">Independent project page; not affiliated with or endorsed by Mozilla Foundation.</p>
     </div>
