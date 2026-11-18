@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GapCaster 口述影像無障礙試聽回饋 · Audio Description Listening Study</title>
-<meta name="description" content="A 15-minute screen-reader accessible listening study for blind and low-vision listeners: does GapCaster's audio description work for you?">
+<meta name="description" content="誠摯邀請視障朋友參與約 15 分鐘的台灣國語短片口述影像試聽回饋：支援 VoiceOver／TalkBack／NVDA，免註冊、免下載，勾選完一鍵匿名送出。">
+<meta property="og:title" content="GapCaster 口述影像無障礙試聽回饋（約 15 分鐘・一鍵匿名送出）">
+<meta property="og:description" content="試聽同一段 2 分 20 秒台灣國語紀實短片的「原片」與「AI 口述初稿」，協助開源工具改進。全程支援螢幕閱讀器與放大閱讀，不收個資。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tedinroc.github.io/gapcaster/pilot/">
 <style>
 :root{
   --bg:#0d1110; --panel:#151b19; --panel2:#1d2522; --ink:#f2f5f3; --muted:#b9c3bd;
@@ -381,6 +385,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
             <div class="opts">
               <label class="opt"><input type="radio" name="vision" id="v-blind" value="blind"><span class="zh-t">完全以聽覺為主（全盲）</span><span class="en-t hidden" lang="en">Audio only (blind)</span></label>
               <label class="opt"><input type="radio" name="vision" id="v-low" value="low"><span class="zh-t">保有部分視覺（低視力／弱視）</span><span class="en-t hidden" lang="en">Partial sight (low vision)</span></label>
+              <label class="opt"><input type="radio" name="vision" id="v-sighted" value="sighted"><span class="zh-t">一般視力（親友／志工／口述影像相關）</span><span class="en-t hidden" lang="en">Sighted (ally / volunteer / describer)</span></label>
               <label class="opt"><input type="radio" name="vision" id="v-pref" value="prefer"><span class="zh-t">其他或不方便透露</span><span class="en-t hidden" lang="en">Other / prefer not to say</span></label>
             </div>
           </fieldset>
@@ -650,7 +655,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
   var startedAt=new Date().toISOString();
   function collect(){
     var rawPid=(document.getElementById('p-id').value||'').trim();
-    var data={kind:'listener_pilot',version:3,id:(rawPid||autoId),
+    var data={kind:'listener_pilot',version:3,session_id:autoId,id:(rawPid||autoId),
       order:order, clip:clip, adLang:adLang, started:startedAt, submitted:new Date().toISOString(),
       noQuote:(document.getElementById('no-quote').checked||document.getElementById('no-quote-en').checked),
       a:{}, b:{}, compare:{}, about:{}};
