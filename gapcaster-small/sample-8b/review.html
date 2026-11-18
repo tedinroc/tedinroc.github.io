@@ -161,4 +161,46 @@ document.getElementById('dl-json').onclick=()=>{document.querySelectorAll('.line
 document.getElementById('dl-vtt').onclick=()=>{let v='WEBVTT\nKind: descriptions\n\n';document.querySelectorAll('.line').forEach(el=>{const s=st[el.dataset.id];if(!s||s.status==='rejected'||s.status==='pending')return;
  v+=el.dataset.id+'\n'+el.dataset.a+' --> '+el.dataset.b+'\n'+s.text+'\n\n';});download('approved.vtt',v,'text/vtt');};
 paint();
-</script></body></html>
+</script>
+<div id="online-review-bar" role="region" aria-label="Submit review online" style="background:var(--card);border:2px solid var(--ad);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+  <div><strong>One-click online review submission:</strong> <span class="sub">Mark any lines Approve / Edit / Reject or type a note below, then submit directly — no file download required.</span></div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <label for="rev-note" class="sr-only">Overall describer notes or critique (optional)</label>
+    <input id="rev-note" type="text" placeholder="Overall feedback: what felt wrong or awkward? (optional, anonymous)" style="flex:1;min-width:240px;min-height:42px;padding:8px 12px;border-radius:8px;border:1.5px solid var(--rule);background:var(--bg);color:var(--ink);font:inherit">
+    <button class="primary" id="online-submit-review" type="button">Submit review directly</button>
+  </div>
+  <div id="online-review-status" role="status" aria-live="polite" style="font-weight:700;color:var(--ok)"></div>
+</div>
+<script>
+(function(){
+  const bar=document.getElementById('online-review-bar');
+  const anchor=document.querySelector('.bar2');
+  if(bar&&anchor) anchor.insertAdjacentElement('afterend', bar);
+  const btn=document.getElementById('online-submit-review');
+  const stEl=document.getElementById('online-review-status');
+  const noteEl=document.getElementById('rev-note');
+  if(!btn) return;
+  btn.onclick=async()=>{
+    document.querySelectorAll('.line').forEach(el=>{if(el.querySelector('.txt').isContentEditable)el.querySelector('button[data-act=edit]').click();});
+    const lines=[...document.querySelectorAll('.line')].map(el=>({id:el.dataset.id,status:(st[el.dataset.id]||{}).status||'pending',original:el.dataset.orig,text:(st[el.dataset.id]||{}).text||el.dataset.orig}));
+    const note=(noteEl.value||'').trim();
+    if(!note && lines.every(r=>r.status==='pending')){
+      stEl.textContent='Please mark at least one line or enter a note before submitting.';
+      return;
+    }
+    btn.disabled=true; stEl.textContent='Submitting review…';
+    try{
+      const res=await fetch('https://gapcaster-pilot-collector.jiacpunk.workers.dev/submit',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({kind:'describer_review',run:document.body.dataset.run,note,lines,submitted:new Date().toISOString()})
+      });
+      const j=await res.json();
+      if(!res.ok||!j.ok) throw new Error(j.error||'HTTP '+res.status);
+      stEl.textContent='✅ Review submitted! (Receipt: '+j.receipt+') Thank you.';
+    }catch(err){
+      stEl.textContent='Network error — please retry or use Download approved.json above.';
+    }finally{ btn.disabled=false; }
+  };
+})();
+</script>
+</body></html>
