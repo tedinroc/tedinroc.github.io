@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GapCaster 語音描述聆聽測試 · Audio Description Listening Test</title>
-<meta name="description" content="A short listening study for blind and low-vision listeners: does GapCaster's audio description help you follow a film?">
+<title>GapCaster 口述影像無障礙聆聽測試 · Accessible Listening Study</title>
+<meta name="description" content="A 15-minute screen-reader accessible listening study for blind and low-vision listeners: does GapCaster's audio description help you follow a film?">
 <style>
 :root{
   --bg:#0d1110; --panel:#151b19; --panel2:#1d2522; --ink:#f2f5f3; --muted:#b9c3bd;
@@ -14,12 +14,16 @@
 @media (prefers-color-scheme: light){
   :root{--bg:#f7f7f2;--panel:#ffffff;--panel2:#eef1ec;--ink:#151a17;--muted:#4c5751;--line:#c9d1ca;--accent:#9a3d00;--accent-ink:#fff;--ok:#1e6b45;--focus:#004f9e;}
 }
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto!important}
+  *{transition:none!important}
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif}
-a{color:inherit}
-.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:12px 18px;border-radius:0 0 10px 0;z-index:9}
-.skip:focus{left:0}
+a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:12px 18px;border-radius:0 0 10px 0;z-index:20;font-weight:800;text-decoration:none}
+.skip:focus{left:0;outline:3px solid var(--focus);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:24px 20px 80px}
 header{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;padding:8px 0 20px;border-bottom:1px solid var(--line)}
 .brand{font-weight:800;letter-spacing:-.01em;font-size:19px}
@@ -27,7 +31,7 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 .lang{display:flex;gap:6px}
 .lang button{font:inherit;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;min-height:44px}
 .lang button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
-h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin:34px 0 12px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:34px 0 12px}
 .lede{font-size:20px;color:var(--muted);max-width:46ch;margin:0 0 26px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;margin:0 0 22px}
 .card h2{font-size:24px;margin:0 0 12px;letter-spacing:-.01em}
@@ -39,10 +43,9 @@ h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin:
 .grid{display:grid;gap:14px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border-radius:12px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:800;cursor:pointer;text-decoration:none}
 .btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,audio:focus-visible,video:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,audio:focus-visible,video:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .player{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}
 .player h3{margin:0 0 12px;font-size:20px}
-.media-row{display:grid;gap:12px}
 audio, video{width:100%;border-radius:10px}
 video{background:#000;max-height:52vh}
 details{margin:12px 0;border:1px dashed var(--line);border-radius:12px;padding:10px 16px}
@@ -52,268 +55,271 @@ fieldset{border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0
 legend{font-weight:800;font-size:19px;padding:0 8px}
 .q{margin:0 0 22px;padding:0 0 18px;border-bottom:1px solid var(--line)}
 .q:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
-.q > label{display:block;font-weight:700;margin-bottom:6px}
-.help{display:block;font-weight:400;color:var(--muted);font-size:16px;margin-bottom:10px}
+.q > label, .q > .q-label{display:block;font-weight:700;margin-bottom:10px}
 .scale{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.scale input{position:absolute;opacity:0;width:1px;height:1px}
-.scale label{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:52px;border:2px solid var(--line);border-radius:12px;font-weight:800;cursor:pointer;background:var(--panel2)}
-.scale label:hover{border-color:var(--accent)}
+.scale > div{position:relative}
+.scale input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
+.scale label{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:52px;padding:0 12px;border:2px solid var(--line);border-radius:12px;font-weight:800;cursor:pointer;background:var(--panel2)}
+.scale > div:hover label{border-color:var(--accent)}
 .scale input:checked + label{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .scale input:focus-visible + label{outline:3px solid var(--focus);outline-offset:3px}
-.anchors{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--muted);max-width:420px;margin-top:6px}
+.anchors{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;color:var(--muted);max-width:340px;margin-top:8px}
 textarea{width:100%;min-height:96px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font:inherit}
 input[type=text]{width:100%;min-height:48px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font:inherit}
 .status{min-height:28px;margin-top:10px;font-size:16px;color:var(--ok);font-weight:700}
 .hidden{display:none!important}
-.warn{border-color:var(--accent);background:linear-gradient(0deg,rgba(255,179,122,.08),rgba(255,179,122,.08))}
-table{border-collapse:collapse;width:100%;font-size:16px}
-th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
 footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
 @media print{.lang,header .btn,.btn{display:none}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">跳到主要內容 · Skip to main content</a>
+<a class="skip" href="#main"><span class="zh-t">跳到主要內容</span><span class="en-t hidden" lang="en">Skip to main content</span></a>
 <div class="wrap">
   <header>
-    <div class="brand">Gap<span>Caster</span> · 聆聽測試 / Listening study</div>
-    <div class="lang" role="group" aria-label="Language / 語言">
-      <button type="button" id="lang-zh" aria-pressed="true">繁體中文</button>
-      <button type="button" id="lang-en" aria-pressed="false">English</button>
+    <div class="brand">Gap<span>Caster</span> · <span class="zh-t">口述影像聆聽測試</span><span class="en-t hidden" lang="en">Listening study</span></div>
+    <div class="lang" role="group" aria-label="語言選擇 / Language">
+      <button type="button" id="lang-zh" lang="zh-Hant" aria-pressed="true">繁體中文</button>
+      <button type="button" id="lang-en" lang="en" aria-pressed="false">English</button>
     </div>
   </header>
 
 <main id="main">
   <h1 id="title-zh">你聽得懂這個片段嗎？</h1>
-  <h1 id="title-en" class="hidden">Could you follow this film?</h1>
-  <p class="lede" id="lede-zh">這是一場約 15 分鐘的線上聆聽測試，對象是盲人或低視力朋友。你會聽到同一段電影的兩個版本，然後回答幾個問題。沒有標準答案，也不需要稱讚我們。</p>
-  <p class="lede hidden" id="lede-en">This is a 15-minute remote listening study for blind and low-vision listeners. You will hear two versions of the same scene and answer a few questions. There are no right answers, and no need to be polite about our tool.</p>
+  <h1 id="title-en" class="hidden" lang="en">Could you follow this film?</h1>
+  <p class="lede" id="lede-zh">這是一場約 15 分鐘的線上無障礙聆聽測試，對象是盲人或低視力朋友。你會聽到同一段影片的兩個版本，然後回答幾個問題。沒有標準答案，也不需要稱讚我們。</p>
+  <p class="lede hidden" id="lede-en" lang="en">This is a 15-minute screen-reader accessible listening study for blind and low-vision listeners. You will hear two versions of the same scene and answer a few questions. There are no right answers, and no need to be polite about our tool.</p>
 
-  <section class="card" id="consent-card">
+  <section class="card" id="consent-card" aria-labelledby="h-consent-zh">
     <h2 id="h-consent-zh">參與同意</h2>
-    <h2 id="h-consent-en" class="hidden">Before you start</h2>
+    <h2 id="h-consent-en" class="hidden" lang="en">Before you start</h2>
     <div id="consent-zh">
       <ul>
-        <li><strong>這是什麼：</strong>測試 GapCaster 產生的語音描述（audio description）是否幫助盲／低視力觀眾跟上影片。研究由獨立開發者 Ted Chen（台灣）進行，作為 Mozilla Foundation Human-Scale AI Incubator 申請與產品改進之用。</li>
-        <li><strong>會發生什麼：</strong>你會在線上聽同一段約 2 分 20 秒的電影，一個版本含語音描述，一個沒有；聽完後回答 6 個評分題與 3 個開放題。全程約 15 分鐘，可以隨時暫停或停止。</li>
-        <li><strong>不會發生什麼：</strong>我們不會錄音、不會錄影、不會收集你的姓名、電話或 email；不會公開你的姓名或逐字回答（匿名引述除外）。你只需要提供匿名編號（例如 P1）。</li>
+        <li><strong>這是什麼：</strong>測試 GapCaster 產生的口述影像（audio description）是否幫助盲／低視力觀眾跟上影片。研究由獨立開發者 Ted Chen（台灣）進行，作為 Mozilla Foundation Human-Scale AI Incubator 申請與開源工具改進之用。</li>
+        <li><strong>會發生什麼：</strong>你會在線上聽同一段約 2 分 20 秒的短片兩次（一個版本含口述影像，一個沒有）；聽完後回答 6 個 1 到 5 分評分題與 3 個開放題。全程約 15 分鐘，可隨時暫停或停止。</li>
+        <li><strong>不會發生什麼：</strong>我們不會錄音、不會錄影、不會收集你的姓名、電話或 email；不會公開你的姓名或逐字回答（經同意之匿名引述除外）。你只需要使用匿名編號（例如 P1）。</li>
         <li><strong>資料怎麼用：</strong>你的評分與匿名引述可用於 Mozilla 補助申請與產品改進；原始回答在 90 天內刪除。你可以要求不要被引述。</li>
-        <li><strong>風險與補償：</strong>預設測試片段為台灣失智症協會人物紀實短片《Young Coffee Story》（CC BY 3.0，全程國語對白與訪談）；若切換為科幻短片《Tears of Steel》（CC BY 3.0）則含機器人與戰鬥音效。只聽聲音通常不會不適，你可以隨時停止。本測試不提供報酬（除非主持人另外說明）。</li>
+        <li><strong>風險與補償：</strong>預設測試片段為台灣失智症協會人物紀實短片《Young Coffee Story》（CC BY 3.0，全程台灣國語訪談）；若切換為科幻短片《Tears of Steel》（CC BY 3.0）則含機器人與戰鬥音效。只聽聲音通常不會不適，你可以隨時停止。本測試不提供報酬（除非主持人另外說明）。</li>
         <li><strong>聯絡：</strong>本測試主持人會提供聯絡方式；有問題可隨時提出。</li>
       </ul>
-      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px">
-        <input type="checkbox" id="agree" style="width:26px;height:26px;margin-top:4px">
-        <span>我已了解以上說明，年滿 18 歲，自願參加，並同意我的匿名評分與引述可用於上述用途。<br><span class="note">（如果不想被引述，請勾選下方第二個框。）</span></span>
+      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;cursor:pointer">
+        <input type="checkbox" id="agree" style="width:28px;height:28px;margin-top:4px">
+        <span>我已了解以上說明，年滿 18 歲，自願參加，並同意我的匿名評分與引述可用於上述用途。<br><span class="note">（如果不想被引述原話，請再勾選下方第二個核取方塊。）</span></span>
       </label>
-      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;margin-top:10px">
-        <input type="checkbox" id="no-quote" style="width:26px;height:26px;margin-top:4px">
-        <span>請不要引述我的原話，只用分數。</span>
+      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;margin-top:12px;cursor:pointer">
+        <input type="checkbox" id="no-quote" style="width:28px;height:28px;margin-top:4px">
+        <span>請不要引述我的原話，只統計分數。</span>
       </label>
     </div>
-    <div id="consent-en" class="hidden">
+    <div id="consent-en" class="hidden" lang="en">
       <ul>
-        <li><strong>What this is:</strong> A test of whether GapCaster's audio description helps blind and low-vision viewers follow a film. The study is run by independent developer Ted Chen (Taiwan) for a Mozilla Foundation Human-Scale AI Incubator application and product improvement.</li>
-        <li><strong>What happens:</strong> You listen to the same 2 min 20 s film excerpt twice online — one version with audio description, one without. Then you answer six rating questions and three open questions. About 15 minutes. You can pause or stop at any time.</li>
+        <li><strong>What this is:</strong> A test of whether GapCaster's audio description helps blind and low-vision viewers follow a film. Run by independent developer Ted Chen (Taiwan) for a Mozilla Foundation Human-Scale AI Incubator application and open-source tool improvement.</li>
+        <li><strong>What happens:</strong> You listen to the same 2 min 20 s excerpt twice online — one version with audio description, one without — then answer six 1-to-5 rating questions and three open questions. About 15 minutes. Pause or stop any time.</li>
         <li><strong>What does not happen:</strong> We do not record audio or video, and we do not collect your name, phone number or email. You only use an anonymous ID (for example, P1).</li>
-        <li><strong>How the data is used:</strong> Your ratings and anonymous quotes may be used in the Mozilla grant application and to improve the product. Raw answers are deleted within 90 days. You can ask not to be quoted.</li>
-        <li><strong>Risk and payment:</strong> Depending on the selected clip, the excerpt is either the Taiwanese Mandarin documentary short <em>Young Coffee Story</em> (Taiwan Alzheimer's Disease Association, CC BY 3.0) or the sci-fi short film <em>Tears of Steel</em> (Blender Foundation, CC BY 3.0, with combat sounds). You can stop at any time. There is no payment unless the moderator says otherwise.</li>
-        <li><strong>Contact:</strong> The moderator will give you a contact. Ask anything, at any time.</li>
+        <li><strong>How data is used:</strong> Your ratings and anonymous quotes may be used in the Mozilla grant application and to improve the tool. Raw answers are deleted within 90 days. You can opt out of quotes below.</li>
+        <li><strong>Risk and payment:</strong> Depending on the selected clip, the excerpt is either the Taiwanese Mandarin documentary short <em>Young Coffee Story</em> (Taiwan Alzheimer's Disease Association, CC BY 3.0) or the sci-fi short film <em>Tears of Steel</em> (Blender Foundation, CC BY 3.0, with combat sounds). There is no payment unless the moderator says otherwise.</li>
+        <li><strong>Contact:</strong> Your moderator will provide contact details; ask anything at any time.</li>
       </ul>
-      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px">
-        <input type="checkbox" id="agree-en" style="width:26px;height:26px;margin-top:4px">
+      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;cursor:pointer">
+        <input type="checkbox" id="agree-en" style="width:28px;height:28px;margin-top:4px">
         <span>I understand the information above, I am 18 or older, I take part voluntarily, and I agree that my anonymous ratings and quotes may be used as described. <span class="note">(Tick the second box if you do not want to be quoted.)</span></span>
       </label>
-      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;margin-top:10px">
-        <input type="checkbox" id="no-quote-en" style="width:26px;height:26px;margin-top:4px">
+      <label class="grid" style="grid-template-columns:auto 1fr;align-items:start;gap:12px;margin-top:12px;cursor:pointer">
+        <input type="checkbox" id="no-quote-en" style="width:28px;height:28px;margin-top:4px">
         <span>Do not quote my words; use my scores only.</span>
       </label>
     </div>
     <div class="grid" style="margin-top:18px">
-      <button type="button" class="btn" id="start">開始測試 · Start</button>
-      <p class="status" id="start-status" role="status" aria-live="polite"></p>
+      <button type="button" class="btn" id="start"><span class="zh-t">開始測試</span><span class="en-t hidden" lang="en">Start study</span></button>
+      <p class="status" id="start-status" role="alert" aria-live="assertive"></p>
     </div>
   </section>
 
   <div id="study" class="hidden">
     <section class="card" id="context">
       <h2 id="h-context-zh">先聽這兩個版本</h2>
-      <h2 id="h-context-en" class="hidden">Two versions of the same scene</h2>
-      <p id="p-context-zh">兩個版本都是同一段 2 分 20 秒的片段（0:00–2:20），出自 Blender Foundation 的《Tears of Steel》。<strong>其中一個版本有語音描述</strong>（在對話空檔描述畫面），另一個沒有。片中對白是英文；口述預設是<strong>中文</strong>（可在下方切換成英文）。口述是 AI 產生的草稿，還沒有經過口述影像員修改，聽到錯誤或彆扭的地方請直接告訴我們。請依主持人指定的順序聆聽；每聽完一個版本，先回答該版本的問題，再聽下一個。聽完兩個版本後，還有一組比較題。</p>
-      <p id="p-context-en" class="hidden">Both versions are the same 2 min 20 s excerpt (0:00–2:20) of <em>Tears of Steel</em> by the Blender Foundation. <strong>One version has audio description</strong> (narration fitted into the gaps between dialogue); the other does not. The film's dialogue is in English; the narration defaults to <strong>Mandarin</strong> (you can switch to English below). The narration is an AI draft that no describer has edited yet, so please tell us about anything wrong or awkward. Follow the order your moderator gives you: after each version, answer the questions for that version before moving to the next. After both, there is a short comparison section.</p>
+      <h2 id="h-context-en" class="hidden" lang="en">Two versions of the same scene</h2>
+      <p id="p-context-zh">兩個版本都是同一段 2 分 20 秒（0:00–2:20）的《Tears of Steel》。<strong>其中一個版本有中文口述影像</strong>，另一個沒有。口述是本機 8B 小模型產生的初稿，尚未經過口述影像員修改，聽到錯誤或彆扭的地方請直接告訴我們。每聽完一個版本，請先回答該版本的問題，再聽下一個。</p>
+      <p id="p-context-en" class="hidden" lang="en">Both versions are the same 2 min 20 s excerpt (0:00–2:20) of <em>Tears of Steel</em> by the Blender Foundation. <strong>One version has audio description</strong> fitted into the silences; the other does not. It is an unedited AI draft — please tell us about anything wrong or awkward. Answer each version's questions right after listening to it.</p>
       <p class="note" id="order-note" role="status" aria-live="polite"></p>
       <p class="note" id="ad-lang-switch"></p>
     </section>
 
-    <section class="card" id="round-1-card">
-      <h2 id="round1-title">版本一 · Version A</h2>
+    <section class="card" id="round-1-card" aria-labelledby="round1-title">
+      <h2 id="round1-title">版本一</h2>
       <div class="player">
         <h3 id="round1-player-title">版本一（音訊）</h3>
-        <audio id="audio-1" controls preload="none" aria-label="Version A audio"></audio>
+        <audio id="audio-1" controls preload="none" aria-label="版本一音訊"></audio>
         <details>
-          <summary>用影片版本聽（給低視力朋友）· Video version</summary>
-          <video id="video-1" controls preload="none" poster="" aria-label="Version A video"></video>
+          <summary><span class="zh-t">改用影片播放器（給低視力朋友）</span><span class="en-t hidden" lang="en">Switch to video player (for low-vision viewers)</span></summary>
+          <video id="video-1" controls preload="none" poster="" aria-label="版本一影片"></video>
         </details>
       </div>
       <form id="form-1" novalidate>
         <fieldset>
-          <legend>版本一：評分 · Version A ratings</legend>
-          <div class="q">
-            <label id="q1a" for="q1a">1. 你有多清楚這個片段發生了什麼事？<span class="help">How clear was the story of this excerpt?</span></label>
+          <legend><span class="zh-t">版本一：評分（1 到 5 分）</span><span class="en-t hidden" lang="en">Version A ratings (1 to 5)</span></legend>
+          <div class="q" data-qkind="clarity">
+            <div class="q-label" id="q1a"><span class="zh-t">1. 你有多清楚這個片段發生了什麼事？</span><span class="en-t hidden" lang="en">1. How clear was the story of this excerpt?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q1a">
-              <div><input type="radio" name="q1" id="q1-1" value="1"><label for="q1-1">1</label></div>
+              <div><input type="radio" name="q1" id="q1-1" value="1" data-zh="1 分（完全不清楚）" data-en="1 (Not at all clear)"><label for="q1-1">1</label></div>
               <div><input type="radio" name="q1" id="q1-2" value="2"><label for="q1-2">2</label></div>
               <div><input type="radio" name="q1" id="q1-3" value="3"><label for="q1-3">3</label></div>
               <div><input type="radio" name="q1" id="q1-4" value="4"><label for="q1-4">4</label></div>
-              <div><input type="radio" name="q1" id="q1-5" value="5"><label for="q1-5">5</label></div>
+              <div><input type="radio" name="q1" id="q1-5" value="5" data-zh="5 分（非常清楚）" data-en="5 (Very clear)"><label for="q1-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 完全不清楚</span><span>5 非常清楚</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 完全不清楚</span><span class="en-t hidden" lang="en">1 Not at all clear</span><span class="zh-t">5 非常清楚</span><span class="en-t hidden" lang="en">5 Very clear</span></div>
           </div>
-          <div class="q">
-            <label id="q2a" for="q2a">2. 你有多容易跟上劇情？<span class="help">How easy was it to follow?</span></label>
+          <div class="q" data-qkind="follow">
+            <div class="q-label" id="q2a"><span class="zh-t">2. 你有多容易跟上劇情？</span><span class="en-t hidden" lang="en">2. How easy was it to follow?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q2a">
-              <div><input type="radio" name="q2" id="q2-1" value="1"><label for="q2-1">1</label></div>
+              <div><input type="radio" name="q2" id="q2-1" value="1" data-zh="1 分（很吃力）" data-en="1 (Very hard)"><label for="q2-1">1</label></div>
               <div><input type="radio" name="q2" id="q2-2" value="2"><label for="q2-2">2</label></div>
               <div><input type="radio" name="q2" id="q2-3" value="3"><label for="q2-3">3</label></div>
               <div><input type="radio" name="q2" id="q2-4" value="4"><label for="q2-4">4</label></div>
-              <div><input type="radio" name="q2" id="q2-5" value="5"><label for="q2-5">5</label></div>
+              <div><input type="radio" name="q2" id="q2-5" value="5" data-zh="5 分（很輕鬆）" data-en="5 (Very easy)"><label for="q2-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 很吃力</span><span>5 很輕鬆</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 很吃力</span><span class="en-t hidden" lang="en">1 Very hard</span><span class="zh-t">5 很輕鬆</span><span class="en-t hidden" lang="en">5 Very easy</span></div>
           </div>
-          <div class="q">
-            <label id="q3a" for="q3a">3. 旁白有沒有蓋住對話或重要音效？<span class="help">Did the narration ever cover dialogue or important sound?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q3a"><span class="zh-t">3. 旁白有沒有蓋住對話或重要音效？（1＝經常蓋住，5＝從未蓋住）</span><span class="en-t hidden" lang="en">3. Did the narration ever cover dialogue or important sound? (1 = Often, 5 = Never)</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q3a">
-              <div><input type="radio" name="q3" id="q3-1" value="1"><label for="q3-1">1</label></div>
+              <div><input type="radio" name="q3" id="q3-1" value="1" data-zh="1 分（經常蓋住）" data-en="1 (Often covered)"><label for="q3-1">1</label></div>
               <div><input type="radio" name="q3" id="q3-2" value="2"><label for="q3-2">2</label></div>
               <div><input type="radio" name="q3" id="q3-3" value="3"><label for="q3-3">3</label></div>
               <div><input type="radio" name="q3" id="q3-4" value="4"><label for="q3-4">4</label></div>
-              <div><input type="radio" name="q3" id="q3-5" value="5"><label for="q3-5">5</label></div>
+              <div><input type="radio" name="q3" id="q3-5" value="5" data-zh="5 分（從未蓋住）" data-en="5 (Never covered)"><label for="q3-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 經常</span><span>5 從未</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 經常蓋住</span><span class="en-t hidden" lang="en">1 Often</span><span class="zh-t">5 從未蓋住</span><span class="en-t hidden" lang="en">5 Never</span></div>
           </div>
-          <div class="q">
-            <label id="q4a" for="q4a">4. 旁白的長度與語速合適嗎？<span class="help">Was the pacing and length of the narration right?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q4a"><span class="zh-t">4. 旁白的長度與語速合適嗎？</span><span class="en-t hidden" lang="en">4. Was the pacing and length of the narration right?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q4a">
-              <div><input type="radio" name="q4" id="q4-1" value="1"><label for="q4-1">1</label></div>
+              <div><input type="radio" name="q4" id="q4-1" value="1" data-zh="1 分（太趕或太長）" data-en="1 (Too rushed or long)"><label for="q4-1">1</label></div>
               <div><input type="radio" name="q4" id="q4-2" value="2"><label for="q4-2">2</label></div>
               <div><input type="radio" name="q4" id="q4-3" value="3"><label for="q4-3">3</label></div>
               <div><input type="radio" name="q4" id="q4-4" value="4"><label for="q4-4">4</label></div>
-              <div><input type="radio" name="q4" id="q4-5" value="5"><label for="q4-5">5</label></div>
+              <div><input type="radio" name="q4" id="q4-5" value="5" data-zh="5 分（剛剛好）" data-en="5 (Just right)"><label for="q4-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 太趕／太長</span><span>5 剛好</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 太趕／太長</span><span class="en-t hidden" lang="en">1 Too rushed/long</span><span class="zh-t">5 剛好</span><span class="en-t hidden" lang="en">5 Just right</span></div>
           </div>
-          <div class="q">
-            <label id="q5a" for="q5a">5. 旁白提供了你真正需要的資訊嗎？<span class="help">Did the narration tell you what you actually needed to know?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q5a"><span class="zh-t">5. 旁白提供了你真正需要的畫面資訊嗎？</span><span class="en-t hidden" lang="en">5. Did the narration tell you what you actually needed to know?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q5a">
-              <div><input type="radio" name="q5" id="q5-1" value="1"><label for="q5-1">1</label></div>
+              <div><input type="radio" name="q5" id="q5-1" value="1" data-zh="1 分（沒有幫助）" data-en="1 (Not at all)"><label for="q5-1">1</label></div>
               <div><input type="radio" name="q5" id="q5-2" value="2"><label for="q5-2">2</label></div>
               <div><input type="radio" name="q5" id="q5-3" value="3"><label for="q5-3">3</label></div>
               <div><input type="radio" name="q5" id="q5-4" value="4"><label for="q5-4">4</label></div>
-              <div><input type="radio" name="q5" id="q5-5" value="5"><label for="q5-5">5</label></div>
+              <div><input type="radio" name="q5" id="q5-5" value="5" data-zh="5 分（非常有幫助）" data-en="5 (A great deal)"><label for="q5-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 沒有</span><span>5 很多</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 沒有</span><span class="en-t hidden" lang="en">1 Not at all</span><span class="zh-t">5 很多</span><span class="en-t hidden" lang="en">5 A great deal</span></div>
           </div>
           <div class="q">
-            <label id="q6a" for="q6a">6. 整體而言，你有多喜歡這個版本？<span class="help">Overall, how much did you like this version?</span></label>
+            <div class="q-label" id="q6a"><span class="zh-t">6. 整體而言，你有多喜歡這個版本？</span><span class="en-t hidden" lang="en">6. Overall, how much did you like this version?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q6a">
-              <div><input type="radio" name="q6" id="q6-1" value="1"><label for="q6-1">1</label></div>
+              <div><input type="radio" name="q6" id="q6-1" value="1" data-zh="1 分（不喜歡）" data-en="1 (Disliked)"><label for="q6-1">1</label></div>
               <div><input type="radio" name="q6" id="q6-2" value="2"><label for="q6-2">2</label></div>
               <div><input type="radio" name="q6" id="q6-3" value="3"><label for="q6-3">3</label></div>
               <div><input type="radio" name="q6" id="q6-4" value="4"><label for="q6-4">4</label></div>
-              <div><input type="radio" name="q6" id="q6-5" value="5"><label for="q6-5">5</label></div>
+              <div><input type="radio" name="q6" id="q6-5" value="5" data-zh="5 分（很喜歡）" data-en="5 (Liked very much)"><label for="q6-5">5</label></div>
             </div>
-            <div class="anchors"><span>1 不喜歡</span><span>5 很喜歡</span></div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 不喜歡</span><span class="en-t hidden" lang="en">1 Disliked</span><span class="zh-t">5 很喜歡</span><span class="en-t hidden" lang="en">5 Liked a lot</span></div>
           </div>
-          <div class="q">
-            <label for="open1a">7. 哪一句旁白最有幫助？哪一句最沒幫助或讓你困惑？<span class="help">Which line helped most, and which line was least helpful or confusing? (If this version had no narration, say so.)</span></label>
+          <div class="q" data-open="1">
+            <label for="open1a"><span class="zh-t open1-zh">7. 哪一句旁白最有幫助？哪一句最沒幫助或讓你困惑？</span><span class="en-t hidden open1-en" lang="en">7. Which line helped most, and which line was least helpful or confusing?</span></label>
             <textarea id="open1a" name="open1"></textarea>
           </div>
-          <div class="q">
-            <label for="open2a">8. 你覺得少了什麼，或哪裡需要改？<span class="help">What was missing, or what would you change?</span></label>
+          <div class="q" data-open="2">
+            <label for="open2a"><span class="zh-t open2-zh">8. 你覺得少了什麼，或哪裡需要改？</span><span class="en-t hidden open2-en" lang="en">8. What was missing, or what would you change?</span></label>
             <textarea id="open2a" name="open2"></textarea>
           </div>
         </fieldset>
       </form>
     </section>
 
-    <section class="card" id="round-2-card">
-      <h2 id="round2-title">版本二 · Version B</h2>
+    <section class="card" id="round-2-card" aria-labelledby="round2-title">
+      <h2 id="round2-title">版本二</h2>
       <div class="player">
         <h3 id="round2-player-title">版本二（音訊）</h3>
-        <audio id="audio-2" controls preload="none" aria-label="Version B audio"></audio>
+        <audio id="audio-2" controls preload="none" aria-label="版本二音訊"></audio>
         <details>
-          <summary>用影片版本聽（給低視力朋友）· Video version</summary>
-          <video id="video-2" controls preload="none" poster="" aria-label="Version B video"></video>
+          <summary><span class="zh-t">改用影片播放器（給低視力朋友）</span><span class="en-t hidden" lang="en">Switch to video player (for low-vision viewers)</span></summary>
+          <video id="video-2" controls preload="none" poster="" aria-label="版本二影片"></video>
         </details>
       </div>
       <form id="form-2" novalidate>
         <fieldset>
-          <legend>版本二：評分 · Version B ratings</legend>
+          <legend><span class="zh-t">版本二：評分（1 到 5 分）</span><span class="en-t hidden" lang="en">Version B ratings (1 to 5)</span></legend>
           <div class="q">
-            <label id="q1b" for="q1b">1. 你有多清楚這個片段發生了什麼事？<span class="help">How clear was the story of this excerpt?</span></label>
+            <div class="q-label" id="q1b"><span class="zh-t">1. 你有多清楚這個片段發生了什麼事？</span><span class="en-t hidden" lang="en">1. How clear was the story of this excerpt?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q1b">
-              <div><input type="radio" name="q7" id="q7-1" value="1"><label for="q7-1">1</label></div>
+              <div><input type="radio" name="q7" id="q7-1" value="1" data-zh="1 分（完全不清楚）" data-en="1 (Not at all clear)"><label for="q7-1">1</label></div>
               <div><input type="radio" name="q7" id="q7-2" value="2"><label for="q7-2">2</label></div>
               <div><input type="radio" name="q7" id="q7-3" value="3"><label for="q7-3">3</label></div>
               <div><input type="radio" name="q7" id="q7-4" value="4"><label for="q7-4">4</label></div>
-              <div><input type="radio" name="q7" id="q7-5" value="5"><label for="q7-5">5</label></div>
+              <div><input type="radio" name="q7" id="q7-5" value="5" data-zh="5 分（非常清楚）" data-en="5 (Very clear)"><label for="q7-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 完全不清楚</span><span class="en-t hidden" lang="en">1 Not at all clear</span><span class="zh-t">5 非常清楚</span><span class="en-t hidden" lang="en">5 Very clear</span></div>
           </div>
           <div class="q">
-            <label id="q2b" for="q2b">2. 你有多容易跟上劇情？<span class="help">How easy was it to follow?</span></label>
+            <div class="q-label" id="q2b"><span class="zh-t">2. 你有多容易跟上劇情？</span><span class="en-t hidden" lang="en">2. How easy was it to follow?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q2b">
-              <div><input type="radio" name="q8" id="q8-1" value="1"><label for="q8-1">1</label></div>
+              <div><input type="radio" name="q8" id="q8-1" value="1" data-zh="1 分（很吃力）" data-en="1 (Very hard)"><label for="q8-1">1</label></div>
               <div><input type="radio" name="q8" id="q8-2" value="2"><label for="q8-2">2</label></div>
               <div><input type="radio" name="q8" id="q8-3" value="3"><label for="q8-3">3</label></div>
               <div><input type="radio" name="q8" id="q8-4" value="4"><label for="q8-4">4</label></div>
-              <div><input type="radio" name="q8" id="q8-5" value="5"><label for="q8-5">5</label></div>
+              <div><input type="radio" name="q8" id="q8-5" value="5" data-zh="5 分（很輕鬆）" data-en="5 (Very easy)"><label for="q8-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 很吃力</span><span class="en-t hidden" lang="en">1 Very hard</span><span class="zh-t">5 很輕鬆</span><span class="en-t hidden" lang="en">5 Very easy</span></div>
           </div>
-          <div class="q">
-            <label id="q3b" for="q3b">3. 旁白有沒有蓋住對話或重要音效？<span class="help">Did the narration ever cover dialogue or important sound?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q3b"><span class="zh-t">3. 旁白有沒有蓋住對話或重要音效？（1＝經常蓋住，5＝從未蓋住）</span><span class="en-t hidden" lang="en">3. Did the narration ever cover dialogue or important sound? (1 = Often, 5 = Never)</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q3b">
-              <div><input type="radio" name="q9" id="q9-1" value="1"><label for="q9-1">1</label></div>
+              <div><input type="radio" name="q9" id="q9-1" value="1" data-zh="1 分（經常蓋住）" data-en="1 (Often covered)"><label for="q9-1">1</label></div>
               <div><input type="radio" name="q9" id="q9-2" value="2"><label for="q9-2">2</label></div>
               <div><input type="radio" name="q9" id="q9-3" value="3"><label for="q9-3">3</label></div>
               <div><input type="radio" name="q9" id="q9-4" value="4"><label for="q9-4">4</label></div>
-              <div><input type="radio" name="q9" id="q9-5" value="5"><label for="q9-5">5</label></div>
+              <div><input type="radio" name="q9" id="q9-5" value="5" data-zh="5 分（從未蓋住）" data-en="5 (Never covered)"><label for="q9-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 經常蓋住</span><span class="en-t hidden" lang="en">1 Often</span><span class="zh-t">5 從未蓋住</span><span class="en-t hidden" lang="en">5 Never</span></div>
           </div>
-          <div class="q">
-            <label id="q4b" for="q4b">4. 旁白的長度與語速合適嗎？<span class="help">Was the pacing and length of the narration right?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q4b"><span class="zh-t">4. 旁白的長度與語速合適嗎？</span><span class="en-t hidden" lang="en">4. Was the pacing and length of the narration right?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q4b">
-              <div><input type="radio" name="q10" id="q10-1" value="1"><label for="q10-1">1</label></div>
+              <div><input type="radio" name="q10" id="q10-1" value="1" data-zh="1 分（太趕或太長）" data-en="1 (Too rushed or long)"><label for="q10-1">1</label></div>
               <div><input type="radio" name="q10" id="q10-2" value="2"><label for="q10-2">2</label></div>
               <div><input type="radio" name="q10" id="q10-3" value="3"><label for="q10-3">3</label></div>
               <div><input type="radio" name="q10" id="q10-4" value="4"><label for="q10-4">4</label></div>
-              <div><input type="radio" name="q10" id="q10-5" value="5"><label for="q10-5">5</label></div>
+              <div><input type="radio" name="q10" id="q10-5" value="5" data-zh="5 分（剛剛好）" data-en="5 (Just right)"><label for="q10-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 太趕／太長</span><span class="en-t hidden" lang="en">1 Too rushed/long</span><span class="zh-t">5 剛好</span><span class="en-t hidden" lang="en">5 Just right</span></div>
           </div>
-          <div class="q">
-            <label id="q5b" for="q5b">5. 旁白提供了你真正需要的資訊嗎？<span class="help">Did the narration tell you what you actually needed to know?</span></label>
+          <div class="q" data-ad-only="1">
+            <div class="q-label" id="q5b"><span class="zh-t">5. 旁白提供了你真正需要的畫面資訊嗎？</span><span class="en-t hidden" lang="en">5. Did the narration tell you what you actually needed to know?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q5b">
-              <div><input type="radio" name="q11" id="q11-1" value="1"><label for="q11-1">1</label></div>
+              <div><input type="radio" name="q11" id="q11-1" value="1" data-zh="1 分（沒有幫助）" data-en="1 (Not at all)"><label for="q11-1">1</label></div>
               <div><input type="radio" name="q11" id="q11-2" value="2"><label for="q11-2">2</label></div>
               <div><input type="radio" name="q11" id="q11-3" value="3"><label for="q11-3">3</label></div>
               <div><input type="radio" name="q11" id="q11-4" value="4"><label for="q11-4">4</label></div>
-              <div><input type="radio" name="q11" id="q11-5" value="5"><label for="q11-5">5</label></div>
+              <div><input type="radio" name="q11" id="q11-5" value="5" data-zh="5 分（非常有幫助）" data-en="5 (A great deal)"><label for="q11-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 沒有</span><span class="en-t hidden" lang="en">1 Not at all</span><span class="zh-t">5 很多</span><span class="en-t hidden" lang="en">5 A great deal</span></div>
           </div>
           <div class="q">
-            <label id="q6b" for="q6b">6. 整體而言，你有多喜歡這個版本？<span class="help">Overall, how much did you like this version?</span></label>
+            <div class="q-label" id="q6b"><span class="zh-t">6. 整體而言，你有多喜歡這個版本？</span><span class="en-t hidden" lang="en">6. Overall, how much did you like this version?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="q6b">
-              <div><input type="radio" name="q12" id="q12-1" value="1"><label for="q12-1">1</label></div>
+              <div><input type="radio" name="q12" id="q12-1" value="1" data-zh="1 分（不喜歡）" data-en="1 (Disliked)"><label for="q12-1">1</label></div>
               <div><input type="radio" name="q12" id="q12-2" value="2"><label for="q12-2">2</label></div>
               <div><input type="radio" name="q12" id="q12-3" value="3"><label for="q12-3">3</label></div>
               <div><input type="radio" name="q12" id="q12-4" value="4"><label for="q12-4">4</label></div>
-              <div><input type="radio" name="q12" id="q12-5" value="5"><label for="q12-5">5</label></div>
+              <div><input type="radio" name="q12" id="q12-5" value="5" data-zh="5 分（很喜歡）" data-en="5 (Liked very much)"><label for="q12-5">5</label></div>
             </div>
+            <div class="anchors" aria-hidden="true"><span class="zh-t">1 不喜歡</span><span class="en-t hidden" lang="en">1 Disliked</span><span class="zh-t">5 很喜歡</span><span class="en-t hidden" lang="en">5 Liked a lot</span></div>
           </div>
-          <div class="q">
-            <label for="open1b">7. 哪一句旁白最有幫助？哪一句最沒幫助或讓你困惑？<span class="help">Which line helped most, and which line was least helpful or confusing? (If this version had no narration, say so.)</span></label>
+          <div class="q" data-open="1">
+            <label for="open1b"><span class="zh-t open1-zh">7. 哪一句旁白最有幫助？哪一句最沒幫助或讓你困惑？</span><span class="en-t hidden open1-en" lang="en">7. Which line helped most, and which line was least helpful or confusing?</span></label>
             <textarea id="open1b" name="open3"></textarea>
           </div>
-          <div class="q">
-            <label for="open2b">8. 你覺得少了什麼，或哪裡需要改？<span class="help">What was missing, or what would you change?</span></label>
+          <div class="q" data-open="2">
+            <label for="open2b"><span class="zh-t open2-zh">8. 你覺得少了什麼，或哪裡需要改？</span><span class="en-t hidden open2-en" lang="en">8. What was missing, or what would you change?</span></label>
             <textarea id="open2b" name="open4"></textarea>
           </div>
         </fieldset>
@@ -322,24 +328,24 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 
     <section class="card" id="compare-card">
       <h2 id="h-compare-zh">比較兩個版本</h2>
-      <h2 id="h-compare-en" class="hidden">Comparing the two versions</h2>
+      <h2 id="h-compare-en" class="hidden" lang="en">Comparing the two versions</h2>
       <form id="form-cmp" novalidate>
         <fieldset>
-          <legend>比較題 · Comparison</legend>
+          <legend><span class="zh-t">比較題</span><span class="en-t hidden" lang="en">Comparison</span></legend>
           <div class="q">
-            <label id="cmp1" for="cmp1">9. 哪個版本讓你比較跟得上？<span class="help">Which version did you follow better?</span></label>
+            <div class="q-label" id="cmp1"><span class="zh-t">9. 哪個版本讓你比較跟得上？</span><span class="en-t hidden" lang="en">9. Which version did you follow better?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="cmp1">
-              <div><input type="radio" name="cmp" id="cmp-a" value="A"><label for="cmp-a" style="min-width:96px">版本一</label></div>
-              <div><input type="radio" name="cmp" id="cmp-b" value="B"><label for="cmp-b" style="min-width:96px">版本二</label></div>
-              <div><input type="radio" name="cmp" id="cmp-s" value="same"><label for="cmp-s" style="min-width:96px">差不多</label></div>
+              <div><input type="radio" name="cmp" id="cmp-a" value="A"><label for="cmp-a" style="min-width:104px"><span class="zh-t">版本一</span><span class="en-t hidden" lang="en">Version A</span></label></div>
+              <div><input type="radio" name="cmp" id="cmp-b" value="B"><label for="cmp-b" style="min-width:104px"><span class="zh-t">版本二</span><span class="en-t hidden" lang="en">Version B</span></label></div>
+              <div><input type="radio" name="cmp" id="cmp-s" value="same"><label for="cmp-s" style="min-width:104px"><span class="zh-t">差不多</span><span class="en-t hidden" lang="en">About the same</span></label></div>
             </div>
           </div>
           <div class="q">
-            <label id="cmp2" for="cmp2">10. 為什麼？<span class="help">Why?</span></label>
+            <label for="cmp2"><span class="zh-t">10. 為什麼？</span><span class="en-t hidden" lang="en">10. Why?</span></label>
             <textarea id="cmp2"></textarea>
           </div>
           <div class="q">
-            <label id="cmp3" for="cmp3">11. 如果以後的影片都有這種描述，你會想用嗎？用在哪裡？<span class="help">If more videos had description like this, would you use it? Where?</span></label>
+            <label for="cmp3"><span class="zh-t">11. 如果以後的影片都有這種描述，你會想用嗎？用在哪裡？</span><span class="en-t hidden" lang="en">11. If more videos had description like this, would you use it? Where?</span></label>
             <textarea id="cmp3"></textarea>
           </div>
         </fieldset>
@@ -348,36 +354,36 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 
     <section class="card" id="about-card">
       <h2 id="h-about-zh">關於你（可跳過）</h2>
-      <h2 id="h-about-en" class="hidden">About you (optional)</h2>
+      <h2 id="h-about-en" class="hidden" lang="en">About you (optional)</h2>
       <form id="form-about" novalidate>
         <fieldset>
-          <legend>基本資料 · Background</legend>
+          <legend><span class="zh-t">基本資料</span><span class="en-t hidden" lang="en">Background</span></legend>
           <div class="q">
-            <label for="p-id">匿名編號（主持人提供）<span class="help">Anonymous ID from the moderator</span></label>
+            <label for="p-id"><span class="zh-t">匿名編號（主持人提供，例如 P1）</span><span class="en-t hidden" lang="en">Anonymous ID from moderator (e.g. P1)</span></label>
             <input type="text" id="p-id" name="pid" autocomplete="off" placeholder="P1">
           </div>
           <div class="q">
-            <label id="p-vision" for="p-vision">視力狀況<span class="help">Vision</span></label>
+            <div class="q-label" id="p-vision"><span class="zh-t">視力狀況</span><span class="en-t hidden" lang="en">Vision</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="p-vision">
-              <div><input type="radio" name="vision" id="v-blind" value="blind"><label for="v-blind" style="min-width:120px">全盲</label></div>
-              <div><input type="radio" name="vision" id="v-low" value="low"><label for="v-low" style="min-width:120px">低視力</label></div>
-              <div><input type="radio" name="vision" id="v-pref" value="prefer"><label for="v-pref" style="min-width:120px">不願說</label></div>
+              <div><input type="radio" name="vision" id="v-blind" value="blind"><label for="v-blind" style="min-width:124px"><span class="zh-t">全盲</span><span class="en-t hidden" lang="en">Blind</span></label></div>
+              <div><input type="radio" name="vision" id="v-low" value="low"><label for="v-low" style="min-width:124px"><span class="zh-t">低視力</span><span class="en-t hidden" lang="en">Low vision</span></label></div>
+              <div><input type="radio" name="vision" id="v-pref" value="prefer"><label for="v-pref" style="min-width:124px"><span class="zh-t">不願透露</span><span class="en-t hidden" lang="en">Prefer not to say</span></label></div>
             </div>
           </div>
           <div class="q">
-            <label for="p-sr">你用什麼聽？（可複選／自由填寫）<span class="help">What do you listen with? (screen reader, headphones, phone speaker…)</span></label>
+            <label for="p-sr"><span class="zh-t">你使用的輔助工具或播放設備（螢幕閱讀器、耳機、手機喇叭等）</span><span class="en-t hidden" lang="en">What do you listen with? (screen reader, headphones, phone speaker…)</span></label>
             <input type="text" id="p-sr" name="sr" autocomplete="off">
           </div>
           <div class="q">
-            <label for="p-lang">主要語言<span class="help">Main language</span></label>
+            <label for="p-lang"><span class="zh-t">平常主要語言</span><span class="en-t hidden" lang="en">Main language</span></label>
             <input type="text" id="p-lang" name="lang" autocomplete="off">
           </div>
           <div class="q">
-            <label id="p-seen" for="p-seen">你以前看／聽過這支短片嗎？<span class="help">Have you seen or heard this short film before?</span></label>
+            <div class="q-label" id="p-seen"><span class="zh-t">你以前看／聽過這支短片嗎？</span><span class="en-t hidden" lang="en">Have you seen or heard this short film before?</span></div>
             <div class="scale" role="radiogroup" aria-labelledby="p-seen">
-              <div><input type="radio" name="seen" id="seen-y" value="yes"><label for="seen-y" style="min-width:96px">看過</label></div>
-              <div><input type="radio" name="seen" id="seen-n" value="no"><label for="seen-n" style="min-width:96px">沒看過</label></div>
-              <div><input type="radio" name="seen" id="seen-u" value="unsure"><label for="seen-u" style="min-width:96px">不確定</label></div>
+              <div><input type="radio" name="seen" id="seen-y" value="yes"><label for="seen-y" style="min-width:104px"><span class="zh-t">看過</span><span class="en-t hidden" lang="en">Yes</span></label></div>
+              <div><input type="radio" name="seen" id="seen-n" value="no"><label for="seen-n" style="min-width:104px"><span class="zh-t">沒看過</span><span class="en-t hidden" lang="en">No</span></label></div>
+              <div><input type="radio" name="seen" id="seen-u" value="unsure"><label for="seen-u" style="min-width:104px"><span class="zh-t">不確定</span><span class="en-t hidden" lang="en">Not sure</span></label></div>
             </div>
           </div>
         </fieldset>
@@ -386,16 +392,16 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 
     <section class="card" id="export-card">
       <h2 id="h-export-zh">完成，交出答案</h2>
-      <h2 id="h-export-en" class="hidden">Done — send your answers</h2>
-      <p id="p-export-zh">按下面的按鈕下載一個 JSON 檔，然後用主持人給你的方式（email、LINE、或直接開檔案唸給主持人聽）交回。檔案裡只有你的匿名編號與答案，沒有姓名或聯絡方式。</p>
-      <p id="p-export-en" class="hidden">Download a JSON file with the button below, then send it back the way your moderator asked (email, message, or read it out). The file contains only your anonymous ID and answers — no name or contact details.</p>
+      <h2 id="h-export-en" class="hidden" lang="en">Done — send your answers</h2>
+      <p id="p-export-zh">按下面的按鈕下載一個 JSON 檔，或複製成純文字，再用主持人給你的方式（LINE、email 或直接唸出）交回。檔案裡只有你的匿名編號與答案，沒有姓名或聯絡方式。</p>
+      <p id="p-export-en" class="hidden" lang="en">Download a JSON file or copy your answers as plain text below, then send them back the way your moderator asked. The file contains only your anonymous ID and answers — no name or contact details.</p>
       <div class="grid">
-        <button type="button" class="btn" id="save">下載我的答案 · Download my answers</button>
-        <button type="button" class="btn secondary" id="copy">複製答案文字 · Copy answers as text</button>
+        <button type="button" class="btn" id="save"><span class="zh-t">下載我的答案（JSON）</span><span class="en-t hidden" lang="en">Download my answers (JSON)</span></button>
+        <button type="button" class="btn secondary" id="copy"><span class="zh-t">複製答案純文字</span><span class="en-t hidden" lang="en">Copy answers as plain text</span></button>
       </div>
       <p class="status" id="save-status" role="status" aria-live="polite"></p>
       <details>
-        <summary>主持人要看的原始答案 · Raw answers</summary>
+        <summary><span class="zh-t">檢視原始答案文字</span><span class="en-t hidden" lang="en">Inspect raw answers</span></summary>
         <pre id="preview" class="transcript" style="white-space:pre-wrap"></pre>
       </details>
     </section>
@@ -403,7 +409,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
 
   <footer>
     <p id="foot-zh">GapCaster · 本地端語音描述原型 · 樣本影片：台灣失智症協會《Young Coffee Story》（觀賞故事，CC BY 3.0）及 Blender Foundation《Tears of Steel》（CC BY 3.0）。本研究由獨立開發者進行，非 Mozilla 或原片單位官方活動。問題請洽主持人。</p>
-    <p id="foot-en" class="hidden">GapCaster · local audio-description prototype · Sample footage: <em>Young Coffee Story</em> (Taiwan Alzheimer's Disease Association / 觀賞故事, CC BY 3.0) and <em>Tears of Steel</em> (Blender Foundation, CC BY 3.0). Independent study; not an official Mozilla activity. Questions: ask your moderator.</p>
+    <p id="foot-en" class="hidden" lang="en">GapCaster · local audio-description prototype · Sample footage: <em>Young Coffee Story</em> (Taiwan Alzheimer's Disease Association / 觀賞故事, CC BY 3.0) and <em>Tears of Steel</em> (Blender Foundation, CC BY 3.0). Independent study; not an official Mozilla activity. Questions: ask your moderator.</p>
   </footer>
 </main>
 </div>
@@ -415,7 +421,6 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
   var params=new URLSearchParams(location.search);
   var adLang=params.get('ad')==='en'?'en':'zh';
   var clipParam=params.get('clip');
-  // Default to native Taiwanese Mandarin documentary ('yc') when adLang is zh, unless ?clip=tos is requested
   var clip=(adLang==='en')?'tos':(clipParam==='tos'?'tos':'yc');
   var DESCRIBED, ORIGINAL;
   if(clip==='yc'){
@@ -429,16 +434,6 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
       :{audio:'media/described-140.m4a',video:'media/described-140.mp4',poster:'media/poster-described.jpg'};
     ORIGINAL={audio:'media/original-140.m4a',video:'media/original-140.mp4',poster:'media/poster-original.jpg'};
   }
-  var adSwitch=document.getElementById('ad-lang-switch');
-  if(adSwitch){
-    var ordQ=params.get('order')?('&order='+encodeURIComponent(params.get('order'))):'';
-    adSwitch.innerHTML='切換測試影片／語言 · Switch clip: '
-      + (clip==='yc'?'<strong>台灣國語紀實片《Young Coffee Story》＋中文口述</strong>':'<a href="?clip=yc&ad=zh'+ordQ+'">台灣國語紀實片《Young Coffee Story》＋中文口述</a>')
-      + ' · '
-      + (clip==='tos'&&adLang==='zh'?'<strong>科幻片《Tears of Steel》＋中文口述</strong>':'<a href="?clip=tos&ad=zh'+ordQ+'">科幻片《Tears of Steel》＋中文口述</a>')
-      + ' · '
-      + (clip==='tos'&&adLang==='en'?'<strong>《Tears of Steel》＋英文口述 (English AD)</strong>':'<a href="?clip=tos&ad=en'+ordQ+'">《Tears of Steel》＋英文口述 (English AD)</a>');
-  }
   var order=params.get('order');
   if(order!=='ad-first'&&order!=='orig-first'){order='orig-first';}
   var first=order==='ad-first'?DESCRIBED:ORIGINAL;
@@ -450,28 +445,61 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
   document.getElementById('video-2').src=second.video;
   document.getElementById('video-2').poster=second.poster;
   var adIdx = order==='ad-first' ? 1 : 2;
-  var note=document.getElementById('order-note');
-  note.textContent='本次順序：先聽版本一，再聽版本二。每聽完一個版本，先回答該版本的問題。Version A first, then Version B.';
+
+  function renderSwitches(){
+    var zh=lang==='zh';
+    var note=document.getElementById('order-note');
+    note.textContent=zh
+      ?'本次順序：先聽版本一並填答，再聽版本二並填答。'
+      :'Playback order: listen to Version A and answer its questions first, then Version B.';
+    var adSwitch=document.getElementById('ad-lang-switch');
+    if(adSwitch){
+      var ordQ=params.get('order')?('&order='+encodeURIComponent(params.get('order'))):'';
+      if(zh){
+        adSwitch.innerHTML='切換測試影片：'
+          + (clip==='yc'?'<strong>台灣國語紀實片《Young Coffee Story》＋中文口述（目前選擇）</strong>':'<a href="?clip=yc&ad=zh'+ordQ+'">台灣國語紀實片《Young Coffee Story》＋中文口述</a>')
+          + ' · '
+          + (clip==='tos'&&adLang==='zh'?'<strong>科幻片《Tears of Steel》＋中文口述（目前選擇）</strong>':'<a href="?clip=tos&ad=zh'+ordQ+'">科幻片《Tears of Steel》＋中文口述</a>')
+          + ' · '
+          + (clip==='tos'&&adLang==='en'?'<strong>《Tears of Steel》＋英文口述（目前選擇）</strong>':'<a href="?clip=tos&ad=en'+ordQ+'">《Tears of Steel》＋英文口述</a>');
+      } else {
+        adSwitch.innerHTML='Switch test clip: '
+          + (clip==='yc'?'<strong>Taiwanese Mandarin doc (Young Coffee Story) + Mandarin AD (current)</strong>':'<a href="?clip=yc&ad=zh'+ordQ+'">Taiwanese Mandarin doc + Mandarin AD</a>')
+          + ' · '
+          + (clip==='tos'&&adLang==='zh'?'<strong>Tears of Steel + Mandarin AD (current)</strong>':'<a href="?clip=tos&ad=zh'+ordQ+'">Tears of Steel + Mandarin AD</a>')
+          + ' · '
+          + (clip==='tos'&&adLang==='en'?'<strong>Tears of Steel + English AD (current)</strong>':'<a href="?clip=tos&ad=en'+ordQ+'">Tears of Steel + English AD</a>');
+      }
+    }
+  }
+
   function markVersion(idx, hasAD){
-    // narration questions only exist for the version that has audio description
-    var rows=document.querySelectorAll('#form-'+idx+' .q');
-    rows.forEach(function(row){
-      var lab=row.querySelector('label');
-      if(!lab) return;
-      var txt=lab.textContent;
-      if(/旁白有沒有|長度與語速|提供了你真正需要/.test(txt)){
-        row.style.display = hasAD ? '' : 'none';
-      }
-      if(/哪一句旁白最有幫助/.test(txt) && !hasAD){
-        lab.innerHTML='7. 這個版本沒有旁白。你覺得少了什麼？<span class="help">This version had no narration. What was missing?</span>';
-      }
-      if(/你覺得少了什麼，或哪裡需要改/.test(txt) && !hasAD){
-        lab.innerHTML='8. 如果只能從聲音判斷，你最想知道畫面上的什麼？<span class="help">If you only had the sound, what would you most want to know about the picture?</span>';
-      }
+    var form=document.getElementById('form-'+idx);
+    form.querySelectorAll('[data-ad-only="1"]').forEach(function(row){
+      row.style.display = hasAD ? '' : 'none';
     });
+    if(!hasAD){
+      var o1z=form.querySelector('.open1-zh'), o1e=form.querySelector('.open1-en');
+      var o2z=form.querySelector('.open2-zh'), o2e=form.querySelector('.open2-en');
+      if(o1z) o1z.textContent='7. 這個版本沒有旁白。你覺得少了什麼畫面資訊？';
+      if(o1e) o1e.textContent='7. This version had no narration. What visual information felt missing?';
+      if(o2z) o2z.textContent='8. 如果只能從聲音判斷，你最想知道畫面上的什麼？';
+      if(o2e) o2e.textContent='8. With sound alone, what would you most want to know about the picture?';
+    }
   }
   markVersion(1, adIdx===1);
   markVersion(2, adIdx===2);
+
+  function syncScaleAria(){
+    var zh=lang==='zh';
+    document.querySelectorAll('.scale input[type="radio"]').forEach(function(inp){
+      var lbl=zh?inp.getAttribute('data-zh'):inp.getAttribute('data-en');
+      if(lbl){ inp.setAttribute('aria-label', lbl); }
+      else if(inp.value && /^[234]$/.test(inp.value)){
+        inp.setAttribute('aria-label', zh?(inp.value+' 分'):inp.value);
+      }
+    });
+  }
 
   function setLang(l){
     lang=l;
@@ -479,33 +507,47 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
     document.documentElement.lang=zh?'zh-Hant':'en';
     document.getElementById('lang-zh').setAttribute('aria-pressed',zh?'true':'false');
     document.getElementById('lang-en').setAttribute('aria-pressed',zh?'false':'true');
+    document.getElementById('consent-card').setAttribute('aria-labelledby',zh?'h-consent-zh':'h-consent-en');
     ['title','lede','h-consent','h-context','h-compare','h-about','h-export','p-context','p-export','foot'].forEach(function(k){
       var z=document.getElementById(k+'-zh'), e=document.getElementById(k+'-en');
       if(z) z.classList.toggle('hidden',!zh);
       if(e) e.classList.toggle('hidden',zh);
     });
+    document.querySelectorAll('.zh-t').forEach(function(el){el.classList.toggle('hidden',!zh);});
+    document.querySelectorAll('.en-t').forEach(function(el){el.classList.toggle('hidden',zh);});
     document.getElementById('consent-zh').classList.toggle('hidden',!zh);
     document.getElementById('consent-en').classList.toggle('hidden',zh);
-    document.getElementById('round1-title').textContent=zh?'版本一 · Version A':'Version A';
-    document.getElementById('round2-title').textContent=zh?'版本二 · Version B':'Version B';
-    document.getElementById('round1-player-title').textContent=zh?'版本一（音訊）':'Version A (audio)';
-    document.getElementById('round2-player-title').textContent=zh?'版本二（音訊）':'Version B (audio)';
+    document.getElementById('round1-title').textContent=zh?'版本一':'Version A';
+    document.getElementById('round2-title').textContent=zh?'版本二':'Version B';
+    document.getElementById('round1-player-title').textContent=zh?'版本一（音訊播放器）':'Version A (audio player)';
+    document.getElementById('round2-player-title').textContent=zh?'版本二（音訊播放器）':'Version B (audio player)';
+    document.getElementById('audio-1').setAttribute('aria-label',zh?'播放版本一音訊':'Version A audio');
+    document.getElementById('video-1').setAttribute('aria-label',zh?'播放版本一影片':'Version A video');
+    document.getElementById('audio-2').setAttribute('aria-label',zh?'播放版本二音訊':'Version B audio');
+    document.getElementById('video-2').setAttribute('aria-label',zh?'播放版本二影片':'Version B video');
+    syncScaleAria();
+    renderSwitches();
   }
   document.getElementById('lang-zh').addEventListener('click',function(){setLang('zh');});
   document.getElementById('lang-en').addEventListener('click',function(){setLang('en');});
+  setLang(adLang==='en'?'en':'zh');
 
   function show(id){var x=document.getElementById(id); if(x){x.classList.remove('hidden');}}
 
   document.getElementById('start').addEventListener('click',function(){
+    var agreeBox=document.getElementById(lang==='zh'?'agree':'agree-en');
     var agree=document.getElementById('agree').checked||document.getElementById('agree-en').checked;
     var st=document.getElementById('start-status');
-    if(!agree){st.textContent='請先勾選同意框。 · Please tick the consent box first.'; return;}
-    st.textContent='已開始。 · Started.';
+    if(!agree){
+      st.textContent=lang==='zh'?'請先勾選上方的參與同意核取方塊，再開始測試。':'Please tick the consent checkbox above before starting.';
+      if(agreeBox) agreeBox.focus();
+      return;
+    }
+    st.textContent=lang==='zh'?'測試已開始。':'Study started.';
     document.getElementById('consent-card').classList.add('hidden');
     show('study');
-    document.getElementById('study').scrollIntoView({block:'start'});
-    var h=document.getElementById('h-context-zh');
-    h.setAttribute('tabindex','-1'); h.focus();
+    var h=document.getElementById(lang==='zh'?'h-context-zh':'h-context-en');
+    if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
   });
 
   function collect(){
@@ -548,7 +590,9 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
     try{localStorage.setItem('gapcaster-pilot:'+d.id,JSON.stringify(d));}catch(e){}
     var blob=new Blob([JSON.stringify(d,null,1)],{type:'application/json'});
     var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gapcaster-pilot-'+d.id+'.json';a.click();
-    document.getElementById('save-status').textContent='已下載。請把檔案交給主持人。 · Downloaded. Please send it to your moderator.';
+    document.getElementById('save-status').textContent=lang==='zh'
+      ?'答案 JSON 已下載，請把檔案傳給主持人。'
+      :'Downloaded JSON file. Please send it to your moderator.';
     document.getElementById('preview').textContent=textOut(d);
   });
   document.getElementById('copy').addEventListener('click',function(){
@@ -556,11 +600,20 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:v
     document.getElementById('preview').textContent=t;
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(t).then(function(){
-        document.getElementById('save-status').textContent='已複製。可以貼給主持人。 · Copied. Paste it to your moderator.';
-      },function(){document.getElementById('save-status').textContent='無法自動複製，請手動選取下方文字。 · Copy failed; select the text below.';});
-    }else{document.getElementById('save-status').textContent='請手動選取下方文字。 · Select the text below.';}
+        document.getElementById('save-status').textContent=lang==='zh'
+          ?'答案已複製到剪貼簿，可直接貼上回傳給主持人。'
+          :'Copied to clipboard. Paste it into your message to the moderator.';
+      },function(){
+        document.getElementById('save-status').textContent=lang==='zh'
+          ?'無法自動複製，請展開下方原始答案手動選取。'
+          :'Automatic copy failed; expand the raw answers below and copy manually.';
+      });
+    }else{
+      document.getElementById('save-status').textContent=lang==='zh'
+        ?'請展開下方原始答案手動選取。'
+        :'Expand the raw answers below and copy manually.';
+    }
   });
-  // keyboard shortcuts for play/pause: space on focused audio works natively; add A/B buttons? keep native.
 })();
 </script>
 </body>

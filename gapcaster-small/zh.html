@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
+<a class="skip" href="#main-content">跳到主要內容</a>
 <header>
   <div class="wrap nav">
     <a class="brand" href="zh.html">Gap<span>Caster</span> Small</a>
@@ -24,7 +25,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main-content">
   <section class="hero" style="border-top:0">
     <div>
       <p class="eyebrow"><b>Human-Scale 版本</b> · ≤10B 開源小模型 · 繁體中文／英文 · 全程本機</p>
@@ -100,17 +101,18 @@
     <p class="sub">於單台 Apple M5 Max 筆電實測《Tears of Steel》0:00–2:20（開發用片段，in-sample）與台灣失智症協會《Young Coffee Story》0:00–2:20（未調校原生國語紀實短片，held-out）。</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>指標（0:00–2:20）</th><th>8B 英文（ToS）</th><th>8B 繁中（ToS）</th><th>8B 繁中（台灣國語新片 Young Coffee）</th><th>27B 對照組（2:20 / 12:14）</th></tr></thead>
+        <caption class="sr-only">8B 英文、8B 繁體中文（Tears of Steel 與未調校台灣國語紀實片 Young Coffee Story）及 27B 對照組實測數據比較</caption>
+        <thead><tr><th scope="col">指標（0:00–2:20）</th><th scope="col">8B 英文（ToS）</th><th scope="col">8B 繁中（ToS）</th><th scope="col">8B 繁中（台灣國語新片 Young Coffee）</th><th scope="col">27B 對照組（2:20 / 12:14）</th></tr></thead>
         <tbody>
-          <tr><td>塞進空檔的句數</td><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
-          <tr><td>旁白壓到偵測到的對話</td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
-          <tr><td>旁白壓到官方字幕 cue</td><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>不適用（原片為內嵌開路字幕）</td><td>0.4 秒 · 5.8 秒</td></tr>
-          <tr><td>驗證器抓到明顯植入錯誤</td><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
-          <tr><td>驗證器抓到片內隱蔽錯誤</td><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td><b>12 / 13</b>（鄰句置換）</td><td>15 / 17 · 34 / 40</td></tr>
-          <tr><td>原稿被驗證器標記句數</td><td>2 / 19</td><td>1 / 15</td><td>3 / 13（3 處皆為真實疊化時間差）</td><td>1 / 17 · —</td></tr>
-          <tr><td>中點畫面逐句檢查（正確 · 小錯 · 錯）</td><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
-          <tr><td>每分鐘影片處理時間</td><td>50 秒</td><td>39 秒</td><td><b>39 秒</b></td><td>125 秒 · 137 秒</td></tr>
-          <tr><td>峰值模型記憶體</td><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
+          <tr><th scope="row">塞進空檔的句數</th><td><b>19 / 19</b></td><td><b>15 / 15</b></td><td><b>13 / 13</b></td><td>17 / 17 · 70 / 71</td></tr>
+          <tr><th scope="row">旁白壓到偵測到的對話</th><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td><b>0.0 秒</b></td><td>0.0 秒 · 0.0 秒</td></tr>
+          <tr><th scope="row">旁白壓到官方字幕 cue</th><td>0.6 秒（多在字幕尾）</td><td>0.4 秒</td><td>不適用（原片為內嵌開路字幕）</td><td>0.4 秒 · 5.8 秒</td></tr>
+          <tr><th scope="row">驗證器抓到明顯植入錯誤</th><td><b>18 / 19</b></td><td><b>13 / 15</b></td><td><b>12 / 13</b></td><td>17 / 17 · 40 / 40</td></tr>
+          <tr><th scope="row">驗證器抓到片內隱蔽錯誤</th><td>13 / 19（換動詞 0/5）</td><td>11 / 15（換人／鄰句）</td><td><b>12 / 13</b>（鄰句置換）</td><td>15 / 17 · 34 / 40</td></tr>
+          <tr><th scope="row">原稿被驗證器標記句數</th><td>2 / 19</td><td>1 / 15</td><td>3 / 13（3 處皆為真實疊化時間差）</td><td>1 / 17 · —</td></tr>
+          <tr><th scope="row">中點畫面逐句檢查（正確 · 小錯 · 錯）</th><td>—</td><td>7 · 7 · 1</td><td><b>6 · 5 · 2</b></td><td>13 · 4 · 0 · —</td></tr>
+          <tr><th scope="row">每分鐘影片處理時間</th><td>50 秒</td><td>39 秒</td><td><b>39 秒</b></td><td>125 秒 · 137 秒</td></tr>
+          <tr><th scope="row">峰值模型記憶體</th><td><b>13.7 GB</b></td><td><b>13.8 GB</b></td><td><b>13.6 GB</b></td><td>33.2 GB · 34 GB</td></tr>
         </tbody>
       </table>
     </div>
