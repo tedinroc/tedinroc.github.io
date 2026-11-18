@@ -1,8 +1,8 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GapCaster 口述影像審核頁</title><style>
-:root{--bg:#f4f5f2;--card:#ffffff;--ink:#1b1f1d;--muted:#525c56;--rule:#cfd5cc;--dlg:#3d4a44;--gap:#e6ece4;--ad:#b43b08;--ad-ink:#ffffff;--ok:#1b6338;--warn:#7c4700;--no:#b91c1c;--focus:#0052a3}
-@media (prefers-color-scheme:dark){:root{--bg:#121513;--card:#1a1e1c;--ink:#e8ece9;--muted:#a6b0aa;--rule:#323b36;--dlg:#8fa197;--gap:#232d27;--ad:#fb923c;--ad-ink:#241102;--ok:#7ae0a5;--warn:#f3c65f;--no:#fca5a5;--focus:#fde047}}
+:root{--bg:#f4f5f2;--card:#ffffff;--ink:#1b1f1d;--muted:#525c56;--rule:#cfd5cc;--ctrl:#67706a;--dlg:#3d4a44;--gap:#e6ece4;--ad:#b43b08;--ad-ink:#ffffff;--ok:#1b6338;--warn:#7c4700;--no:#b91c1c;--focus:#0052a3}
+@media (prefers-color-scheme:dark){:root{--bg:#121513;--card:#1a1e1c;--ink:#e8ece9;--muted:#a6b0aa;--rule:#323b36;--ctrl:#78847d;--dlg:#8fa197;--gap:#232d27;--ad:#fb923c;--ad-ink:#241102;--ok:#7ae0a5;--warn:#f3c65f;--no:#fca5a5;--focus:#fde047}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif}
+*{box-sizing:border-box}html{scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;overflow-wrap:break-word}
 a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:absolute;left:-9999px;top:0;background:var(--ad);color:var(--ad-ink);padding:10px 16px;border-radius:0 0 8px 0;z-index:20;font-weight:700;text-decoration:none}
@@ -36,7 +36,7 @@ video{width:100%;border-radius:10px;background:#000}
 audio{width:100%;height:36px;margin-top:4px}
 .bar2{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--rule)}
 .bar2 b{font-variant-numeric:tabular-nums}
-button{font:inherit;font-size:13.5px;font-weight:700;min-height:40px;padding:7px 13px;border-radius:8px;border:1.5px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+button{font:inherit;font-size:13.5px;font-weight:700;min-height:40px;padding:7px 13px;border-radius:8px;border:1.5px solid var(--ctrl);background:var(--card);color:var(--ink);cursor:pointer}
 button:focus-visible,a:focus-visible,video:focus-visible,audio:focus-visible,.txt:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 button.ok{border-color:var(--ok);color:var(--ok)}
 button.ok[aria-pressed="true"]{background:var(--ok);color:var(--card)}
@@ -154,7 +154,7 @@ paint();
   <div><strong>線上審核回傳（免下載傳檔）：</strong> <span class="sub">勾選下方任幾句「核准／修改／剔除」或填寫整體建議後，按右側按鈕即可直接匿名送回，不需另外寄檔。</span></div>
   <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
     <label for="rev-note" class="sr-only">整體審核建議或問題（選填）</label>
-    <input id="rev-note" type="text" placeholder="整體建議：哪裡不合口述影像習慣、哪裡不好用？（選填，可留署名或匿名）" style="flex:1;min-width:240px;min-height:42px;padding:8px 12px;border-radius:8px;border:1.5px solid var(--rule);background:var(--bg);color:var(--ink);font:inherit">
+    <input id="rev-note" type="text" placeholder="整體建議：哪裡不合口述影像習慣、哪裡不好用？（選填，可留署名或匿名）" style="flex:1;min-width:220px;min-height:42px;padding:8px 12px;border-radius:8px;border:1.5px solid var(--ctrl);background:var(--bg);color:var(--ink);font:inherit">
     <button class="primary" id="online-submit-review" type="button">直接送出審核結果</button>
   </div>
   <div id="online-review-status" role="status" aria-live="polite" style="font-weight:700;color:var(--ok)"></div>

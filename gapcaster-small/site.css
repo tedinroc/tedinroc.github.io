@@ -7,7 +7,7 @@
   :root{--bg:#f7f7f2;--panel:#ffffff;--panel2:#eef1ec;--ink:#141a16;--muted:#4b5650;--line:#ccd4cd;--accent:#9a3c00;--accent-ink:#fff;--ok:#1d6b45;--warn:#8a6200;}
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif}
 a{color:inherit}
