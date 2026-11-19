@@ -1,0 +1,1884 @@
+{
+ "source": {
+  "file": "grandma_words.mp4",
+  "start": 0.0,
+  "end": 140.014875
+ },
+ "settings": {
+  "lang": "zh",
+  "merge_pause": 0.6,
+  "lead": 0.25,
+  "tail": 0.3,
+  "min_slot": 1.1,
+  "breath": 0.8,
+  "max_slot": 7.0,
+  "words_per_sec": 2.6,
+  "chars_per_sec": 4.0,
+  "speeds": [
+   1.0,
+   1.08,
+   1.15
+  ],
+  "max_rewrites": 3,
+  "whisper_model": "mlx-community/whisper-large-v3-turbo",
+  "vlm_model": "mlx-community/Qwen3.5-9B-8bit",
+  "tts_model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit",
+  "tts_voice": "tw_ref_female",
+  "llm_backend": "mlx",
+  "llm_base_url": "http://127.0.0.1:8000/v1",
+  "llm_model_name": "qwen",
+  "concurrency": 8,
+  "asr_backend": "mlx",
+  "asr_ov_model": "OpenVINO/whisper-large-v3-turbo-int8-ov",
+  "asr_device": "CPU",
+  "tts_backend": "qwen3_tts",
+  "extra": {}
+ },
+ "cast": [],
+ "shots": [
+  {
+   "id": "S001",
+   "start": 0.0,
+   "end": 4.546,
+   "frames": [
+    "frames/S001_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a beach with sand and water in the background",
+    "action": "a person stands with a gray sweatshirt featuring large white letters and a gold cross necklace",
+    "text": "HCO",
+    "key": "a person wearing a gray sweatshirt with the letters HCO and a gold cross necklace",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S002",
+   "start": 4.546,
+   "end": 7.716,
+   "frames": [
+    "frames/S002_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a beach with wet sand and the ocean",
+    "action": "waves roll toward the shore",
+    "text": "",
+    "key": "a wide shot of a grey, overcast beach with small waves rolling onto the wet sand",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S003",
+   "start": 7.716,
+   "end": 10.219,
+   "frames": [
+    "frames/S003_0.jpg"
+   ],
+   "facts": {
+    "who": "a person wearing a grey sweatshirt",
+    "where": "indoor or outdoor setting with a plain background",
+    "action": "standing still",
+    "text": "",
+    "key": "a close-up of a person's chest showing a grey sweatshirt with a black beaded necklace featuring a silver ring and a gold cross pendant",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S004",
+   "start": 10.219,
+   "end": 15.307,
+   "frames": [
+    "frames/S004_0.jpg",
+    "frames/S004_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short black hair and a grey t-shirt",
+    "where": "a beach with the ocean in the background",
+    "action": "the man looks to his right, then looks down",
+    "text": "",
+    "key": "a young man stands on a beach and looks around",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S005",
+   "start": 15.307,
+   "end": 20.395,
+   "frames": [
+    "frames/S005_0.jpg",
+    "frames/S005_1.jpg"
+   ],
+   "facts": {
+    "who": "a person wearing a grey t-shirt",
+    "where": "outdoors, possibly near a beach",
+    "action": "standing still",
+    "text": "",
+    "key": "a close-up shot of a person's chest wearing a grey t-shirt with large white letters, featuring a black beaded necklace with a gold cross pendant",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S006",
+   "start": 20.395,
+   "end": 27.527,
+   "frames": [
+    "frames/S006_0.jpg",
+    "frames/S006_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short black hair wearing a grey t-shirt and a necklace",
+    "where": "a beach with wet sand and a seawall in the background",
+    "action": "the man stands with his eyes closed and hands clasped together in a prayer-like gesture",
+    "text": "",
+    "key": "a young man stands on a beach with his eyes closed and hands clasped in prayer",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S007",
+   "start": 27.527,
+   "end": 34.66,
+   "frames": [
+    "frames/S007_0.jpg",
+    "frames/S007_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short black hair, wearing a grey t-shirt and a black beaded necklace",
+    "where": "a wide, flat beach with a concrete seawall and distant buildings in the background",
+    "action": "the man stands with his eyes closed and hands clasped together in front of his chest in a prayer-like gesture",
+    "text": "",
+    "key": "a young man stands on a beach with his eyes closed and hands clasped in prayer",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S008",
+   "start": 34.66,
+   "end": 41.792,
+   "frames": [
+    "frames/S008_0.jpg",
+    "frames/S008_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short black hair wearing a grey t-shirt and a necklace",
+    "where": "a beach with wet sand and a stone seawall in the background",
+    "action": "the man looks down at his chest, touching his necklace, then looks up and to the side",
+    "text": "",
+    "key": "a young man stands on a beach, looking down at his necklace and then up",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S009",
+   "start": 41.792,
+   "end": 49.216,
+   "frames": [
+    "frames/S009_0.jpg",
+    "frames/S009_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a wide beach with wet sand and shallow pools in the foreground, leading to a calm sea with a distant ship on the horizon under an overcast sky",
+    "action": "the camera remains static on the seascape",
+    "text": "阿嬤的話",
+    "key": "a static shot of a wide, wet beach and the sea with text overlay",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S010",
+   "start": 49.216,
+   "end": 55.097,
+   "frames": [
+    "frames/S010_0.jpg",
+    "frames/S010_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "black screen",
+    "action": "white text appears at the bottom of the screen",
+    "text": "阿嬤告訴我\n不能拿香拜拜",
+    "key": "white text appears at the bottom of the screen",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S011",
+   "start": 55.097,
+   "end": 62.604,
+   "frames": [
+    "frames/S011_0.jpg",
+    "frames/S011_1.jpg"
+   ],
+   "facts": {
+    "who": "a person wearing a light-colored shirt",
+    "where": "a doorway with a wooden door",
+    "action": "the person is holding the door handle and opening the door",
+    "text": "",
+    "key": "a person is opening a wooden door from the inside",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S012",
+   "start": 62.604,
+   "end": 69.528,
+   "frames": [
+    "frames/S012_0.jpg",
+    "frames/S012_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's arm and hand",
+    "where": "an indoor setting with a large, dark, rectangular object",
+    "action": "The person's hand rests on the top surface of the object.",
+    "text": "",
+    "key": "A person's hand is resting on the top of a large, dark, rectangular object.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S013",
+   "start": 69.528,
+   "end": 71.78,
+   "frames": [
+    "frames/S013_0.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "a dark wooden surface, likely a desk or table",
+    "action": "hands are resting on the edge of the wooden surface",
+    "text": "",
+    "key": "a person's hands are resting on the edge of a dark wooden surface",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S014",
+   "start": 71.78,
+   "end": 73.448,
+   "frames": [
+    "frames/S014_0.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands and arms",
+    "where": "a dark, wooden surface, likely a desk or table",
+    "action": "the person's hands are placed on the surface, with fingers spread out",
+    "text": "",
+    "key": "a person's hands are resting on a dark wooden surface",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S015",
+   "start": 73.448,
+   "end": 80.935,
+   "frames": [
+    "frames/S015_0.jpg",
+    "frames/S015_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "a dark wooden drawer",
+    "action": "opening a drawer to reveal various items inside",
+    "text": "WHITE CASTLE",
+    "key": "a person opens a wooden drawer to reveal a large round tin of White Castle cookies and other miscellaneous items",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S016",
+   "start": 80.935,
+   "end": 88.422,
+   "frames": [
+    "frames/S016_0.jpg",
+    "frames/S016_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "inside a wooden drawer",
+    "action": "reaching for and moving items within the drawer",
+    "text": "WHITE CASTLE",
+    "key": "a person's hands are rummaging through a cluttered wooden drawer containing various containers and boxes",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S017",
+   "start": 88.422,
+   "end": 95.137,
+   "frames": [
+    "frames/S017_0.jpg",
+    "frames/S017_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "a dark table",
+    "action": "holding and rotating a round cookie tin",
+    "text": "WHITE CASTLE",
+    "key": "a person's hands rotate a round cookie tin on a table",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S018",
+   "start": 95.137,
+   "end": 101.852,
+   "frames": [
+    "frames/S018_0.jpg",
+    "frames/S018_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's arms and hands",
+    "where": "indoors, at a table",
+    "action": "The person uses both hands to pry the lid off a round tin canister.",
+    "text": "",
+    "key": "A person's hands are shown prying the lid off a round tin canister.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S019",
+   "start": 101.852,
+   "end": 106.836,
+   "frames": [
+    "frames/S019_0.jpg"
+   ],
+   "facts": {
+    "key": "```json\n{\n  \"who\": \"a person's hands\",\n  \"where\": \"a dark, indoor setting\",\n  \"action\": \"holding a round tin can open with one hand and holding a blister pack of dark pills with the other\",\n  \"text\": ",
+    "confidence": 0.3,
+    "parse_error": true
+   }
+  },
+  {
+   "id": "S020",
+   "start": 106.836,
+   "end": 111.82,
+   "frames": [
+    "frames/S020_0.jpg"
+   ],
+   "facts": {
+    "who": "a person's left hand",
+    "where": "a dark, indoor setting",
+    "action": "holding a round tin container open to reveal a document inside",
+    "text": "0, 0,",
+    "key": "a hand holds an open round tin containing a document with a table of numbers and text",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "S021",
+   "start": 111.82,
+   "end": 116.95,
+   "frames": [
+    "frames/S021_0.jpg",
+    "frames/S021_1.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "a dark room",
+    "action": "hands reach into a round metal tin, removing a white packet to reveal a red square object tied with a red string inside",
+    "text": "",
+    "key": "hands remove a white packet from a metal tin to reveal a red object inside",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S022",
+   "start": 116.95,
+   "end": 122.623,
+   "frames": [
+    "frames/S022_0.jpg",
+    "frames/S022_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short dark hair wearing a white t-shirt and a necklace with a cross pendant",
+    "where": "a room with a wooden wardrobe featuring an oval mirror in the background",
+    "action": "the man looks down and holds a small red object in his hands",
+    "text": "",
+    "key": "a young man in a white t-shirt looks down while holding a small red object",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S023",
+   "start": 122.623,
+   "end": 125.459,
+   "frames": [
+    "frames/S023_0.jpg"
+   ],
+   "facts": {
+    "who": "a person's hands",
+    "where": "a dimly lit, dark interior",
+    "action": "holding a red amulet",
+    "text": "\"白拱沙天屯宮 天上聖母\"",
+    "key": "a person holds a red, square amulet with gold Chinese characters and dragon designs",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S024",
+   "start": 125.459,
+   "end": 132.674,
+   "frames": [
+    "frames/S024_0.jpg",
+    "frames/S024_1.jpg"
+   ],
+   "facts": {
+    "who": "a young man with short dark hair wearing a white t-shirt and a necklace with a cross pendant",
+    "where": "a dimly lit room with a wooden door and a wooden cabinet visible in the background",
+    "action": "the man holds a red string or cord in his hands, looking down at it with a focused expression",
+    "text": "",
+    "key": "a young man in a white t-shirt examines a red string in his hands",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S025",
+   "start": 132.674,
+   "end": 137.179,
+   "frames": [
+    "frames/S025_0.jpg"
+   ],
+   "facts": {
+    "who": "a young man",
+    "where": "a dimly lit, dark interior",
+    "action": "the young man is shown in a close-up profile view, gazing intently to the right",
+    "text": "",
+    "key": "a close-up profile of a young man looking to the right in a dark setting",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S026",
+   "start": 137.179,
+   "end": 140.015,
+   "frames": [
+    "frames/S026_0.jpg"
+   ],
+   "facts": {
+    "who": "a person's left hand and forearm",
+    "where": "a dimly lit desk with computer equipment",
+    "action": "the person's hand is positioned over a keyboard and a computer mouse on a mousepad",
+    "text": "",
+    "key": "a person's hand is resting on a computer keyboard and mouse in a dark room",
+    "confidence": 0.95
+   }
+  }
+ ],
+ "dialogue": [
+  {
+   "start": 20.820000000000004,
+   "end": 23.2,
+   "text": "我們在天上的父王"
+  },
+  {
+   "start": 24.060000000000006,
+   "end": 31.46,
+   "text": "願你將喜樂賜福給阿嬤 讓在天國的阿嬤過得幸福快樂"
+  },
+  {
+   "start": 32.08,
+   "end": 36.16,
+   "text": "沒有痛苦沒有悲傷 阿奈"
+  },
+  {
+   "start": 48.699999999999996,
+   "end": 51.7,
+   "text": "小時候阿嬤告訴我"
+  },
+  {
+   "start": 52.44,
+   "end": 54.2,
+   "text": "不能拿香拜拜"
+  },
+  {
+   "start": 85.52,
+   "end": 87.3,
+   "text": "请 3,"
+  },
+  {
+   "start": 113.7,
+   "end": 114.04,
+   "text": "0, 0,"
+  },
+  {
+   "start": 115.28,
+   "end": 116.78,
+   "text": "0"
+  },
+  {
+   "start": 138.57999999999998,
+   "end": 139.98,
+   "text": "中"
+  }
+ ],
+ "dialogue_asr": [
+  {
+   "start": 20.820000000000004,
+   "end": 23.02,
+   "text": "我們在天上的父王"
+  },
+  {
+   "start": 24.060000000000006,
+   "end": 26.94,
+   "text": "願你將喜樂賜福給阿嬤"
+  },
+  {
+   "start": 27.659999999999997,
+   "end": 31.46,
+   "text": "讓在天國的阿嬤過得幸福快樂"
+  },
+  {
+   "start": 32.08,
+   "end": 34.74,
+   "text": "沒有痛苦沒有悲傷"
+  },
+  {
+   "start": 35.44,
+   "end": 36.16,
+   "text": "阿奈"
+  },
+  {
+   "start": 48.699999999999996,
+   "end": 51.52,
+   "text": "小時候阿嬤告訴我"
+  },
+  {
+   "start": 52.44,
+   "end": 53.8,
+   "text": "不能拿香拜拜"
+  },
+  {
+   "start": 85.52,
+   "end": 87.3,
+   "text": "请 3,"
+  },
+  {
+   "start": 113.7,
+   "end": 114.04,
+   "text": "0, 0,"
+  },
+  {
+   "start": 115.28,
+   "end": 116.78,
+   "text": "0"
+  },
+  {
+   "start": 138.57999999999998,
+   "end": 139.98,
+   "text": "中"
+  }
+ ],
+ "speech_vad": [
+  {
+   "start": 21.3,
+   "end": 23.2
+  },
+  {
+   "start": 24.5,
+   "end": 27.1
+  },
+  {
+   "start": 27.8,
+   "end": 31.2
+  },
+  {
+   "start": 32.5,
+   "end": 33.3
+  },
+  {
+   "start": 34.0,
+   "end": 35.1
+  },
+  {
+   "start": 49.1,
+   "end": 50.1
+  },
+  {
+   "start": 50.6,
+   "end": 51.7
+  },
+  {
+   "start": 52.7,
+   "end": 54.2
+  }
+ ],
+ "gaps": [
+  {
+   "start": 0.3,
+   "end": 20.52
+  },
+  {
+   "start": 36.41,
+   "end": 48.4
+  },
+  {
+   "start": 54.45,
+   "end": 85.22
+  },
+  {
+   "start": 87.55,
+   "end": 113.4
+  },
+  {
+   "start": 117.03,
+   "end": 138.28
+  }
+ ],
+ "slots": [
+  {
+   "start": 0.3,
+   "end": 4.546,
+   "shots": [
+    "S001"
+   ],
+   "prev": []
+  },
+  {
+   "start": 4.546,
+   "end": 7.716,
+   "shots": [
+    "S002"
+   ],
+   "prev": [
+    "S001"
+   ]
+  },
+  {
+   "start": 7.716,
+   "end": 10.219,
+   "shots": [
+    "S003"
+   ],
+   "prev": [
+    "S002"
+   ]
+  },
+  {
+   "start": 10.219,
+   "end": 15.307,
+   "shots": [
+    "S004"
+   ],
+   "prev": [
+    "S003"
+   ]
+  },
+  {
+   "start": 15.307,
+   "end": 20.52,
+   "shots": [
+    "S005"
+   ],
+   "prev": [
+    "S004"
+   ]
+  },
+  {
+   "start": 36.41,
+   "end": 41.792,
+   "shots": [
+    "S008"
+   ],
+   "prev": [
+    "S007"
+   ]
+  },
+  {
+   "start": 41.792,
+   "end": 48.4,
+   "shots": [
+    "S009"
+   ],
+   "prev": [
+    "S008"
+   ]
+  },
+  {
+   "start": 54.45,
+   "end": 62.604,
+   "shots": [
+    "S010",
+    "S011"
+   ],
+   "prev": []
+  },
+  {
+   "start": 62.604,
+   "end": 69.528,
+   "shots": [
+    "S012"
+   ],
+   "prev": [
+    "S011"
+   ]
+  },
+  {
+   "start": 69.528,
+   "end": 73.448,
+   "shots": [
+    "S013",
+    "S014"
+   ],
+   "prev": [
+    "S012"
+   ]
+  },
+  {
+   "start": 73.448,
+   "end": 80.935,
+   "shots": [
+    "S015"
+   ],
+   "prev": [
+    "S013",
+    "S014"
+   ]
+  },
+  {
+   "start": 80.935,
+   "end": 85.22,
+   "shots": [
+    "S016"
+   ],
+   "prev": [
+    "S015"
+   ]
+  },
+  {
+   "start": 87.55,
+   "end": 95.137,
+   "shots": [
+    "S016",
+    "S017"
+   ],
+   "prev": []
+  },
+  {
+   "start": 95.137,
+   "end": 101.852,
+   "shots": [
+    "S018"
+   ],
+   "prev": [
+    "S017"
+   ]
+  },
+  {
+   "start": 101.852,
+   "end": 106.836,
+   "shots": [
+    "S019"
+   ],
+   "prev": [
+    "S018"
+   ]
+  },
+  {
+   "start": 106.836,
+   "end": 113.4,
+   "shots": [
+    "S020",
+    "S021"
+   ],
+   "prev": [
+    "S019"
+   ]
+  },
+  {
+   "start": 117.03,
+   "end": 122.623,
+   "shots": [
+    "S022"
+   ],
+   "prev": [
+    "S021"
+   ]
+  },
+  {
+   "start": 122.623,
+   "end": 125.459,
+   "shots": [
+    "S023"
+   ],
+   "prev": [
+    "S022"
+   ]
+  },
+  {
+   "start": 125.459,
+   "end": 132.674,
+   "shots": [
+    "S024"
+   ],
+   "prev": [
+    "S023"
+   ]
+  },
+  {
+   "start": 132.674,
+   "end": 138.28,
+   "shots": [
+    "S025",
+    "S026"
+   ],
+   "prev": [
+    "S024"
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": "AD001",
+   "start": 0.3,
+   "window_end": 4.546,
+   "avail": 4.25,
+   "text": "穿灰衫戴金十字架者立沙灘。",
+   "duration": 2.96,
+   "speed": 1.0,
+   "budget_words": 16,
+   "attempts": [
+    {
+     "text": "穿灰色 HCO 運動衫戴金十字架項鍊的人站在沙灘上。",
+     "seconds": 5.46,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 5.5s > 4.2s"
+    },
+    {
+     "text": "穿灰衫戴金十字架者立沙灘。",
+     "seconds": 3.02,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S001"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD001.wav",
+   "verify_shots": [
+    "S001"
+   ]
+  },
+  {
+   "id": "AD002",
+   "start": 4.55,
+   "window_end": 7.716,
+   "avail": 3.17,
+   "text": "灰天海灘浪打濕沙。",
+   "duration": 2.28,
+   "speed": 1.0,
+   "budget_words": 12,
+   "attempts": [
+    {
+     "text": "灰天海灘浪打濕沙。",
+     "seconds": 1.74,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S002"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD002.wav",
+   "verify_shots": [
+    "S002"
+   ]
+  },
+  {
+   "id": "AD003",
+   "start": 10.22,
+   "window_end": 15.307,
+   "avail": 5.09,
+   "text": "黑髮灰衫男看右再望下。",
+   "duration": 2.54,
+   "speed": 1.0,
+   "budget_words": 20,
+   "attempts": [
+    {
+     "text": "黑髮灰衫男看右再望下。",
+     "seconds": 2.19,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S004"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD003.wav",
+   "verify_shots": [
+    "S004"
+   ]
+  },
+  {
+   "id": "AD004",
+   "start": 15.31,
+   "window_end": 20.52,
+   "avail": 5.21,
+   "text": "灰衫男胸前白字與金十字架項鍊。",
+   "duration": 3.23,
+   "speed": 1.0,
+   "budget_words": 20,
+   "attempts": [
+    {
+     "text": "灰衫男胸前白字與金十字架項鍊。",
+     "seconds": 3.26,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S005"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD004.wav",
+   "verify_shots": [
+    "S005"
+   ]
+  },
+  {
+   "id": "AD005",
+   "start": 36.41,
+   "window_end": 41.792,
+   "avail": 5.38,
+   "text": "灰衫男觸碰項鍊再望遠處。",
+   "duration": 2.53,
+   "speed": 1.0,
+   "budget_words": 21,
+   "attempts": [
+    {
+     "text": "灰衫男觸碰項鍊再望遠處。",
+     "seconds": 2.6,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S008"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD005.wav",
+   "verify_shots": [
+    "S008"
+   ]
+  },
+  {
+   "id": "AD006",
+   "start": 41.79,
+   "window_end": 48.4,
+   "avail": 6.61,
+   "text": "灰衫男靜立海灘，海平線遠處有船。",
+   "duration": 3.56,
+   "speed": 1.0,
+   "budget_words": 26,
+   "attempts": [
+    {
+     "text": "灰衫男靜立海灘，海平線遠處有船。",
+     "seconds": 3.84,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S009"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "灰衫男靜立海灘",
+     "海平線遠處有船"
+    ]
+   },
+   "flags": [
+    "unsupported: 灰衫男靜立海灘; 海平線遠處有船"
+   ],
+   "review": "pending",
+   "audio": "lines/AD006.wav",
+   "verify_shots": [
+    "S009"
+   ]
+  },
+  {
+   "id": "AD007",
+   "start": 54.45,
+   "window_end": 62.604,
+   "avail": 8.15,
+   "text": "灰衫男開啟木門。",
+   "duration": 1.6,
+   "speed": 1.0,
+   "budget_words": 32,
+   "attempts": [
+    {
+     "text": "灰衫男開啟木門。",
+     "seconds": 1.77,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S010",
+    "S011"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD007.wav",
+   "verify_shots": [
+    "S010",
+    "S011"
+   ]
+  },
+  {
+   "id": "AD008",
+   "start": 62.6,
+   "window_end": 69.528,
+   "avail": 6.92,
+   "text": "灰衫男的手放在大型深色長方物體頂端。",
+   "duration": 3.63,
+   "speed": 1.0,
+   "budget_words": 27,
+   "attempts": [
+    {
+     "text": "灰衫男的手放在大型深色長方物體頂端。",
+     "seconds": 3.45,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S012"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "灰衫男"
+    ]
+   },
+   "flags": [
+    "unsupported: 灰衫男"
+   ],
+   "review": "pending",
+   "audio": "lines/AD008.wav",
+   "verify_shots": [
+    "S012"
+   ]
+  },
+  {
+   "id": "AD009",
+   "start": 69.53,
+   "window_end": 73.448,
+   "avail": 3.92,
+   "text": "雙手放於深色木桌邊緣。",
+   "duration": 2.24,
+   "speed": 1.0,
+   "budget_words": 15,
+   "attempts": [
+    {
+     "text": "雙手放於深色木桌邊緣。",
+     "seconds": 2.73,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S013",
+    "S014"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD009.wav",
+   "verify_shots": [
+    "S013",
+    "S014"
+   ]
+  },
+  {
+   "id": "AD010",
+   "start": 73.45,
+   "window_end": 80.935,
+   "avail": 7.49,
+   "text": "木櫃內有「白城堡」字樣的圓鐵盒。",
+   "duration": 3.64,
+   "speed": 1.0,
+   "budget_words": 29,
+   "attempts": [
+    {
+     "text": "木櫃內有「白城堡」字樣的圓鐵盒。",
+     "seconds": 3.68,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S015"
+   ],
+   "text_read": [
+    "WHITE CASTLE"
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD010.wav",
+   "verify_shots": [
+    "S015"
+   ]
+  },
+  {
+   "id": "AD011",
+   "start": 95.14,
+   "window_end": 101.852,
+   "avail": 6.72,
+   "text": "雙手掰開圓鐵盒蓋子。",
+   "duration": 1.98,
+   "speed": 1.0,
+   "budget_words": 26,
+   "attempts": [
+    {
+     "text": "雙手掰開圓鐵盒蓋子。",
+     "seconds": 2.08,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S018"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD011.wav",
+   "verify_shots": [
+    "S018"
+   ]
+  },
+  {
+   "id": "AD012",
+   "start": 101.85,
+   "window_end": 106.836,
+   "avail": 4.98,
+   "text": "一手持圓鐵盒，一手拿深色藥排。",
+   "duration": 3.34,
+   "speed": 1.0,
+   "budget_words": 19,
+   "attempts": [
+    {
+     "text": "一手持圓鐵盒，一手拿深色藥排。",
+     "seconds": 3.52,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S019"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [
+    "low vision confidence 0.30"
+   ],
+   "review": "pending",
+   "audio": "lines/AD012.wav",
+   "verify_shots": [
+    "S019"
+   ]
+  },
+  {
+   "id": "AD013",
+   "start": 106.84,
+   "window_end": 113.4,
+   "avail": 6.56,
+   "text": "手拿出白包，露出紅繩綁的紅方塊。",
+   "duration": 3.27,
+   "speed": 1.0,
+   "budget_words": 26,
+   "attempts": [
+    {
+     "text": "手拿出白包，露出紅繩綁的紅方塊。",
+     "seconds": 3.49,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S020",
+    "S021"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "白包",
+     "紅繩",
+     "紅方塊"
+    ]
+   },
+   "flags": [
+    "unsupported: 白包; 紅繩; 紅方塊"
+   ],
+   "review": "pending",
+   "audio": "lines/AD013.wav",
+   "verify_shots": [
+    "S020"
+   ]
+  },
+  {
+   "id": "AD014",
+   "start": 117.03,
+   "window_end": 122.623,
+   "avail": 5.59,
+   "text": "白衣男子低頭，手中捧著紅方塊。",
+   "duration": 3.02,
+   "speed": 1.0,
+   "budget_words": 22,
+   "attempts": [
+    {
+     "text": "白衣男子低頭，手中捧著紅方塊。",
+     "seconds": 3.26,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S022"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD014.wav",
+   "verify_shots": [
+    "S022"
+   ]
+  },
+  {
+   "id": "AD015",
+   "start": 122.62,
+   "window_end": 125.459,
+   "avail": 2.84,
+   "text": "手捧紅牌寫白拱沙天屯宮媽祖。",
+   "duration": 2.8,
+   "speed": 1.25,
+   "budget_words": 11,
+   "attempts": [
+    {
+     "text": "手捧紅牌，寫著白拱沙天屯宮天上聖母。",
+     "seconds": 3.93,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 3.9s > 2.8s"
+    },
+    {
+     "text": "手捧紅牌寫白拱沙天屯宮媽祖",
+     "seconds": 2.88,
+     "fit": true,
+     "speed": 1.08,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S023"
+   ],
+   "text_read": [
+    "白拱沙天屯宮 天上聖母"
+   ],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "媽祖"
+    ]
+   },
+   "flags": [
+    "unsupported: 媽祖"
+   ],
+   "review": "pending",
+   "audio": "lines/AD015.wav",
+   "verify_shots": [
+    "S023"
+   ]
+  },
+  {
+   "id": "AD016",
+   "start": 132.67,
+   "window_end": 138.28,
+   "avail": 5.61,
+   "text": "白衣男子側臉凝望，手放鍵盤滑鼠。",
+   "duration": 3.33,
+   "speed": 1.0,
+   "budget_words": 22,
+   "attempts": [
+    {
+     "text": "白衣男子側臉凝望，手放鍵盤滑鼠。",
+     "seconds": 3.8,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S025",
+    "S026"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "手放鍵盤滑鼠"
+    ]
+   },
+   "flags": [
+    "unsupported: 手放鍵盤滑鼠"
+   ],
+   "review": "pending",
+   "audio": "lines/AD016.wav",
+   "verify_shots": [
+    "S025"
+   ]
+  }
+ ],
+ "metrics": {
+  "clip_seconds": 140.0,
+  "shots": 26,
+  "dialogue_spans": 9,
+  "gaps": 5,
+  "speech_seconds_asr": 21.5,
+  "speech_seconds_vad": 13.4,
+  "speech_seconds_merged": 23.6,
+  "usable_gap_seconds": 110.1,
+  "slots": 20,
+  "lines": 16,
+  "lines_placed": 16,
+  "skipped_repeats": 4,
+  "first_try_fit": 14,
+  "fit_after_loop": 16,
+  "mean_attempts": 1.12,
+  "rewrites": 2,
+  "ad_seconds": 46.0,
+  "ad_overlap_with_detected_dialogue_s": 0.0,
+  "flagged_lines": 6,
+  "unsupported_flags": 5,
+  "rescued_by_speed": 1,
+  "rescued_by_rewrite": 2,
+  "style_or_text_gate_rewrites": 0,
+  "shots_covered": 20,
+  "processing_seconds": 101.5,
+  "seconds_per_content_minute": 43.5,
+  "stages": {
+   "prepare": 2.89,
+   "shots": 2.74,
+   "dialogue_map": 5.83,
+   "load_models": 3.29,
+   "shot_facts": 61.18,
+   "write_fit_verify": 17.43,
+   "verify": 6.78,
+   "mix": 1.4,
+   "injected_error_test": 21.73
+  },
+  "llm": {
+   "calls": 66,
+   "seconds": 79.0,
+   "prompt_tokens": 36700,
+   "gen_tokens": 3304
+  },
+  "tts": {
+   "calls": 20,
+   "audio_seconds": 58.6,
+   "voice": "qwen3-tts-1.7b:tw_ref_female",
+   "backend": "qwen3_tts"
+  },
+  "mlx_peak_memory_gb": 13.1,
+  "injected_error_test": {
+   "clean_lines": 15,
+   "false_alarms_on_clean_lines": 4,
+   "verdict_missing": 0,
+   "cases": [
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD001",
+     "original": "穿灰衫戴金十字架者立沙灘。",
+     "corrupted": "穿灰衫戴金十字架者立沙灘，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD001",
+     "original": "穿灰衫戴金十字架者立沙灘。",
+     "corrupted": "黑髮灰衫男看右再望下。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "黑髮",
+      "男"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD002",
+     "original": "灰天海灘浪打濕沙。",
+     "corrupted": "灰天海灘浪打濕沙，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD002",
+     "original": "灰天海灘浪打濕沙。",
+     "corrupted": "灰衫男胸前白字與金十字架項鍊。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "灰衫男",
+      "白字",
+      "金十字架項鍊"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD003",
+     "original": "黑髮灰衫男看右再望下。",
+     "corrupted": "黑髮灰衫男看右再望下，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD003",
+     "original": "黑髮灰衫男看右再望下。",
+     "corrupted": "灰衫男觸碰項鍊再望遠處。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "灰衫男觸碰項鍊",
+      "望遠處"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD004",
+     "original": "灰衫男胸前白字與金十字架項鍊。",
+     "corrupted": "灰衫男胸前白字與金十字架項鍊。招牌寫著「出口」。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "招牌寫著「出口」"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD004",
+     "original": "灰衫男胸前白字與金十字架項鍊。",
+     "corrupted": "灰衫男靜立海灘，海平線遠處有船。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "海平線遠處有船"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD005",
+     "original": "灰衫男觸碰項鍊再望遠處。",
+     "corrupted": "灰衫男觸碰項鍊再望遠處，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身旁有一匹白馬"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD005",
+     "original": "灰衫男觸碰項鍊再望遠處。",
+     "corrupted": "灰衫男開啟木門。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "灰衫男開啟木門"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD006",
+     "original": "灰衫男靜立海灘，海平線遠處有船。",
+     "corrupted": "灰衫男靜立海灘，海平線遠處有船，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "灰衫男靜立海灘",
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD006",
+     "original": "灰衫男靜立海灘，海平線遠處有船。",
+     "corrupted": "灰衫男的手放在大型深色長方物體頂端。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "灰衫男的手放在大型深色長方物體頂端。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD007",
+     "original": "灰衫男開啟木門。",
+     "corrupted": "灰衫男開啟木門，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD007",
+     "original": "灰衫男開啟木門。",
+     "corrupted": "雙手放於深色木桌邊緣。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "雙手放於深色木桌邊緣"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD008",
+     "original": "灰衫男的手放在大型深色長方物體頂端。",
+     "corrupted": "灰衫男的手放在大型深色長方物體頂端，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD008",
+     "original": "灰衫男的手放在大型深色長方物體頂端。",
+     "corrupted": "木櫃內有「白城堡」字樣的圓鐵盒。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "木櫃內有「白城堡」字樣的圓鐵盒。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD009",
+     "original": "雙手放於深色木桌邊緣。",
+     "corrupted": "雙手放於深色木桌邊緣。招牌寫著「出口」。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "招牌寫著「出口」"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD009",
+     "original": "雙手放於深色木桌邊緣。",
+     "corrupted": "雙手掰開圓鐵盒蓋子。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "圓鐵盒",
+      "蓋子",
+      "掰開"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD010",
+     "original": "木櫃內有「白城堡」字樣的圓鐵盒。",
+     "corrupted": "木櫃內有「白城堡」字樣的圓鐵盒，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身旁有一匹白馬"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD010",
+     "original": "木櫃內有「白城堡」字樣的圓鐵盒。",
+     "corrupted": "一手持圓鐵盒，一手拿深色藥排。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "一手持圓鐵盒",
+      "一手拿深色藥排"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD011",
+     "original": "雙手掰開圓鐵盒蓋子。",
+     "corrupted": "雙手掰開圓鐵盒蓋子，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD011",
+     "original": "雙手掰開圓鐵盒蓋子。",
+     "corrupted": "手拿出白包，露出紅繩綁的紅方塊。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手拿出白包",
+      "露出紅繩綁的紅方塊"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD012",
+     "original": "一手持圓鐵盒，一手拿深色藥排。",
+     "corrupted": "一手持圓鐵盒，一手拿深色藥排，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD012",
+     "original": "一手持圓鐵盒，一手拿深色藥排。",
+     "corrupted": "白衣男子低頭，手中捧著紅方塊。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "白衣男子",
+      "低頭",
+      "紅方塊"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD013",
+     "original": "手拿出白包，露出紅繩綁的紅方塊。",
+     "corrupted": "手拿出白包，露出紅繩綁的紅方塊，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "白包",
+      "紅繩",
+      "紅方塊",
+      "擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD013",
+     "original": "手拿出白包，露出紅繩綁的紅方塊。",
+     "corrupted": "手捧紅牌寫白拱沙天屯宮媽祖",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手捧",
+      "紅牌",
+      "寫",
+      "白拱沙天屯宮媽祖"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD014",
+     "original": "白衣男子低頭，手中捧著紅方塊。",
+     "corrupted": "白衣女子低頭，手中捧著紅方塊。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "白衣女子",
+      "捧著"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD014",
+     "original": "白衣男子低頭，手中捧著紅方塊。",
+     "corrupted": "白衣男子側臉凝望，手放鍵盤滑鼠。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手放鍵盤滑鼠"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD015",
+     "original": "手捧紅牌寫白拱沙天屯宮媽祖",
+     "corrupted": "手捧紅牌寫白拱沙天屯宮媽祖，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身旁有一匹白馬",
+      "媽祖"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD015",
+     "original": "手捧紅牌寫白拱沙天屯宮媽祖",
+     "corrupted": "手拿出白包，露出紅繩綁的紅方塊。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手拿出白包",
+      "露出"
+     ]
+    }
+   ],
+   "easy": {
+    "planted": 15,
+    "caught": 15,
+    "catch_rate": 1.0
+   },
+   "hard": {
+    "planted": 15,
+    "caught": 15,
+    "catch_rate": 1.0,
+    "by_kind": {
+     "noun": "0/0",
+     "verb": "0/0",
+     "character": "0/0",
+     "neighbour": "15/15"
+    }
+   },
+   "planted": 15,
+   "caught": 15,
+   "catch_rate": 1.0
+  }
+ }
+}

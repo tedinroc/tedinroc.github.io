@@ -127,7 +127,7 @@
       <div class="step"><span class="n">01</span><h3>標出對白空檔</h3><p>Whisper large-v3-turbo（0.8B）與 Silero VAD 雙重偵測語音，保留前後緩衝並於鏡頭切換處分段。</p></div>
       <div class="step"><span class="n">02</span><h3>擷取鏡頭事實</h3><p>Qwen3.5-9B（或 Qwen3-VL-8B）輸出結構化畫面事實；由口述影像員撰寫的角色表決定人物何時具名。</p></div>
       <div class="step"><span class="n">03</span><h3>依字數預算撰寫</h3><p>中文以每秒 4.0 字計算上限、繁體中文儲存；自動過濾片頭贊助與演職員名單。</p></div>
-      <div class="step"><span class="n">04</span><h3>台灣腔配音並實測秒數</h3><p>本機台灣腔國語神經語音（或跨平台 Kokoro-82M）實際念出每一句並量測時長，超時就試 1.08×／1.15× 或依溢出秒數重寫。</p></div>
+      <div class="step"><span class="n">04</span><h3>台灣腔開源配音並實測秒數</h3><p>開源 Apache-2.0 的 Qwen3-TTS-1.7B（搭配聯發創新基地 BreezyVoice 開源台灣女聲參考音色）或英文 Kokoro-82M 實際念出每一句並量測時長，超時就試 1.08×／1.15× 或依溢出秒數重寫。</p></div>
       <div class="step"><span class="n">05</span><h3>風格把關與查核</h3><p>中文規則擋下「我們看到」「鏡頭」「似乎／好像」；驗證器核對播出當下的畫面事實。</p></div>
       <div class="step"><span class="n">06</span><h3>本機審核工作台</h3><p><code>gapcaster web</code> 啟動 <code>127.0.0.1</code> 網頁介面，讓口述影像員免打指令審核修改並一鍵匯出核准音軌。</p></div>
     </div>
@@ -136,7 +136,7 @@
   <section id="human-scale">
     <h2>Small · Intentional · Tailored</h2>
     <div class="principles">
-      <div class="principle"><h3><span>Small.</span></h3><p>核心模型全數 ≤10B 開源權重（Qwen3.5-9B／Qwen3-VL-8B、Whisper 0.8B、Silero VAD、Kokoro-82M），單台筆電峰值僅 13.1–13.7 GB 即可離線執行，適合處理未公開片源與預算有限的單位。</p></div>
+      <div class="principle"><h3><span>Small.</span></h3><p>核心模型全數 ≤10B 開源權重（Qwen3.5-9B／Qwen3-VL-8B、Whisper 0.8B、Silero VAD、Qwen3-TTS-1.7B 與 Kokoro-82M），單台筆電峰值僅 13.1–13.7 GB 即可離線執行，適合處理未公開片源與預算有限的單位。</p></div>
       <div class="principle"><h3><span>Intentional.</span></h3><p>影片、字幕與草稿全程留在 <code>127.0.0.1</code>，無雲端、無遙測。每句保留完整 JSON 證據鏈，未經人工核准絕不混音。</p></div>
       <div class="principle"><h3><span>Tailored.</span></h3><p>針對對白空隙這項口述影像核心限制設計，並為台灣補上繁體中文規則、字數預算、本機瀏覽器工作台與螢幕閱讀器友善的聆聽測試。</p></div>
     </div>

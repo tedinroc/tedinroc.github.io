@@ -1,0 +1,1748 @@
+{
+ "source": {
+  "file": "young_coffee.mp4",
+  "start": 0.0,
+  "end": 140.0
+ },
+ "settings": {
+  "lang": "zh",
+  "merge_pause": 0.6,
+  "lead": 0.25,
+  "tail": 0.3,
+  "min_slot": 1.1,
+  "breath": 0.8,
+  "max_slot": 7.0,
+  "words_per_sec": 2.6,
+  "chars_per_sec": 4.0,
+  "speeds": [
+   1.0,
+   1.08,
+   1.15
+  ],
+  "max_rewrites": 3,
+  "whisper_model": "mlx-community/whisper-large-v3-turbo",
+  "vlm_model": "a0093b9b5fda6f76ddd4a462c6830ae7c4fe47ec",
+  "tts_model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit",
+  "tts_voice": "tw_ref_female",
+  "llm_backend": "mlx",
+  "llm_base_url": "http://127.0.0.1:8000/v1",
+  "llm_model_name": "qwen",
+  "concurrency": 8,
+  "asr_backend": "mlx",
+  "asr_ov_model": "OpenVINO/whisper-large-v3-turbo-int8-ov",
+  "asr_device": "CPU",
+  "tts_backend": "qwen3_tts",
+  "extra": {}
+ },
+ "cast": [
+  {
+   "name": "善仁",
+   "look": "older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim, or a blue-grey hooded jacket",
+   "named_from": 24
+  },
+  {
+   "name": "鳳蓮",
+   "look": "middle-aged Taiwanese woman, short dark bob hair, red-and-black plaid shirt under a dark vest, warm smile",
+   "named_from": 31
+  }
+ ],
+ "shots": [
+  {
+   "id": "S001",
+   "start": 0.0,
+   "end": 7.904,
+   "frames": [
+    "frames/S001_0.jpg",
+    "frames/S001_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a coffee shop, on a beige wall",
+    "action": "a sign with handwritten Chinese characters and a logo for 'Young 記憶會館 Young Coffee' is displayed",
+    "text": "來一杯，年輕型失智者的心意之作\n與我們一起發現每一個相遇的美好\nYoung 記憶會館\nYoung Coffee",
+    "key": "The sign reads 'Young 記憶會館 Young Coffee' and features a poignant message about young-onset dementia, indicating the coffee shop's theme.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S002",
+   "start": 7.904,
+   "end": 15.808,
+   "frames": [
+    "frames/S002_0.jpg",
+    "frames/S002_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a plain, textured beige background",
+    "action": "a black-and-white line drawing of a teapot and several sandwiches is shown, with the text 'YOUNG COFFEE STORY' overlaid. The next frame shows a line drawing of an espresso machine with the text '或者 Or' to its left.",
+    "text": "YOUNG COFFEE STORY",
+    "key": "The image displays a stylized line drawing of tea and coffee-related items, including a teapot, sandwiches, and an espresso machine, with text indicating a theme of 'Young Coffee Story' and an alternative option.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S003",
+   "start": 15.808,
+   "end": 23.712,
+   "frames": [
+    "frames/S003_0.jpg",
+    "frames/S003_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a plain, light-colored textured wall",
+    "action": "The screen displays two title cards. The first card reads '是咖啡裡的故事' and 'The story behind coffee'. The second card shows a faint coffee cup icon, the text '關於林善仁' and 'About Mr. Shan-Ren Lin', and below that, the word '善良' and 'Kind'.",
+    "text": "是咖啡裡的故事\nThe story behind coffee\n關於林善仁\nAbout Mr. Shan-Ren Lin\n善良\nKind",
+    "key": "The screen displays title cards introducing the film's theme and a character named Mr. Shan-Ren Lin, described as 'Kind'.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S004",
+   "start": 23.712,
+   "end": 31.617,
+   "frames": [
+    "frames/S004_0.jpg",
+    "frames/S004_1.jpg"
+   ],
+   "facts": {
+    "who": "middle-aged Taiwanese woman, short dark bob hair, red-and-black plaid shirt under a dark vest, warm smile",
+    "where": "indoors, sitting on a red chair against a white and peach-colored wall",
+    "action": "The woman is speaking and gesturing with her right hand, making a peace sign.",
+    "text": "鳳蓮 Feng Lian",
+    "key": "A middle-aged Taiwanese woman with short dark bob hair, wearing a red-and-black plaid shirt under a dark vest, is speaking and making a peace sign with her right hand.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S005",
+   "start": 31.617,
+   "end": 39.521,
+   "frames": [
+    "frames/S005_0.jpg",
+    "frames/S005_1.jpg"
+   ],
+   "facts": {
+    "who": "鳳蓮",
+    "where": "indoors, seated on a red chair, against a plain white wall with a peach-colored wall section to the right",
+    "action": "a middle-aged woman with short dark bob hair is seated and looking slightly upward and to her right with a thoughtful expression",
+    "text": "",
+    "key": "a middle-aged woman with short dark bob hair, wearing a red-and-black plaid shirt under a dark vest, is seated and looking upward.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S006",
+   "start": 39.521,
+   "end": 47.425,
+   "frames": [
+    "frames/S006_0.jpg",
+    "frames/S006_1.jpg"
+   ],
+   "facts": {
+    "who": "鳳蓮",
+    "where": "indoors, against a plain white wall with a peach-colored corner",
+    "action": "a middle-aged Taiwanese woman with short dark bob hair is speaking and gesturing with her right hand",
+    "text": "",
+    "key": "The woman is wearing a red-and-black plaid shirt under a dark vest.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S007",
+   "start": 47.425,
+   "end": 55.329,
+   "frames": [
+    "frames/S007_0.jpg",
+    "frames/S007_1.jpg"
+   ],
+   "facts": {
+    "who": "鳳蓮: middle-aged Taiwanese woman, short dark bob hair, red-and-black plaid shirt under a dark vest, warm smile",
+    "where": "Indoors, against a plain white wall with a light switch visible, seated on a red chair",
+    "action": "The woman is looking at the camera and giving a thumbs-up gesture with her right hand.",
+    "text": "自卑感很重",
+    "key": "A middle-aged woman with short dark hair, wearing a red-and-black plaid shirt under a dark vest, gives a thumbs-up while seated.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S008",
+   "start": 55.329,
+   "end": 63.233,
+   "frames": [
+    "frames/S008_0.jpg",
+    "frames/S008_1.jpg"
+   ],
+   "facts": {
+    "who": "鳳蓮",
+    "where": "indoors, sitting in a red chair against a plain wall",
+    "action": "smiling warmly at the camera while gesturing with her hand",
+    "text": "",
+    "key": "A middle-aged Taiwanese woman with short dark bob hair, wearing a red-and-black plaid shirt under a dark vest, is smiling and gesturing while speaking.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S009",
+   "start": 63.233,
+   "end": 69.711,
+   "frames": [
+    "frames/S009_0.jpg",
+    "frames/S009_1.jpg"
+   ],
+   "facts": {
+    "who": [
+     "an older man with grey-flecked hair wearing a striped sweater under a white apron with orange trim",
+     "a middle-aged woman with short dark bob hair wearing a dark vest over a plaid shirt",
+     "a young man in a denim jacket",
+     "a young woman in a white t-shirt",
+     "a small white dog"
+    ],
+    "where": "outdoors, sitting on a wooden bench",
+    "action": "five people and a small white dog are sitting together on a wooden bench, smiling at the camera",
+    "text": "我老婆\nShe is my wife\n我女兒\nAnd also my daughter, my son",
+    "key": "A family of five, including an older man and woman, and two younger people, are posing together on a bench with a small white dog.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S010",
+   "start": 69.711,
+   "end": 76.189,
+   "frames": [
+    "frames/S010_0.jpg",
+    "frames/S010_1.jpg"
+   ],
+   "facts": {
+    "who": "善仁: older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim",
+    "where": "Indoor, against a plain wall with a peach-colored section on the left and a white section on the right",
+    "action": "The man is seated, looking down and slightly to his right, with his mouth slightly open as if speaking.",
+    "text": "善仁大哥 58歲\n輕度阿茲海默症\nShan-Ren, 58 years old\nAlzheimer's Disease, Mild stage",
+    "key": "The man is wearing a white apron with orange straps and the word 'DEMENTIA' printed on it.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S011",
+   "start": 76.189,
+   "end": 82.667,
+   "frames": [
+    "frames/S011_0.jpg",
+    "frames/S011_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a cafe or shop, behind a glass display case",
+    "action": "The camera focuses on a display case containing books, signs, and stationery items. A prominent book with a pink cover and Chinese characters is visible, along with a red sign that reads '翻轉失智 友善咖啡' and features a cartoon illustration of a person with glasses.",
+    "text": "樣書\n翻轉失智 友善咖啡\n羊毛與花 X 台灣失智症協會\nI can!\n感謝您的支持\nBut we are still young",
+    "key": "A display case contains books and signs promoting a 'Friendly Coffee' initiative for people with dementia, featuring a cartoon character and the phrase 'I can!'",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S012",
+   "start": 82.667,
+   "end": 86.4,
+   "frames": [
+    "frames/S012_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "indoors, near a wooden lattice window",
+    "action": "four red pots with bright green, finger-like plants and yellow moss are arranged in a row on a wooden surface",
+    "text": "",
+    "key": "four identical potted plants with bright green, finger-shaped growths and yellow moss",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S013",
+   "start": 86.4,
+   "end": 92.5,
+   "frames": [
+    "frames/S013_0.jpg",
+    "frames/S013_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "outside a wooden building, near a bench and a chalkboard sign",
+    "action": "A person in a dark jacket and red beanie is sitting on a wooden bench, bent over with their head down. Another person in a dark jacket with a fur-lined hood is standing beside them, leaning forward.",
+    "text": "Young",
+    "key": "A chalkboard sign with a drawing of a coffee mug and the word 'Young' is visible in the foreground.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S014",
+   "start": 92.5,
+   "end": 98.267,
+   "frames": [
+    "frames/S014_0.jpg",
+    "frames/S014_1.jpg"
+   ],
+   "facts": {
+    "who": "An older man wearing a blue-grey hooded jacket and a pink cap, sitting on a wooden bench.",
+    "where": "An outdoor wooden patio or deck, with potted plants on a raised wooden ledge behind him.",
+    "action": "The man is sitting on a wooden bench, looking down. A person in a dark jacket with a fur-lined hood leans toward him, reaching out to touch his hand.",
+    "text": "",
+    "key": "An older man in a blue-grey jacket and pink cap is being comforted by another person who is touching his hand.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S015",
+   "start": 98.267,
+   "end": 101.367,
+   "frames": [
+    "frames/S015_0.jpg"
+   ],
+   "facts": {
+    "who": "an older Taiwanese man in his late 50s, wearing a blue-grey hooded jacket and a red cap",
+    "where": "the entrance of a building with wooden doors and glass panels, decorated with red paper cutouts",
+    "action": "the man stands in the doorway, looking slightly upward and to his right",
+    "text": "Young",
+    "key": "an older man in a blue-grey hooded jacket and red cap stands in a doorway decorated with red paper cutouts",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S016",
+   "start": 101.367,
+   "end": 108.3,
+   "frames": [
+    "frames/S016_0.jpg",
+    "frames/S016_1.jpg"
+   ],
+   "facts": {
+    "who": "鳳蓮",
+    "where": "indoors, against a plain wall with a light switch visible",
+    "action": "a middle-aged Taiwanese woman with short dark bob hair is speaking while seated, looking slightly off-camera",
+    "text": "",
+    "key": "A middle-aged Taiwanese woman with short dark bob hair, wearing a red-and-black plaid shirt under a dark vest, is speaking.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S017",
+   "start": 108.3,
+   "end": 115.233,
+   "frames": [
+    "frames/S017_0.jpg",
+    "frames/S017_1.jpg"
+   ],
+   "facts": {
+    "who": [
+     "an older Taiwanese man in a cycling helmet and jersey",
+     "an older Taiwanese man holding a camera and tripod"
+    ],
+    "where": "outdoors, in three different scenes: by a lake, in front of a temple-like structure, and cycling on a road",
+    "action": "The man is shown in three different activities: holding a camera, posing for a selfie, and riding a bicycle.",
+    "text": "",
+    "key": "The man is shown engaging in two hobbies: photography and cycling, with text indicating he has completed cycling around Taiwan.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S018",
+   "start": 115.233,
+   "end": 120.033,
+   "frames": [
+    "frames/S018_0.jpg"
+   ],
+   "facts": {
+    "who": "older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim",
+    "where": "indoors, against a plain wall with a peach-colored section on the left and white on the right",
+    "action": "the man is speaking, looking slightly to his right",
+    "text": "",
+    "key": "The man is wearing a white apron with orange trim over a striped sweater.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S019",
+   "start": 120.033,
+   "end": 125.267,
+   "frames": [
+    "frames/S019_0.jpg",
+    "frames/S019_1.jpg"
+   ],
+   "facts": {
+    "who": "善仁: older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim",
+    "where": "Indoors, against a plain wall with a peach-colored section on the left and a white section on the right.",
+    "action": "The man is sitting and speaking, looking slightly to his right with a thoughtful expression. He gestures with his right hand near his chest.",
+    "text": "",
+    "key": "The man is wearing a white apron with orange straps over a dark green and black striped sweater.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S020",
+   "start": 125.267,
+   "end": 128.5,
+   "frames": [
+    "frames/S020_0.jpg"
+   ],
+   "facts": {
+    "who": "善仁: older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim",
+    "where": "indoors, against a plain wall with a peach-colored section on the left",
+    "action": "The man is speaking, gesturing with his right hand near his chest.",
+    "text": "",
+    "key": "The man is wearing a white apron with orange trim over a striped sweater.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S021",
+   "start": 128.5,
+   "end": 133.6,
+   "frames": [
+    "frames/S021_0.jpg",
+    "frames/S021_1.jpg"
+   ],
+   "facts": {
+    "who": "善仁: older Taiwanese man in his late 50s, short grey-flecked hair, striped sweater under a white apron with orange trim",
+    "where": "indoors, against a plain wall with an orange and white color scheme",
+    "action": "The man is speaking animatedly, his mouth open and his facial expression shifting from earnest to a smile as he talks.",
+    "text": "",
+    "key": "The man is wearing a white apron with orange straps over a striped sweater.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S022",
+   "start": 133.6,
+   "end": 138.7,
+   "frames": [
+    "frames/S022_0.jpg",
+    "frames/S022_1.jpg"
+   ],
+   "facts": {
+    "who": [
+     "善仁: older Taiwanese man in his late 50s, short grey-flecked hair, wearing a blue-grey hooded jacket",
+     "鳳蓮: middle-aged Taiwanese woman, short dark bob hair, wearing a dark vest over a red-and-black plaid shirt"
+    ],
+    "where": "Indoor setting, possibly a home or office, with a doorway leading to another room with a table and appliances",
+    "action": "The older man stands with his head bowed, looking down at his hands or jacket. The woman enters from the doorway and stands beside him, looking at him.",
+    "text": "",
+    "key": "An older man in a blue-grey hooded jacket stands with his head bowed, while a woman in a dark vest and plaid shirt enters the frame beside him.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S023",
+   "start": 138.7,
+   "end": 140.0,
+   "frames": [
+    "frames/S023_0.jpg"
+   ],
+   "facts": {
+    "who": "a middle-aged woman with short dark hair and a man with short grey-flecked hair, both wearing jackets",
+    "where": "an indoor room with furniture and appliances in the background",
+    "action": "the woman is adjusting the man's jacket while he stands still",
+    "text": "",
+    "key": "a woman is helping a man adjust his jacket",
+    "confidence": 0.95
+   }
+  }
+ ],
+ "dialogue": [
+  {
+   "start": 3.6,
+   "end": 4.1,
+   "text": ""
+  },
+  {
+   "start": 19.34,
+   "end": 26.3,
+   "text": "盛善良 孝顺孟杰瑞很热心很超美"
+  },
+  {
+   "start": 40.67999999999999,
+   "end": 51.4,
+   "text": "我五歲的時候就很濃烈然後就長長然後這個沒有自信心自備玩很重"
+  },
+  {
+   "start": 52.179999999999986,
+   "end": 59.3,
+   "text": "我劉鳳年我是長大文書你還是很愛我"
+  },
+  {
+   "start": 60.32,
+   "end": 64.2,
+   "text": "真愛 當然值得牛鳳蓮"
+  },
+  {
+   "start": 65.02,
+   "end": 71.4,
+   "text": "我老婆 我女兒我兒子是最重要的我會忘了"
+  },
+  {
+   "start": 89.44,
+   "end": 92.6,
+   "text": "她的超名不在呀也也不在呀"
+  },
+  {
+   "start": 93.56,
+   "end": 99.4,
+   "text": "她的思考也不见她的烂情不见你最后面"
+  },
+  {
+   "start": 101.24,
+   "end": 103.6,
+   "text": "他以前是买的阳光"
+  },
+  {
+   "start": 104.72,
+   "end": 106.8,
+   "text": "他修买的阳光"
+  },
+  {
+   "start": 109.36,
+   "end": 132.86,
+   "text": "这野爬山是我最快乐的 骑行车台湾也环岛了百岳我也爬完 这一生就全部都爬完了他跟我讲这样这什么事还是这样的对我来讲是完全没有症状我自己不会感觉怪怪无让 澐"
+  }
+ ],
+ "dialogue_asr": [
+  {
+   "start": 19.34,
+   "end": 21.74,
+   "text": "盛善良"
+  },
+  {
+   "start": 22.34,
+   "end": 26.12,
+   "text": "孝顺孟杰瑞很热心很超美"
+  },
+  {
+   "start": 40.67999999999999,
+   "end": 51.28,
+   "text": "我五歲的時候就很濃烈然後就長長然後這個沒有自信心自備玩很重"
+  },
+  {
+   "start": 52.179999999999986,
+   "end": 58.9,
+   "text": "我劉鳳年我是長大文書你還是很愛我"
+  },
+  {
+   "start": 60.32,
+   "end": 61.2,
+   "text": "真愛"
+  },
+  {
+   "start": 61.9,
+   "end": 63.94,
+   "text": "當然值得牛鳳蓮"
+  },
+  {
+   "start": 65.02,
+   "end": 66.22,
+   "text": "我老婆"
+  },
+  {
+   "start": 67.0,
+   "end": 71.4,
+   "text": "我女兒我兒子是最重要的我會忘了"
+  },
+  {
+   "start": 89.44,
+   "end": 92.6,
+   "text": "她的超名不在呀也也不在呀"
+  },
+  {
+   "start": 93.56,
+   "end": 99.2,
+   "text": "她的思考也不见她的烂情不见你最后面"
+  },
+  {
+   "start": 101.24,
+   "end": 103.16,
+   "text": "他以前是买的阳光"
+  },
+  {
+   "start": 104.72,
+   "end": 106.78,
+   "text": "他修买的阳光"
+  },
+  {
+   "start": 109.36,
+   "end": 112.28,
+   "text": "这野爬山是我最快乐的"
+  },
+  {
+   "start": 112.96000000000001,
+   "end": 116.34,
+   "text": "骑行车台湾也环岛了百岳我也爬完"
+  },
+  {
+   "start": 117.1,
+   "end": 129.2,
+   "text": "这一生就全部都爬完了他跟我讲这样这什么事还是这样的对我来讲是完全没有症状我自己不会感觉怪怪无让"
+  },
+  {
+   "start": 131.36,
+   "end": 132.86,
+   "text": "澐"
+  }
+ ],
+ "speech_vad": [
+  {
+   "start": 3.6,
+   "end": 4.1
+  },
+  {
+   "start": 21.6,
+   "end": 26.3
+  },
+  {
+   "start": 41.6,
+   "end": 46.0
+  },
+  {
+   "start": 46.5,
+   "end": 49.1
+  },
+  {
+   "start": 50.0,
+   "end": 51.4
+  },
+  {
+   "start": 52.4,
+   "end": 52.8
+  },
+  {
+   "start": 53.1,
+   "end": 54.5
+  },
+  {
+   "start": 54.9,
+   "end": 55.7
+  },
+  {
+   "start": 56.2,
+   "end": 57.3
+  },
+  {
+   "start": 57.8,
+   "end": 59.3
+  },
+  {
+   "start": 60.7,
+   "end": 61.4
+  },
+  {
+   "start": 62.0,
+   "end": 63.0
+  },
+  {
+   "start": 63.4,
+   "end": 64.2
+  },
+  {
+   "start": 65.5,
+   "end": 66.7
+  },
+  {
+   "start": 67.1,
+   "end": 68.2
+  },
+  {
+   "start": 68.4,
+   "end": 71.4
+  },
+  {
+   "start": 90.0,
+   "end": 92.6
+  },
+  {
+   "start": 93.9,
+   "end": 96.6
+  },
+  {
+   "start": 96.9,
+   "end": 99.4
+  },
+  {
+   "start": 101.6,
+   "end": 103.6
+  },
+  {
+   "start": 105.1,
+   "end": 106.8
+  },
+  {
+   "start": 109.7,
+   "end": 112.5
+  },
+  {
+   "start": 113.0,
+   "end": 116.8
+  },
+  {
+   "start": 117.7,
+   "end": 119.9
+  },
+  {
+   "start": 120.2,
+   "end": 121.2
+  },
+  {
+   "start": 121.6,
+   "end": 124.9
+  },
+  {
+   "start": 125.5,
+   "end": 129.6
+  },
+  {
+   "start": 130.2,
+   "end": 132.6
+  }
+ ],
+ "gaps": [
+  {
+   "start": 0.3,
+   "end": 3.3
+  },
+  {
+   "start": 4.35,
+   "end": 19.04
+  },
+  {
+   "start": 26.55,
+   "end": 40.38
+  },
+  {
+   "start": 71.65,
+   "end": 89.14
+  },
+  {
+   "start": 99.65,
+   "end": 100.94
+  },
+  {
+   "start": 107.05,
+   "end": 109.06
+  },
+  {
+   "start": 133.11,
+   "end": 139.8
+  }
+ ],
+ "slots": [
+  {
+   "start": 0.3,
+   "end": 3.3,
+   "shots": [
+    "S001"
+   ],
+   "prev": []
+  },
+  {
+   "start": 4.35,
+   "end": 7.904,
+   "shots": [
+    "S001"
+   ],
+   "prev": []
+  },
+  {
+   "start": 7.904,
+   "end": 15.808,
+   "shots": [
+    "S002"
+   ],
+   "prev": [
+    "S001"
+   ]
+  },
+  {
+   "start": 15.808,
+   "end": 19.04,
+   "shots": [
+    "S003"
+   ],
+   "prev": [
+    "S002"
+   ]
+  },
+  {
+   "start": 26.55,
+   "end": 31.617,
+   "shots": [
+    "S004"
+   ],
+   "prev": []
+  },
+  {
+   "start": 31.617,
+   "end": 40.38,
+   "shots": [
+    "S005",
+    "S006"
+   ],
+   "prev": [
+    "S004"
+   ]
+  },
+  {
+   "start": 71.65,
+   "end": 76.189,
+   "shots": [
+    "S010"
+   ],
+   "prev": [
+    "S009"
+   ]
+  },
+  {
+   "start": 76.189,
+   "end": 82.667,
+   "shots": [
+    "S011"
+   ],
+   "prev": [
+    "S010"
+   ]
+  },
+  {
+   "start": 82.667,
+   "end": 86.4,
+   "shots": [
+    "S012"
+   ],
+   "prev": [
+    "S011"
+   ]
+  },
+  {
+   "start": 86.4,
+   "end": 89.14,
+   "shots": [
+    "S013"
+   ],
+   "prev": [
+    "S012"
+   ]
+  },
+  {
+   "start": 99.65,
+   "end": 100.94,
+   "shots": [
+    "S015"
+   ],
+   "prev": [
+    "S014"
+   ]
+  },
+  {
+   "start": 107.05,
+   "end": 109.06,
+   "shots": [
+    "S016",
+    "S017"
+   ],
+   "prev": []
+  },
+  {
+   "start": 133.11,
+   "end": 139.8,
+   "shots": [
+    "S021",
+    "S022",
+    "S023"
+   ],
+   "prev": []
+  }
+ ],
+ "lines": [
+  {
+   "id": "AD001",
+   "start": 0.3,
+   "window_end": 3.3,
+   "avail": 3.0,
+   "text": "年輕失智者獻上一杯",
+   "duration": 1.97,
+   "speed": 1.0,
+   "budget_words": 12,
+   "attempts": [
+    {
+     "text": "字幕：來一杯，年輕型失智者的心意之作。",
+     "seconds": 3.73,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 3.7s > 3.0s"
+    },
+    {
+     "text": "年輕失智者獻上一杯",
+     "seconds": 2.17,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S001"
+   ],
+   "text_read": [
+    "來一杯，年輕型失智者的心意之作\n與我們一起發現每一個相遇的美好\nYoung 記憶會館\nYoung Coffee"
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD001.wav",
+   "verify_shots": [
+    "S001"
+   ]
+  },
+  {
+   "id": "AD002",
+   "start": 4.35,
+   "window_end": 7.904,
+   "avail": 3.55,
+   "text": "老先生遞出一杯咖啡，微笑。",
+   "duration": 2.48,
+   "speed": 1.0,
+   "budget_words": 14,
+   "attempts": [
+    {
+     "text": "老先生遞出一杯咖啡，微笑。",
+     "seconds": 2.61,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S001"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "老先生遞出一杯咖啡，微笑。"
+    ]
+   },
+   "flags": [
+    "unsupported: 老先生遞出一杯咖啡，微笑。"
+   ],
+   "review": "pending",
+   "audio": "lines/AD002.wav",
+   "verify_shots": [
+    "S001"
+   ]
+  },
+  {
+   "id": "AD003",
+   "start": 7.9,
+   "window_end": 15.808,
+   "avail": 7.9,
+   "text": "字幕：YOUNG COFFEE STORY。",
+   "duration": 2.3,
+   "speed": 1.0,
+   "budget_words": 31,
+   "attempts": [
+    {
+     "text": "字幕：YOUNG COFFEE STORY。",
+     "seconds": 1.41,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S002"
+   ],
+   "text_read": [
+    "YOUNG COFFEE STORY"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD003.wav",
+   "verify_shots": [
+    "S002"
+   ]
+  },
+  {
+   "id": "AD004",
+   "start": 15.81,
+   "window_end": 19.04,
+   "avail": 3.23,
+   "text": "字幕：是咖啡裡的故事。",
+   "duration": 2.38,
+   "speed": 1.0,
+   "budget_words": 12,
+   "attempts": [
+    {
+     "text": "字幕：是咖啡裡的故事。",
+     "seconds": 2.02,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S003"
+   ],
+   "text_read": [
+    "是咖啡裡的故事\nThe story behind coffee\n關於林善仁\nAbout Mr. Shan-Ren Lin\n善良\nKind"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD004.wav",
+   "verify_shots": [
+    "S003"
+   ]
+  },
+  {
+   "id": "AD005",
+   "start": 26.55,
+   "window_end": 31.617,
+   "avail": 5.07,
+   "text": "鳳蓮比出和平手勢，微笑。",
+   "duration": 2.48,
+   "speed": 1.0,
+   "budget_words": 20,
+   "attempts": [
+    {
+     "text": "鳳蓮比出和平手勢，微笑。",
+     "seconds": 2.47,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S004"
+   ],
+   "text_read": [
+    "鳳蓮 Feng Lian"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD005.wav",
+   "verify_shots": [
+    "S004"
+   ]
+  },
+  {
+   "id": "AD006",
+   "start": 31.62,
+   "window_end": 40.38,
+   "avail": 8.76,
+   "text": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+   "duration": 3.52,
+   "speed": 1.0,
+   "budget_words": 35,
+   "attempts": [
+    {
+     "text": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+     "seconds": 3.69,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S005",
+    "S006"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "鳳蓮舉右手比出和平手勢"
+    ]
+   },
+   "flags": [
+    "unsupported: 鳳蓮舉右手比出和平手勢"
+   ],
+   "review": "pending",
+   "audio": "lines/AD006.wav",
+   "verify_shots": [
+    "S005"
+   ]
+  },
+  {
+   "id": "AD007",
+   "start": 71.65,
+   "window_end": 76.189,
+   "avail": 4.54,
+   "text": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+   "duration": 4.44,
+   "speed": 1.22,
+   "budget_words": 18,
+   "attempts": [
+    {
+     "text": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+     "seconds": 4.86,
+     "fit": true,
+     "speed": 1.15,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S010"
+   ],
+   "text_read": [
+    "善仁大哥 58歲\n輕度阿茲海默症\nShan-Ren, 58 years old\nAlzheimer's Disease, Mild stage"
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD007.wav",
+   "verify_shots": [
+    "S010"
+   ]
+  },
+  {
+   "id": "AD008",
+   "start": 76.92,
+   "window_end": 82.667,
+   "avail": 5.75,
+   "text": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+   "duration": 4.39,
+   "speed": 1.0,
+   "budget_words": 23,
+   "attempts": [
+    {
+     "text": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+     "seconds": 4.24,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S011"
+   ],
+   "text_read": [
+    "樣書\n翻轉失智 友善咖啡\n羊毛與花 X 台灣失智症協會\nI can!\n感謝您的支持\nBut we are still young"
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD008.wav",
+   "verify_shots": [
+    "S011"
+   ]
+  },
+  {
+   "id": "AD009",
+   "start": 82.67,
+   "window_end": 86.4,
+   "avail": 3.73,
+   "text": "四盆多肉植物排成一列。",
+   "duration": 2.3,
+   "speed": 1.0,
+   "budget_words": 14,
+   "attempts": [
+    {
+     "text": "四盆多肉植物排成一列。",
+     "seconds": 2.18,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S012"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD009.wav",
+   "verify_shots": [
+    "S012"
+   ]
+  },
+  {
+   "id": "AD010",
+   "start": 86.4,
+   "window_end": 89.14,
+   "avail": 2.74,
+   "text": "字幕：Young。",
+   "duration": 1.34,
+   "speed": 1.0,
+   "budget_words": 10,
+   "attempts": [
+    {
+     "text": "字幕：Young。",
+     "seconds": 0.91,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S013"
+   ],
+   "text_read": [
+    "Young"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD010.wav",
+   "verify_shots": [
+    "S013"
+   ]
+  },
+  {
+   "id": "AD011",
+   "start": 99.65,
+   "window_end": 100.94,
+   "avail": 1.29,
+   "text": "老伯門口戴帽",
+   "duration": 1.28,
+   "speed": 1.08,
+   "budget_words": 5,
+   "attempts": [
+    {
+     "text": "老伯穿藍灰外套戴紅帽，站門口。",
+     "seconds": 3.16,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 3.2s > 1.3s"
+    },
+    {
+     "text": "老伯戴紅帽站門口",
+     "seconds": 1.81,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 1.8s > 1.3s"
+    },
+    {
+     "text": "老伯戴帽站門口",
+     "seconds": 1.65,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 1.6s > 1.3s"
+    },
+    {
+     "text": "老伯門口戴帽",
+     "seconds": 1.39,
+     "fit": true,
+     "speed": 1.15,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S015"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD011.wav",
+   "verify_shots": [
+    "S015"
+   ]
+  },
+  {
+   "id": "AD012",
+   "start": 107.05,
+   "window_end": 109.06,
+   "avail": 2.01,
+   "text": "鳳蓮笑著說。",
+   "duration": 1.24,
+   "speed": 1.0,
+   "budget_words": 8,
+   "attempts": [
+    {
+     "text": "鳳蓮笑著說。",
+     "seconds": 1.39,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S016",
+    "S017"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD012.wav",
+   "verify_shots": [
+    "S016",
+    "S017"
+   ]
+  },
+  {
+   "id": "AD013",
+   "start": 133.11,
+   "window_end": 139.8,
+   "avail": 6.69,
+   "text": "鳳蓮幫善仁整理外套。",
+   "duration": 2.01,
+   "speed": 1.0,
+   "budget_words": 26,
+   "attempts": [
+    {
+     "text": "鳳蓮幫善仁整理外套。",
+     "seconds": 2.1,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S021",
+    "S022",
+    "S023"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "鳳蓮幫善仁整理外套。"
+    ]
+   },
+   "flags": [
+    "unsupported: 鳳蓮幫善仁整理外套。"
+   ],
+   "review": "pending",
+   "audio": "lines/AD013.wav",
+   "verify_shots": [
+    "S021",
+    "S022"
+   ]
+  }
+ ],
+ "metrics": {
+  "clip_seconds": 140.0,
+  "shots": 23,
+  "dialogue_spans": 11,
+  "gaps": 7,
+  "speech_seconds_asr": 64.7,
+  "speech_seconds_vad": 57.7,
+  "speech_seconds_merged": 72.5,
+  "usable_gap_seconds": 59.0,
+  "slots": 13,
+  "lines": 13,
+  "lines_placed": 13,
+  "skipped_repeats": 0,
+  "first_try_fit": 10,
+  "fit_after_loop": 13,
+  "mean_attempts": 1.31,
+  "rewrites": 4,
+  "ad_seconds": 32.1,
+  "ad_overlap_with_detected_dialogue_s": 0.0,
+  "flagged_lines": 3,
+  "unsupported_flags": 3,
+  "rescued_by_speed": 2,
+  "rescued_by_rewrite": 2,
+  "style_or_text_gate_rewrites": 0,
+  "shots_covered": 16,
+  "processing_seconds": 91.0,
+  "seconds_per_content_minute": 39.0,
+  "stages": {
+   "prepare": 3.13,
+   "shots": 3.17,
+   "dialogue_map": 4.82,
+   "load_models": 1.87,
+   "shot_facts": 61.61,
+   "write_fit_verify": 10.84,
+   "verify": 4.58,
+   "mix": 0.95,
+   "injected_error_test": 15.36
+  },
+  "llm": {
+   "calls": 55,
+   "seconds": 74.2,
+   "prompt_tokens": 34384,
+   "gen_tokens": 3356
+  },
+  "tts": {
+   "calls": 18,
+   "audio_seconds": 54.9,
+   "voice": "qwen3-tts-1.7b:tw_ref_female",
+   "backend": "qwen3_tts"
+  },
+  "mlx_peak_memory_gb": 13.6,
+  "injected_error_test": {
+   "clean_lines": 13,
+   "false_alarms_on_clean_lines": 3,
+   "verdict_missing": 0,
+   "cases": [
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD001",
+     "original": "年輕失智者獻上一杯",
+     "corrupted": "年輕失智者獻上一杯，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "年輕失智者獻上一杯",
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD001",
+     "original": "年輕失智者獻上一杯",
+     "corrupted": "字幕：YOUNG COFFEE STORY。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "字幕：YOUNG COFFEE STORY。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD002",
+     "original": "老先生遞出一杯咖啡，微笑。",
+     "corrupted": "老先生遞出一杯咖啡，微笑，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老先生遞出一杯咖啡",
+      "微笑",
+      "天空下著大雨"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD002",
+     "original": "老先生遞出一杯咖啡，微笑。",
+     "corrupted": "字幕：是咖啡裡的故事。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD003",
+     "original": "字幕：YOUNG COFFEE STORY。",
+     "corrupted": "字幕：YOUNG COFFEE STORY，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD003",
+     "original": "字幕：YOUNG COFFEE STORY。",
+     "corrupted": "鳳蓮比出和平手勢，微笑。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮比出和平手勢，微笑。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD004",
+     "original": "字幕：是咖啡裡的故事。",
+     "corrupted": "字幕：是咖啡裡的故事。招牌寫著「出口」。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "招牌寫著「出口」"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD004",
+     "original": "字幕：是咖啡裡的故事。",
+     "corrupted": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮舉右手比出和平手勢，嘴角微揚。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD005",
+     "original": "鳳蓮比出和平手勢，微笑。",
+     "corrupted": "善仁比出和平手勢，微笑。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD005",
+     "original": "鳳蓮比出和平手勢，微笑。",
+     "corrupted": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD006",
+     "original": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+     "corrupted": "鳳蓮舉右手比出和平手勢，嘴角微揚，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮舉右手比出和平手勢",
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD006",
+     "original": "鳳蓮舉右手比出和平手勢，嘴角微揚。",
+     "corrupted": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "樣書擺在玻璃櫃",
+      "寫著翻轉失智友善咖啡"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD007",
+     "original": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+     "corrupted": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD007",
+     "original": "善仁大哥穿白圍裙，橙色繫帶，圍裙印「失智症」字樣。",
+     "corrupted": "四盆多肉植物排成一列。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "四盆多肉植物排成一列。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD008",
+     "original": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+     "corrupted": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD008",
+     "original": "樣書擺在玻璃櫃，寫著翻轉失智友善咖啡。",
+     "corrupted": "字幕：Young。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "字幕：Young。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD009",
+     "original": "四盆多肉植物排成一列。",
+     "corrupted": "四盆多肉植物排成一列。招牌寫著「出口」。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "招牌寫著「出口」"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD009",
+     "original": "四盆多肉植物排成一列。",
+     "corrupted": "老伯門口戴帽",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老伯門口戴帽"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD010",
+     "original": "字幕：Young。",
+     "corrupted": "字幕：Young，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身旁有一匹白馬。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD010",
+     "original": "字幕：Young。",
+     "corrupted": "鳳蓮笑著說。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮笑著說。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD011",
+     "original": "老伯門口戴帽",
+     "corrupted": "老伯門口戴帽，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老伯門口戴帽",
+      "手裡拿著一把紅傘"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD011",
+     "original": "老伯門口戴帽",
+     "corrupted": "鳳蓮幫善仁整理外套。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮幫善仁整理外套。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD012",
+     "original": "鳳蓮笑著說。",
+     "corrupted": "鳳蓮笑著說，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮笑著說，天空下著大雨。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD012",
+     "original": "鳳蓮笑著說。",
+     "corrupted": "字幕：Young。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "字幕：Young。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD013",
+     "original": "鳳蓮幫善仁整理外套。",
+     "corrupted": "鳳蓮幫善仁整理外套，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "鳳蓮幫善仁整理外套",
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD013",
+     "original": "鳳蓮幫善仁整理外套。",
+     "corrupted": "老伯門口戴帽",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老伯門口戴帽"
+     ]
+    }
+   ],
+   "easy": {
+    "planted": 13,
+    "caught": 12,
+    "catch_rate": 0.92
+   },
+   "hard": {
+    "planted": 13,
+    "caught": 12,
+    "catch_rate": 0.92,
+    "by_kind": {
+     "noun": "0/0",
+     "verb": "0/0",
+     "character": "0/0",
+     "neighbour": "12/13"
+    }
+   },
+   "planted": 13,
+   "caught": 12,
+   "catch_rate": 0.92
+  }
+ }
+}

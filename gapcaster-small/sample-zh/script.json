@@ -1,0 +1,1830 @@
+{
+ "source": {
+  "file": "tears_of_steel_720p.mov",
+  "start": 0.0,
+  "end": 140.0
+ },
+ "settings": {
+  "lang": "zh",
+  "merge_pause": 0.6,
+  "lead": 0.25,
+  "tail": 0.3,
+  "min_slot": 1.1,
+  "breath": 0.8,
+  "max_slot": 7.0,
+  "words_per_sec": 2.6,
+  "chars_per_sec": 4.0,
+  "speeds": [
+   1.0,
+   1.08,
+   1.15
+  ],
+  "max_rewrites": 3,
+  "whisper_model": "mlx-community/whisper-large-v3-turbo",
+  "vlm_model": "a0093b9b5fda6f76ddd4a462c6830ae7c4fe47ec",
+  "tts_model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit",
+  "tts_voice": "tw_ref_female",
+  "llm_backend": "mlx",
+  "llm_base_url": "http://127.0.0.1:8000/v1",
+  "llm_model_name": "qwen",
+  "concurrency": 8,
+  "asr_backend": "mlx",
+  "asr_ov_model": "OpenVINO/whisper-large-v3-turbo-int8-ov",
+  "asr_device": "CPU",
+  "tts_backend": "qwen3_tts",
+  "extra": {}
+ },
+ "cast": [
+  {
+   "name": "席莉雅",
+   "look": "young woman, red hair tied back, blue jacket under a dark vest, a robotic hand",
+   "named_from": 25
+  },
+  {
+   "name": "湯姆",
+   "look": "young man, dark hair, black leather jacket over a printed T-shirt",
+   "named_from": 23
+  },
+  {
+   "name": "狙擊手",
+   "look": "young Black man, short dark hair, dark padded jacket, futuristic rifle with a scope"
+  },
+  {
+   "name": "老人",
+   "look": "older man, shoulder-length grey hair, dark checked jacket"
+  }
+ ],
+ "shots": [
+  {
+   "id": "S001",
+   "start": 0.0,
+   "end": 8.917,
+   "frames": [
+    "frames/S001_0.jpg",
+    "frames/S001_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a spacecraft or space station",
+    "action": "The screen is black with white text that reads 'Blender Foundation Presents' and 'the Mango Open Movie project'.",
+    "text": "Blender Foundation Presents\nthe Mango Open Movie project",
+    "key": "The screen displays the title card for 'the Mango Open Movie project' presented by the Blender Foundation.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S002",
+   "start": 8.917,
+   "end": 13.458,
+   "frames": [
+    "frames/S002_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a large, industrial-looking spacecraft or rocket engine bay",
+    "action": "four large rocket engines are firing, emitting bright pinkish-white flames and smoke",
+    "text": "",
+    "key": "Four rocket engines are firing with intense pinkish-white flames, indicating a powerful engine start sequence.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S003",
+   "start": 13.458,
+   "end": 18.417,
+   "frames": [
+    "frames/S003_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a large, industrial-looking spacecraft or space station",
+    "action": "massive engines are firing, emitting bright white exhaust plumes",
+    "text": "",
+    "key": "The engines are firing with intense white light, indicating a powerful launch or thrust sequence.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S004",
+   "start": 18.417,
+   "end": 25.0,
+   "frames": [
+    "frames/S004_0.jpg",
+    "frames/S004_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "an industrial complex with tall metal towers and pipes, under a hazy, bright sky",
+    "action": "a bright, vertical beam of light is shooting upwards from the center of the complex",
+    "text": "This film is supported by the Netherlands Film Fund",
+    "key": "A powerful, bright beam of light is erupting vertically from the industrial facility, illuminating the scene.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S005",
+   "start": 25.0,
+   "end": 40.25,
+   "frames": [
+    "frames/S005_0.jpg",
+    "frames/S005_1.jpg"
+   ],
+   "facts": {
+    "who": [
+     "湯姆",
+     "席莉雅"
+    ],
+    "where": "a bridge over a canal in a city with trees and buildings in the background",
+    "action": "湯姆 and 席莉雅 are standing on a bridge, holding onto the railing. 席莉雅 is gesturing with her robotic hand toward 湯姆, who is looking at her and gesturing back with his hands.",
+    "text": "",
+    "key": "席莉雅 has a robotic hand, which is a key visual element in the scene.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S006",
+   "start": 40.25,
+   "end": 42.083,
+   "frames": [
+    "frames/S006_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "industrial setting with machinery and pipes",
+    "action": "two glowing holographic figures, one orange and one blue, are standing and interacting near machinery",
+    "text": "",
+    "key": "two holographic figures, one orange and one blue, are standing and interacting near machinery",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S007",
+   "start": 42.083,
+   "end": 45.625,
+   "frames": [
+    "frames/S007_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a dark, ruined, industrial interior with exposed pipes and broken structures",
+    "action": "a glowing pink energy sphere pulses on the left, while a small lit-up room and a platform with glowing figures are visible in the background",
+    "text": "40 YEARS LATER",
+    "key": "The text '40 YEARS LATER' indicates a significant time jump in the story, set in a dark, decaying industrial environment with glowing elements.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S008",
+   "start": 45.625,
+   "end": 49.792,
+   "frames": [
+    "frames/S008_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a dark, cluttered, industrial-looking space with glowing neon lights",
+    "action": "neon lights in pink, green, and orange glow against a dark, textured background with visible wires and mechanical parts",
+    "text": "",
+    "key": "glowing neon lights in pink, green, and orange illuminate a dark, cluttered, industrial setting with visible wires and mechanical parts",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S009",
+   "start": 49.792,
+   "end": 51.125,
+   "frames": [
+    "frames/S009_0.jpg"
+   ],
+   "facts": {
+    "who": "a person with a robotic hand",
+    "where": "inside a high-tech control room",
+    "action": "a hand with a robotic finger is pressing buttons on a complex control panel with glowing digital displays",
+    "text": "LOCK-IN 10Hz - 100kHz, 98% RT, 00:00:02",
+    "key": "a robotic hand is interacting with a futuristic control panel with glowing digital readouts",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S010",
+   "start": 51.125,
+   "end": 53.667,
+   "frames": [
+    "frames/S010_0.jpg"
+   ],
+   "facts": {
+    "who": "man with curly hair and glasses, wearing a hoodie; two other people in white jackets, partially visible",
+    "where": "a high-tech lab or control room with glowing screens and equipment",
+    "action": "the man with glasses is looking forward with a focused expression, surrounded by glowing digital interfaces and equipment",
+    "text": "",
+    "key": "A man with curly hair and glasses is intensely focused in a futuristic lab filled with glowing green and purple digital displays and equipment.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S011",
+   "start": 53.667,
+   "end": 56.667,
+   "frames": [
+    "frames/S011_0.jpg"
+   ],
+   "facts": {
+    "who": "A young woman with long red hair tied back, wearing a light-colored jacket, is seated at a cluttered table. Another person, seen from the back, wears a purple jacket.",
+    "where": "An outdoor or semi-outdoor setting with a large, glowing digital display in the background showing glitchy text.",
+    "action": "The young woman is focused on the items on the table in front of her. The person in the purple jacket is also seated at the table, interacting with equipment.",
+    "text": "SIMULATION READY...",
+    "key": "The scene features a young woman with red hair and a light jacket, surrounded by electronic equipment and a large digital display showing the text 'SIMULATION READY...'.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S012",
+   "start": 56.667,
+   "end": 64.458,
+   "frames": [
+    "frames/S012_0.jpg",
+    "frames/S012_1.jpg"
+   ],
+   "facts": {
+    "who": "an older man with a mechanical eye and a robotic arm, wearing a dark, textured jacket",
+    "where": "a dimly lit, cluttered laboratory or workshop",
+    "action": "The man is leaning over a human brain model that is pinned to a plate and has electronic components attached to it. He is staring intently at the brain, his mechanical eye glowing with a targeting reticle.",
+    "text": "",
+    "key": "A human brain model is being examined by an older man with a mechanical eye and robotic arm, with glowing purple arcs and targeting reticles visible around the brain.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S013",
+   "start": 64.458,
+   "end": 69.917,
+   "frames": [
+    "frames/S013_0.jpg",
+    "frames/S013_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a black screen",
+    "action": "The screen is black with white text in the center.",
+    "text": "TEARS OF STEEL",
+    "key": "The title 'TEARS OF STEEL' is displayed in white text on a black background.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S014",
+   "start": 69.917,
+   "end": 74.083,
+   "frames": [
+    "frames/S014_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a cityscape under a dark, smoky sky, with rooftops, a tall tower, and ship masts visible",
+    "action": "a large, dark, mechanical structure dominates the center of the frame, partially obscuring the tower behind it",
+    "text": "",
+    "key": "A massive, dark mechanical structure looms over a city, partially blocking a tall tower and ship masts under a smoky, gloomy sky.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S015",
+   "start": 74.083,
+   "end": 79.375,
+   "frames": [
+    "frames/S015_0.jpg",
+    "frames/S015_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a dimly lit, cluttered ship's cabin or bridge, looking out through a window at a foggy or misty sea",
+    "action": "a person is lying on the floor, partially covered by blankets, with two lit candles nearby",
+    "text": "",
+    "key": "A person is sleeping or resting on the floor inside a ship's cabin, illuminated by two candles.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S016",
+   "start": 79.375,
+   "end": 82.125,
+   "frames": [
+    "frames/S016_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "indoor, dimly lit",
+    "action": "a hand holds a newspaper with a headline about killer robots",
+    "text": "Dr Amst... ROBOTICIST CREATES KILLER ROBOTS",
+    "key": "newspaper headline reads 'ROBOTICIST CREATES KILLER ROBOTS'",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S017",
+   "start": 82.125,
+   "end": 84.833,
+   "frames": [
+    "frames/S017_0.jpg"
+   ],
+   "facts": {
+    "who": "a young Black man with short dark hair, wearing a dark padded jacket",
+    "where": "an outdoor setting with stone balusters and a hazy, blue-toned background",
+    "action": "the young man is aiming a futuristic rifle with a scope, holding it steady with both hands",
+    "text": "",
+    "key": "a young Black man is aiming a futuristic rifle with a scope, suggesting a tense, action-oriented scene",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S018",
+   "start": 84.833,
+   "end": 92.417,
+   "frames": [
+    "frames/S018_0.jpg",
+    "frames/S018_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "inside a dark, circular opening, looking out at a large, complex, dark-colored mechanical vehicle floating in a misty, blue-toned environment",
+    "action": "The vehicle, which appears to be a submarine or an underwater drone, is stationary and viewed through a circular aperture. It is heavily equipped with various antennas, sensors, and pipes, and its hull is covered in grime and wear. The scene is viewed through a circular lens or porthole, with the edges of the frame dark and out of focus.",
+    "text": "",
+    "key": "A large, heavily equipped, dark-colored mechanical vehicle is seen floating in a misty, blue environment, viewed through a circular aperture.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S019",
+   "start": 92.417,
+   "end": 95.417,
+   "frames": [
+    "frames/S019_0.jpg"
+   ],
+   "facts": {
+    "who": "a young Black man with short dark hair, wearing a dark padded jacket, holding a futuristic rifle with a scope",
+    "where": "a dimly lit, possibly indoor or urban environment with cool blue tones",
+    "action": "the young man is aiming the rifle, his eye focused through the scope, with intense concentration",
+    "text": "",
+    "key": "A young Black man is aiming a futuristic rifle with a scope, his face partially visible and focused intently on the target.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S020",
+   "start": 95.417,
+   "end": 98.208,
+   "frames": [
+    "frames/S020_0.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a foggy, urban environment viewed through a circular lens or scope",
+    "action": "a large, mechanical flying vehicle with multiple lights hovers over a cityscape of rooftops",
+    "text": "",
+    "key": "A large, hovering mechanical vehicle dominates the center of the frame, viewed through a circular lens, suggesting a surveillance or combat perspective.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S021",
+   "start": 98.208,
+   "end": 102.417,
+   "frames": [
+    "frames/S021_0.jpg"
+   ],
+   "facts": {
+    "who": [
+     "老人",
+     "狙擊手"
+    ],
+    "where": "a dimly lit, possibly indoor or covered outdoor space with wooden railings and candles",
+    "action": "The elderly man with grey hair lies motionless on a bed or cot, while the young Black man with a futuristic rifle crouches nearby, aiming the weapon.",
+    "text": "",
+    "key": "A young Black man in a padded jacket is aiming a futuristic rifle at an elderly man lying on a bed.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S022",
+   "start": 102.417,
+   "end": 116.708,
+   "frames": [
+    "frames/S022_0.jpg",
+    "frames/S022_1.jpg"
+   ],
+   "facts": {
+    "who": "none",
+    "where": "a city with rooftops visible below, viewed through a circular lens or scope",
+    "action": "A large, heavily armed, steam-powered airship hovers over the city, emitting steam and smoke from its engines, with bright lights glowing on its surface.",
+    "text": "",
+    "key": "A massive, steampunk-style airship is hovering low over a city, viewed through a circular scope or lens.",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "S023",
+   "start": 116.708,
+   "end": 119.875,
+   "frames": [
+    "frames/S023_0.jpg"
+   ],
+   "facts": {
+    "who": "a young Black man with short dark hair, wearing a dark padded jacket, holding a futuristic rifle with a scope",
+    "where": "an indoor setting with a dim, blue-tinted atmosphere, featuring stone balusters and a lit candle",
+    "action": "the young man is aiming the rifle with both hands, his body positioned low and focused on a target",
+    "text": "",
+    "key": "A young Black man is aiming a futuristic rifle with a scope in a dimly lit, atmospheric indoor setting.",
+    "confidence": 0.98
+   }
+  },
+  {
+   "id": "S024",
+   "start": 119.875,
+   "end": 134.917,
+   "frames": [
+    "frames/S024_0.jpg",
+    "frames/S024_1.jpg"
+   ],
+   "facts": {
+    "who": "老人, 狙擊手",
+    "where": "a dimly lit, possibly makeshift or damaged interior space with a wooden railing in the background",
+    "action": "The older man with grey hair is leaning forward, then straightens up and gestures with his hand. In the background, the狙击手 is crouched, aiming a rifle.",
+    "text": "",
+    "key": "An older man with grey hair is gesturing while speaking, with a young Black man in tactical gear aiming a rifle in the background.",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "S025",
+   "start": 134.917,
+   "end": 140.0,
+   "frames": [
+    "frames/S025_0.jpg",
+    "frames/S025_1.jpg"
+   ],
+   "facts": {
+    "who": "老人",
+    "where": "a dim, cluttered room with a balcony visible in the background",
+    "action": "The older man with grey hair is kneeling on a wooden floor, looking toward the camera.",
+    "text": "",
+    "key": "An older man with shoulder-length grey hair is kneeling in a cluttered, dimly lit room.",
+    "confidence": 0.98
+   }
+  }
+ ],
+ "dialogue": [
+  {
+   "start": 2.9,
+   "end": 11.1,
+   "text": "We have main engine start. Four, three, two, one."
+  },
+  {
+   "start": 22.740000000000002,
+   "end": 36.1,
+   "text": "You're a jerk, Tom. Look, Celia, we have to follow our passions. You have your robotics and I just want to be awesome in space. Why don't you just admit that you're freaked out by my robot hand? I'm not freaked out by it's..."
+  },
+  {
+   "start": 37.36,
+   "end": 45.3,
+   "text": "Alright, fine. I'm freaked out. I'm having nightmares that I'm being chased by this giant robotic claw. Oh, whatever, Tom. We're done."
+  },
+  {
+   "start": 50.02,
+   "end": 53.7,
+   "text": "Robots memories synced and locked."
+  },
+  {
+   "start": 60.1,
+   "end": 62.4,
+   "text": "This is pretty freaky."
+  },
+  {
+   "start": 86.84,
+   "end": 87.22,
+   "text": "2"
+  },
+  {
+   "start": 117.5,
+   "end": 118.7,
+   "text": "Shouldn't you be down there?"
+  },
+  {
+   "start": 130.98000000000002,
+   "end": 133.0,
+   "text": "I heard you guys talking last night."
+  },
+  {
+   "start": 136.16000000000003,
+   "end": 137.56,
+   "text": "It's not my fault, you know."
+  }
+ ],
+ "dialogue_asr": [
+  {
+   "start": 4.1800000000000015,
+   "end": 9.56,
+   "text": "We have main engine start. Four, three, two, one."
+  },
+  {
+   "start": 22.740000000000002,
+   "end": 35.88,
+   "text": "You're a jerk, Tom. Look, Celia, we have to follow our passions. You have your robotics and I just want to be awesome in space. Why don't you just admit that you're freaked out by my robot hand? I'm not freaked out by it's..."
+  },
+  {
+   "start": 37.36,
+   "end": 43.3,
+   "text": "Alright, fine. I'm freaked out. I'm having nightmares that I'm being chased by this giant robotic claw. Oh, whatever, Tom."
+  },
+  {
+   "start": 44.06,
+   "end": 44.84,
+   "text": "We're done."
+  },
+  {
+   "start": 50.02,
+   "end": 53.56,
+   "text": "Robots memories synced and locked."
+  },
+  {
+   "start": 60.1,
+   "end": 62.2,
+   "text": "This is pretty freaky."
+  },
+  {
+   "start": 86.84,
+   "end": 87.22,
+   "text": "2"
+  },
+  {
+   "start": 117.5,
+   "end": 118.5,
+   "text": "Shouldn't you be down there?"
+  },
+  {
+   "start": 130.98000000000002,
+   "end": 132.78,
+   "text": "I heard you guys talking last night."
+  },
+  {
+   "start": 136.16000000000003,
+   "end": 137.56,
+   "text": "It's not my fault, you know."
+  }
+ ],
+ "speech_vad": [
+  {
+   "start": 2.9,
+   "end": 3.7
+  },
+  {
+   "start": 4.7,
+   "end": 6.6
+  },
+  {
+   "start": 6.8,
+   "end": 10.1
+  },
+  {
+   "start": 10.7,
+   "end": 11.1
+  },
+  {
+   "start": 24.6,
+   "end": 36.1
+  },
+  {
+   "start": 37.6,
+   "end": 43.7
+  },
+  {
+   "start": 44.3,
+   "end": 45.3
+  },
+  {
+   "start": 50.2,
+   "end": 51.9
+  },
+  {
+   "start": 52.1,
+   "end": 52.8
+  },
+  {
+   "start": 53.3,
+   "end": 53.7
+  },
+  {
+   "start": 60.9,
+   "end": 62.4
+  },
+  {
+   "start": 117.7,
+   "end": 118.7
+  },
+  {
+   "start": 131.5,
+   "end": 133.0
+  },
+  {
+   "start": 136.6,
+   "end": 137.5
+  }
+ ],
+ "gaps": [
+  {
+   "start": 0.3,
+   "end": 2.6
+  },
+  {
+   "start": 11.35,
+   "end": 22.44
+  },
+  {
+   "start": 45.55,
+   "end": 49.72
+  },
+  {
+   "start": 53.95,
+   "end": 59.8
+  },
+  {
+   "start": 62.65,
+   "end": 86.54
+  },
+  {
+   "start": 87.47,
+   "end": 117.2
+  },
+  {
+   "start": 118.95,
+   "end": 130.68
+  },
+  {
+   "start": 133.25,
+   "end": 135.86
+  },
+  {
+   "start": 137.81,
+   "end": 139.8
+  }
+ ],
+ "slots": [
+  {
+   "start": 0.3,
+   "end": 2.6,
+   "shots": [
+    "S001"
+   ],
+   "prev": []
+  },
+  {
+   "start": 11.35,
+   "end": 18.417,
+   "shots": [
+    "S002",
+    "S003"
+   ],
+   "prev": [
+    "S001"
+   ]
+  },
+  {
+   "start": 18.417,
+   "end": 22.44,
+   "shots": [
+    "S004"
+   ],
+   "prev": [
+    "S003"
+   ]
+  },
+  {
+   "start": 45.55,
+   "end": 49.72,
+   "shots": [
+    "S008"
+   ],
+   "prev": [
+    "S007"
+   ]
+  },
+  {
+   "start": 53.95,
+   "end": 59.8,
+   "shots": [
+    "S011",
+    "S012"
+   ],
+   "prev": [
+    "S010"
+   ]
+  },
+  {
+   "start": 62.65,
+   "end": 69.917,
+   "shots": [
+    "S012",
+    "S013"
+   ],
+   "prev": []
+  },
+  {
+   "start": 69.917,
+   "end": 74.083,
+   "shots": [
+    "S014"
+   ],
+   "prev": [
+    "S013"
+   ]
+  },
+  {
+   "start": 74.083,
+   "end": 79.375,
+   "shots": [
+    "S015"
+   ],
+   "prev": [
+    "S014"
+   ]
+  },
+  {
+   "start": 79.375,
+   "end": 82.125,
+   "shots": [
+    "S016"
+   ],
+   "prev": [
+    "S015"
+   ]
+  },
+  {
+   "start": 82.125,
+   "end": 86.54,
+   "shots": [
+    "S017",
+    "S018"
+   ],
+   "prev": [
+    "S016"
+   ]
+  },
+  {
+   "start": 87.47,
+   "end": 92.417,
+   "shots": [
+    "S018"
+   ],
+   "prev": []
+  },
+  {
+   "start": 92.417,
+   "end": 95.417,
+   "shots": [
+    "S019"
+   ],
+   "prev": [
+    "S018"
+   ]
+  },
+  {
+   "start": 95.417,
+   "end": 98.208,
+   "shots": [
+    "S020"
+   ],
+   "prev": [
+    "S019"
+   ]
+  },
+  {
+   "start": 98.208,
+   "end": 102.417,
+   "shots": [
+    "S021"
+   ],
+   "prev": [
+    "S020"
+   ]
+  },
+  {
+   "start": 102.417,
+   "end": 117.2,
+   "shots": [
+    "S022",
+    "S023"
+   ],
+   "prev": [
+    "S021"
+   ]
+  },
+  {
+   "start": 118.95,
+   "end": 130.68,
+   "shots": [
+    "S023",
+    "S024"
+   ],
+   "prev": [
+    "S022"
+   ]
+  },
+  {
+   "start": 133.25,
+   "end": 135.86,
+   "shots": [
+    "S024",
+    "S025"
+   ],
+   "prev": []
+  },
+  {
+   "start": 137.81,
+   "end": 139.8,
+   "shots": [
+    "S025"
+   ],
+   "prev": []
+  }
+ ],
+ "lines": [
+  {
+   "id": "AD001",
+   "start": 11.35,
+   "window_end": 18.417,
+   "avail": 7.07,
+   "text": "四具引擎噴出粉白火光，煙霧翻滾。",
+   "duration": 3.71,
+   "speed": 1.0,
+   "budget_words": 28,
+   "attempts": [
+    {
+     "text": "四具引擎噴出粉白火光，煙霧翻滾。",
+     "seconds": 3.44,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S002",
+    "S003"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD001.wav",
+   "verify_shots": [
+    "S002",
+    "S003"
+   ]
+  },
+  {
+   "id": "AD002",
+   "start": 18.42,
+   "window_end": 22.44,
+   "avail": 4.02,
+   "text": "工業區中央射出強光，照亮灰濛天空。",
+   "duration": 3.58,
+   "speed": 1.0,
+   "budget_words": 16,
+   "attempts": [
+    {
+     "text": "工業區中央射出強光，照亮灰濛天空。",
+     "seconds": 3.85,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S004"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD002.wav",
+   "verify_shots": [
+    "S004"
+   ]
+  },
+  {
+   "id": "AD003",
+   "start": 45.55,
+   "window_end": 49.72,
+   "avail": 4.17,
+   "text": "四十年後，霓虹燈閃爍",
+   "duration": 2.38,
+   "speed": 1.0,
+   "budget_words": 16,
+   "attempts": [
+    {
+     "text": "字幕：四十年後。霓虹燈閃爍，粉、綠、橙光映照雜亂工業空間。",
+     "seconds": 6.06,
+     "fit": false,
+     "speed": null,
+     "reason": "overflow 6.1s > 4.2s"
+    },
+    {
+     "text": "四十年後，霓虹燈閃爍",
+     "seconds": 2.28,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S008"
+   ],
+   "text_read": [
+    "40 YEARS LATER"
+   ],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD003.wav",
+   "verify_shots": [
+    "S007",
+    "S008"
+   ]
+  },
+  {
+   "id": "AD004",
+   "start": 53.95,
+   "window_end": 59.8,
+   "avail": 5.85,
+   "text": "字幕：SIMULATION READY...",
+   "duration": 2.14,
+   "speed": 1.0,
+   "budget_words": 23,
+   "attempts": [
+    {
+     "text": "字幕：SIMULATION READY...",
+     "seconds": 1.36,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S011",
+    "S012"
+   ],
+   "text_read": [
+    "SIMULATION READY..."
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD004.wav",
+   "verify_shots": [
+    "S011"
+   ]
+  },
+  {
+   "id": "AD005",
+   "start": 62.65,
+   "window_end": 69.917,
+   "avail": 7.27,
+   "text": "字幕：TEARS OF STEEL。",
+   "duration": 2.25,
+   "speed": 1.0,
+   "budget_words": 29,
+   "attempts": [
+    {
+     "text": "字幕：TEARS OF STEEL。",
+     "seconds": 1.23,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S012",
+    "S013"
+   ],
+   "text_read": [
+    "TEARS OF STEEL"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD005.wav",
+   "verify_shots": [
+    "S012"
+   ]
+  },
+  {
+   "id": "AD006",
+   "start": 69.92,
+   "window_end": 74.083,
+   "avail": 4.17,
+   "text": "巨大的機械結構壓住高樓與船桅",
+   "duration": 3.08,
+   "speed": 1.0,
+   "budget_words": 16,
+   "attempts": [
+    {
+     "text": "巨大的機械結構壓住高樓與船桅",
+     "seconds": 3.14,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S014"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD006.wav",
+   "verify_shots": [
+    "S014"
+   ]
+  },
+  {
+   "id": "AD007",
+   "start": 74.08,
+   "window_end": 79.375,
+   "avail": 5.29,
+   "text": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+   "duration": 3.35,
+   "speed": 1.0,
+   "budget_words": 21,
+   "attempts": [
+    {
+     "text": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+     "seconds": 3.28,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S015"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD007.wav",
+   "verify_shots": [
+    "S015"
+   ]
+  },
+  {
+   "id": "AD008",
+   "start": 79.38,
+   "window_end": 82.125,
+   "avail": 2.75,
+   "text": "字幕：機械師製造殺人機器。",
+   "duration": 2.73,
+   "speed": 1.08,
+   "budget_words": 11,
+   "attempts": [
+    {
+     "text": "字幕：機械師製造殺人機器。",
+     "seconds": 2.56,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S016"
+   ],
+   "text_read": [
+    "Dr Amst... ROBOTICIST CREATES KILLER ROBOTS"
+   ],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD008.wav",
+   "verify_shots": [
+    "S016"
+   ]
+  },
+  {
+   "id": "AD009",
+   "start": 82.73,
+   "window_end": 86.54,
+   "avail": 3.81,
+   "text": "狙擊手穩穩扣住槍機。",
+   "duration": 2.37,
+   "speed": 1.0,
+   "budget_words": 15,
+   "attempts": [
+    {
+     "text": "狙擊手穩穩扣住槍機。",
+     "seconds": 2.15,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S017",
+    "S018"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD009.wav",
+   "verify_shots": [
+    "S017"
+   ]
+  },
+  {
+   "id": "AD010",
+   "start": 92.42,
+   "window_end": 95.417,
+   "avail": 3.0,
+   "text": "狙擊手凝視前方，呼吸放緩。",
+   "duration": 2.71,
+   "speed": 1.0,
+   "budget_words": 12,
+   "attempts": [
+    {
+     "text": "狙擊手眼睛盯著鏡頭，呼吸放慢。",
+     "seconds": null,
+     "fit": false,
+     "reason": "style: camera-language"
+    },
+    {
+     "text": "狙擊手凝視前方，呼吸放緩。",
+     "seconds": 2.78,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S019"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD010.wav",
+   "verify_shots": [
+    "S019"
+   ]
+  },
+  {
+   "id": "AD011",
+   "start": 96.0,
+   "window_end": 98.208,
+   "avail": 2.21,
+   "text": "機械飛行器盤旋城上。",
+   "duration": 2.09,
+   "speed": 1.08,
+   "budget_words": 8,
+   "attempts": [
+    {
+     "text": "機械飛行器盤旋城上。",
+     "seconds": 2.2,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S020"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD011.wav",
+   "verify_shots": [
+    "S020"
+   ]
+  },
+  {
+   "id": "AD012",
+   "start": 99.0,
+   "window_end": 102.417,
+   "avail": 3.42,
+   "text": "老人靜躺床上，狙擊手低姿瞄準。",
+   "duration": 3.1,
+   "speed": 1.0,
+   "budget_words": 13,
+   "attempts": [
+    {
+     "text": "老人靜躺床上，狙擊手低姿瞄準。",
+     "seconds": 3.35,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S021"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD012.wav",
+   "verify_shots": [
+    "S021"
+   ]
+  },
+  {
+   "id": "AD013",
+   "start": 103.15,
+   "window_end": 117.2,
+   "avail": 14.05,
+   "text": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+   "duration": 4.21,
+   "speed": 1.0,
+   "budget_words": 40,
+   "attempts": [
+    {
+     "text": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+     "seconds": 4.25,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S022",
+    "S023"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD013.wav",
+   "verify_shots": [
+    "S022"
+   ]
+  },
+  {
+   "id": "AD014",
+   "start": 118.95,
+   "window_end": 130.68,
+   "avail": 11.73,
+   "text": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+   "duration": 4.71,
+   "speed": 1.0,
+   "budget_words": 40,
+   "attempts": [
+    {
+     "text": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+     "seconds": 4.69,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S023",
+    "S024"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": true,
+    "unsupported": []
+   },
+   "flags": [],
+   "review": "pending",
+   "audio": "lines/AD014.wav",
+   "verify_shots": [
+    "S023",
+    "S024"
+   ]
+  },
+  {
+   "id": "AD015",
+   "start": 133.25,
+   "window_end": 135.86,
+   "avail": 2.61,
+   "text": "老人跪地，仰頭。",
+   "duration": 1.98,
+   "speed": 1.0,
+   "budget_words": 10,
+   "attempts": [
+    {
+     "text": "老人跪在木板地上，抬頭看鏡頭。",
+     "seconds": null,
+     "fit": false,
+     "reason": "style: camera-language"
+    },
+    {
+     "text": "老人跪地，仰頭。",
+     "seconds": 1.47,
+     "fit": true,
+     "speed": 1.0,
+     "reason": "fits"
+    }
+   ],
+   "status": "fit",
+   "shots": [
+    "S024",
+    "S025"
+   ],
+   "text_read": [],
+   "verify": {
+    "supported": false,
+    "unsupported": [
+     "老人跪地",
+     "仰頭"
+    ]
+   },
+   "flags": [
+    "unsupported: 老人跪地; 仰頭"
+   ],
+   "review": "pending",
+   "audio": "lines/AD015.wav",
+   "verify_shots": [
+    "S024"
+   ]
+  }
+ ],
+ "metrics": {
+  "clip_seconds": 140.0,
+  "shots": 25,
+  "dialogue_spans": 9,
+  "gaps": 9,
+  "speech_seconds_asr": 35.5,
+  "speech_seconds_vad": 32.7,
+  "speech_seconds_merged": 40.5,
+  "usable_gap_seconds": 93.4,
+  "slots": 18,
+  "lines": 15,
+  "lines_placed": 15,
+  "skipped_repeats": 3,
+  "first_try_fit": 12,
+  "fit_after_loop": 15,
+  "mean_attempts": 1.2,
+  "rewrites": 3,
+  "ad_seconds": 44.4,
+  "ad_overlap_with_detected_dialogue_s": 0.0,
+  "flagged_lines": 1,
+  "unsupported_flags": 1,
+  "rescued_by_speed": 2,
+  "rescued_by_rewrite": 1,
+  "style_or_text_gate_rewrites": 2,
+  "shots_covered": 19,
+  "processing_seconds": 91.6,
+  "seconds_per_content_minute": 39.3,
+  "stages": {
+   "prepare": 2.67,
+   "shots": 2.26,
+   "dialogue_map": 7.07,
+   "load_models": 3.2,
+   "shot_facts": 56.65,
+   "write_fit_verify": 13.86,
+   "verify": 4.53,
+   "mix": 1.37,
+   "injected_error_test": 17.73
+  },
+  "llm": {
+   "calls": 64,
+   "seconds": 72.5,
+   "prompt_tokens": 31696,
+   "gen_tokens": 3258
+  },
+  "tts": {
+   "calls": 17,
+   "audio_seconds": 49.9,
+   "voice": "qwen3-tts-1.7b:tw_ref_female",
+   "backend": "qwen3_tts"
+  },
+  "mlx_peak_memory_gb": 13.8,
+  "reference_dialogue_cues": 14,
+  "ad_overlap_with_reference_subtitles_s": 0.4,
+  "injected_error_test": {
+   "clean_lines": 15,
+   "false_alarms_on_clean_lines": 1,
+   "verdict_missing": 0,
+   "cases": [
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD001",
+     "original": "四具引擎噴出粉白火光，煙霧翻滾。",
+     "corrupted": "四具引擎噴出粉白火光，煙霧翻滾，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手裡拿著一把紅傘。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD001",
+     "original": "四具引擎噴出粉白火光，煙霧翻滾。",
+     "corrupted": "四十年後，霓虹燈閃爍",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "四十年後",
+      "霓虹燈閃爍"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD002",
+     "original": "工業區中央射出強光，照亮灰濛天空。",
+     "corrupted": "工業區中央射出強光，照亮灰濛天空，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD002",
+     "original": "工業區中央射出強光，照亮灰濛天空。",
+     "corrupted": "字幕：SIMULATION READY...",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "字幕：SIMULATION READY..."
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD003",
+     "original": "四十年後，霓虹燈閃爍",
+     "corrupted": "四十年後，霓虹燈閃爍，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD003",
+     "original": "四十年後，霓虹燈閃爍",
+     "corrupted": "字幕：TEARS OF STEEL。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD004",
+     "original": "字幕：SIMULATION READY...",
+     "corrupted": "字幕：SIMULATION READY。招牌寫著「出口」。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD004",
+     "original": "字幕：SIMULATION READY...",
+     "corrupted": "巨大的機械結構壓住高樓與船桅",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "巨大的機械結構壓住高樓與船桅"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD005",
+     "original": "字幕：TEARS OF STEEL。",
+     "corrupted": "字幕：TEARS OF STEEL，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身旁有一匹白馬。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD005",
+     "original": "字幕：TEARS OF STEEL。",
+     "corrupted": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "席莉雅躺在地板上",
+      "兩盞蠟燭亮著"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD006",
+     "original": "巨大的機械結構壓住高樓與船桅",
+     "corrupted": "巨大的機械結構壓住高樓與船桅，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手裡拿著一把紅傘。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD006",
+     "original": "巨大的機械結構壓住高樓與船桅",
+     "corrupted": "字幕：機械師製造殺人機器。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "字幕：機械師製造殺人機器。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD007",
+     "original": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+     "corrupted": "席莉雅躺在地板上，兩盞蠟燭亮著，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "character",
+     "line": "AD007",
+     "original": "席莉雅躺在地板上，兩盞蠟燭亮著。",
+     "corrupted": "湯姆躺在地板上，兩盞蠟燭亮著。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD008",
+     "original": "字幕：機械師製造殺人機器。",
+     "corrupted": "字幕：機械師製造殺人機器，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "機械師製造殺人機器",
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD008",
+     "original": "字幕：機械師製造殺人機器。",
+     "corrupted": "狙擊手凝視前方，呼吸放緩。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "狙擊手凝視前方"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD009",
+     "original": "狙擊手穩穩扣住槍機。",
+     "corrupted": "狙擊手穩穩扣住槍機。招牌寫著「出口」。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "招牌寫著「出口」"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "character",
+     "line": "AD009",
+     "original": "狙擊手穩穩扣住槍機。",
+     "corrupted": "老人穩穩扣住槍機。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老人穩穩扣住槍機。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD010",
+     "original": "狙擊手凝視前方，呼吸放緩。",
+     "corrupted": "狙擊手凝視前方，呼吸放緩，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "狙擊手凝視前方",
+      "呼吸放緩",
+      "身旁有一匹白馬"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD010",
+     "original": "狙擊手凝視前方，呼吸放緩。",
+     "corrupted": "老人靜躺床上，狙擊手低姿瞄準。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老人靜躺床上",
+      "狙擊手低姿瞄準"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD011",
+     "original": "機械飛行器盤旋城上。",
+     "corrupted": "機械飛行器盤旋城上，手裡拿著一把紅傘。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "手裡拿著一把紅傘。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD011",
+     "original": "機械飛行器盤旋城上。",
+     "corrupted": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD012",
+     "original": "老人靜躺床上，狙擊手低姿瞄準。",
+     "corrupted": "老人靜躺床上，狙擊手低姿瞄準，天空下著大雨。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "天空下著大雨。"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD012",
+     "original": "老人靜躺床上，狙擊手低姿瞄準。",
+     "corrupted": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD013",
+     "original": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+     "corrupted": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍，身處擁擠的火車站。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "身處擁擠的火車站"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD013",
+     "original": "蒸汽飛船盤旋城上，引擎噴煙，燈光閃爍。",
+     "corrupted": "老人跪地，仰頭。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老人跪地，仰頭。"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD014",
+     "original": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+     "corrupted": "老人前傾身子，抬手比劃。老人低姿瞄準不動。",
+     "caught": false,
+     "verdict_missing": false,
+     "unsupported": []
+    },
+    {
+     "set": "hard",
+     "kind": "neighbour",
+     "line": "AD014",
+     "original": "老人前傾身子，抬手比劃。狙擊手低姿瞄準不動。",
+     "corrupted": "老人靜躺床上，狙擊手低姿瞄準。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老人靜躺床上",
+      "狙擊手低姿瞄準"
+     ]
+    },
+    {
+     "set": "easy",
+     "kind": "append/swap",
+     "line": "AD015",
+     "original": "老人跪地，仰頭。",
+     "corrupted": "老人跪地，仰頭，身旁有一匹白馬。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "老人跪地",
+      "仰頭",
+      "身旁有一匹白馬"
+     ]
+    },
+    {
+     "set": "hard",
+     "kind": "character",
+     "line": "AD015",
+     "original": "老人跪地，仰頭。",
+     "corrupted": "狙擊手跪地，仰頭。",
+     "caught": true,
+     "verdict_missing": false,
+     "unsupported": [
+      "狙擊手跪地，仰頭。"
+     ]
+    }
+   ],
+   "easy": {
+    "planted": 15,
+    "caught": 13,
+    "catch_rate": 0.87
+   },
+   "hard": {
+    "planted": 15,
+    "caught": 11,
+    "catch_rate": 0.73,
+    "by_kind": {
+     "noun": "0/0",
+     "verb": "0/0",
+     "character": "2/3",
+     "neighbour": "9/12"
+    }
+   },
+   "planted": 15,
+   "caught": 13,
+   "catch_rate": 0.87
+  }
+ }
+}
